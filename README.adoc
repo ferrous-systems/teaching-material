@@ -24,5 +24,6 @@ The results are in the `./target` directory.
 
 ## Links
 
+* https://ferrous-systems.github.io/teaching-material/index.html[Rendered Presentations]
 * https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[AsciiDoc Syntax Quick Reference]
 * https://asciidoctor.org/docs/user-manual/[Asciidoctor User Manual]
