@@ -1,0 +1,33 @@
+name: pages
+on:
+  push:
+   branches:
+     - master
+
+jobs:
+  pages:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v1
+
+      - name: Set up Ruby 2.6
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 2.6
+
+      - name: Build
+        run: |
+          gem install bundler
+          bundle install --jobs 4 --retry 3
+          ./make.sh
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v2.6.0-rc0
+        env:
+          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: ./target/
+        with:
+          forceOrphan: true
