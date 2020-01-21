@@ -1,0 +1,3 @@
+[dependencies.my_lib]
+version = "0.1"
+features = ["experimental"]

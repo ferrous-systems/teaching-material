@@ -1,0 +1,4 @@
+[dependencies.futures]
+version = "0.1"
+git = "https://github.com/skade/futures-rs.git"
+branch = "my-new-feature"

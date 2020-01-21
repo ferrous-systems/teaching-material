@@ -1,0 +1,8 @@
+[dependencies]
+futures = "0.1"
+
+[build-dependencies]
+tango = "0.5"
+
+[test-dependencies]
+hamcrest = "0.5"

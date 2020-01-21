@@ -53,9 +53,9 @@ By default, cargo uses the Debug profile, which means that the resulting binary 
 
 == `cargo run`
 
-If the project contains an application, you can run it using `cargo run -- [Arguments]`.
+If the project contains an application, you can run it using `+cargo run -- [Arguments]+`.
 
-If it contains multiple, the name of the intended binary can be given using `--bin <name>`.
+If it contains multiple, the name of the intended binary can be given using `+--bin <name>+`.
 
 The debug profile is default here.
 
@@ -111,12 +111,22 @@ Cargo knows 3 different kinds of dependencies:
 
 == Example
 
-<pre><code data-source="chapters/shared/code/cargo/2.toml" data-trim="hljs toml"></code></pre>
+[source,toml]
+----
+include::2.toml[]
+----
 
 == Dependencies in detail
 
-<pre><code data-source="chapters/shared/code/cargo/3.toml" data-trim="hljs toml"></code></pre>
-<pre><code data-source="chapters/shared/code/cargo/4.toml" data-trim="hljs toml"></code></pre>
+[source,toml]
+----
+include::3.toml[]
+----
+
+[source,toml]
+----
+include::4.toml[]
+----
 
 == Aside
 
@@ -126,7 +136,10 @@ Dependencies outside of crates.io are forbidden if a library is to be published 
 
 It is possible to temporarily replace libraries though local ones. For this, their path need to be registered in `$PROJECT_PATH/.cargo/config`.
 
-<pre><code data-source="chapters/shared/code/cargo/5.toml" data-trim="hljs toml"></code></pre>
+[source,toml]
+----
+include::5.toml[]
+----
 
 Libraries found here will be preferred. This allows easy testing of patches.
 
@@ -137,7 +150,7 @@ The cargo profiles (release, bench, test...) can be customized. Details can be f
 == Targets
 
 - profiles and dependencies can be configured based on the compilation target
-- `cargo build --target ...` uses that target
+- `+cargo build --target ...+` uses that target
 - the target must be installed beforehand
 - consider using xargo
 
@@ -151,19 +164,28 @@ See the http://doc.crates.io/manifest.html[manifest documentation] for details.
 
 `rustc` provides the ability to ignore certain code parts on compilation. This happens through feature flags.
 
-<pre><code data-source="chapters/shared/code/cargo/6.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::6.rs[]
+----
 
 == !
 
 These can be registered in `Cargo.toml`.
 
-<pre><code data-source="chapters/shared/code/cargo/7.toml" data-trim="hljs toml"></code></pre>
+[source,toml]
+----
+include::7.toml[]
+----
 
 == !
 
 And then be expressed on a dependency:
 
-<pre><code data-source="chapters/shared/code/cargo/8.toml" data-trim="hljs toml"></code></pre>
+[source,toml]
+----
+include::8.toml[]
+----
 
 == Directly invoking `rustc`
 
