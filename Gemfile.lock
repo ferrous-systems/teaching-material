@@ -1,0 +1,19 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    asciidoctor (2.0.10)
+    asciidoctor-revealjs (3.1.0)
+      asciidoctor (>= 2.0.0, < 3.0.0)
+      concurrent-ruby (~> 1.0)
+      thread_safe (~> 0.3.5)
+    concurrent-ruby (1.1.5)
+    thread_safe (0.3.6)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  asciidoctor-revealjs
+
+BUNDLED WITH
+   1.17.2

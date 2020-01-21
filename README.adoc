@@ -1,0 +1,28 @@
+# teaching-material
+
+## Prerequsites
+
+You need to have Ruby and bundle installed
+
+Run
+
+[source]
+----
+$ bundle --path=.bundle/gems --binstubs=.bundle/.bin
+----
+
+Once to install AsciiDoctor
+
+## Building
+
+[source]
+----
+$ ./make.sh
+----
+
+The results are in the `./target` directory.
+
+## Links
+
+* https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[AsciiDoc Syntax Quick Reference]
+* https://asciidoctor.org/docs/user-manual/[Asciidoctor User Manual]
