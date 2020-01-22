@@ -4,4 +4,5 @@
 
 * link:./overview.html[Overview]
 * link:./installation.html[Installation]
+* link:./syntax.html[Syntax]
 * link:./cargo.html[Cargo]
