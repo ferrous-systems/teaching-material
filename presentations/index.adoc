@@ -3,4 +3,5 @@
 == Presentations
 
 * link:./overview.html[Overview]
+* link:./installation.html[Installation]
 * link:./cargo.html[Cargo]
