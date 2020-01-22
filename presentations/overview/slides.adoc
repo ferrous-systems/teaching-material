@@ -1,0 +1,111 @@
+= Overview
+:revealjs_width: 1920
+:revealjs_height: 1080
+:source-highlighter: highlightjs
+
+link:./index.html[Table of Contents]
+
+== A Little Bit of History
+
+- Rust is roughly 10 years old
+- An experimental project by Graydon Hoare
+- Adopted by Mozilla
+- Presented to the general public as version 0.4 in 2012
+- Looked a bit Go-like back then
+
+== Focus
+
+- Rust has lost many features from 2012 to 2014
+- Garbage collector, evented runtime, complex error handling
+  * All present once, now gone
+- Orientation towards a usable systems programming language
+
+== Development
+
+- Always together with a larger project (e.g. Servo)
+- Early adoption of regular releases, deprecations and an RFC process
+- Good software development methodologies
+- "Things are not complete when there is nothing left to add, but when there is nothing left to take away."
+
+== Release Method
+
+- Nightly releases
+- Every 6 weeks, the current nightly is promoted to beta
+- After 6 weeks of testing, beta becomes stable
+- Guaranteed backwards-compatibility
+- Makes small iterations easier
+
+== Goals
+
+- Explicit over implicit ^*^
+- Predictable runtime behaviour
+- Supporting stable software development for programming at large
+- Pragmatism and easy integration
+- Approachable project
+
+== Rust wants to be usable first!
+
+== !
+
+Many examples in this course are very small, which is why we will also spend time discussing the impact of many features on large projects.
+
+== The Three Words
+
+- Safe
+- Concurrent
+- Fast
+
+== Safe
+
+- Rust is memory-safe
+- No illegal memory access
+- Deallocation is automated
+- Warning: memory leaks are *safe* by that definition!
+
+== Concurrent
+
+- "Concurrency without fear"
+- The type system detects concurrent access to data and requires synchronisation
+- Also: Rust detects when unsynchronised access is safely possible!
+- Protection from data races!
+
+== Fast
+
+- These properties are guaranteed at compile time and have no runtime cost!
+- Optimizing compiler based on LLVM
+- Features with runtime cost are explicit and hard to activate "by accident"
+- No reflection (Dracula-Language)
+- Static dispatch per default
+
+== Pragmatic
+
+- Sublanguage for unsafe memory access
+- Good techniques to handle these
+- Great FFI support
+- Great error messages by the compiler
+- Rust gives support for many hard things and trusts you with the rest
+
+== Language features
+
+- Rust is an expression-based language. Each expression has a value, which can be assigned or returned.
+- "Pay what you use": Rust has features with a runtime cost in an explicit and visible way. Features not used don't cost anything.
+- Zero-cost abstractions
+
+== Where do Rustaceans come from?
+
+In almost equal parts from:
+
+- Dynamic languages (JS, Rubyists and Pythonista)
+- Functional languages like Scala and Haskell
+- C/C++
+
+== Well-known Users
+
+- Mozilla Firefox
+- Mozilla Servo
+- Gnome
+- Dropbox
+- Microsoft
+- Amazon
+- Google
+- http://rust-lang.org/friends.html[Rust Friends]
