@@ -19,13 +19,16 @@ WebAssembly is still not widely supported and has a number of rough edges.
 
 Setup is a bit unrefined at this moment, but it should improve in the future.
 
-* Fetch `emsdk` from [emscripten](http://kripken.github.io/emscripten-site/docs/getting_started/downloads.html).
+* Fetch `emsdk` from http://kripken.github.io/emscripten-site/docs/getting_started/downloads.html[emscripten].
 * Unpack it somewhere sensible.
 * Navigate to the directory in your terminal.
 
 == Installing: `emcc`
 
-<pre><code data-source="chapters/shared/code/wasm/1.bash" data-trim="hljs bash"></code></pre>
+[source,bash]
+----
+include::./1.bash[]
+----
 
 The output of the third command will offer instructions for what to add to `$PATH` if desired.
 
@@ -35,21 +38,28 @@ The output of the third command will offer instructions for what to add to `$PAT
 
 The versions of the toolchain are quite important. Verify there are no errors running the following:
 
-<pre><code data-source="chapters/shared/code/wasm/2.bash" data-trim="hljs bash"></code></pre>
+[source,bash]
+----
+include::./2.bash[]
+----
 
 == Installing: `rustup` Target
 
 `rustup` allows installing multiple compilation targets.
 
-<pre><code data-source="chapters/shared/code/wasm/3.bash" data-trim="hljs bash"></code></pre>
-
-== !
-
-# Standalone Executable
+[source,bash]
+----
+include::./3.bash[]
+----
 
 == Standalone Executable
 
-<pre><code data-source="chapters/shared/code/wasm/4.bash" data-trim="hljs bash"></code></pre>
+== Standalone Executable
+
+[source,bash]
+----
+include::./4.bash[]
+----
 
 [source,rust]
 ----
@@ -58,33 +68,46 @@ include::./5.rs[]
 
 == Standalone Executable
 
-<pre><code data-source="chapters/shared/code/wasm/6.bash" data-trim="hljs bash"></code></pre>
+[source,bash]
+----
+include::./6.bash[]
+----
 
 This will create a directory structure like so:
 
-<pre><code data-source="chapters/shared/code/wasm/7.output" data-trim="hljs bash"></code></pre>
+[source]
+----
+include::./7.output[]
+----
 
 == Standalone Executable
 
 Once we generate the `wasm` and `js` we want to place them in with a `site` folder. We can use a `Makefile` for this.
 
-<pre><code data-source="chapters/shared/code/wasm/8.makefile" data-trim="hljs makefile"></code></pre>
+[source,makefile]
+----
+include::./8.makefile[]
+----
 
 == Standalone Executable
 
 Create `site/index.html`:
 
-<pre><code data-source="chapters/shared/code/wasm/9.html" data-trim="hljs html"></code></pre>
+[source,html]
+----
+include::./9.html[]
+----
 
 == Standalone Executable
 
-Running `python -m SimpleHTTPServer` or equivalent, browsing to `localhost:8000/site`, and opening the console yield the following output:
+Running `python3 -m http.server` or equivalent, browsing to `localhost:8000/site`, and opening the console yield the following output:
 
-<pre><code data-source="chapters/shared/code/wasm/10.output" data-trim="hljs bash"></code></pre>
+[source]
+----
+include::./10.output[]
+----
 
-== !
-
-# Rust from JS
+== Rust from JS
 
 == Rust from JS
 
@@ -96,11 +119,17 @@ Additionally, interactions must be handled like interactions to C.
 
 The nightly channel is currently necessary to get this to work properly:
 
-<pre><code data-source="chapters/shared/code/wasm/11.bash" data-trim="hljs bash"></code></pre>
+[source,bash]
+----
+include::./11.bash[]
+----
 
 == Rust from JS
 
-<pre><code data-source="chapters/shared/code/wasm/12.bash" data-trim="hljs bash"></code></pre>
+[source,bash]
+----
+include::./12.bash[]
+----
 
 [source,rust]
 ----
@@ -111,29 +140,36 @@ include::./13.rs[]
 
 We can use the same Makefile as before.
 
-<pre><code data-source="chapters/shared/code/wasm/8.makefile" data-trim="hljs makefile"></code></pre>
+[source,makefile]
+----
+include::./8.makefile[]
+----
 
 == Rust from JS
 
 The `onRuntimeInitialized` hook for `Module` defines what is called after the WebAssembly is loaded.
 
-<pre><code data-source="chapters/shared/code/wasm/14.html" data-trim="hljs html"></code></pre>
+[source,html]
+----
+include::./14.html[]
+----
 
 == Rust from JS
 
-Running `python -m SimpleHTTPServer` or equivalent, browsing to `localhost:8000/site`, and opening the console yield the following output:
+Running `python3 -m http.server` or equivalent, browsing to `localhost:8000/site`, and opening the console yield the following output:
 
-<pre><code data-source="chapters/shared/code/wasm/15.output" data-trim="hljs bash"></code></pre>
+[source]
+----
+include::./15.output[]
+----
 
-== !
-
-# JS from Rust
+== JS from Rust
 
 == JS from Rust
 
 Calling JS code from Rust has similar complications.
 
-It is done primarily through passing the `--js-library` flag at link time, which requires the nightly channel of rust.
+It is done primarily through passing the `+--js-library+` flag at link time, which requires the nightly channel of rust.
 
 Passing numerics is relatively simple, but passing more complex things like strings requires extra effort.
 
@@ -141,7 +177,10 @@ Passing numerics is relatively simple, but passing more complex things like stri
 
 Returning a string for Rust code:
 
-<pre><code data-source="chapters/shared/code/wasm/17.js" data-trim="hljs javascript"></code></pre>
+[source,javascript]
+----
+include::./17.js[]
+----
 
 == JS from Rust
 
@@ -154,7 +193,7 @@ include::./18.rs[]
 
 == DOM Interaction
 
-There is a [WebPlatform crate](https://github.com/tcr/rust-webplatform) to explore and contribute to.
+There is a https://github.com/tcr/rust-webplatform[WebPlatform crate] to explore and contribute to.
 
 [source,rust]
 ----

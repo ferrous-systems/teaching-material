@@ -21,5 +21,6 @@
 * link:./traits.html[Traits]
 
 .Unfinished
+* link:./wasm.html[WebAssembly]
 * link:./futures.html[Futures]
 * link:./future-of-futures.html[The Future of Futures]
