@@ -1,9 +1,7 @@
 # Borrowing
 [Table of Contents](toc/english.html)
 
----
-
-## What you own, you can borrow
+== What you own, you can borrow
 
 ---
 
@@ -41,9 +39,7 @@ What if we want to change the value?
 
 Mutable borrows are exclusive!
 
----
-
-## The borrowing rules
+== The borrowing rules
 
 Values can be:
 
@@ -56,9 +52,7 @@ Ownership remains in the calling context, as well as the deallocation.
 
 What does this save us from?
 
----
-
-## Do you see a potential problem?
+== Do you see a potential problem?
 
 <pre><code data-source="chapters/shared/code/borrowing/3.rs" data-trim="hljs rust"></code></pre>
 
@@ -71,9 +65,7 @@ It follows:
 * `&&T` is a valid type
 * `& &mut T` not a valid type. Why?
 
----
-
-## Borrows are References
+== Borrows are References
 
 That means that we need to dereference them from time to time.
 

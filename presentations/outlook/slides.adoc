@@ -27,9 +27,7 @@ Changes are opt-in.
 
 <pre><code data-source="chapters/shared/code/outlook/1.toml" data-trim="hljs toml" class="lang-rust"></code></pre>
 
----
-
-## Some of the changes
+== Some of the changes
 
 ---
 

@@ -7,9 +7,7 @@ It's time for a tour of some interesting parts in `std`.
 
 We will focus on parts we have not otherwise covered.
 
----
-
-## Collections
+== Collections
 
 [`std::collections`](https://doc.rust-lang.org/std/collections/index.html)
 
@@ -20,9 +18,7 @@ Contains a number of valuable data structures. In particular:
 
 When seeking to optimize code other options may be appropriate.
 
----
-
-## Entry
+== Entry
 
 [`std::collections::hash_map::Entry`](https://doc.rust-lang.org/std/collections/hash_map/enum.Entry.html)
 
@@ -30,9 +26,7 @@ Calling `.entry()` on a `HashMap` accesses this API and allows for 'insert or up
 
 <pre><code data-source="chapters/shared/code/std-lib-tour/1.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
----
-
-## PhantomData
+== PhantomData
 
 [`std::marker::PhantomData`](https://doc.rust-lang.org/std/marker/struct.PhantomData.html)
 
@@ -40,9 +34,7 @@ Zero-sized type used to mark things that "act like" they own a `T`. These are us
 
 <pre><code data-source="chapters/shared/code/std-lib-tour/2.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
----
-
-## Command
+== Command
 
 [`std::process::Command`](https://doc.rust-lang.org/std/process/struct.Command.html)
 
@@ -50,9 +42,7 @@ A process builder, providing fine-grained control over how a new process should 
 
 <pre><code data-source="chapters/shared/code/std-lib-tour/3.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
----
-
-## Syncronization Primitives
+== Syncronization Primitives
 
 [`std::sync`](https://doc.rust-lang.org/std/sync/)
 
@@ -60,9 +50,7 @@ Provides types such a `Mutex`, `RwLock`, `CondVar`, `Arc` and `Barrier`s.
 
 <pre><code data-source="chapters/shared/code/std-lib-tour/4.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
----
-
-## Read and Write
+== Read and Write
 
 [`std::io::Read`](https://doc.rust-lang.org/std/io/trait.Read.html) & [`std::io::Write`](https://doc.rust-lang.org/std/io/trait.Write.html)
 
@@ -70,9 +58,7 @@ Generic read and write functionality to files, sockets, buffers, and anything in
 
 <pre><code data-source="chapters/shared/code/std-lib-tour/5.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
----
-
-## Filesystem Manipulation
+== Filesystem Manipulation
 
 [`std::fs`](https://doc.rust-lang.org/std/fs/) & [`std::path`](https://doc.rust-lang.org/std/path/)
 

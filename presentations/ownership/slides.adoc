@@ -5,9 +5,7 @@
 
 Ownership is the basis for the memory management of Rust.
 
----
-
-## Rules
+== Rules
 
 -   Every value has exactly one owner
 -   Ownership can be passed on
@@ -23,9 +21,7 @@ These rules:
 -   are enforced at compile time
 -   are practical in many other ways
 
----
-
-## Example
+== Example
 
 <pre><code data-source="chapters/shared/code/ownership/1.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
@@ -41,9 +37,7 @@ What happens if we try to use `dot` a second time?
 
 <pre><code data-source="chapters/shared/code/ownership/2.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
----
-
-## Oops!
+== Oops!
 
 ---
 
@@ -51,15 +45,11 @@ In Rust-Lingo, this is called `consuming`. `pacman` consumes `dot`.
 
 The value cannot be used anymore.
 
----
-
-## Background
+== Background
 
 When calling `pacman` with `dot`, the value is "moved" into the arguments of `pacman`. At that moment, ownership passes to `pacman`. `main` is not owner of the data anymore and thus not allowed to access or manipulate them.
 
----
-
-## Working with moves: explicit clone
+== Working with moves: explicit clone
 
 What, if that behaviour is unwanted? We can create a second copy of the data!
 
@@ -75,9 +65,7 @@ What, if that behaviour is unwanted? We can create a second copy of the data!
 
 Cloning is a general operation that - depending on the complexity of the data at hand - can be costly.
 
----
-
-## Working with moves: copy instead of move
+== Working with moves: copy instead of move
 
 <pre><code data-source="chapters/shared/code/ownership/4.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
@@ -96,17 +84,13 @@ Values that are copy follow the standard ownership rules, but they are copied wh
 
 The terminology around moves is similar, but not the same to the one used in C++, which is why you should always use Rust-Terminology: Ownership, passing on ownership and consumption.
 
----
-
-## Practical example
+== Practical example
 
 <pre><code data-source="chapters/shared/code/ownership/5.rs" data-trim="hljs rust"></code></pre>
 
 What would happen if we use could use File after calling `use_file`?
 
----
-
-## Small quiz
+== Small quiz
 
 `drop` is the function that deallocates a value immediately. What does the implementation look like?
 

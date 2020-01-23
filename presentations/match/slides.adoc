@@ -9,9 +9,7 @@ To check variants of enums, `match` is used.
 
 <pre><code data-source="chapters/shared/code/match/1.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
----
-
-## Alternative: if-let
+== Alternative: if-let
 
 <pre><code data-source="chapters/shared/code/match/2.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
@@ -23,9 +21,7 @@ To check variants of enums, `match` is used.
 
 Matches must cover all variants!
 
----
-
-## Ignoring variants
+== Ignoring variants
 
 <pre><code data-source="chapters/shared/code/match/4.rs" data-trim="hljs rust"
 class="lang-rust"></code></pre>

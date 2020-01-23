@@ -1,28 +1,20 @@
 # Property Testing
 [Table of Contents](toc/english.html)
 
----
-
-## This is your brain
+== This is your brain
 
 -   Everything we know is subject to bias
 -   Everything we build reflects these biases
 
----
-
-## Problem:
+== Problem:
 
 Our code reflects our biases, our tests are often biased similarly
 
----
-
-## Solution:
+== Solution:
 
 Don't write tests
 
----
-
-## Solution:
+== Solution:
 
 Write expectations
 
@@ -35,21 +27,15 @@ Write expectations
 
 This is called property testing
 
----
-
-## Crate: **proptest**
+== Crate: **proptest**
 
 <pre><code data-source="chapters/shared/code/proptest/1.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
----
-
-## Crate: **proptest**
+== Crate: **proptest**
 
 <pre><code data-source="chapters/shared/code/proptest/2.txt" data-trim="hljs bash" class="lang-bash"></code></pre>
 
----
-
-## Crate: **proptest**
+== Crate: **proptest**
 
 <pre><code data-source="chapters/shared/code/proptest/3.txt" data-trim="hljs bash" class="lang-bash"></code></pre>
 
@@ -67,15 +53,11 @@ It's easy to generate more structured input, too
 
 <pre><code data-source="chapters/shared/code/proptest/5.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
----
-
-## Configuration is a great target
+== Configuration is a great target
 
 <pre><code data-source="chapters/shared/code/proptest/6.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
----
-
-## Miscellaneous Tips
+== Miscellaneous Tips
 
 -   Isolate business logic from IO concerns
 -   Use assert! and debug_assert! on non-trivial things! this makes our "fuzzers" extremely effective

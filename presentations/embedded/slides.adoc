@@ -1,23 +1,17 @@
 # Embedded systems in Rust
 [Table of Contents](toc/english.html)
 
----
-
-## Places to stay informed
+== Places to stay informed
 
 <http://www.rust-embedded.org/>
 
----
-
-## Stack
+== Stack
 
 Xargo: Cross-compilation with libcore and libstd: <https://github.com/japaric/xargo>
 
 Cross: Cross-Testing of results with QEMU <https://github.com/japaric/cross>
 
----
-
-## Reading
+== Reading
 
 Discovery: Discovering microcontrollers through Rust.
 
@@ -27,15 +21,11 @@ Copper: Programming Microcontrollers with Rust and Cortex-M.
 
 <https://japaric.github.io/copper/>
 
----
-
-## Projects
+== Projects
 
 Tock, an operating system for Cortex-M processors: [tockos.org](tockos.org)
 
----
-
-## Problems
+== Problems
 
 -   LLVM target support
     -   LLVM is generally good on targets that Apple uses
@@ -46,9 +36,7 @@ Tock, an operating system for Cortex-M processors: [tockos.org](tockos.org)
     -   "No solution is better than a bad solution!"
 -   We need vendor buy-in
 
----
-
-## Solution
+== Solution
 
 -   Rust is a driving Force behind better target support in LLVM
     -   Multiple Targets, espcially AVR, to be released in the next versions

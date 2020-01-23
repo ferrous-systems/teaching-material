@@ -15,9 +15,7 @@ These traits are what Rust uses to prevent data races.
 
 They are *automatically derived* for all types if appropriate.
 
----
-
-## Automatically Derived
+== Automatically Derived
 
 <pre><code data-source="chapters/shared/code/send-and-sync/1.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
@@ -27,58 +25,42 @@ There are some notable types which are not `Send` or `Sync`.
 
 Such as `Rc`, raw pointers, and `UnsafeCell`.
 
----
-
-## Example: `Rc`
+== Example: `Rc`
 
 <pre><code data-source="chapters/shared/code/send-and-sync/2.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
----
-
-## Example: `Rc`
+== Example: `Rc`
 
 <pre><code data-source="chapters/shared/code/send-and-sync/3.output" data-trim="hljs output"></code></pre>
 
----
-
-## Implementing
+== Implementing
 
 It's possible to add the implementation of `Send` and `Sync` to a type.
 
 <pre><code data-source="chapters/shared/code/send-and-sync/4.rs" data-trim="hljs rust"></code></pre>
 In these cases, the task of thread safety is left to the implementor.
 
----
-
-## Relationships
+== Relationships
 
 If a type implements both `Sync` and `Copy` then it can also implement `Send`.
 
----
-
-## Relationships
+== Relationships
 
 A type `&T` can implement `Send` if the type `T` also implements `Sync`.
 
 <pre><code data-source="chapters/shared/code/send-and-sync/5.rs" data-trim="hljs rust"></code></pre>
 
----
-
-## Relationships
+== Relationships
 
 A type `&mut T` can implement `Send` if the type `T` also implements `Send`.
 
 <pre><code data-source="chapters/shared/code/send-and-sync/6.rs" data-trim="hljs rust"></code></pre>
 
----
-
-## Consequences
+== Consequences
 
 What are the consequences of having `Send` and `Sync`?
 
----
-
-## Consequences
+== Consequences
 
 Carrying this information at the type system level allows driving data race bugs down to a *compile time* level.
 

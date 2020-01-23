@@ -31,9 +31,7 @@ Unsafe code should never:
     - never construct a `std:::vec::Vec` from a C++ vector and drop it
 -   cheat on borrowck, for example by changing lifetimes or mutability of a type. The most common source of "but I was so sure that works" bugs.
 
----
-
-## Rusts little secret
+== Rusts little secret
 
 When implementing data structures, unsafe isn't unusual.
 
@@ -45,9 +43,7 @@ Unsafe code must *always* be marked `unsafe`.
 
 <pre><code data-source="chapters/shared/code/unsafe/1.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
----
-
-## Traps of `unsafe`
+== Traps of `unsafe`
 
 -   Not all examples are that simple. `unsafe` *must* guarantee the invariants that Rust expects.
 -   This *especially* applies to ownership and mutable borrowing
@@ -58,9 +54,7 @@ Unsafe code must *always* be marked `unsafe`.
 
 Rust allows you to shoot yourself in the foot, it just requires you to take your gun out of the holster and remove the safety first.
 
----
-
-## Practical example
+== Practical example
 
 As Rust forbids aliasing, it is impossible in safe Rust to split a slice into 2 non-overlapping parts.
 

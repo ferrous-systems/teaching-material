@@ -1,23 +1,17 @@
 # `serde`
 [Table of Contents](toc/english.html)
 
----
-
-## **Ser**ialization and **De**serialization
+== **Ser**ialization and **De**serialization
 
 [https://serde.rs/](https://serde.rs/)
 
----
-
-## `Serialize` & `Deserialize`
+== `Serialize` & `Deserialize`
 
 To make a Rust structure (de)serializable:
 
 <pre><code data-source="chapters/shared/code/serde/1.rs" data-trim="hljs rust"></code></pre>
 
----
-
-## Formats
+== Formats
 
 Serde supports a number of formats, such as:
 
@@ -31,31 +25,23 @@ Serde supports a number of formats, such as:
 
 Did you enjoy that acronym salad?
 
----
-
-## `Serialize`
+== `Serialize`
 
 To JSON:
 
 <pre><code data-source="chapters/shared/code/serde/2.rs" data-trim="hljs rust"></code></pre>
 
----
-
-## `Deserialize`
+== `Deserialize`
 
 From JSON:
 
 <pre><code data-source="chapters/shared/code/serde/3.rs" data-trim="hljs rust"></code></pre>
 
----
-
-## Transcode
+== Transcode
 
 <pre><code data-source="chapters/shared/code/serde/4.rs" data-trim="hljs rust"></code></pre>
 
----
-
-## Attributes
+== Attributes
 
 `serde` has a large number of attributes you can utilize:
 

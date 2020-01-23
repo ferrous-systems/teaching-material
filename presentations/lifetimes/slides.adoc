@@ -17,23 +17,17 @@ Rusts lifetimes are notorious for being hard to understand.
 
 That is not necessary.
 
----
-
-## Lifetimes
+== Lifetimes
 
 -   Lifetimes describe the time that values remain in memory
 -   They describe - they cannot force or change anything
 -   Lifetimes are types!
 
----
-
-## You have used them already
+== You have used them already
 
 <pre><code data-source="chapters/shared/code/lifetimes/3.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
----
-
-## Motivation
+== Motivation
 
 <pre><code data-source="chapters/shared/code/lifetimes/4.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
@@ -61,15 +55,11 @@ Takeaway:
 
 Lifetimes describe minimal conditions
 
----
-
-## Multiple lifetimes in one signature
+== Multiple lifetimes in one signature
 
 <pre><code data-source="chapters/shared/code/lifetimes/6.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
----
-
-## Sublifetimes
+== Sublifetimes
 
 <pre><code data-source="chapters/shared/code/lifetimes/7.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
@@ -85,9 +75,7 @@ Lifetimes cannot do _more_ than describe "this must live longer (or at least equ
 
 Common pitfall: you cannot "shorten a lifetime", as it just describes what's already there.
 
----
-
-## `'static`
+== `'static`
 
 `'static` is a lifetime that lives longer than all others. That's not necessarily forever!
 
@@ -112,24 +100,18 @@ Lifetimes describe all types, not only references, therefore they are also bound
 
 <pre><code data-source="chapters/shared/code/lifetimes/8.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
----
-
-## Lifetime-Elision
+== Lifetime-Elision
 
 For simple cases, lifetimes are automatically inserted into signatures.
 
 <pre><code data-source="chapters/shared/code/lifetimes/9.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
----
-
-## Lifetimes and Bindings
+== Lifetimes and Bindings
 
 <pre><code data-source="chapters/shared/code/lifetimes/10.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 <pre><code data-source="chapters/shared/code/lifetimes/11.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
----
-
-## Lifetimes and Boxes
+== Lifetimes and Boxes
 
 For boxes, the default lifetime bound of the contained value is `'static`. Sometimes, this is too long and can be overwritten:
 

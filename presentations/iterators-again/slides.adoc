@@ -1,9 +1,7 @@
 # Iterators Again
 [Table of Contents](toc/english.html)
 
----
-
-## Returning Generic Iterators
+== Returning Generic Iterators
 
 Currently, Rust allows no generic return values. You have to use impl trait here.
 

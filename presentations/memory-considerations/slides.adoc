@@ -7,63 +7,47 @@
 
 <pre><code data-source="chapters/shared/code/memory-considerations/1.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
----
-
-## Sizedness
+== Sizedness
 
 All values in Rust have a fixed or a flexible-sized memory size. The language expresses that through the marker trait `Sized`. `Sized` types have a size known at compile time.
 
 Unsized types *must* be addressed through indirection (e.g. through borrows).
 
----
-
-## Size of Structs
+== Size of Structs
 
 Structs have the size of their contained values.
 
 <pre><code data-source="chapters/shared/code/memory-considerations/2.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
----
-
-## References
+== References
 
 References have the size of 1 `usize`. The same is true for simple boxes.
 
 <pre><code data-source="chapters/shared/code/memory-considerations/3.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
----
-
-## Trait Objects
+== Trait Objects
 
 Trait objects need 2 `usize`.
 
 <pre><code data-source="chapters/shared/code/memory-considerations/4.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
----
-
-## Slices
+== Slices
 
 Slices need 2 usize. The same is true for their boxes.
 
 <pre><code data-source="chapters/shared/code/memory-considerations/5.output" data-trim="hljs output" class="lang-rust"></code></pre>
 
----
-
-## Vectors
+== Vectors
 
 Vectors need 3 usize, to additionally store their capacity.
 
 <pre><code data-source="chapters/shared/code/memory-considerations/6.output" data-trim="hljs output" class="lang-rust"></code></pre>
 
----
-
-## `&str`, `Box<str>`, `String`
+== `&str`, `Box<str>`, `String`
 
 They behave the same as slices and vectors.
 
----
-
-## Enums
+== Enums
 
 Enums need the size of their largest value, 1 byte for a discriminant, plus padding.
 

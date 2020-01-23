@@ -5,15 +5,11 @@
 
 Where to find help and contacts?
 
----
-
-## In General
+== In General
 
 There's never anything wrong with sending a mail to `community-team@rust-lang.org`.
 
----
-
-## Teams
+== Teams
 
 -   Core
 -   Language
@@ -26,9 +22,7 @@ There's never anything wrong with sending a mail to `community-team@rust-lang.or
 -   Style
 -   Infrastructure
 
----
-
-## Websites
+== Websites
 
 -   <https://rust-lang.org>
 -   <https://community.rs>
@@ -38,9 +32,7 @@ There's never anything wrong with sending a mail to `community-team@rust-lang.or
 
 [Code of Conduct](https://www.rust-lang.org/en-US/conduct.html)
 
----
-
-## IRC
+== IRC
 
 `irc.mozilla.org`:
 
@@ -50,47 +42,35 @@ There's never anything wrong with sending a mail to `community-team@rust-lang.or
 -   `#rust-community`
 -   `#rust-docs`
 
----
-
-## Discord
+== Discord
 
 - Used by many of the working groups
 - https://discordapp.com/invite/rust-lang
 
----
-
-## For production users
+== For production users
 
 -   Regular Surveys done by project members
 -   Regular Interviews through the project team
 
----
-
-## Changes
+== Changes
 
 Changes to the language and the standard library require an RFC:
 
 -   [RFCS](https://github.com/rust-lang/rfcs)
 
----
-
-## Conferences
+== Conferences
 
 -   RustConf
 -   RustFest
 -   Rust Belt Rust
 
----
-
-## Staying up-to-date
+== Staying up-to-date
 
 -   [Community Calendar](https://calendar.google.com/calendar/embed?src=apd9vmbc22egenmtu5l6c5jbfc@group.calendar.google.com)
 -   [TWIR - This Week in Rust](https://this-week-in-rust.org/)
 -   And many more "this week in"-newsletters
 
----
-
-## Contribution
+== Contribution
 
 -   `rustc` has a medium wait time of Patches of 6 days(!).
 -   Small fixes, especially documentation fixes, are merged very fast!

@@ -1,9 +1,7 @@
 # FFI
 [Table of Contents](toc/english.html)
 
----
-
-## Efficiency!
+== Efficiency!
 
 <small>(This is Germany after all)</small>
 
@@ -31,13 +29,9 @@ Or _be_ one.
 
 There are no conversion costs
 
----
+== Using C from Rust
 
-## Using C from Rust
-
----
-
-## Basic example
+== Basic example
 
 Hello world from C
 
@@ -49,18 +43,14 @@ Let's assume you _really_ want to use printf
 
 <pre><code data-source="chapters/shared/code/ffi/hello.h" data-trim="hljs rust"></code></pre>
 
----
-
-## Things TODO
+== Things TODO
 
 - Bind against functions in header
 - Link the external code as a library
 - Call those with `unsafe { ... }`
 - Transmute data for C functions
 
----
-
-## Before we get started
+== Before we get started
 
 <pre><code data-source="chapters/shared/code/ffi/1.rs" data-trim="hljs rust"></code></pre>
 
@@ -68,17 +58,13 @@ Disables some Rust naming lints
 
 <small>(which are common in C code)</small>
 
----
-
-## Binding functions
+== Binding functions
 
 <pre><code data-source="chapters/shared/code/ffi/hello.h" data-trim="hljs rust"></code></pre>
 
 <pre><code data-source="chapters/shared/code/ffi/2.rs" data-trim="hljs rust"></code></pre>
 
----
-
-## Primitive types
+== Primitive types
 
 Some type conversions can be infered by the compiler.
 
@@ -87,23 +73,17 @@ Some type conversions can be infered by the compiler.
 * `c_void` ↔ `()`
 * ...etc...
 
----
-
-## Calling this
+== Calling this
 
 <pre><code data-source="chapters/shared/code/ffi/3.rs" data-trim="hljs rust"></code></pre>
 
----
-
-## Cargo (build-system) support
+== Cargo (build-system) support
 
 * Build native code via build-dependency crates
   * `gcc`, `clang`, `cmake`, ...
 * `build.rs` file responsible for linking code
 
----
-
-## Structs
+== Structs
 
 The layout of enums and structs is left to the compiler. 
 
@@ -111,39 +91,29 @@ The layout of enums and structs is left to the compiler.
 
 <pre><code data-source="chapters/shared/code/ffi/4-1.rs" data-trim="hljs rust"></code></pre>
 
----
-
-## Enums
+== Enums
 
 <pre><code data-source="chapters/shared/code/ffi/4-3.rs" data-trim="hljs rust"></code></pre>
 
----
-
-## Opaque types
+== Opaque types
 
 When not knowing (or caring) about internal layout, opaque structs can be used.
 
 <pre><code data-source="chapters/shared/code/ffi/4-2.rs" data-trim="hljs rust"></code></pre>
 
----
-
-## Callbacks
+== Callbacks
 
 `extern "C"` applies to function pointers given to extern functions too.
 
 <pre><code data-source="chapters/shared/code/ffi/6.rs" data-trim="hljs rust"></code></pre>
 
----
-
-## Real example
+== Real example
 
 Binding imagemagick to rust!
 
 <small>(Somebody already did that but let's do it again)</small>
 
----
-
-## bindgen
+== bindgen
 
 `imagemagick` has a _lot_ of functions. Don't write all those `extern "C"` blocks yourself – generate them!
 
@@ -155,25 +125,17 @@ At this point including bindings is easy\*
 
 <pre><code data-source="chapters/shared/code/ffi/8.rs" data-trim="hljs rust"></code></pre>
 
----
-
-## Building Layers
+== Building Layers
 
 <pre><code data-source="chapters/shared/code/ffi/9.rs" data-trim="hljs rust"></code></pre>
 
----
-
-## Building Layers
+== Building Layers
 
 <pre><code data-source="chapters/shared/code/ffi/10.rs" data-trim="hljs rust"></code></pre>
 
----
+== Wrap unsafe code in safe Rust
 
-## Wrap unsafe code in safe Rust
-
----
-
-## Memory Management
+== Memory Management
 
 <pre><code data-source="chapters/shared/code/ffi/11.rs" data-trim="hljs rust"></code></pre>
 
@@ -183,9 +145,7 @@ At this point including bindings is easy\*
 
 Isolates lifecycle management of the pointer from the rest of the code.
 
----
-
-## Using Rust from C
+== Using Rust from C
 
 ---
 
@@ -193,13 +153,9 @@ Works simmilarly to what you've already seen.
 
 Use platform-ABI in reverse – emit a native library
 
----
+== Example: plugin for `weechat`
 
-## Example: plugin for `weechat`
-
----
-
-## Cargo Settings
+== Cargo Settings
 
 <pre><code data-source="chapters/shared/code/ffi/12.toml" data-trim="hljs toml"></code></pre>
 
@@ -221,9 +177,7 @@ Otherwise similar concept.
 
 Now what?
 
----
-
-## Creating bindings
+== Creating bindings
 
 <small>(No, this is not a deja-vu)</small>
 
@@ -245,9 +199,7 @@ Full code here: [spacekookie/weechat-rs](https://github.com/spacekookie/weechat-
 
 Feel free to run, play, test, ...
 
----
-
-## Some things not covered
+== Some things not covered
 
 ---
 

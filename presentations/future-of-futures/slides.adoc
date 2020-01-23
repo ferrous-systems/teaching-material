@@ -19,9 +19,7 @@ Future = asynchronous computation
 
 Rust has no implicit runtime event loop (like i.e. node.js)
 
----
-
-## Layers of abstractions
+== Layers of abstractions
 
 ---
 
@@ -37,9 +35,7 @@ Part of `libcore` and `libstd`
 
 `tokio` abstraction crate provides event-loop
 
----
-
-## It's all...not stable
+== It's all...not stable
 
 Requires nightly and `futures_api` feature-flag
 
@@ -77,9 +73,7 @@ And combinators on futures
 
 <pre><code data-source="chapters/shared/code/future-futures/4.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
----
-
-## Explicit runtime
+== Explicit runtime
 
 ![](img/tokio.jpg)
 
@@ -92,9 +86,7 @@ And combinators on futures
 <pre><code data-source="chapters/shared/code/future-futures/5.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
 
----
-
-## Future of `futures`
+== Future of `futures`
 
 <br/>
 
@@ -109,13 +101,9 @@ And combinators on futures
 
 <pre><code data-source="chapters/shared/code/future-futures/6.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
----
+== I want that!
 
-## I want that!
-
----
-
-## Timeline
+== Timeline
 
 * RFC 2394 (tracking issue #50547)
 * Implemented in the compiler

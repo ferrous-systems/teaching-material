@@ -1,17 +1,13 @@
 # Effective Rust
 [Table of Contents](toc/english.html)
 
----
-
-## Iterators
+== Iterators
 
 Get used to the Iterator-API and use them!
 
 Iterators are heavily optimised, especially their combinations.
 
----
-
-## Notable issues with Ownership
+== Notable issues with Ownership
 
 Moving data out of collections is not easy, if you don't immediately place another value there.
 
@@ -21,9 +17,7 @@ Indiana Jones uses `std::mem::swap` or `std::mem::replace`.
 
 In some cases, `Drain` can be used, an iterator that drains values one-by-one from a collection and shrinks it at the same time.
 
----
-
-## Compile times
+== Compile times
 
 `rustc` is not the fastest compiler, much time is spent in LLVM with code generation and optimisation.
 
@@ -33,17 +27,13 @@ Seperating the code in multiple crates can be helpful, as crates will only be re
 
 Reduced use of generics improves compile times.
 
----
-
-## Optimising binary size
+== Optimising binary size
 
 -   Use the system allocator (nightly feature)
 -   If libstd is sparingly used, it can be replaced
 -   Lower the number of monomorphised function calls
 
----
-
-## Converting properly
+== Converting properly
 
 Avoid passing around generic parameters that can be evaluated to a specific type.
 
@@ -55,9 +45,7 @@ Avoid passing around generic parameters that can be evaluated to a specific type
 
 Rust inlines across libraries.
 
----
-
-## Helpers
+== Helpers
 
 -   GDB supports Rust, also check out `rust-gdb`
 -   `valgrind` works fine with Rust

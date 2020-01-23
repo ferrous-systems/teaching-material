@@ -7,61 +7,45 @@ Sometimes, we want to take the decision of which implementation to use at runtim
 
 There's two approaches to that.
 
----
-
-## Dispatch through Enums
+== Dispatch through Enums
 
 If the number of possible choices is limited, an Enum can be used:
 
 <pre><code data-source="chapters/shared/code/dynamic-dispatch/1.rs" data-trim="hljs rust"></code></pre>
 
----
-
-## Alternative Form
+== Alternative Form
 
 <pre><code data-source="chapters/shared/code/dynamic-dispatch/2.rs" data-trim="hljs rust"></code></pre>
 
----
-
-## Recommendation
+== Recommendation
 
 Try to minimise repeated matches on the Enum, if not strictly necessary.
 
----
-
-## Trait Objects
+== Trait Objects
 
 References or raw pointers on traits, also boxes, describe so-called "trait objects".
 
 Trait objects are a pair of pointers to a virtual function table and the data.
 
----
-
-## Limitations
+== Limitations
 
 -   You can only use one trait per object
 -   This trait must fulfill certain conditions
 
----
-
-## Rules for object-safe traits
+== Rules for object-safe traits
 
 -   Object-safe traits are *not* allowed to require `Self: Sized`
 -   All methods are object-safe
     -   They have no type parameters
     -   They don't use `Self`
 
----
-
-## Further properties
+== Further properties
 
 -   As trait objects know about their exact type at runtime, they support downcasts.
 
 <pre><code data-source="chapters/shared/code/dynamic-dispatch/3.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
----
-
-## Trait Objects and Closures
+== Trait Objects and Closures
 
 Closure traits fulfill object safety rules.
 

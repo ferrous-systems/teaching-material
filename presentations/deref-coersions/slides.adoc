@@ -1,9 +1,7 @@
 # Deref-Conversions
 [Table of Contents](toc/english.html)
 
----
-
-## Motivation
+== Motivation
 
 Why does the following work?
 
@@ -11,9 +9,7 @@ Why does the following work?
 
 Box doesn't have a field named "x"!
 
----
-
-## Auto-Dereferencing
+== Auto-Dereferencing
 
 Rust automatically dereferences in certain cases. Like everything else, it must be explicitly requested: 
 
@@ -34,9 +30,7 @@ Dereferencing is described by the `Deref` and `DerefMut`-Traits.
 
 This call is introduced when dereferencing is requested.
 
----
-
-## Important deref behaviours
+== Important deref behaviours
 
 -   String -&gt; &str
 -   Vec<T> -&gt; &\[T\]

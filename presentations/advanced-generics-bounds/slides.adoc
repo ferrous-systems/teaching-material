@@ -39,9 +39,7 @@ Traits can also directly require prerequisites:
 
 Rust does not allow negative Bounds (Trait A and *not* Trait B)
 
----
-
-## Exception: `Sized`
+== Exception: `Sized`
 
 If not specified otherwise, all type parameters carry the bound `Sized` (the type has a statically known memory size). This can be suppressed by using the bound `?Sized`.
 
@@ -67,17 +65,13 @@ Bounds are very common in conversion functions.
 
 <pre><code data-source="chapters/shared/code/advanced-generics-bounds/7.rs" data-trim="hljs rust"></code></pre>
 
----
-
-## Generic implementations
+== Generic implementations
 
 Bounds can be used to constrain the target of an implementation.
 
 <pre><code data-source="chapters/shared/code/advanced-generics-bounds/8.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
----
-
-## Trait Inheritance
+== Trait Inheritance
 
 Traits can also request the implementation of other traits and declare default implementations for methods relying on that information.
 
