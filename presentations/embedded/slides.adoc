@@ -1,7 +1,4 @@
 = Embedded systems in Rust
-:revealjs_width: 1920
-:revealjs_height: 1080
-:source-highlighter: highlightjs
 
 link:./index.html[Table of Contents]
 
@@ -47,4 +44,3 @@ Tock, an operating system for Cortex-M processors: [tockos.org](tockos.org)
     -   Multiple Targets, espcially AVR, to be released in the next versions
 -   Enthusiastic embedded community
 -   Rust has a very good community process for features that core cannot implement themselves
-

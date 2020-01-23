@@ -1,7 +1,4 @@
 = Closures
-:revealjs_width: 1920
-:revealjs_height: 1080
-:source-highlighter: highlightjs
 
 link:./index.html[Table of Contents]
 
@@ -26,11 +23,11 @@ include::./2.rs[]
 
 == Closure-Types
 
-FnOnce 
+FnOnce
 
 * The closure consumes its environment
 
-FnMut 
+FnMut
 
 * The closure mutates its environment
 
@@ -61,4 +58,3 @@ As the closure environment is implicit, moving types into the closure is explici
 ----
 include::./4.rs[]
 ----
-

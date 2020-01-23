@@ -1,7 +1,4 @@
 = The Toolchain
-:revealjs_width: 1920
-:revealjs_height: 1080
-:source-highlighter: highlightjs
 
 link:./index.html[Table of Contents]
 
@@ -41,7 +38,7 @@ The Rust compiler builds and links Rust code.
 
 == Functional Test
 
-[source,sh]
+[source,rust]
 ----
 include::./4.rs[]
 ----

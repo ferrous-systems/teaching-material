@@ -1,7 +1,4 @@
 = Advanced Generics: Bounds
-:revealjs_width: 1920
-:revealjs_height: 1080
-:source-highlighter: highlightjs
 
 link:./index.html[Table of Contents]
 
@@ -19,7 +16,7 @@ This can happen at any point where type parameters are used.
 == !
 
 Example: `println("{:?}")` requires Debug
- 
+
 [source,rust]
 ----
 include::./1.rs[]
@@ -108,4 +105,3 @@ Traits can also request the implementation of other traits and declare default i
 ----
 include::./9.rs[]
 ----
-

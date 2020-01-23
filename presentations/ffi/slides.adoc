@@ -1,7 +1,4 @@
 = FFI
-:revealjs_width: 1920
-:revealjs_height: 1080
-:source-highlighter: highlightjs
 
 link:./index.html[Table of Contents]
 
@@ -108,9 +105,9 @@ include::./3.rs[]
 
 == Structs
 
-The layout of enums and structs is left to the compiler. 
+The layout of enums and structs is left to the compiler.
 
-`#[repr(C)]` directs the compiler to use the platform-layout. 
+`#[repr(C)]` directs the compiler to use the platform-layout.
 
 [source,rust]
 ----

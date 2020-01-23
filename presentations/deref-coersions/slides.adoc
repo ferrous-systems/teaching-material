@@ -1,7 +1,4 @@
 = Deref-Conversions
-:revealjs_width: 1920
-:revealjs_height: 1080
-:source-highlighter: highlightjs
 
 link:./index.html[Table of Contents]
 
@@ -19,7 +16,7 @@ Box doesn't have a field named "x"!
 
 == Auto-Dereferencing
 
-Rust automatically dereferences in certain cases. Like everything else, it must be explicitly requested: 
+Rust automatically dereferences in certain cases. Like everything else, it must be explicitly requested:
 
 -   Through a call or field access using the `.` operator
 -   By explicitly dereferencing through `*`
@@ -54,5 +51,3 @@ Functions that don't modify the lengths of a String or a Vector  should accept a
 ----
 include::./3.rs[]
 ----
-
-

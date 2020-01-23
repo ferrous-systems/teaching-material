@@ -2,6 +2,7 @@
 
 == Presentations
 
+.Basics
 * link:./overview.html[Overview]
 * link:./installation.html[Installation]
 * link:./syntax.html[Syntax]
@@ -15,3 +16,6 @@
 * link:./borrowing.html[Borrowing]
 * link:./stack-and-heap.html[Stack and Heap]
 * link:./cargo.html[Cargo]
+
+.Unfinished
+* link:./futures.html[Futures]

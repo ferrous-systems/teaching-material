@@ -1,7 +1,4 @@
 = Standard Types
-:revealjs_width: 1920
-:revealjs_height: 1080
-:source-highlighter: highlightjs
 
 link:./index.html[Table of Contents]
 
@@ -137,4 +134,3 @@ Manipulate a key's cooresponding entry in place.
 ----
 include::./11.rs[]
 ----
-

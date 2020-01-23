@@ -1,10 +1,6 @@
 = Crates
-:revealjs_width: 1920
-:revealjs_height: 1080
-:source-highlighter: highlightjs
 
 link:./index.html[Table of Contents]
-
 
 == !
 
@@ -23,7 +19,7 @@ This imports the "SERialisation/DEserialisation"-Framework.
 
 == !
 
-In Rust 2018 this is no longer required. 
+In Rust 2018 this is no longer required.
 Libraries that were declared via cargo can simply be used with `use`-statements.
 
 [source,rust]
@@ -68,4 +64,3 @@ Published crates can be found on [crates.io](https://crates.io), their documenta
 == Crates and Applications
 
 `cargo install my_crate` installs the applications shipped with a crate.
-

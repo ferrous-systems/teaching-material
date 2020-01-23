@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-ATTRS="--attribute=customcss=slides.css"
+ATTRS="--attribute=customcss=slides.css --attribute=revealjs_width=1920 --attribute=revealjs_height=1080 --attribute=source-highlighter=highlightjs"
 
 bundle exec asciidoctor $ATTRS ./presentations/index.adoc -o ./target/index.html
 cp ./presentations/slides.css ./target/slides.css
