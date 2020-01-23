@@ -1,5 +1,10 @@
-# Embedded systems in Rust
-[Table of Contents](toc/english.html)
+= Embedded systems in Rust
+:revealjs_width: 1920
+:revealjs_height: 1080
+:source-highlighter: highlightjs
+
+link:./index.html[Table of Contents]
+
 
 == Places to stay informed
 

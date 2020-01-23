@@ -1,5 +1,10 @@
-# Dynamic and static libraries
-[Table of Contents](toc/english.html)
+= Dynamic and static libraries
+:revealjs_width: 1920
+:revealjs_height: 1080
+:source-highlighter: highlightjs
+
+link:./index.html[Table of Contents]
+
 
 ---
 

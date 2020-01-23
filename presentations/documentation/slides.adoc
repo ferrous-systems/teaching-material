@@ -1,5 +1,10 @@
-# Documentation
-[Table of Contents](toc/english.html)
+= Documentation
+:revealjs_width: 1920
+:revealjs_height: 1080
+:source-highlighter: highlightjs
+
+link:./index.html[Table of Contents]
+
 
 == `rustdoc`
 

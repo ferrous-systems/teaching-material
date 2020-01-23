@@ -29,5 +29,21 @@ for chapter in (dest / 'presentations').iterdir():
         continue
     slides = chapter / 'slides.adoc'
     old = open(slides).read()
-    new = old.replace(old_header, new_header)
+
+    tt = "[Table of Contents](toc/english.html)"
+    toc = old.find(tt)
+    if toc == -1:
+        continue
+
+    header_len = toc + len(tt)
+    old_header = old[:header_len].strip()
+    name = old_header.splitlines()[0][1:].strip()
+    new_header = f"""= {name}
+:revealjs_width: 1920
+:revealjs_height: 1080
+:source-highlighter: highlightjs
+
+link:./index.html[Table of Contents]
+"""
+    new = new_header  + old[header_len:]
     open(slides, 'w').write(new)

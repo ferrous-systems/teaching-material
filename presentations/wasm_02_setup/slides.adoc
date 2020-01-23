@@ -1,6 +1,10 @@
+= Setup of the toolchain
+:revealjs_width: 1920
+:revealjs_height: 1080
+:source-highlighter: highlightjs
 
-# Setup of the toolchain
-[Table of Contents](toc/english.html)
+link:./index.html[Table of Contents]
+
 
 ---
 
