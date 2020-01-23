@@ -7,4 +7,5 @@
 * link:./syntax.html[Syntax]
 * link:./mutability.html[Mutability]
 * link:./basic-types.html[Basic Types]
+* link:./data-structures.html[Data Structures]
 * link:./cargo.html[Cargo]

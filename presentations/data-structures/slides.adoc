@@ -1,0 +1,79 @@
+= Data Structures
+:revealjs_width: 1920
+:revealjs_height: 1080
+:source-highlighter: highlightjs
+
+link:./index.html[Table of Contents]
+
+== Structs
+
+== Definition
+
+[source,rust]
+----
+include::./1.rs[]
+----
+
+
+== Allocation
+
+[source,rust]
+----
+include::./2.rs[]
+----
+
+== Sidenote
+
+It's common to hide allocation behind a call to `Point::new()` instead of raw allocation.
+
+== Field Access
+
+[source,rust]
+----
+include::./3.rs[]
+----
+
+== Tuples
+
+[source,rust]
+----
+include::./4.rs[]
+----
+
+== Tuple Structs
+
+[source,rust]
+----
+include::./5.rs[]
+----
+
+== Enums
+
+[source,rust]
+----
+include::./6.rs[]
+----
+
+The different choices of Enums are called "variants."
+
+== Enums with Values
+
+[source,rust]
+----
+include::./7.rs[]
+----
+
+== Enums with Structured Variants
+
+[source,rust]
+----
+include::./8.rs[]
+----
+
+== `null`
+
+Does not exist.
+
+== Are There Variant Types?
+
+No, not at the moment!
