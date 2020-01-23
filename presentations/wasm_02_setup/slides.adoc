@@ -15,61 +15,92 @@ http://rustup.rs/
 
 == Important Commands
 
-<pre><code data-source="chapters/shared/code/wasm_workshop/02_setup/01_important_commands.sh" data-trim="hljs sh"></code></pre>
+[source,sh]
+----
+include::./01_important_commands.sh[]
+----
+
+== First Steps
 
 == !
 
-# First Steps
-
 Execute the following commands:
 
-<pre><code data-source="chapters/shared/code/wasm_workshop/02_setup/02_first_steps.sh" data-trim="hljs sh"></code></pre>
+[source,sh]
+----
+include::./02_first_steps.sh[]
+----
+
 This loads the sources of the default library and documentation for completion and offline use.
 
 == Functional Test
 
 [source,rust]
 ----
-include::./02_setup/4.rs[]
+include::./4.rs[]
 ----
 
 == !
 
-<pre><code data-source="chapters/shared/code/wasm_workshop/02_setup/5a.sh" data-trim="hljs sh"></code></pre>
+[source,sh]
+----
+include::./5a.sh[]
+----
 
 == !
 
 declaring of variables, scope,
 
-== wasm-pack
+== !
 
+* wasm-pack
++
+[source,sh]
+----
 curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+----
 
-## cargo-generate
-
+* cargo-generate
++
+[source,sh]
+----
 cargo install cargo-generate
+----
 
-## npm
-
+* npm
++
+[source,sh]
+----
 npm install npm@latest -g
+----
 
 == Clone the Project Template
 
-<pre><code data-source="chapters/shared/code/wasm_workshop/02_setup/03_clone_project_template.sh" data-trim="hljs sh"></code></pre>
+[source,sh]
+----
+include::./03_clone_project_template.sh[]
+----
 
 New project name:
 
-
-<pre><code data-source="chapters/shared/code/wasm_workshop/02_setup/04_clone_project_template.sh" data-trim="hljs sh"></code></pre>
+[source,sh]
+----
+include::./04_clone_project_template.sh[]
+----
 
 == What's inside?
 
-<pre><code data-source="chapters/shared/code/wasm_workshop/02_setup/05_root.sh" data-trim="hljs sh"></code></pre>
+[source,sh]
+----
+include::./05_root.sh[]
+----
 
 == Build the Project
 
-<pre><code data-source="chapters/shared/code/wasm_workshop/02_setup/06_wasm_pack_build.sh" data-trim="hljs sh"></code></pre>
-
+[source,sh]
+----
+include::./06_wasm_pack_build.sh[]
+----
 
 * Ensures Rust 1.30 or newer and the wasm32-unknown-unknown target were installed via rustup
 * Compiles Rust sources into a WebAssembly .wasm binary via cargo
@@ -78,47 +109,69 @@ New project name:
 
 == !
 
-What's inside pkg/?
+What's inside pkg?
 
-<pre><code data-source="chapters/shared/code/wasm_workshop/02_setup/07_pkg.sh" data-trim="hljs sh"></code></pre>
+[source,sh]
+----
+include::./07_pkg.sh[]
+----
 
 == Putting it into a Web Page
 
-
-<pre><code data-source="chapters/shared/code/wasm_workshop/02_setup/08_npm_init_wasm.sh" data-trim="hljs sh"></code></pre>
+[source,sh]
+----
+include::./08_npm_init_wasm.sh[]
+----
 
 == !
 
-#What's inside www?
+What's inside www?
 
-<pre><code data-source="chapters/shared/code/wasm_workshop/02_setup/09_www.sh" data-trim="hljs sh"></code></pre>
-
+[source,sh]
+----
+include::./09_www.sh[]
+----
 
 == !
 
 Install dependencies
 
-<pre><code data-source="chapters/shared/code/wasm_workshop/02_setup/10_npm_install.sh" data-trim="hljs sh"></code></pre>
+[source,rust]
+----
+include::./10_npm_install.sh[]
+----
 
 == !
 
 Using Local wasm-game-of-life Package in www
 
-<pre><code data-source="chapters/shared/code/wasm_workshop/02_setup/11_npm_link.sh" data-trim="hljs sh"></code></pre>
+[source,sh]
+----
+include::./11_npm_link.sh[]
+----
 
-<pre><code data-source="chapters/shared/code/wasm_workshop/02_setup/12_npm_link.sh" data-trim="hljs sh"></code></pre>
+[source,sh]
+----
+include::./12_npm_link.sh[]
+----
 
 == !
 
 Modify index.js to import wasm-game-of-life instead of the hello-wasm-pack package:
 
-<pre><code data-source="chapters/shared/code/wasm_workshop/02_setup/13_modify_index.js" data-trim="hljs js"></code></pre>
+[source,js]
+----
+include::./13_modify_index.js[]
+----
 
 == !
 
 The Web page is now ready to be served locally!
 
-<pre><code data-source="chapters/shared/code/wasm_workshop/02_setup/14_npm_run_start.sh" data-trim="hljs sh"></code></pre>
+[source,sh]
+----
+include::./14_npm_run_start.sh[]
+----
 
 Navigate your Web browser to http://localhost:8080/
 
@@ -132,7 +185,7 @@ Rust Syntax on Example
 
 [source,rust]
 ----
-include::./02_setup/00_syntax_on_example.rs[]
+include::./00_syntax_on_example.rs[]
 ----
 
 == !
@@ -140,7 +193,10 @@ include::./02_setup/00_syntax_on_example.rs[]
 
 Rebuild the `.wasm` binary with `wasm-pack build`, refresh http://localhost:8080/
 
-<pre><code data-source="chapters/shared/code/wasm_workshop/02_setup/00_syntax_on_example.rs"></code></pre>
+[source,rust]
+----
+include::./00_syntax_on_example.rs[]
+----
 
 == !
 
@@ -148,9 +204,10 @@ Solution:
 
 [source,rust]
 ----
-include::./02_setup/00_solution_lib.rs[]
+include::./00_solution_lib.rs[]
 ----
 
-<pre><code data-source="chapters/shared/code/wasm_workshop/02_setup/00_index_.js" data-trim="hljs js"></code></pre>
-
-== !
+[source,js]
+----
+include::./00_index_.js[]
+----

@@ -22,5 +22,6 @@
 
 .Unfinished
 * link:./wasm.html[WebAssembly]
+* link:./wasm_02_setup.html[WebAssembly Workshop, Part 2]
 * link:./futures.html[Futures]
 * link:./future-of-futures.html[The Future of Futures]
