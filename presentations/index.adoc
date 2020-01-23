@@ -12,4 +12,5 @@
 * link:./generics-basics.html[Basic Generics]
 * link:./match.html[Match]
 * link:./ownership.html[Ownership]
+* link:./borrowing.html[Borrowing]
 * link:./cargo.html[Cargo]

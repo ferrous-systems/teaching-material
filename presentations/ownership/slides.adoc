@@ -5,7 +5,6 @@
 
 link:./index.html[Table of Contents]
 
-
 == !
 
 Ownership is the basis for the memory management of Rust.
@@ -101,9 +100,9 @@ Copy is meant for data that can be quickly copied in memory (using memcopy) and 
 
 Values that are copy follow the standard ownership rules, but they are copied when ownership is passed on.
 
-== !
+== Warning
 
-# Warning
+== !
 
 The terminology around moves is similar, but not the same to the one used in C++, which is why you should always use Rust-Terminology: Ownership, passing on ownership and consumption.
 
