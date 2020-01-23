@@ -1,0 +1,5 @@
+$ cargo test
+test mult_and_div ... FAILED
+Test failed: attempt to multiply with overflow;
+minimal failing input: ref a = 3689348814741910324
+test result: FAILED. 0 passed; 1 failed

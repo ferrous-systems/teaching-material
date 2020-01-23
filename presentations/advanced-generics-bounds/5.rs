@@ -1,0 +1,3 @@
+fn take_unsized<T: ?Sized>(t: &T) {
+    //...
+}

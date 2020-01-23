@@ -1,0 +1,5 @@
+warning: unused variable: `outcome`, #[warn(unused_variables)] on by default
+  --> <anon>:10:9
+   |
+10 |     let outcome = this_can_fail(true);
+   |         ^^^^^^^

@@ -1,0 +1,1 @@
+unsafe impl<'a, T: Sync + ?Sized> Send for &'a T {}

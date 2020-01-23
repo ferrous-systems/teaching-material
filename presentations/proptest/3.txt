@@ -1,0 +1,8 @@
+$ cat proptest-regressions/main.txt
+# Seeds for failure cases proptest has
+# generated. It is automatically read
+# and these particular cases re-run before
+# any novel cases are generated.
+
+# shrinks to ref a = 3689348814741910324
+xs 4050946508 1278147119 4151624343 875310407

@@ -1,0 +1,3 @@
+fn inspect<'a, T: Debug + 'a>(t: T) {
+    //...
+}

@@ -1,0 +1,107 @@
+# Testing
+[Table of Contents](toc/english.html)
+
+---
+
+Testing is fundamental to Rust.
+
+Unit, integration, and documentation tests all come builtin.
+
+---
+
+## Organizing Tests
+
+Tests typically end up in 1 of 4 possible locations:
+
+-   Immediately beside the functionality tested. (Unit test)
+-   In a `tests` submodule. (Private integration test)
+-   In documentation. (Documentation test)
+-   In the `tests/` directory. (Public integration test)
+
+---
+
+## Unit Tests
+
+-   Allows testing functionality in the same module and environment.
+-   Typically exist immediately near the functionality.
+-   Good for testing to make sure a single action *works*.
+
+---
+
+## Unit Tests
+
+<pre><code data-source="chapters/shared/code/testing/1.rs" data-trim="hljs rust"></code></pre>
+
+---
+
+## Unit Tests
+
+<pre><code data-source="chapters/shared/code/testing/2.bash" data-trim="hljs bash"></code></pre>
+
+---
+
+## `tests` Submodule
+
+-   Allows testing as if the functionality is being used elsewhere in the project.
+-   For testing private APIs and functionality.
+-   Good for testing expected processes and use cases.
+
+---
+
+## `tests` Submodule
+
+<pre><code data-source="chapters/shared/code/testing/3.rs" data-trim="hljs rust"></code></pre>
+
+---
+
+## `tests` Submodule
+
+<pre><code data-source="chapters/shared/code/testing/4.bash" data-trim="hljs bash"></code></pre>
+
+---
+
+## Documentation Tests
+
+-   Allows testing public functionality.
+-   Is displayed in `rustdoc` output.
+-   For demonstrating expected use cases and examples.
+
+---
+
+## Documentation Tests
+
+<pre><code>
+/// ```rust
+/// use example::Direction;
+/// let way_home = Direction::North;
+/// ```
+pub enum Direction { North, South, East, West }
+</code></pre>
+
+---
+
+## Documentation Tests
+
+<pre><code data-source="chapters/shared/code/testing/5.bash" data-trim="hljs bash"></code></pre>
+
+---
+
+## Integration Tests
+
+-   Tests as if the crate is an external dependency.
+-   Intended for longer or full-function tests.
+
+---
+
+## Integration Tests
+
+`/tests/basic.rs`:
+
+<pre><code data-source="chapters/shared/code/testing/6.rs" data-trim="hljs rust"></code></pre>
+
+---
+
+## Integration Tests
+
+<pre><code data-source="chapters/shared/code/testing/7.bash" data-trim="hljs bash"></code></pre>
+

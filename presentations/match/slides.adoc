@@ -1,0 +1,53 @@
+# Control Flow with `match`
+[Table of Contents](toc/english.html)
+
+---
+
+To check variants of enums, `match` is used.
+
+---
+
+<pre><code data-source="chapters/shared/code/match/1.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+## Alternative: if-let
+
+<pre><code data-source="chapters/shared/code/match/2.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+<pre><code data-source="chapters/shared/code/match/3.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+Matches must cover all variants!
+
+---
+
+## Ignoring variants
+
+<pre><code data-source="chapters/shared/code/match/4.rs" data-trim="hljs rust"
+class="lang-rust"></code></pre>
+
+---
+
+Results carry a special marker: they must not be ignored!
+
+
+<pre><code data-source="chapters/shared/code/match/5.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+Solution: match or pass on.
+
+---
+
+`match` does not only work on enums:
+
+<pre><code data-source="chapters/shared/code/match/6.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+`match` and `if` expressions:
+
+<pre><code data-source="chapters/shared/code/match/7.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+

@@ -1,0 +1,177 @@
+# Imports, Modules and Visibility
+[Table of Contents](toc/english.html)
+
+---
+
+## Imports
+
+All used items must be declared. This is similar to Java or Haskell.
+
+<pre><code data-source="chapters/shared/code/imports-modules-and-visibility/1.rs" data-trim="hljs sh" class="lang-sh"></code></pre>
+
+---
+
+## Module Imports
+
+It is possible to import the module instead and qualify every use.
+
+<pre><code data-source="chapters/shared/code/imports-modules-and-visibility/2.rs" data-trim="hljs sh" class="lang-sh"></code></pre>
+
+---
+
+## Glob Imports
+
+You can also import everything from a module.
+
+<pre><code data-source="chapters/shared/code/imports-modules-and-visibility/3.rs" data-trim="hljs sh" class="lang-sh"></code></pre>
+
+This is *generally* frowned upon.
+
+---
+
+## Prelude
+
+One exception to the rule is the "Prelude": This is a special module in the standard library that is automatically fully imported.
+
+---
+
+## Other Preludes
+
+Other libraries offer `prelude`-Modules, one of the most common is `std::io`.
+
+<pre><code data-source="chapters/shared/code/imports-modules-and-visibility/4.rs" data-trim="hljs rust" class="lang-"></code></pre>
+
+Here, the glob is accepted.
+
+---
+
+## Structured imports
+
+You can combine multiple things, that are also nested.
+
+<pre><code data-source="chapters/shared/code/imports-modules-and-visibility/4-5.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+## Renaming on import
+
+<pre><code data-source="chapters/shared/code/imports-modules-and-visibility/5.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+## Local import
+
+Imports can happen inside a function. They only take effect within the function.
+
+<pre><code data-source="chapters/shared/code/imports-modules-and-visibility/6.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+## Modules
+
+The module system of Rust is similar to Python.
+
+---
+
+-   every source file is a module
+-   submodules can be in the same file or in another
+-   libraries are called "crates" and contain modules
+
+---
+
+By convention, the root module of a library is found in `src/lib.rs`.
+
+the root module of a single application in `src/main.rs`.
+
+The root modules for multiple applications in `src/bin/*.rs`.
+
+---
+
+## Example
+
+<pre><code data-source="chapters/shared/code/imports-modules-and-visibility/7.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+## Moving the Module to a Separate File
+
+Our application could also have the following layout:
+
+<pre><code data-source="chapters/shared/code/imports-modules-and-visibility/8.rs" data-trim="hljs sh"></code></pre>
+
+---
+
+## A Larger Module as a Directory
+
+Simply by adding a new folder of the same name
+
+<pre><code data-source="chapters/shared/code/imports-modules-and-visibility/9-2.rs" data-trim="hljs rust"></code></pre>
+
+---
+
+## A Larger Module as a Directory
+
+Or declare a module via `mod.rs`
+
+<pre><code data-source="chapters/shared/code/imports-modules-and-visibility/9.rs" data-trim="hljs rust"></code></pre>
+
+---
+
+In both cases, the module must be registered with the root module.
+
+<pre><code data-source="chapters/shared/code/imports-modules-and-visibility/10.rs" data-trim="hljs rust"></code></pre>
+
+---
+
+With the last approach, you can create additional modules relative to `mod.rs`.
+
+---
+
+## Visibility
+
+In Rust, everything is private by default. Publicly available types are marked with `pub`.
+
+Public types and functions that can be reached through a public module path are exported.
+
+---
+
+## Example
+
+<pre><code data-source="chapters/shared/code/imports-modules-and-visibility/11.rs" data-trim="hljs rust"></code></pre>
+
+---
+
+Traits must be public and imported before use.
+
+The compiler will detect if you use an un-imported trait.
+
+---
+
+## Structs
+
+Structs are a little more complex. They don't export fields, which makes their usage and the construction impossible. This is often intended.
+
+Also, struct functions are not exported by default.
+
+---
+
+<pre><code data-source="chapters/shared/code/imports-modules-and-visibility/12.rs" data-trim="hljs rust"></code></pre>
+
+---
+
+<pre><code data-source="chapters/shared/code/imports-modules-and-visibility/13.rs" data-trim="hljs rust"></code></pre>
+
+---
+
+In general, exporting fields should be avoided:
+
+* Any change of the structure leads to API breakage
+
+* Accessor functions are usually as fast as direct field access due to optimizations.
+
+---
+
+## Pub qualifiers
+
+<pre><code data-source="chapters/shared/code/imports-modules-and-visibility/14.rs" data-trim="hljs rust"></code></pre>
+

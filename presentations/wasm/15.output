@@ -1,0 +1,4 @@
+trying binaryen method: native-wasm
+asynchronously preparing wasm
+binaryen method succeeded.
+Bob likes to receive messages, Alice likes to send messages, Carol likes to intercept messages

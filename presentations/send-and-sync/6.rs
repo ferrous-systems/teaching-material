@@ -1,0 +1,1 @@
+unsafe impl<'a, T: Send + ?Sized> Send for &'a mut T {}

@@ -1,0 +1,50 @@
+# Deref-Conversions
+[Table of Contents](toc/english.html)
+
+---
+
+## Motivation
+
+Why does the following work?
+
+<pre><code data-source="chapters/shared/code/deref-coersions/1.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+Box doesn't have a field named "x"!
+
+---
+
+## Auto-Dereferencing
+
+Rust automatically dereferences in certain cases. Like everything else, it must be explicitly requested: 
+
+-   Through a call or field access using the `.` operator
+-   By explicitly dereferencing through `*`
+-   When borrowing through `&`
+-   This sometimes leads to the ugly `&*`-Pattern
+
+---
+
+This makes wrapper types very ergonomic and easy to use!
+
+---
+
+Dereferencing is described by the `Deref` and `DerefMut`-Traits.
+
+<pre><code data-source="chapters/shared/code/deref-coersions/2.rs" data-trim="hljs rust"></code></pre>
+
+This call is introduced when dereferencing is requested.
+
+---
+
+## Important deref behaviours
+
+-   String -&gt; &str
+-   Vec<T> -&gt; &\[T\]
+
+Functions that don't modify the lengths of a String or a Vector  should accept a slice instead. The memory layout is chosen so that this is *cost free*.
+
+---
+
+<pre><code data-source="chapters/shared/code/deref-coersions/3.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+

@@ -1,0 +1,71 @@
+# Inner Mutability
+[Table of Contents](toc/english.html)
+
+---
+
+In Rust, values are immutable by default.
+
+We can make them mutable with the `mut` keyword.
+
+What if we want just partial mutability? Can we do this?
+
+---
+
+Of course we can!
+
+Our prime accomplices are `Cell<T>` and `RefCell<T>`.
+
+---
+
+## A motivating example
+
+We have some posts which have immutable content, and an incrementing view count.
+
+Ideally, we would have a `fn view(&self) -> &'static str` to return the content, and increment the view count. 
+
+---
+
+## Without `Cell`s
+
+<pre><code data-source="chapters/shared/code/inner-mutability/1.rs" data-trim="hljs rust"  class="lang-rust"></code></pre>
+
+---
+
+## Without `Cell`s
+
+This isn't ideal! `view` takes a `&mut self`, meaning this won't work:
+
+<pre><code data-source="chapters/shared/code/inner-mutability/2.rs" data-trim="hljs rust"  class="lang-rust"></code></pre>
+
+---
+
+## Without `Cell`s
+
+<pre><code data-source="chapters/shared/code/inner-mutability/3.rs" data-trim="hljs rust"  class="lang-rust"></code></pre>
+
+---
+
+## Tossing our views into a `Cell`
+
+* `Cell` lets us move and take **values** inside.
+* `RefCell` works with **references** through 'dynamic borrowing'.
+
+Let's see our previous example with `Cell`.
+
+---
+
+## Tossing our views into a `Cell`
+
+<pre><code data-source="chapters/shared/code/inner-mutability/4.rs" data-trim="hljs rust"  class="lang-rust"></code></pre>
+
+---
+
+## Again with `RefCell`
+
+<pre><code data-source="chapters/shared/code/inner-mutability/5.rs" data-trim="hljs rust"  class="lang-rust"></code></pre>
+
+---
+
+> ...interior mutability is something of a last resort.
+
+<iframe src="https://doc.rust-lang.org/std/cell/index.html#when-to-choose-interior-mutability"  width="100%" height="400"></iframe>

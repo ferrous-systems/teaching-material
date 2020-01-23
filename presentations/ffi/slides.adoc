@@ -1,0 +1,256 @@
+# FFI
+[Table of Contents](toc/english.html)
+
+---
+
+## Efficiency!
+
+<small>(This is Germany after all)</small>
+
+*» efficient C bindings «*
+
+---
+
+Rust ABI is *not* stable.
+
+---
+
+Rust supports the platform-ABI.
+
+---
+
+Interact with shared/static libraries.
+
+Or _be_ one.
+
+---
+
+*» efficient C bindings «*
+
+<br/>
+
+There are no conversion costs
+
+---
+
+## Using C from Rust
+
+---
+
+## Basic example
+
+Hello world from C
+
+---
+
+Let's assume you _really_ want to use printf
+
+<pre><code data-source="chapters/shared/code/ffi/hello.c" data-trim="hljs rust"></code></pre>
+
+<pre><code data-source="chapters/shared/code/ffi/hello.h" data-trim="hljs rust"></code></pre>
+
+---
+
+## Things TODO
+
+- Bind against functions in header
+- Link the external code as a library
+- Call those with `unsafe { ... }`
+- Transmute data for C functions
+
+---
+
+## Before we get started
+
+<pre><code data-source="chapters/shared/code/ffi/1.rs" data-trim="hljs rust"></code></pre>
+
+Disables some Rust naming lints
+
+<small>(which are common in C code)</small>
+
+---
+
+## Binding functions
+
+<pre><code data-source="chapters/shared/code/ffi/hello.h" data-trim="hljs rust"></code></pre>
+
+<pre><code data-source="chapters/shared/code/ffi/2.rs" data-trim="hljs rust"></code></pre>
+
+---
+
+## Primitive types
+
+Some type conversions can be infered by the compiler.
+
+* `c_uint` ↔ `u32`
+* `c_int` ↔ `i32`
+* `c_void` ↔ `()`
+* ...etc...
+
+---
+
+## Calling this
+
+<pre><code data-source="chapters/shared/code/ffi/3.rs" data-trim="hljs rust"></code></pre>
+
+---
+
+## Cargo (build-system) support
+
+* Build native code via build-dependency crates
+  * `gcc`, `clang`, `cmake`, ...
+* `build.rs` file responsible for linking code
+
+---
+
+## Structs
+
+The layout of enums and structs is left to the compiler. 
+
+`#[repr(C)]` directs the compiler to use the platform-layout. 
+
+<pre><code data-source="chapters/shared/code/ffi/4-1.rs" data-trim="hljs rust"></code></pre>
+
+---
+
+## Enums
+
+<pre><code data-source="chapters/shared/code/ffi/4-3.rs" data-trim="hljs rust"></code></pre>
+
+---
+
+## Opaque types
+
+When not knowing (or caring) about internal layout, opaque structs can be used.
+
+<pre><code data-source="chapters/shared/code/ffi/4-2.rs" data-trim="hljs rust"></code></pre>
+
+---
+
+## Callbacks
+
+`extern "C"` applies to function pointers given to extern functions too.
+
+<pre><code data-source="chapters/shared/code/ffi/6.rs" data-trim="hljs rust"></code></pre>
+
+---
+
+## Real example
+
+Binding imagemagick to rust!
+
+<small>(Somebody already did that but let's do it again)</small>
+
+---
+
+## bindgen
+
+`imagemagick` has a _lot_ of functions. Don't write all those `extern "C"` blocks yourself – generate them!
+
+<pre><code data-source="chapters/shared/code/ffi/7.rs" data-trim="hljs rust"></code></pre>
+
+---
+
+At this point including bindings is easy\*
+
+<pre><code data-source="chapters/shared/code/ffi/8.rs" data-trim="hljs rust"></code></pre>
+
+---
+
+## Building Layers
+
+<pre><code data-source="chapters/shared/code/ffi/9.rs" data-trim="hljs rust"></code></pre>
+
+---
+
+## Building Layers
+
+<pre><code data-source="chapters/shared/code/ffi/10.rs" data-trim="hljs rust"></code></pre>
+
+---
+
+## Wrap unsafe code in safe Rust
+
+---
+
+## Memory Management
+
+<pre><code data-source="chapters/shared/code/ffi/11.rs" data-trim="hljs rust"></code></pre>
+
+---
+
+**Structs with one field vanish at runtime.**
+
+Isolates lifecycle management of the pointer from the rest of the code.
+
+---
+
+## Using Rust from C
+
+---
+
+Works simmilarly to what you've already seen.
+
+Use platform-ABI in reverse – emit a native library
+
+---
+
+## Example: plugin for `weechat`
+
+---
+
+## Cargo Settings
+
+<pre><code data-source="chapters/shared/code/ffi/12.toml" data-trim="hljs toml"></code></pre>
+
+---
+
+Otherwise similar concept.
+
+* `extern "C"` functions.
+* `#[repr(C)]` structures/ enums.
+* Making data C compatible.
+
+---
+
+<pre><code data-source="chapters/shared/code/ffi/13.rs" data-trim="hljs toml"></code></pre>
+
+<small>You saw the rest of the function earlier</small>
+
+---
+
+Now what?
+
+---
+
+## Creating bindings
+
+<small>(No, this is not a deja-vu)</small>
+
+C code needs `.h` files to include – define Rust functions there.
+
+`cbindgen` is a great tool to auto-generate them.
+
+---
+
+But: not required here, because plugin API is specified via weechat!
+
+---
+
+<pre><code data-source="chapters/shared/code/ffi/14.rs" data-trim="hljs toml"></code></pre>
+
+---
+
+Full code here: [spacekookie/weechat-rs](https://github.com/spacekookie/weechat-rs/tree/master/examples/hello_weechat)
+
+Feel free to run, play, test, ...
+
+---
+
+## Some things not covered
+
+---
+
+
+
+---

@@ -1,0 +1,1 @@
+cargo init wasm-demo --bin

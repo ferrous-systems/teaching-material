@@ -1,0 +1,64 @@
+# Simple Generics
+[Table of Contents](toc/english.html)
+
+---
+
+Generics are fundamental for Rust.
+
+---
+
+## Generic Structs
+
+<pre><code data-source="chapters/shared/code/generics-basics/1.rs" data-trim="hljs rust"></code></pre>
+
+---
+
+## Type Inference
+
+Rust finds the types of all variables and generics with sufficient information.
+
+This only applies *inside* of function limits.
+
+Signatures must always be fully entered.
+
+---
+
+## Generic Enums
+
+<pre><code data-source="chapters/shared/code/generics-basics/2.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+## Important Generic Enums
+
+---
+
+## Option
+
+<pre><code data-source="chapters/shared/code/generics-basics/3.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+Describes a value which does not have to be present.
+
+`None` is a value, and should not be confused with `null`.
+
+---
+
+## Result
+
+<pre><code data-source="chapters/shared/code/generics-basics/4.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+Describes whether an operation was successful and returns either the value or an error.
+
+---
+
+## Typical Results
+
+<pre><code data-source="chapters/shared/code/generics-basics/5.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+
+## Generic Functions
+
+Generic Functions have type parameters.
+
+<pre><code data-source="chapters/shared/code/generics-basics/6.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+

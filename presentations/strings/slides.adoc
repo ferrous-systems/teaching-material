@@ -1,0 +1,119 @@
+# Strings
+[Table of Contents](toc/english.html)
+
+---
+
+There are several different kinds of strings in Rust.
+
+Most common are `String` and `&str`.
+
+---
+
+## `String`
+
+-   *Owns* the data it stores, and can be mutated freely.
+-   Exists as a pointer to some bytes, a length, and a capacity.
+-   Exists on the *heap*.
+-   Does not implement `Copy`, but implements `Clone`.
+
+---
+
+## `&str`
+
+-   An immutable reference to a string slice.
+-   Only seen as a borrowed value.
+-   May be anywhere, on the heap, stack, or in program memory.
+
+---
+
+## Creation
+
+<pre><code data-source="chapters/shared/code/strings/1.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+## When to Use What?
+
+-   `String` is the *easiest* to use when starting out. Refine later.
+-   `String` owns its data, so works well as a field of a `struct` or Enum.
+
+-   `&'static str` works well for constant values.
+-   `&str` is typically used in function arguments.
+
+---
+
+## `Deref` Coercion
+
+Just because multiple types exist doesn't mean they can't work in harmony.
+
+<pre><code data-source="chapters/shared/code/strings/2.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+This is because `String`s implement `Deref<Target=str>`.
+
+---
+
+## Exotic String types
+
+-   `OsStr` and `OsString` may show up when working with file systems or system calls.
+
+-   `CStr` and `CString` may show up when working with FFI.
+
+The differences between `*Str` and `*String` are generally the same as the normal types.
+
+---
+
+## `OsString` & `OsStr`
+
+These types represent *platform native* strings. This is necessary because Unix and Windows strings have different characteristics.
+
+---
+
+## Behind the `OsString` Scenes
+
+-   Unix strings are often arbitrary non-zero sequences, usually interpreted as UTF-8.
+-   Windows strings are often arbitrary non-zero sequences, usually interpreted as UTF-16.
+-   Rust strings are always valid UTF-8, and may contain zeros.
+
+`OsString` and `OsStr` bridge this gap and allow for cheap converstion to and from `String` and `str`.
+
+---
+
+## `CString` & `CStr`
+
+These types represent valid C compatible strings.
+
+They are predominantly used when doing FFI with external code.
+
+It is strongly recommended you read *all* of the documentation on these types before using them.
+
+---
+
+## Common String Tasks
+
+Splitting:
+
+<pre><code data-source="chapters/shared/code/strings/3.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+
+---
+
+## Common String Tasks
+
+Concatenation:
+
+<pre><code data-source="chapters/shared/code/strings/4.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+## Common String Tasks
+
+Replacing:
+
+<pre><code data-source="chapters/shared/code/strings/5.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+## Accepting `String` or `str`
+
+It's possible to accept either rather painlessly:
+
+<pre><code data-source="chapters/shared/code/strings/6.rs" data-trim="hljs rust" class="lang-rust"></code></pre>

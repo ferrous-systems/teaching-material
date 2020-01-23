@@ -1,0 +1,71 @@
+# Special Pointers in Rust
+[Table of Contents](toc/english.html)
+
+---
+
+Rust offers several special pointers to handle different scenarios.
+
+They all have something in common: They are managed by ownership.
+
+---
+
+## `std::rc::Rc<T>`
+
+Runtime reference counted within a thread.
+
+<pre><code data-source="chapters/shared/code/smart-pointers/1.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+## Semantics
+
+-   `Rc` is a handle on the contained data
+-   The handle can be cloned
+-   If the last handle drops, drop the data as well
+-   `Rc<T>` implements `Deref<Target=T>`
+
+---
+
+## `std::rc::Weak<T>`
+
+Weak pointer to data.
+
+<pre><code data-source="chapters/shared/code/smart-pointers/2.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+## Semantics
+
+-   Similar to `Rc`, however the existence of the data is not guaranteed
+-   Single Threaded: The data is guaranteed to be available over the time of an operation
+-   Is *not* automatically dereferenced
+-   `Rc` circles are memory leaks, weak pointers prevent that
+
+---
+
+## Use
+
+-   Frequently used in data structures that require complex cross references
+-   Higher runtime costs for more flexibility
+
+---
+
+## `std::sync::Arc<T>`
+
+A more expensive `Rc` which works across thread boundaries since an atomic counter is used for incrementing.
+
+---
+
+## Remark
+
+Do not use `Arc` on a hunch. `rustc` rejects code using `Rc` over thread boundaries.
+
+---
+
+## `std::borrow::Cow`
+
+-   Copy-on-write
+-   Abstracts over Borrowing and Ownership
+-   Clones Data only when necessary
+-   https://doc.rust-lang.org/std/borrow/enum.Cow.html#examples
+

@@ -1,0 +1,81 @@
+# `std` Library Tour
+[Table of Contents](toc/english.html)
+
+---
+
+It's time for a tour of some interesting parts in `std`.
+
+We will focus on parts we have not otherwise covered.
+
+---
+
+## Collections
+
+[`std::collections`](https://doc.rust-lang.org/std/collections/index.html)
+
+Contains a number of valuable data structures. In particular:
+
+* [`Vec`](https://doc.rust-lang.org/std/vec/struct.Vec.html) for storing sequences of values.
+* [`HashMap`](https://doc.rust-lang.org/std/collections/struct.HashMap.html) for storing as key value pairs.
+
+When seeking to optimize code other options may be appropriate.
+
+---
+
+## Entry
+
+[`std::collections::hash_map::Entry`](https://doc.rust-lang.org/std/collections/hash_map/enum.Entry.html)
+
+Calling `.entry()` on a `HashMap` accesses this API and allows for 'insert or update' access.
+
+<pre><code data-source="chapters/shared/code/std-lib-tour/1.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+## PhantomData
+
+[`std::marker::PhantomData`](https://doc.rust-lang.org/std/marker/struct.PhantomData.html)
+
+Zero-sized type used to mark things that "act like" they own a `T`. These are useful for types which require markers, generics, or use unsafe code.
+
+<pre><code data-source="chapters/shared/code/std-lib-tour/2.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+## Command
+
+[`std::process::Command`](https://doc.rust-lang.org/std/process/struct.Command.html)
+
+A process builder, providing fine-grained control over how a new process should be spawned. Used for interacting with other executables.
+
+<pre><code data-source="chapters/shared/code/std-lib-tour/3.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+## Syncronization Primitives
+
+[`std::sync`](https://doc.rust-lang.org/std/sync/)
+
+Provides types such a `Mutex`, `RwLock`, `CondVar`, `Arc` and `Barrier`s.
+
+<pre><code data-source="chapters/shared/code/std-lib-tour/4.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+## Read and Write
+
+[`std::io::Read`](https://doc.rust-lang.org/std/io/trait.Read.html) & [`std::io::Write`](https://doc.rust-lang.org/std/io/trait.Write.html)
+
+Generic read and write functionality to files, sockets, buffers, and anything in between. Also part of [`std::io::prelude`]([`std::io::prelude::*`](https://doc.rust-lang.org/std/io/prelude/).
+
+<pre><code data-source="chapters/shared/code/std-lib-tour/5.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+## Filesystem Manipulation
+
+[`std::fs`](https://doc.rust-lang.org/std/fs/) & [`std::path`](https://doc.rust-lang.org/std/path/)
+
+Path handling and file manipulation.
+
+<pre><code data-source="chapters/shared/code/std-lib-tour/6.rs" data-trim="hljs rust" class="lang-rust"></code></pre>

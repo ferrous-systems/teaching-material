@@ -1,0 +1,84 @@
+# Error Handling
+[Table of Contents](toc/english.html)
+
+---
+
+Error handling is explicit in Rust.
+
+Any function with known error conditions returns a `Result<T,E>`.
+
+**There are no exceptions.**
+
+---
+
+<pre><code data-source="chapters/shared/code/error-handling/1.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+## Results Must Be Used
+
+<pre><code data-source="chapters/shared/code/error-handling/2.output" data-trim="hljs output"></code></pre>
+
+---
+
+## Using Results With `match`
+
+<pre><code data-source="chapters/shared/code/error-handling/3.rs" data-trim="hljs rust"></code></pre>
+
+---
+
+## Using Results With Conditionals
+
+Check for success with `is_ok()`, errors with `is_err()`:
+
+<pre><code data-source="chapters/shared/code/error-handling/4.rs" data-trim="hljs rust"></code></pre>
+
+---
+
+## Using Results With `?`
+
+Use `?` in functions with multiple possible failures.
+
+<pre><code data-source="chapters/shared/code/error-handling/5.rs" data-trim="hljs rust"></code></pre>
+
+---
+
+## Using Results With `?`
+
+Output:
+
+<pre><code data-source="chapters/shared/code/error-handling/6.output" data-trim="hljs output"></code></pre>
+Note the early exit.
+
+---
+
+## Using `?` in `main`
+
+* `main` can return `Result`
+* Stable in Rust since `1.26`.
+
+<pre><code data-source="chapters/shared/code/error-handling/6.rs" data-trim="hljs rust"></code></pre>
+
+---
+
+## Results Are Wrapper Types
+
+It's possible to change a `Result<T,E>` into a `Result<U,E>` without unwrapping it.
+
+Transforming a `Result<T,E>` into a `Result<T,X>` is also possible.
+
+<pre class="diagram" data-source="chapters/shared/diagram/error-handling/1.diagram"></pre>
+
+---
+
+## Mapping Result Values
+
+<pre><code data-source="chapters/shared/code/error-handling/7.rs" data-trim="hljs rust"></code></pre>
+`map_err()` is also available.
+
+---
+
+## Reporting Errors Only
+
+If you only have to report an error, but don't have a meaningful return value, use `Result<(), Error>`.
+

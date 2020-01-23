@@ -1,0 +1,5 @@
+error[E0277]: the trait bound `std::rc::Rc<bool>: std::marker::Send` is not satisfied
+ --> <anon>:7:5
+  |
+7 |     thread::spawn(move || {
+  |     ^^^^^^^^^^^^^ the trait `std::marker::Send` is not implemented for `std::rc::Rc<bool>`

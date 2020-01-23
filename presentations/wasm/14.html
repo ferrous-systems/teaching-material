@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <script>
+            // This is read and used by `site.js`
+            var Module = {
+                wasmBinaryFile: "site.wasm",
+                onRuntimeInitialized: main,
+            }
+            function main() {
+                let get_data = Module.cwrap('get_data', 'string', []);
+                console.log(get_data());
+            }
+        </script>
+        <script src="site.js"></script>
+    </head>
+    <body></body>
+</html>

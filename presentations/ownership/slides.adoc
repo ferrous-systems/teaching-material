@@ -1,0 +1,118 @@
+# Ownership
+[Table of Contents](toc/english.html)
+
+---
+
+Ownership is the basis for the memory management of Rust.
+
+---
+
+## Rules
+
+-   Every value has exactly one owner
+-   Ownership can be passed on
+-   The owner is responsible for removing the data from memory
+-   The owner has all powers over the data and can mutate it
+
+
+---
+
+These rules:
+
+-   are fundamental to Rusts type system
+-   are enforced at compile time
+-   are practical in many other ways
+
+---
+
+## Example
+
+<pre><code data-source="chapters/shared/code/ownership/1.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+<pre class="diagram" data-source="chapters/shared/diagram/ownership/1.diagram"></pre>
+
+---
+
+What happens if we try to use `dot` a second time?
+
+---
+
+<pre><code data-source="chapters/shared/code/ownership/2.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+## Oops!
+
+---
+
+In Rust-Lingo, this is called `consuming`. `pacman` consumes `dot`.
+
+The value cannot be used anymore.
+
+---
+
+## Background
+
+When calling `pacman` with `dot`, the value is "moved" into the arguments of `pacman`. At that moment, ownership passes to `pacman`. `main` is not owner of the data anymore and thus not allowed to access or manipulate them.
+
+---
+
+## Working with moves: explicit clone
+
+What, if that behaviour is unwanted? We can create a second copy of the data!
+
+---
+
+<pre><code data-source="chapters/shared/code/ownership/3.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+<pre class="diagram" data-source="chapters/shared/diagram/ownership/2.diagram"></pre>
+
+---
+
+Cloning is a general operation that - depending on the complexity of the data at hand - can be costly.
+
+---
+
+## Working with moves: copy instead of move
+
+<pre><code data-source="chapters/shared/code/ownership/4.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+Copy is meant for data that can be quickly copied in memory (using memcopy) and are allowed to be copied (e.g.: not File pointers).
+
+
+---
+
+Values that are copy follow the standard ownership rules, but they are copied when ownership is passed on.
+
+---
+
+# Warning
+
+The terminology around moves is similar, but not the same to the one used in C++, which is why you should always use Rust-Terminology: Ownership, passing on ownership and consumption.
+
+---
+
+## Practical example
+
+<pre><code data-source="chapters/shared/code/ownership/5.rs" data-trim="hljs rust"></code></pre>
+
+What would happen if we use could use File after calling `use_file`?
+
+---
+
+## Small quiz
+
+`drop` is the function that deallocates a value immediately. What does the implementation look like?
+
+<pre><code data-source="chapters/shared/code/ownership/6.rs" data-trim="hljs rust"></code></pre>
+
+---
+
+<pre><code data-source="chapters/shared/code/ownership/7.rs" data-trim="hljs rust"></code></pre>
+

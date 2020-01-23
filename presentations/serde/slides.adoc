@@ -1,0 +1,64 @@
+# `serde`
+[Table of Contents](toc/english.html)
+
+---
+
+## **Ser**ialization and **De**serialization
+
+[https://serde.rs/](https://serde.rs/)
+
+---
+
+## `Serialize` & `Deserialize`
+
+To make a Rust structure (de)serializable:
+
+<pre><code data-source="chapters/shared/code/serde/1.rs" data-trim="hljs rust"></code></pre>
+
+---
+
+## Formats
+
+Serde supports a number of formats, such as:
+
+* JSON
+* CBOR
+* YAML
+* TOML
+* BSON
+* MessagePack
+* ... More!
+
+Did you enjoy that acronym salad?
+
+---
+
+## `Serialize`
+
+To JSON:
+
+<pre><code data-source="chapters/shared/code/serde/2.rs" data-trim="hljs rust"></code></pre>
+
+---
+
+## `Deserialize`
+
+From JSON:
+
+<pre><code data-source="chapters/shared/code/serde/3.rs" data-trim="hljs rust"></code></pre>
+
+---
+
+## Transcode
+
+<pre><code data-source="chapters/shared/code/serde/4.rs" data-trim="hljs rust"></code></pre>
+
+---
+
+## Attributes
+
+`serde` has a large number of attributes you can utilize:
+
+<pre><code data-source="chapters/shared/code/serde/5.rs" data-trim="hljs rust"></code></pre>
+
+[https://serde.rs/attributes.html](https://serde.rs/attributes.html)

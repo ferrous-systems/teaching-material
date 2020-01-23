@@ -1,0 +1,10 @@
+# Iterators Again
+[Table of Contents](toc/english.html)
+
+---
+
+## Returning Generic Iterators
+
+Currently, Rust allows no generic return values. You have to use impl trait here.
+
+<pre><code data-source="chapters/shared/code/iterators-again/1.rs" data-trim="hljs rust"></code></pre>

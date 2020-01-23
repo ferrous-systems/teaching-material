@@ -1,0 +1,1 @@
+#![plugin(some_plugin)]

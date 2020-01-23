@@ -1,0 +1,118 @@
+# Documentation
+[Table of Contents](toc/english.html)
+
+---
+
+## `rustdoc`
+
+Rust provides a standard documentation tool called `rustdoc`. It is commonly used through `cargo doc`.
+
+Because of this Rust code is almost always documented in a common format.
+
+---
+
+## `std` Documentation
+
+The standard library documentation is hosted at https://doc.rust-lang.org/std/.
+
+A local, offline version can be opened with:
+
+<pre><code data-source="chapters/shared/code/documentation/1.bash" data-trim="hljs bash"></code></pre>
+
+---
+
+## Crate Documentation
+
+Documentation for crates hosted on http://crates.io/ can be found at https://docs.rs/.
+
+Some crates may also have other documentation found via the "Documentation" link on their listing in http://crates.io/.
+
+---
+
+## Example: A Module
+
+<iframe src="https://doc.rust-lang.org/std/vec/" width="100%" height="400">
+</iframe>
+
+---
+
+## Example: A Module
+
+This page documents the `vec` module.
+
+It starts with some examples, then lists any `struct`s, traits, or functions the module exports.
+
+---
+
+## How is it Generated?
+
+`rustdoc` can read Rust code and Markdown documents.
+
+`//!` and `///` comments are read as Markdown.
+
+<pre><code data-source="chapters/shared/code/documentation/2.rs" data-trim="hljs rust"></code></pre>
+
+---
+
+## Example: Components
+
+<iframe src="https://doc.rust-lang.org/std/string/#structs" width="100%" height="400">
+</iframe>
+
+---
+
+## Example: Functions
+
+<iframe src="https://doc.rust-lang.org/std/string/struct.String.html#method.new" width="100%" height="400">
+</iframe>
+
+---
+
+## Code Examples
+
+By default code blocks in documentation are tested.
+
+<pre><code data-trim="hljs rust">
+/// ```rust
+/// assert_eq!(always_true(), true)
+/// ```
+fn always_true() -> bool { true }
+</code></pre>
+
+---
+
+## No-Run Examples
+
+This code will not be run, as it doesn't terminate.
+
+<pre><code data-trim="hljs rust">
+/// ```rust,no_run
+/// serve();
+/// ```
+fn serve() -> ! { loop {} }
+</code></pre>
+
+
+---
+
+## Navigation
+
+The arguments and return types of functions are links to their respective types.
+
+The sidebar on the left offers quick navigate to other parts of the module.
+
+---
+
+## Cargo integration
+
+This command builds and opens the docs to your current project:
+
+```sh
+$ cargo doc --open
+```
+
+---
+
+```sh
+$ cargo doc --document-private-items --open
+```

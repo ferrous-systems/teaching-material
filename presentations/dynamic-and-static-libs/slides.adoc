@@ -1,0 +1,54 @@
+# Dynamic and static libraries
+[Table of Contents](toc/english.html)
+
+---
+
+Let's try to use Rust from C.
+
+---
+
+## Library
+
+<pre><code data-source="chapters/shared/code/dynamic-and-static-libs/1.rs" data-trim="hljs rust"></code></pre>
+
+---
+
+## C-Header (excerpt)
+
+<pre><code data-source="chapters/shared/code/dynamic-and-static-libs/2.c" data-trim="hljs c"></code></pre>
+
+---
+
+## Cargo
+
+<pre><code data-source="chapters/shared/code/dynamic-and-static-libs/3.toml" data-trim="hljs toml"></code></pre>
+
+`cargo build` will now build a static lib instead of an rlib. `cdylib`s are a special kind of dylib that also removes all Rust-specific metadata.
+
+---
+
+## Usage
+
+<pre><code data-source="chapters/shared/code/dynamic-and-static-libs/4.c" data-trim="hljs c"></code></pre>
+<pre><code data-source="chapters/shared/code/dynamic-and-static-libs/5.sh" data-trim="hljs sh"></code></pre>
+
+---
+
+## Execution
+
+<pre><code data-source="chapters/shared/code/dynamic-and-static-libs/6.sh" data-trim="hljs sh"></code></pre>
+
+---
+
+## Woops!
+
+Take good care of ownership!
+
+<pre><code data-source="chapters/shared/code/dynamic-and-static-libs/7.rs" data-trim="hljs rust"></code></pre>
+
+---
+
+## Helpers
+
+-   Cheddar - generates C-Headers from Rust-Libs.
+

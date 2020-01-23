@@ -1,0 +1,62 @@
+# Crates
+[Table of Contents](toc/english.html)
+
+---
+
+Rust calls libraries `crates`. Management of crates is generally done through `cargo`, but this is not strictly necessary.
+
+---
+
+## Usage of libraries
+
+In Rust 2015 you need to declare crates via the `extern crate`-statement.
+
+<pre><code data-source="chapters/shared/code/crates/0.rs" data-trim="hljs rust"></code></pre>
+
+This imports the "SERialisation/DEserialisation"-Framework.
+
+---
+
+In Rust 2018 this is no longer required. 
+Libraries that were declared via cargo can simply be used with `use`-statements.
+
+<pre><code data-source="chapters/shared/code/crates/1.rs" data-trim="hljs rust"></code></pre>
+
+---
+
+## Macro usage
+
+Since Rust 2018 you no longer have to explicitly import macros, they work just like functions.
+
+Simply call a macro as follows
+
+<pre><code data-source="chapters/shared/code/crates/2.rs" data-trim="hljs rust"></code></pre>
+
+You might still encounter older Rust code which relies on `#[macro_use]`
+
+---
+
+Crates can be renamed, just like normal use statements:
+
+<pre><code data-source="chapters/shared/code/crates/3.rs" data-trim="hljs rust"></code></pre>
+
+Note the `crate` keyword before it's usage. You're using a local alias. The original still exists.
+
+---
+
+Alternative: rename dependencies via cargo:
+
+<pre><code data-source="chapters/shared/code/crates/4.toml" data-trim="hljs toml"></code></pre>
+
+---
+
+## crates.io
+
+Published crates can be found on [crates.io](https://crates.io), their documentation is automatically published to [docs.rs](https://docs.rs).
+
+---
+
+## Crates and Applications
+
+`cargo install my_crate` installs the applications shipped with a crate.
+

@@ -1,0 +1,92 @@
+# Outlook
+[Table of Contents](toc/english.html)
+
+---
+
+What is coming in the near future for Rust?
+
+--
+
+# Rust 2018
+
+---
+
+At the end of 2018 the culmination of feature stabilization throughout the year was released as `Rust 2018`
+
+---
+
+Languages change over time.
+
+But stability and backwards compatibility are fundamental.
+
+---
+
+Making core changes to the language without breaking *any* existing code.
+
+Changes are opt-in.
+
+<pre><code data-source="chapters/shared/code/outlook/1.toml" data-trim="hljs toml" class="lang-rust"></code></pre>
+
+---
+
+## Some of the changes
+
+---
+
+### Module system rework
+
+<pre><code data-source="chapters/shared/code/outlook/1.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+<pre><code data-source="chapters/shared/code/outlook/2.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+### Path clarity
+
+<pre><code data-source="chapters/shared/code/outlook/3.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+### No more `extern crate`
+
+---
+
+### `?` in `main()`
+
+<pre><code data-source="chapters/shared/code/outlook/4.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+### Loops can `break` a value
+
+<pre><code data-source="chapters/shared/code/outlook/5.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+### `impl Trait` vs `dyn Trait`
+
+Unamed types that implement a specific trait vs dynamic trait objects 
+
+<pre><code data-source="chapters/shared/code/outlook/6.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+`dyn Trait` is the new syntax for trait objects.
+
+It turned out that the syntax `impl T` vs `T` was confusing and asymmetric.
+
+<pre><code data-source="chapters/shared/code/outlook/7.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+### Many, many more things
+
+Too many too list. Here's a short list
+
+- x86 SIMD
+- 128-bit primitives
+- `_` anonymous lifetimes
+- `async` & `await`
+- Stable procedural macros (compiler attributes)
+- `..=` for inclusive ranges
+- ... etc ...

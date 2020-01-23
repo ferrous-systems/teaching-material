@@ -1,0 +1,136 @@
+# Lifetimes
+[Table of Contents](toc/english.html)
+
+---
+
+<pre><code data-source="chapters/shared/code/lifetimes/1.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+<pre><code data-source="chapters/shared/code/lifetimes/2.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+Rusts lifetimes are notorious for being hard to understand.
+
+---
+
+That is not necessary.
+
+---
+
+## Lifetimes
+
+-   Lifetimes describe the time that values remain in memory
+-   They describe - they cannot force or change anything
+-   Lifetimes are types!
+
+---
+
+## You have used them already
+
+<pre><code data-source="chapters/shared/code/lifetimes/3.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+## Motivation
+
+<pre><code data-source="chapters/shared/code/lifetimes/4.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+This code would - if it compiled - violate memory safety.
+
+---
+
+The correct struct definition is:
+
+<pre><code data-source="chapters/shared/code/lifetimes/5.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+Wrapper is now:
+
+* Generic over the type T
+* As well as a lifetime 'a (its own)
+* The borrowed values must live *at least equally long*
+
+---
+
+Takeaway:
+
+Lifetimes describe minimal conditions
+
+---
+
+## Multiple lifetimes in one signature
+
+<pre><code data-source="chapters/shared/code/lifetimes/6.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+## Sublifetimes
+
+<pre><code data-source="chapters/shared/code/lifetimes/7.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+Lingo: `Input outlives Tokenizer`
+
+---
+
+Lifetimes cannot do _more_ than describe "this must live longer (or at least equally long) as the other".
+
+---
+
+Common pitfall: you cannot "shorten a lifetime", as it just describes what's already there.
+
+---
+
+## `'static`
+
+`'static` is a lifetime that lives longer than all others. That's not necessarily forever!
+
+---
+
+Examples of `'static` data are:
+
+* Data contained in the binary, for example static strings
+* Heap-allocated values (for example the contents of a `Box`)
+    - As long as they are not bound on values that live shorter!
+* Globals
+
+---
+
+`'static` is not an escape hatch. In concurrent, especially evented, programs, `'static` is very usual.
+
+This is due to most data having to live outside of the stack.
+
+---
+
+Lifetimes describe all types, not only references, therefore they are also bounds in generic code.
+
+<pre><code data-source="chapters/shared/code/lifetimes/8.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+## Lifetime-Elision
+
+For simple cases, lifetimes are automatically inserted into signatures.
+
+<pre><code data-source="chapters/shared/code/lifetimes/9.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+## Lifetimes and Bindings
+
+<pre><code data-source="chapters/shared/code/lifetimes/10.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+<pre><code data-source="chapters/shared/code/lifetimes/11.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+## Lifetimes and Boxes
+
+For boxes, the default lifetime bound of the contained value is `'static`. Sometimes, this is too long and can be overwritten:
+
+<pre><code data-source="chapters/shared/code/lifetimes/12.rs" data-trim="hljs rust" class="lang-rust" class="lang-rust"></code></pre>

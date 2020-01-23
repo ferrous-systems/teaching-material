@@ -1,0 +1,68 @@
+## Unsafe Rust
+[Table of Contents](toc/english.html)
+
+---
+
+Rusts type system provides many guarantees, but sometimes, they make specific solutions hard or impossible.
+
+For that reason, Rust has the concept of "unsafe code".
+
+---
+
+Unsafe code is allowed to:
+-   freely access memory
+-   dereference raw pointers
+-   call external functions
+-   declare values `Send` and `Sync`
+-   write to unsynced global variables
+
+---
+
+Not unsafe are:
+
+-   conversion to raw pointers
+-   memory leaks
+
+---
+
+Unsafe code should never:
+
+-   be used to manage memory managed by a different allocator
+    - never construct a `std:::vec::Vec` from a C++ vector and drop it
+-   cheat on borrowck, for example by changing lifetimes or mutability of a type. The most common source of "but I was so sure that works" bugs.
+
+---
+
+## Rusts little secret
+
+When implementing data structures, unsafe isn't unusual.
+
+Safe Rust is the worst language to implement linked lists. There's a full [text on this](https://rust-unofficial.github.io/too-many-lists/)
+
+---
+
+Unsafe code must *always* be marked `unsafe`.
+
+<pre><code data-source="chapters/shared/code/unsafe/1.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+## Traps of `unsafe`
+
+-   Not all examples are that simple. `unsafe` *must* guarantee the invariants that Rust expects.
+-   This *especially* applies to ownership and mutable borrowing
+-   `unsafe` can lead to a value having 2 owners -&gt; double free
+-   `unsafe` can make immutable data temporarily mutable, which will lead to broken promises and tears.
+
+---
+
+Rust allows you to shoot yourself in the foot, it just requires you to take your gun out of the holster and remove the safety first.
+
+---
+
+## Practical example
+
+As Rust forbids aliasing, it is impossible in safe Rust to split a slice into 2 non-overlapping parts.
+
+<pre><code data-source="chapters/shared/code/unsafe/2.rs" data-trim="hljs rust"></code></pre>
+

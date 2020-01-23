@@ -1,0 +1,67 @@
+# Effective Rust
+[Table of Contents](toc/english.html)
+
+---
+
+## Iterators
+
+Get used to the Iterator-API and use them!
+
+Iterators are heavily optimised, especially their combinations.
+
+---
+
+## Notable issues with Ownership
+
+Moving data out of collections is not easy, if you don't immediately place another value there.
+
+Indiana Jones uses `std::mem::swap` or `std::mem::replace`.
+
+---
+
+In some cases, `Drain` can be used, an iterator that drains values one-by-one from a collection and shrinks it at the same time.
+
+---
+
+## Compile times
+
+`rustc` is not the fastest compiler, much time is spent in LLVM with code generation and optimisation.
+
+`cargo check` only runs the type checking and doesn't compile the code.
+
+Seperating the code in multiple crates can be helpful, as crates will only be recompiled on code change.
+
+Reduced use of generics improves compile times.
+
+---
+
+## Optimising binary size
+
+-   Use the system allocator (nightly feature)
+-   If libstd is sparingly used, it can be replaced
+-   Lower the number of monomorphised function calls
+
+---
+
+## Converting properly
+
+Avoid passing around generic parameters that can be evaluated to a specific type.
+
+<pre><code data-source="chapters/shared/code/effective-rust/1.rs" data-trim="hljs rust"></code></pre>
+
+---
+
+<pre><code data-source="chapters/shared/code/effective-rust/2.rs" data-trim="hljs rust"></code></pre>
+
+Rust inlines across libraries.
+
+---
+
+## Helpers
+
+-   GDB supports Rust, also check out `rust-gdb`
+-   `valgrind` works fine with Rust
+-   [`afl.rs`](https://github.com/rust-fuzz/afl.rs) allows fuzzing with American Fuzzy Lop
+-   [`cargo-fuzz`](https://github.com/rust-fuzz/cargo-fuzz) uses `libfuzz` for fuzzing
+-   [`cargo-kcov`](https://github.com/kennytm/cargo-kcov) can handle code coverage
+

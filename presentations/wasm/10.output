@@ -1,0 +1,7 @@
+trying binaryen method: native-wasm
+asynchronously preparing wasm
+binaryen method succeeded.
+run() called, but dependencies remain, so not running
+pre-main prep time: 108 ms
+South
+false

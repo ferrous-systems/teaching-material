@@ -1,0 +1,198 @@
+# WebAssembly
+[Table of Contents](toc/english.html)
+
+---
+
+## What?
+
+WebAssembly enables running Rust (among others) in Javascript environments like the web browser.
+
+It is the successor to asm.js in many ways.
+
+It is currently a developing standard and is often not enabled by default.
+
+---
+
+## Gotcha
+
+WebAssembly is still not widely supported and has a number of rough edges.
+
+---
+
+## Installing
+
+Setup is a bit unrefined at this moment, but it should improve in the future.
+
+* Fetch `emsdk` from [emscripten](http://kripken.github.io/emscripten-site/docs/getting_started/downloads.html).
+* Unpack it somewhere sensible.
+* Navigate to the directory in your terminal.
+
+---
+
+## Installing: `emcc`
+
+<pre><code data-source="chapters/shared/code/wasm/1.bash" data-trim="hljs bash"></code></pre>
+
+The output of the third command will offer instructions for what to add to `$PATH` if desired.
+
+> We use `incoming` to utilize the latest refinements.
+
+---
+
+## Installing: `emcc`
+
+The versions of the toolchain are quite important. Verify there are no errors running the following:
+
+<pre><code data-source="chapters/shared/code/wasm/2.bash" data-trim="hljs bash"></code></pre>
+
+---
+
+## Installing: `rustup` Target
+
+`rustup` allows installing multiple compilation targets.
+
+<pre><code data-source="chapters/shared/code/wasm/3.bash" data-trim="hljs bash"></code></pre>
+
+---
+
+# Standalone Executable
+
+---
+
+## Standalone Executable
+
+<pre><code data-source="chapters/shared/code/wasm/4.bash" data-trim="hljs bash"></code></pre>
+
+<pre><code data-source="chapters/shared/code/wasm/5.rs" data-trim="hljs rust"></code></pre>
+
+---
+
+## Standalone Executable
+
+<pre><code data-source="chapters/shared/code/wasm/6.bash" data-trim="hljs bash"></code></pre>
+
+This will create a directory structure like so:
+
+<pre><code data-source="chapters/shared/code/wasm/7.output" data-trim="hljs bash"></code></pre>
+
+---
+
+## Standalone Executable
+
+Once we generate the `wasm` and `js` we want to place them in with a `site` folder. We can use a `Makefile` for this.
+
+<pre><code data-source="chapters/shared/code/wasm/8.makefile" data-trim="hljs makefile"></code></pre>
+
+---
+
+## Standalone Executable
+
+Create `site/index.html`:
+
+<pre><code data-source="chapters/shared/code/wasm/9.html" data-trim="hljs html"></code></pre>
+
+---
+
+## Standalone Executable
+
+Running `python -m SimpleHTTPServer` or equivalent, browsing to `localhost:8000/site`, and opening the console yield the following output:
+
+<pre><code data-source="chapters/shared/code/wasm/10.output" data-trim="hljs bash"></code></pre>
+
+---
+
+# Rust from JS
+
+---
+
+## Rust from JS
+
+Exporting functions for use in Javascript is a bit more complicated.
+
+Additionally, interactions must be handled like interactions to C.
+
+---
+
+## Rust from JS
+
+The nightly channel is currently necessary to get this to work properly:
+
+<pre><code data-source="chapters/shared/code/wasm/11.bash" data-trim="hljs bash"></code></pre>
+
+---
+
+## Rust from JS
+
+<pre><code data-source="chapters/shared/code/wasm/12.bash" data-trim="hljs bash"></code></pre>
+
+<pre><code data-source="chapters/shared/code/wasm/13.rs" data-trim="hljs rust"></code></pre>
+
+---
+
+## Rust from JS
+
+We can use the same Makefile as before.
+
+<pre><code data-source="chapters/shared/code/wasm/8.makefile" data-trim="hljs makefile"></code></pre>
+
+---
+
+## Rust from JS
+
+The `onRuntimeInitialized` hook for `Module` defines what is called after the WebAssembly is loaded.
+
+<pre><code data-source="chapters/shared/code/wasm/14.html" data-trim="hljs html"></code></pre>
+
+---
+
+## Rust from JS
+
+Running `python -m SimpleHTTPServer` or equivalent, browsing to `localhost:8000/site`, and opening the console yield the following output:
+
+<pre><code data-source="chapters/shared/code/wasm/15.output" data-trim="hljs bash"></code></pre>
+
+---
+
+# JS from Rust
+
+---
+
+## JS from Rust
+
+Calling JS code from Rust has similar complications.
+
+It is done primarily through passing the `--js-library` flag at link time, which requires the nightly channel of rust.
+
+Passing numerics is relatively simple, but passing more complex things like strings requires extra effort.
+
+---
+
+## JS from Rust
+
+Returning a string for Rust code:
+
+<pre><code data-source="chapters/shared/code/wasm/17.js" data-trim="hljs javascript"></code></pre>
+
+---
+
+## JS from Rust
+
+Calling the Javascript function:
+
+<pre><code data-source="chapters/shared/code/wasm/18.rs" data-trim="hljs rust"></code></pre>
+
+---
+
+## DOM Interaction
+
+There is a [WebPlatform crate](https://github.com/tcr/rust-webplatform) to explore and contribute to.
+
+<pre><code data-source="chapters/shared/code/wasm/19.rs" data-trim="hljs rust"></code></pre>
+
+---
+
+## Future
+
+WebAssembly is rapidly becoming more refined and mature. Rust's integration is also under active work.
+
+Keep your eyes peeled for more, better support!

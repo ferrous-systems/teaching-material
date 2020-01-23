@@ -1,0 +1,174 @@
+# Implementation and Traits
+[Table of Contents](toc/english.html)
+
+---
+
+Rust offers the possibility to bind functions to types.
+
+---
+
+# Warning
+
+This sometimes looks like object-oriented programming, but it is not.
+
+In particular, run-time polymorphism, messages, classes, subtypes, and method overload are missing.
+
+---
+
+## Simple implementations: associated function
+
+<pre><code data-source="chapters/shared/code/traits/1.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+## Remark
+
+`new` here is purely convention.
+
+---
+
+## Python Says Hello
+
+<pre><code data-source="chapters/shared/code/traits/2.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+## Borrowing and Ownership of `self`
+
+It is not unlike normal, but at the beginning somewhat unfamiliar.
+
+-   Borrowing through one function *simultaneously borrows self*.
+-   This is especially applicable for mutable borrows!
+-   `self` without `&` returns ownership to the value from the calling context.
+
+---
+
+## Interesting Differences to Common OO
+
+-   Values can replace themselves
+-   Values, for example, iterators and builders can have methods that consume `self` and are thus invalidated.
+-   This solves the problem of invalidating iterators.
+
+---
+
+## Sidenote
+
+-   Implementations can occur multiple times
+
+---
+
+## Self
+
+`Self` is a special type in Rust. It always references the type to which the implementation refers.
+
+<pre><code data-source="chapters/shared/code/traits/3.rs" data-trim="hljs rust"></code></pre>
+
+---
+
+## Traits
+
+Traits are Rusts variant of abstracting over types.
+
+---
+
+We've already met a trait: `Debug`.
+
+---
+
+Traits define functions types must implement. They can then be used generically.
+
+---
+
+<pre><code data-source="chapters/shared/code/traits/4.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+## Self
+
+`Self` is a special type: it is the type currently being implemented.
+
+---
+
+## Generic Traits
+
+Traits can have type parameters.
+
+---
+
+<pre><code data-source="chapters/shared/code/traits/5.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+Working with generic traits is very usual.
+
+---
+
+## Inference of Traits
+
+Type inference of traits is very advanced, but sometimes, undecidable situations can occur. In this case, the compiler needs help deciding.
+
+There are multiple techniques.
+
+---
+
+## UFCS
+
+Unified Function Call Syntax
+
+<pre><code data-source="chapters/shared/code/traits/6.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+## Associated Types
+
+Associated types are generic parameters, but they are ignored during inference.
+
+---
+
+<pre><code data-source="chapters/shared/code/traits/7.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+## `impl Trait`
+
+`impl Trait` is used when the type of a value does not need to be named.
+
+```rust
+fn main() {
+    let v = vec![1,2,3];
+    let i = make_iter(&v);
+}
+
+fn make_iter<'a>(v: &'a Vec<u8>) -> impl Iterator<Item=u8> + 'a {
+    v.iter().map(|v| (*v)*2)
+}
+```
+
+---
+
+```rust
+fn main() {
+    let v = vec![1,2,3];
+    let i = v.iter();
+    let i2 = double(i);
+}
+
+fn double<'a>(i: impl Iterator<Item=&'a u8> + 'a) -> impl Iterator<Item=u8> + 'a {
+    i.map(|v| (*v)*2)
+}
+```
+
+---
+
+Limitations:
+* No `impl Trait` in trait methods
+
+---
+
+```rust
+trait Foo {}
+
+trait Bar {
+    fn fooify(&self) -> impl Foo;
+}
+```

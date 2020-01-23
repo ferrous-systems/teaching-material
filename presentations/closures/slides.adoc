@@ -1,0 +1,55 @@
+# Closures
+[Table of Contents](toc/english.html)
+
+---
+
+Rust has closures. Multiple, even.
+
+* **Advantage:** Highly optimized using only the absolutely necessary runtime resources, often none.
+* **Disadvantage:** Knowing the specific closure type is not always easy.
+
+---
+
+## Notation
+
+<pre><code data-source="chapters/shared/code/closures/1.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+<pre><code data-source="chapters/shared/code/closures/2.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+## Closure-Types
+
+FnOnce 
+
+* The closure consumes its environment
+
+FnMut 
+
+* The closure mutates its environment
+
+Fn
+
+* The closure references its environment immutably
+
+---
+
+`rustc` infers the type automatically, but it is needed for type signatures!
+
+---
+
+The relationship between the closure types is: Fn is a supertrait FnMut, FnMut is a supertrait of FnOnce.
+
+---
+
+## Notation of closure arguments
+
+<pre><code data-source="chapters/shared/code/closures/3.rs" data-trim="hljs rust"></code></pre>
+
+---
+
+## Moves and Closures
+
+As the closure environment is implicit, moving types into the closure is explicit.
+
+<pre><code data-source="chapters/shared/code/closures/4.rs" data-trim="hljs rust"></code></pre>
+

@@ -1,0 +1,3 @@
+[dependencies]
+foo = { git = "svnexpress.com/user/mylib", package = "foo" }
+bar = { version = "0.1", package = "actually_its_bar_these_days" }

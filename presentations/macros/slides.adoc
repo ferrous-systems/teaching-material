@@ -1,0 +1,120 @@
+# Macros
+[Table of Contents](toc/english.html)
+
+---
+
+Rust has a macro language. See [The Little Book Of Macros](https://danielkeep.github.io/tlborm/book/README.html).
+
+---
+
+## Important Macros
+
+-   `try!(result)` Handling of Results
+-   `println!(pattern, [values])` Easy printing of formatted strings to stdout
+-   `format!(pattern, [values])` like `println!`, but returns Strings
+-   `write!(buf, pattern, string)` Simple writing of formatted data to a buffer
+
+---
+
+## What Can They do?
+
+Macros can be used to things such as:
+
+* Generate repetitive code.
+* Create DSLs.
+* Write things that would otherwise be hard without Macros.
+
+---
+
+## What do They Provide?
+
+Macros are:
+
+* **Hygienic**, expansion happens in a different 'syntax context'
+* **Correct**, they cannot expand to invalid code.
+* **Limited**, they cannot, for example, pollute their expansion site.
+
+---
+
+## Components of a Macro
+
+A macro has three parts.
+
+* A name, eg. `println`.
+* A input portion, defining that the macro accepts.
+* An output portion, defining how it expands.
+
+---
+
+## Macros: Syntax
+
+Let's see how they look:
+
+<pre><code data-source="chapters/shared/code/macros/1.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+## Macros: Syntax
+
+The `($value:expr)` part says that:
+
+> The macro accepts one parameter which is an expression.
+
+Parameter types can be restricted.
+
+For example, `$foo:ty` only accepts a type.
+
+---
+
+## Macros: Syntax
+
+The parameters are prepended with a `$` to distinguish them.
+
+Both in the input and output.
+
+---
+
+## Macros: Repetitions
+
+<pre><code data-source="chapters/shared/code/macros/2.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+## Macros: Repetitions
+
+When we see `$(...)*` this is signalling a repetition. It communicates:
+
+> This portion of the macro takes a variable number of arguments.
+
+Each repetition in the input should have a matching one in the output.
+
+---
+
+## Macros: Custom Syntax
+
+<pre><code data-source="chapters/shared/code/macros/3.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+
+---
+
+## Macros: Custom Syntax
+
+Macros allow for a limited form of custom syntax and can be used to build simple DSLs.
+
+For a good example of this, see [clap-rs](https://github.com/kbknapp/clap-rs)
+
+---
+
+## Downsides of Macros
+
+Macros:
+
+* Can be difficult to debug.
+* Can be confusing to read and understand.
+
+---
+
+## When Should You Use Macros?
+
+Use macros where there are no other good alternatives.
+
+Avoid overusing macros.
