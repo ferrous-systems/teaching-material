@@ -1,3 +1,6 @@
 .reveal pre code {
     max-height: 800px;
 }
+.line-through {
+    text-decoration: line-through;
+}

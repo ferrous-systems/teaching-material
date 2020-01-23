@@ -19,3 +19,4 @@
 
 .Unfinished
 * link:./futures.html[Futures]
+* link:./future-of-futures.html[The Future of Futures]

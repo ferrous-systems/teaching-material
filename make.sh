@@ -5,6 +5,8 @@ ATTRS="--attribute=customcss=slides.css --attribute=revealjs_width=1920 --attrib
 
 bundle exec asciidoctor $ATTRS ./presentations/index.adoc -o ./target/index.html
 cp ./presentations/slides.css ./target/slides.css
+# FIXME: this will break if there's a name collision
+cp ./presentations/*/*.{svg,jpg} ./target
 
 for d in ./presentations/*/; do
     echo $d

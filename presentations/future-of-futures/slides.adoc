@@ -2,7 +2,6 @@
 
 link:./index.html[Table of Contents]
 
-
 == !
 
 Hurry up and wait
@@ -65,7 +64,7 @@ Instead return `Poll::Pending` until ready.
 
 == !
 
-![](img/futures-rs-logo.svg)
+image::./futures-rs-logo.svg[]
 
 `futures-rs` to the rescue
 
@@ -89,7 +88,7 @@ include::./4.rs[]
 
 == Explicit runtime
 
-![](img/tokio.jpg)
+image::./tokio.jpg[]
 
 `tokio-rs` to the rescue
 
@@ -105,14 +104,11 @@ include::./5.rs[]
 
 == Future of `futures`
 
-<br/>
-
 * Two new keywords
 * Write code that looks synchronous
-  * Get async for free*
+  ** Get async for free^*^
 
-
-<small>* (ish)</small>
+[.small]#* (ish)#
 
 == !
 
@@ -129,4 +125,4 @@ include::./6.rs[]
 * Implemented in the compiler
 * Several blocking issues (#51719, #53249, #53259, ...)
 * _Not_ included in Rust 2018
-  * But soon™ (~~late 2018~~ 2019!)
+  ** But soon™ ([line-through]#late 2018# 2019!)
