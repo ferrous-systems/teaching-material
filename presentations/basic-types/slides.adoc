@@ -1,0 +1,79 @@
+= Basic types
+:revealjs_width: 1920
+:revealjs_height: 1080
+:source-highlighter: highlightjs
+
+link:./index.html[Table of Contents]
+
+== ints
+
+Rust comes with all standard int types, with and without sign
+
+- i8, u8
+- i16, u16
+- i32, u32
+- i64, u64
+- i128, u128
+
+== Architecture-dependent numbers
+
+Rust comes with 2 architecture-dependent number types:
+
+- isize, usize
+
+== Casts
+
+Casts between number are possible, *also shortening casts*:
+
+[source,rust]
+----
+include::./1.rs[]
+----
+
+== !
+
+If the size isn't given, or cannot be inferred, ints default to `i32`.
+
+== Overflows
+
+Overflows trigger a trap in Debug mode, but not in release mode. This behaviour can be configured.
+
+== Floats
+
+Rust also comes with floats of all standard sizes: f32, f64
+
+[source,rust]
+----
+include::./2.rs[]
+----
+
+== Arrays
+
+Fixed-size arrays have the following notation:
+
+[source,rust]
+----
+include::./3.rs[]
+----
+
+
+== Arrays of dynamic size
+
+Arrays of dynamic size in Rust are represented as slices.
+
+Slices carry a pointer to the array and a length. Slices cannot be resized.
+
+[source,rust]
+----
+include::./4.rs[]
+----
+
+
+== The Unit Type
+
+Expressions without a specific return value return the unit type `()`.
+
+[source,rust]
+----
+include::./5.rs[]
+----
