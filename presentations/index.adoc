@@ -17,6 +17,9 @@
 * link:./stack-and-heap.html[Stack and Heap]
 * link:./cargo.html[Cargo]
 
+.Advanced
+* link:./traits.html[Traits]
+
 .Unfinished
 * link:./futures.html[Futures]
 * link:./future-of-futures.html[The Future of Futures]

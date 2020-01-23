@@ -2,14 +2,13 @@
 
 link:./index.html[Table of Contents]
 
-
 == !
 
 Rust offers the possibility to bind functions to types.
 
-== !
+== Warning
 
-# Warning
+== !
 
 This sometimes looks like object-oriented programming, but it is not.
 
@@ -128,7 +127,8 @@ include::./7.rs[]
 
 `impl Trait` is used when the type of a value does not need to be named.
 
-```rust
+[source,rust]
+----
 fn main() {
     let v = vec![1,2,3];
     let i = make_iter(&v);
@@ -137,11 +137,13 @@ fn main() {
 fn make_iter<'a>(v: &'a Vec<u8>) -> impl Iterator<Item=u8> + 'a {
     v.iter().map(|v| (*v)*2)
 }
-```
+----
+
 
 == !
 
-```rust
+[source,rust]
+----
 fn main() {
     let v = vec![1,2,3];
     let i = v.iter();
@@ -151,8 +153,7 @@ fn main() {
 fn double<'a>(i: impl Iterator<Item=&'a u8> + 'a) -> impl Iterator<Item=u8> + 'a {
     i.map(|v| (*v)*2)
 }
-```
-
+----
 == !
 
 Limitations:
@@ -160,10 +161,11 @@ Limitations:
 
 == !
 
-```rust
+[source,rust]
+----
 trait Foo {}
 
 trait Bar {
     fn fooify(&self) -> impl Foo;
 }
-```
+----
