@@ -43,7 +43,7 @@ Other types might allocate on the heap, most notably `Vec` and `String`.
 
 It is currently *not* possible to allocate values at a self-chosen location. The missing feature is called "placement in".
 
-[Detailed discussion here](https://internals.rust-lang.org/t/lang-team-minutes-feature-status-report-placement-in-and-box/4646)
+https://internals.rust-lang.org/t/lang-team-minutes-feature-status-report-placement-in-and-box/4646[Detailed discussion here]
 
 == !
 

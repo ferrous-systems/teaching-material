@@ -13,4 +13,5 @@
 * link:./match.html[Match]
 * link:./ownership.html[Ownership]
 * link:./borrowing.html[Borrowing]
+* link:./stack-and-heap.html[Stack and Heap]
 * link:./cargo.html[Cargo]
