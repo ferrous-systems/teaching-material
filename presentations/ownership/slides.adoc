@@ -91,7 +91,10 @@ The terminology around moves is similar, but not the same to the one used in C++
 
 == Practical example
 
-<pre><code data-source="chapters/shared/code/ownership/5.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./5.rs[]
+----
 
 What would happen if we use could use File after calling `use_file`?
 
@@ -99,9 +102,15 @@ What would happen if we use could use File after calling `use_file`?
 
 `drop` is the function that deallocates a value immediately. What does the implementation look like?
 
-<pre><code data-source="chapters/shared/code/ownership/6.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./6.rs[]
+----
 
 ---
 
-<pre><code data-source="chapters/shared/code/ownership/7.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./7.rs[]
+----
 

@@ -62,4 +62,7 @@ Rust allows you to shoot yourself in the foot, it just requires you to take your
 
 As Rust forbids aliasing, it is impossible in safe Rust to split a slice into 2 non-overlapping parts.
 
-<pre><code data-source="chapters/shared/code/unsafe/2.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./2.rs[]
+----

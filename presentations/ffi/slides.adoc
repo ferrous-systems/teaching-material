@@ -44,9 +44,15 @@ Hello world from C
 
 Let's assume you _really_ want to use printf
 
-<pre><code data-source="chapters/shared/code/ffi/hello.c" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./hello.c[]
+----
 
-<pre><code data-source="chapters/shared/code/ffi/hello.h" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./hello.h[]
+----
 
 == Things TODO
 
@@ -57,7 +63,10 @@ Let's assume you _really_ want to use printf
 
 == Before we get started
 
-<pre><code data-source="chapters/shared/code/ffi/1.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./1.rs[]
+----
 
 Disables some Rust naming lints
 
@@ -65,9 +74,15 @@ Disables some Rust naming lints
 
 == Binding functions
 
-<pre><code data-source="chapters/shared/code/ffi/hello.h" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./hello.h[]
+----
 
-<pre><code data-source="chapters/shared/code/ffi/2.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./2.rs[]
+----
 
 == Primitive types
 
@@ -80,7 +95,10 @@ Some type conversions can be infered by the compiler.
 
 == Calling this
 
-<pre><code data-source="chapters/shared/code/ffi/3.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./3.rs[]
+----
 
 == Cargo (build-system) support
 
@@ -94,23 +112,35 @@ The layout of enums and structs is left to the compiler.
 
 `#[repr(C)]` directs the compiler to use the platform-layout. 
 
-<pre><code data-source="chapters/shared/code/ffi/4-1.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./4-1.rs[]
+----
 
 == Enums
 
-<pre><code data-source="chapters/shared/code/ffi/4-3.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./4-3.rs[]
+----
 
 == Opaque types
 
 When not knowing (or caring) about internal layout, opaque structs can be used.
 
-<pre><code data-source="chapters/shared/code/ffi/4-2.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./4-2.rs[]
+----
 
 == Callbacks
 
 `extern "C"` applies to function pointers given to extern functions too.
 
-<pre><code data-source="chapters/shared/code/ffi/6.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./6.rs[]
+----
 
 == Real example
 
@@ -122,27 +152,42 @@ Binding imagemagick to rust!
 
 `imagemagick` has a _lot_ of functions. Don't write all those `extern "C"` blocks yourself – generate them!
 
-<pre><code data-source="chapters/shared/code/ffi/7.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./7.rs[]
+----
 
 ---
 
 At this point including bindings is easy\*
 
-<pre><code data-source="chapters/shared/code/ffi/8.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./8.rs[]
+----
 
 == Building Layers
 
-<pre><code data-source="chapters/shared/code/ffi/9.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./9.rs[]
+----
 
 == Building Layers
 
-<pre><code data-source="chapters/shared/code/ffi/10.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./10.rs[]
+----
 
 == Wrap unsafe code in safe Rust
 
 == Memory Management
 
-<pre><code data-source="chapters/shared/code/ffi/11.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./11.rs[]
+----
 
 ---
 

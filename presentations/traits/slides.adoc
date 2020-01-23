@@ -52,7 +52,10 @@ It is not unlike normal, but at the beginning somewhat unfamiliar.
 
 `Self` is a special type in Rust. It always references the type to which the implementation refers.
 
-<pre><code data-source="chapters/shared/code/traits/3.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./3.rs[]
+----
 
 == Traits
 

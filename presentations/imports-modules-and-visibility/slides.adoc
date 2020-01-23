@@ -86,19 +86,28 @@ Our application could also have the following layout:
 
 Simply by adding a new folder of the same name
 
-<pre><code data-source="chapters/shared/code/imports-modules-and-visibility/9-2.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./9-2.rs[]
+----
 
 == A Larger Module as a Directory
 
 Or declare a module via `mod.rs`
 
-<pre><code data-source="chapters/shared/code/imports-modules-and-visibility/9.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./9.rs[]
+----
 
 ---
 
 In both cases, the module must be registered with the root module.
 
-<pre><code data-source="chapters/shared/code/imports-modules-and-visibility/10.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./10.rs[]
+----
 
 ---
 
@@ -112,7 +121,10 @@ Public types and functions that can be reached through a public module path are 
 
 == Example
 
-<pre><code data-source="chapters/shared/code/imports-modules-and-visibility/11.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./11.rs[]
+----
 
 ---
 
@@ -128,11 +140,17 @@ Also, struct functions are not exported by default.
 
 ---
 
-<pre><code data-source="chapters/shared/code/imports-modules-and-visibility/12.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./12.rs[]
+----
 
 ---
 
-<pre><code data-source="chapters/shared/code/imports-modules-and-visibility/13.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./13.rs[]
+----
 
 ---
 
@@ -144,5 +162,8 @@ In general, exporting fields should be avoided:
 
 == Pub qualifiers
 
-<pre><code data-source="chapters/shared/code/imports-modules-and-visibility/14.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./14.rs[]
+----
 

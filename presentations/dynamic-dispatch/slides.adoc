@@ -16,11 +16,17 @@ There's two approaches to that.
 
 If the number of possible choices is limited, an Enum can be used:
 
-<pre><code data-source="chapters/shared/code/dynamic-dispatch/1.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./1.rs[]
+----
 
 == Alternative Form
 
-<pre><code data-source="chapters/shared/code/dynamic-dispatch/2.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./2.rs[]
+----
 
 == Recommendation
 
@@ -54,5 +60,8 @@ Trait objects are a pair of pointers to a virtual function table and the data.
 
 Closure traits fulfill object safety rules.
 
-<pre><code data-source="chapters/shared/code/dynamic-dispatch/4.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./4.rs[]
+----
 

@@ -12,7 +12,10 @@ Let's try to use Rust from C.
 
 == Library
 
-<pre><code data-source="chapters/shared/code/dynamic-and-static-libs/1.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./1.rs[]
+----
 
 == C-Header (excerpt)
 
@@ -37,7 +40,10 @@ Let's try to use Rust from C.
 
 Take good care of ownership!
 
-<pre><code data-source="chapters/shared/code/dynamic-and-static-libs/7.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./7.rs[]
+----
 
 == Helpers
 

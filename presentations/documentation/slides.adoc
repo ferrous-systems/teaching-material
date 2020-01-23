@@ -43,7 +43,10 @@ It starts with some examples, then lists any `struct`s, traits, or functions the
 
 `//!` and `///` comments are read as Markdown.
 
-<pre><code data-source="chapters/shared/code/documentation/2.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./2.rs[]
+----
 
 == Example: Components
 

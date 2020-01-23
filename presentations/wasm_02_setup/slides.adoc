@@ -31,7 +31,10 @@ This loads the sources of the default library and documentation for completion a
 
 == Functional Test
 
-<pre><code data-source="chapters/shared/code/wasm_workshop/02_setup/4.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./02_setup/4.rs[]
+----
 
 ---
 
@@ -130,7 +133,10 @@ Picture?
 
 Rust Syntax on Example
 
-<pre><code data-source="chapters/shared/code/wasm_workshop/02_setup/00_syntax_on_example.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./02_setup/00_syntax_on_example.rs[]
+----
 
 ---
 
@@ -143,7 +149,10 @@ Rebuild the `.wasm` binary with `wasm-pack build`, refresh http://localhost:8080
 
 Solution:
 
-<pre><code data-source="chapters/shared/code/wasm_workshop/02_setup/00_solution_lib.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./02_setup/00_solution_lib.rs[]
+----
 
 <pre><code data-source="chapters/shared/code/wasm_workshop/02_setup/00_index_.js" data-trim="hljs js"></code></pre>
 

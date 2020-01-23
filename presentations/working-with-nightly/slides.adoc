@@ -33,7 +33,10 @@ Some examples:
 
 To enable a feature, add the following line into `src/main.rs` (for executables), or`src/lib.rs` (for libraries):
 
-<pre><code data-source="chapters/shared/code/working-with-nightly/2.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./2.rs[]
+----
 
 == Compiler Plugins
 
@@ -47,7 +50,10 @@ Compiler Plugins add additional capabilities to Rust. For example:
 
 To enable a compiler plugin add the following line into `src/main.rs` (for executables), or`src/lib.rs` (for libraries):
 
-<pre><code data-source="chapters/shared/code/working-with-nightly/3.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./3.rs[]
+----
 
 == Warning
 

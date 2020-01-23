@@ -31,7 +31,10 @@ For this, the `Drop` trait can be implemented.
 
 ---
 
-<pre><code data-source="chapters/shared/code/drop-panic-abort/1.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./1.rs[]
+----
 
 == Warning!
 
@@ -47,7 +50,10 @@ Implementing a `Drop`-bomb (a failing destructor) can make sure this error is ca
 
 Rust also has another error mechanism: `panic!`
 
-<pre><code data-source="chapters/shared/code/drop-panic-abort/2.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./2.rs[]
+----
 
 ---
 

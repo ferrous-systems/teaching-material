@@ -14,7 +14,10 @@ link:./index.html[Table of Contents]
 
 To make a Rust structure (de)serializable:
 
-<pre><code data-source="chapters/shared/code/serde/1.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./1.rs[]
+----
 
 == Formats
 
@@ -34,22 +37,34 @@ Did you enjoy that acronym salad?
 
 To JSON:
 
-<pre><code data-source="chapters/shared/code/serde/2.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./2.rs[]
+----
 
 == `Deserialize`
 
 From JSON:
 
-<pre><code data-source="chapters/shared/code/serde/3.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./3.rs[]
+----
 
 == Transcode
 
-<pre><code data-source="chapters/shared/code/serde/4.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./4.rs[]
+----
 
 == Attributes
 
 `serde` has a large number of attributes you can utilize:
 
-<pre><code data-source="chapters/shared/code/serde/5.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./5.rs[]
+----
 
 [https://serde.rs/attributes.html](https://serde.rs/attributes.html)

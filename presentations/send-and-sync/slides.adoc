@@ -42,7 +42,10 @@ Such as `Rc`, raw pointers, and `UnsafeCell`.
 
 It's possible to add the implementation of `Send` and `Sync` to a type.
 
-<pre><code data-source="chapters/shared/code/send-and-sync/4.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./4.rs[]
+----
 In these cases, the task of thread safety is left to the implementor.
 
 == Relationships
@@ -53,13 +56,19 @@ If a type implements both `Sync` and `Copy` then it can also implement `Send`.
 
 A type `&T` can implement `Send` if the type `T` also implements `Sync`.
 
-<pre><code data-source="chapters/shared/code/send-and-sync/5.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./5.rs[]
+----
 
 == Relationships
 
 A type `&mut T` can implement `Send` if the type `T` also implements `Send`.
 
-<pre><code data-source="chapters/shared/code/send-and-sync/6.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./6.rs[]
+----
 
 == Consequences
 

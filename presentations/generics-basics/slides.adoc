@@ -5,14 +5,16 @@
 
 link:./index.html[Table of Contents]
 
-
----
+== !
 
 Generics are fundamental for Rust.
 
 == Generic Structs
 
-<pre><code data-source="chapters/shared/code/generics-basics/1.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./1.rs[]
+----
 
 == Type Inference
 

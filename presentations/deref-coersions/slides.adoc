@@ -31,7 +31,10 @@ This makes wrapper types very ergonomic and easy to use!
 
 Dereferencing is described by the `Deref` and `DerefMut`-Traits.
 
-<pre><code data-source="chapters/shared/code/deref-coersions/2.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./2.rs[]
+----
 
 This call is introduced when dereferencing is requested.
 

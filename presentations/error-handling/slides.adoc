@@ -24,19 +24,28 @@ Any function with known error conditions returns a `Result<T,E>`.
 
 == Using Results With `match`
 
-<pre><code data-source="chapters/shared/code/error-handling/3.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./3.rs[]
+----
 
 == Using Results With Conditionals
 
 Check for success with `is_ok()`, errors with `is_err()`:
 
-<pre><code data-source="chapters/shared/code/error-handling/4.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./4.rs[]
+----
 
 == Using Results With `?`
 
 Use `?` in functions with multiple possible failures.
 
-<pre><code data-source="chapters/shared/code/error-handling/5.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./5.rs[]
+----
 
 == Using Results With `?`
 
@@ -50,7 +59,10 @@ Note the early exit.
 * `main` can return `Result`
 * Stable in Rust since `1.26`.
 
-<pre><code data-source="chapters/shared/code/error-handling/6.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./6.rs[]
+----
 
 == Results Are Wrapper Types
 
@@ -62,7 +74,10 @@ Transforming a `Result<T,E>` into a `Result<T,X>` is also possible.
 
 == Mapping Result Values
 
-<pre><code data-source="chapters/shared/code/error-handling/7.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./7.rs[]
+----
 `map_err()` is also available.
 
 == Reporting Errors Only

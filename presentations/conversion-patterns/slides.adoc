@@ -26,7 +26,10 @@ The usage depends on the context.
 
 == What does `try!` or `?` do in detail?
 
-<pre><code data-source="chapters/shared/code/conversion-patterns/2.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./2.rs[]
+----
 
 == `AsRef<T>`
 

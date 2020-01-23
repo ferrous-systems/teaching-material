@@ -54,7 +54,10 @@ The versions of the toolchain are quite important. Verify there are no errors ru
 
 <pre><code data-source="chapters/shared/code/wasm/4.bash" data-trim="hljs bash"></code></pre>
 
-<pre><code data-source="chapters/shared/code/wasm/5.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./5.rs[]
+----
 
 == Standalone Executable
 
@@ -102,7 +105,10 @@ The nightly channel is currently necessary to get this to work properly:
 
 <pre><code data-source="chapters/shared/code/wasm/12.bash" data-trim="hljs bash"></code></pre>
 
-<pre><code data-source="chapters/shared/code/wasm/13.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./13.rs[]
+----
 
 == Rust from JS
 
@@ -144,13 +150,19 @@ Returning a string for Rust code:
 
 Calling the Javascript function:
 
-<pre><code data-source="chapters/shared/code/wasm/18.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./18.rs[]
+----
 
 == DOM Interaction
 
 There is a [WebPlatform crate](https://github.com/tcr/rust-webplatform) to explore and contribute to.
 
-<pre><code data-source="chapters/shared/code/wasm/19.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./19.rs[]
+----
 
 == Future
 

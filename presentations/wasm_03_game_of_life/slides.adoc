@@ -19,20 +19,29 @@ Design Decisions ?
 
 A type definition for cells: Enums
 
-<pre><code data-source="chapters/shared/code/wasm_workshop/03_game_of_life/4.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./03_game_of_life/4.rs[]
+----
 
 ---
 
 
 Type definition for the universe: structs
 
-<pre><code data-source="chapters/shared/code/wasm_workshop/03_game_of_life/5.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./03_game_of_life/5.rs[]
+----
 
 ---
 
 
 implement the universe
 
-<pre><code data-source="chapters/shared/code/wasm_workshop/03_game_of_life/5.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./03_game_of_life/5.rs[]
+----
 
 ---

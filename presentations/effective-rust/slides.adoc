@@ -42,11 +42,17 @@ Reduced use of generics improves compile times.
 
 Avoid passing around generic parameters that can be evaluated to a specific type.
 
-<pre><code data-source="chapters/shared/code/effective-rust/1.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./1.rs[]
+----
 
 ---
 
-<pre><code data-source="chapters/shared/code/effective-rust/2.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./2.rs[]
+----
 
 Rust inlines across libraries.
 

@@ -20,25 +20,37 @@ This can happen at any point where type parameters are used.
 
 Example: `println("{:?}")` requires Debug
  
-<pre><code data-source="chapters/shared/code/advanced-generics-bounds/1.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./1.rs[]
+----
 
 ---
 
 Example: A generic Struct that requires inner values to implement `Debug`
 
-<pre><code data-source="chapters/shared/code/advanced-generics-bounds/2.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./2.rs[]
+----
 
 ---
 
 Bounds can also be expressed for implementation targets:
 
-<pre><code data-source="chapters/shared/code/advanced-generics-bounds/3.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./3.rs[]
+----
 
 ---
 
 Traits can also directly require prerequisites:
 
-<pre><code data-source="chapters/shared/code/advanced-generics-bounds/4.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./4.rs[]
+----
 
 ---
 
@@ -48,7 +60,10 @@ Rust does not allow negative Bounds (Trait A and *not* Trait B)
 
 If not specified otherwise, all type parameters carry the bound `Sized` (the type has a statically known memory size). This can be suppressed by using the bound `?Sized`.
 
-<pre><code data-source="chapters/shared/code/advanced-generics-bounds/5.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./5.rs[]
+----
 
 ---
 
@@ -68,7 +83,10 @@ This can be very practical, as this allows expressing different bounds during co
 
 Bounds are very common in conversion functions.
 
-<pre><code data-source="chapters/shared/code/advanced-generics-bounds/7.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./7.rs[]
+----
 
 == Generic implementations
 

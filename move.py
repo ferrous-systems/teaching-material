@@ -1,5 +1,6 @@
 from pathlib import Path
 import shutil
+import re
 
 def copy(src, dst):
     print(f'{src} -> {dst}')
@@ -29,21 +30,9 @@ for chapter in (dest / 'presentations').iterdir():
         continue
     slides = chapter / 'slides.adoc'
     old = open(slides).read()
-
-    tt = "[Table of Contents](toc/english.html)"
-    toc = old.find(tt)
-    if toc == -1:
-        continue
-
-    header_len = toc + len(tt)
-    old_header = old[:header_len].strip()
-    name = old_header.splitlines()[0][1:].strip()
-    new_header = f"""= {name}
-:revealjs_width: 1920
-:revealjs_height: 1080
-:source-highlighter: highlightjs
-
-link:./index.html[Table of Contents]
-"""
-    new = new_header  + old[header_len:]
+    new = re.sub(
+        r'<pre><code data-source="chapters/shared/code/.*/(.*)" data-trim="hljs rust"></code></pre>',
+        "[source,rust]\n----\ninclude::./\\1[]\n----",
+        old
+    )
     open(slides, 'w').write(new)

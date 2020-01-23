@@ -59,7 +59,10 @@ What does this save us from?
 
 == Do you see a potential problem?
 
-<pre><code data-source="chapters/shared/code/borrowing/3.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./3.rs[]
+----
 
 ---
 

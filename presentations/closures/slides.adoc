@@ -42,11 +42,17 @@ The relationship between the closure types is: Fn is a supertrait FnMut, FnMut i
 
 == Notation of closure arguments
 
-<pre><code data-source="chapters/shared/code/closures/3.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./3.rs[]
+----
 
 == Moves and Closures
 
 As the closure environment is implicit, moving types into the closure is explicit.
 
-<pre><code data-source="chapters/shared/code/closures/4.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./4.rs[]
+----
 

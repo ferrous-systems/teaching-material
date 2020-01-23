@@ -29,7 +29,10 @@ Tests typically end up in 1 of 4 possible locations:
 
 == Unit Tests
 
-<pre><code data-source="chapters/shared/code/testing/1.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./1.rs[]
+----
 
 == Unit Tests
 
@@ -43,7 +46,10 @@ Tests typically end up in 1 of 4 possible locations:
 
 == `tests` Submodule
 
-<pre><code data-source="chapters/shared/code/testing/3.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./3.rs[]
+----
 
 == `tests` Submodule
 
@@ -78,7 +84,10 @@ pub enum Direction { North, South, East, West }
 
 `/tests/basic.rs`:
 
-<pre><code data-source="chapters/shared/code/testing/6.rs" data-trim="hljs rust"></code></pre>
+[source,rust]
+----
+include::./6.rs[]
+----
 
 == Integration Tests
 
