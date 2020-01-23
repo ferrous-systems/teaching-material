@@ -16,7 +16,10 @@ They all have something in common: They are managed by ownership.
 
 Runtime reference counted within a thread.
 
-<pre><code data-source="chapters/shared/code/smart-pointers/1.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./1.rs[]
+----
 
 == Semantics
 
@@ -29,7 +32,10 @@ Runtime reference counted within a thread.
 
 Weak pointer to data.
 
-<pre><code data-source="chapters/shared/code/smart-pointers/2.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./2.rs[]
+----
 
 == Semantics
 

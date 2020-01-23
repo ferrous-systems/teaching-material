@@ -27,7 +27,10 @@ Most common are `String` and `&str`.
 
 == Creation
 
-<pre><code data-source="chapters/shared/code/strings/1.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./1.rs[]
+----
 
 == When to Use What?
 
@@ -41,7 +44,10 @@ Most common are `String` and `&str`.
 
 Just because multiple types exist doesn't mean they can't work in harmony.
 
-<pre><code data-source="chapters/shared/code/strings/2.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./2.rs[]
+----
 This is because `String`s implement `Deref<Target=str>`.
 
 == Exotic String types
@@ -76,23 +82,35 @@ It is strongly recommended you read *all* of the documentation on these types be
 
 Splitting:
 
-<pre><code data-source="chapters/shared/code/strings/3.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./3.rs[]
+----
 
 
 == Common String Tasks
 
 Concatenation:
 
-<pre><code data-source="chapters/shared/code/strings/4.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./4.rs[]
+----
 
 == Common String Tasks
 
 Replacing:
 
-<pre><code data-source="chapters/shared/code/strings/5.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./5.rs[]
+----
 
 == Accepting `String` or `str`
 
 It's possible to accept either rather painlessly:
 
-<pre><code data-source="chapters/shared/code/strings/6.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./6.rs[]
+----

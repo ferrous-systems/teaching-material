@@ -45,7 +45,10 @@ Safe Rust is the worst language to implement linked lists. There's a full [text 
 
 Unsafe code must *always* be marked `unsafe`.
 
-<pre><code data-source="chapters/shared/code/unsafe/1.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./1.rs[]
+----
 
 == Traps of `unsafe`
 

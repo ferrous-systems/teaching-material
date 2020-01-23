@@ -8,11 +8,17 @@ link:./index.html[Table of Contents]
 
 ---
 
-<pre><code data-source="chapters/shared/code/lifetimes/1.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./1.rs[]
+----
 
 ---
 
-<pre><code data-source="chapters/shared/code/lifetimes/2.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./2.rs[]
+----
 
 ---
 
@@ -30,11 +36,17 @@ That is not necessary.
 
 == You have used them already
 
-<pre><code data-source="chapters/shared/code/lifetimes/3.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./3.rs[]
+----
 
 == Motivation
 
-<pre><code data-source="chapters/shared/code/lifetimes/4.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./4.rs[]
+----
 
 ---
 
@@ -44,7 +56,10 @@ This code would - if it compiled - violate memory safety.
 
 The correct struct definition is:
 
-<pre><code data-source="chapters/shared/code/lifetimes/5.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./5.rs[]
+----
 
 ---
 
@@ -62,11 +77,17 @@ Lifetimes describe minimal conditions
 
 == Multiple lifetimes in one signature
 
-<pre><code data-source="chapters/shared/code/lifetimes/6.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./6.rs[]
+----
 
 == Sublifetimes
 
-<pre><code data-source="chapters/shared/code/lifetimes/7.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./7.rs[]
+----
 
 ---
 
@@ -103,18 +124,30 @@ This is due to most data having to live outside of the stack.
 
 Lifetimes describe all types, not only references, therefore they are also bounds in generic code.
 
-<pre><code data-source="chapters/shared/code/lifetimes/8.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./8.rs[]
+----
 
 == Lifetime-Elision
 
 For simple cases, lifetimes are automatically inserted into signatures.
 
-<pre><code data-source="chapters/shared/code/lifetimes/9.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./9.rs[]
+----
 
 == Lifetimes and Bindings
 
-<pre><code data-source="chapters/shared/code/lifetimes/10.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
-<pre><code data-source="chapters/shared/code/lifetimes/11.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./10.rs[]
+----
+[source,rust]
+----
+include::./11.rs[]
+----
 
 == Lifetimes and Boxes
 

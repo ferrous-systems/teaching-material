@@ -46,11 +46,17 @@ Requires nightly and `futures_api` feature-flag
 
 ---
 
-<pre><code data-source="chapters/shared/code/future-futures/1.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./1.rs[]
+----
 
 ---
 
-<pre><code data-source="chapters/shared/code/future-futures/2.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./2.rs[]
+----
 
 ---
 
@@ -70,13 +76,19 @@ Instead return `Poll::Pending` until ready.
 
 There's `oneshot`
 
-<pre><code data-source="chapters/shared/code/future-futures/3.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./3.rs[]
+----
 
 ---
 
 And combinators on futures
 
-<pre><code data-source="chapters/shared/code/future-futures/4.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./4.rs[]
+----
 
 == Explicit runtime
 
@@ -88,7 +100,10 @@ And combinators on futures
 
 `tokio` provides an async-executor and runtime
 
-<pre><code data-source="chapters/shared/code/future-futures/5.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./5.rs[]
+----
 
 
 == Future of `futures`
@@ -104,7 +119,10 @@ And combinators on futures
 
 ---
 
-<pre><code data-source="chapters/shared/code/future-futures/6.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./6.rs[]
+----
 
 == I want that!
 

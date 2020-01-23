@@ -22,7 +22,10 @@ They are *automatically derived* for all types if appropriate.
 
 == Automatically Derived
 
-<pre><code data-source="chapters/shared/code/send-and-sync/1.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./1.rs[]
+----
 
 ---
 
@@ -32,7 +35,10 @@ Such as `Rc`, raw pointers, and `UnsafeCell`.
 
 == Example: `Rc`
 
-<pre><code data-source="chapters/shared/code/send-and-sync/2.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./2.rs[]
+----
 
 == Example: `Rc`
 

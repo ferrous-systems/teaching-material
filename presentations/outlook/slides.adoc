@@ -34,29 +34,47 @@ Changes are opt-in.
 
 === Module system rework
 
-<pre><code data-source="chapters/shared/code/outlook/1.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./1.rs[]
+----
 
-<pre><code data-source="chapters/shared/code/outlook/2.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./2.rs[]
+----
 
 === Path clarity
 
-<pre><code data-source="chapters/shared/code/outlook/3.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./3.rs[]
+----
 
 === No more `extern crate`
 
 === `?` in `main()`
 
-<pre><code data-source="chapters/shared/code/outlook/4.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./4.rs[]
+----
 
 === Loops can `break` a value
 
-<pre><code data-source="chapters/shared/code/outlook/5.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./5.rs[]
+----
 
 === `impl Trait` vs `dyn Trait`
 
 Unamed types that implement a specific trait vs dynamic trait objects
 
-<pre><code data-source="chapters/shared/code/outlook/6.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./6.rs[]
+----
 
 ---
 
@@ -64,7 +82,10 @@ Unamed types that implement a specific trait vs dynamic trait objects
 
 It turned out that the syntax `impl T` vs `T` was confusing and asymmetric.
 
-<pre><code data-source="chapters/shared/code/outlook/7.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./7.rs[]
+----
 
 === Many, many more things
 

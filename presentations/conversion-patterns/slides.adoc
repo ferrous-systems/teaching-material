@@ -22,7 +22,10 @@ The usage depends on the context.
 
 == Example
 
-<pre><code data-source="chapters/shared/code/conversion-patterns/1.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./1.rs[]
+----
 
 == What does `try!` or `?` do in detail?
 
@@ -37,7 +40,10 @@ Reference-to-reference-conversion. Indicates that a type can easily produce refe
 
 == Example
 
-<pre><code data-source="chapters/shared/code/conversion-patterns/3.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./3.rs[]
+----
 
 == `Borrow<T>` and `BorrowMut<T>`
 

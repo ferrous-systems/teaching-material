@@ -9,4 +9,5 @@
 * link:./basic-types.html[Basic Types]
 * link:./data-structures.html[Data Structures]
 * link:./functions.html[Functions]
+* link:./generics-basics.html[Basic Generics]
 * link:./cargo.html[Cargo]

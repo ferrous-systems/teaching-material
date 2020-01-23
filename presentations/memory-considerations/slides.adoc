@@ -10,7 +10,10 @@ link:./index.html[Table of Contents]
 
 `size_of` and `size_of_val` help to inspect the size of a type (in bytes).
 
-<pre><code data-source="chapters/shared/code/memory-considerations/1.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./1.rs[]
+----
 
 == Sizedness
 
@@ -22,19 +25,28 @@ Unsized types *must* be addressed through indirection (e.g. through borrows).
 
 Structs have the size of their contained values.
 
-<pre><code data-source="chapters/shared/code/memory-considerations/2.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./2.rs[]
+----
 
 == References
 
 References have the size of 1 `usize`. The same is true for simple boxes.
 
-<pre><code data-source="chapters/shared/code/memory-considerations/3.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./3.rs[]
+----
 
 == Trait Objects
 
 Trait objects need 2 `usize`.
 
-<pre><code data-source="chapters/shared/code/memory-considerations/4.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./4.rs[]
+----
 
 == Slices
 
@@ -56,7 +68,10 @@ They behave the same as slices and vectors.
 
 Enums need the size of their largest value, 1 byte for a discriminant, plus padding.
 
-<pre><code data-source="chapters/shared/code/memory-considerations/7.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./7.rs[]
+----
 
 ---
 

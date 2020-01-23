@@ -12,19 +12,28 @@ Rust defaults to allocation on the stack
 
 == Stack Allocation
 
-<pre><code data-source="chapters/shared/code/stack-and-heap/1.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./1.rs[]
+----
 
 == Box
 
 Heap allocation is represented by the type `Box`.
 
-<pre><code data-source="chapters/shared/code/stack-and-heap/2.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./2.rs[]
+----
 
 == Ownership and Borrowing
 
 `Box` is owned, but you can borrow the contained values.
 
-<pre><code data-source="chapters/shared/code/stack-and-heap/3.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./3.rs[]
+----
 
 == Other heap allocations
 

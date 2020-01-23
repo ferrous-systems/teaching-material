@@ -29,7 +29,10 @@ When seeking to optimize code other options may be appropriate.
 
 Calling `.entry()` on a `HashMap` accesses this API and allows for 'insert or update' access.
 
-<pre><code data-source="chapters/shared/code/std-lib-tour/1.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./1.rs[]
+----
 
 == PhantomData
 
@@ -37,7 +40,10 @@ Calling `.entry()` on a `HashMap` accesses this API and allows for 'insert or up
 
 Zero-sized type used to mark things that "act like" they own a `T`. These are useful for types which require markers, generics, or use unsafe code.
 
-<pre><code data-source="chapters/shared/code/std-lib-tour/2.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./2.rs[]
+----
 
 == Command
 
@@ -45,7 +51,10 @@ Zero-sized type used to mark things that "act like" they own a `T`. These are us
 
 A process builder, providing fine-grained control over how a new process should be spawned. Used for interacting with other executables.
 
-<pre><code data-source="chapters/shared/code/std-lib-tour/3.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./3.rs[]
+----
 
 == Syncronization Primitives
 
@@ -53,7 +62,10 @@ A process builder, providing fine-grained control over how a new process should 
 
 Provides types such a `Mutex`, `RwLock`, `CondVar`, `Arc` and `Barrier`s.
 
-<pre><code data-source="chapters/shared/code/std-lib-tour/4.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./4.rs[]
+----
 
 == Read and Write
 
@@ -61,7 +73,10 @@ Provides types such a `Mutex`, `RwLock`, `CondVar`, `Arc` and `Barrier`s.
 
 Generic read and write functionality to files, sockets, buffers, and anything in between. Also part of [`std::io::prelude`]([`std::io::prelude::*`](https://doc.rust-lang.org/std/io/prelude/).
 
-<pre><code data-source="chapters/shared/code/std-lib-tour/5.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./5.rs[]
+----
 
 == Filesystem Manipulation
 
@@ -69,4 +84,7 @@ Generic read and write functionality to files, sockets, buffers, and anything in
 
 Path handling and file manipulation.
 
-<pre><code data-source="chapters/shared/code/std-lib-tour/6.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./6.rs[]
+----

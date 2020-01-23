@@ -31,7 +31,7 @@ for chapter in (dest / 'presentations').iterdir():
     slides = chapter / 'slides.adoc'
     old = open(slides).read()
     new = re.sub(
-        r'<pre><code data-source="chapters/shared/code/.*/(.*)" data-trim="hljs rust"></code></pre>',
+        r'<pre><code data-source="chapters/shared/code/.*/(.*)" data-trim="hljs rust" class="lang-rust"></code></pre>',
         "[source,rust]\n----\ninclude::./\\1[]\n----",
         old
     )

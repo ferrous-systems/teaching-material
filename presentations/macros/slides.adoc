@@ -45,7 +45,10 @@ A macro has three parts.
 
 Let's see how they look:
 
-<pre><code data-source="chapters/shared/code/macros/1.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./1.rs[]
+----
 
 == Macros: Syntax
 
@@ -65,7 +68,10 @@ Both in the input and output.
 
 == Macros: Repetitions
 
-<pre><code data-source="chapters/shared/code/macros/2.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./2.rs[]
+----
 
 == Macros: Repetitions
 
@@ -77,7 +83,10 @@ Each repetition in the input should have a matching one in the output.
 
 == Macros: Custom Syntax
 
-<pre><code data-source="chapters/shared/code/macros/3.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./3.rs[]
+----
 
 == Macros: Custom Syntax
 

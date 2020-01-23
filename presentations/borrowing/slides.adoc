@@ -22,7 +22,10 @@ Let's borrow instead!
 
 ---
 
-<pre><code data-source="chapters/shared/code/borrowing/1.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./1.rs[]
+----
 
 ---
 
@@ -38,7 +41,10 @@ What if we want to change the value?
 
 ---
 
-<pre><code data-source="chapters/shared/code/borrowing/2.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./2.rs[]
+----
 
 ---
 
@@ -77,4 +83,7 @@ It follows:
 
 That means that we need to dereference them from time to time.
 
-<pre><code data-source="chapters/shared/code/borrowing/4.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./4.rs[]
+----

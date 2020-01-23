@@ -28,7 +28,10 @@ These rules:
 
 == Example
 
-<pre><code data-source="chapters/shared/code/ownership/1.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./1.rs[]
+----
 
 ---
 
@@ -40,7 +43,10 @@ What happens if we try to use `dot` a second time?
 
 ---
 
-<pre><code data-source="chapters/shared/code/ownership/2.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./2.rs[]
+----
 
 == Oops!
 
@@ -60,7 +66,10 @@ What, if that behaviour is unwanted? We can create a second copy of the data!
 
 ---
 
-<pre><code data-source="chapters/shared/code/ownership/3.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./3.rs[]
+----
 
 ---
 
@@ -72,7 +81,10 @@ Cloning is a general operation that - depending on the complexity of the data at
 
 == Working with moves: copy instead of move
 
-<pre><code data-source="chapters/shared/code/ownership/4.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./4.rs[]
+----
 
 ---
 

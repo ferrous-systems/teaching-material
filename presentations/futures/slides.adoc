@@ -26,7 +26,10 @@ They feel like a channel to use, even coming with a `tx` and `rx` pair.
 
 == You've got oneshot
 
-<pre><code data-source="chapters/shared/code/futures/1.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./1.rs[]
+----
 
 == You've got oneshot
 
@@ -36,11 +39,17 @@ There is **no** implicit threading, calling `rx.wait()` blocks the thread until 
 
 == You've got oneshot (threads)
 
-<pre><code data-source="chapters/shared/code/futures/2.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./2.rs[]
+----
 
 == Multiple oneshots
 
-<pre><code data-source="chapters/shared/code/futures/3.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./3.rs[]
+----
 
 == 57 channels (and nothing on)
 
@@ -52,7 +61,10 @@ An `futures::sync::mpsc` represents a channel that will yield a series of future
 
 == 57 channels (and nothing on)
 
-<pre><code data-source="chapters/shared/code/futures/4.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./4.rs[]
+----
 
 == Toes in the CPU pool
 
@@ -62,7 +74,10 @@ This allows for us to dispatch arbitrary (heterogeneous!) jobs to a pool without
 
 == Toes in the CPU pool
 
-<pre><code data-source="chapters/shared/code/futures/5.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./5.rs[]
+----
 
 == Interacting with futures
 

@@ -14,7 +14,10 @@ Therefore they will be covered fully in a separate section later.
 
 == Strings Without Thinking
 
-<pre><code data-source="chapters/shared/code/little-helpers/1.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./1.rs[]
+----
 
 == Code Style
 
@@ -24,7 +27,10 @@ Therefore they will be covered fully in a separate section later.
 
 == println!()
 
-<pre><code data-source="chapters/shared/code/little-helpers/2.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./2.rs[]
+----
 
 == Use Ownership, Luke!
 
@@ -34,9 +40,15 @@ We will use for the first steps:
 -   `Vec<T>` (Vectors)
 -   Plain `struct`s
 
-<pre><code data-source="chapters/shared/code/little-helpers/3.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./3.rs[]
+----
 
 == \#\[derive(Debug)\]
 
-<pre><code data-source="chapters/shared/code/little-helpers/4.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./4.rs[]
+----
 Works for all data structures.

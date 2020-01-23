@@ -26,45 +26,69 @@ Rusts iterators are:
 
 Iterators can be manually progressed:
 
-<pre><code data-source="chapters/shared/code/iterators/1.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./1.rs[]
+----
 
 == `map()`
 
 Transform items as they are evaluated:
 
-<pre><code data-source="chapters/shared/code/iterators/2.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./2.rs[]
+----
 
 == `filter()`
 
 Filter out unwanted values, skipping further computation on them:
 
-<pre><code data-source="chapters/shared/code/iterators/3.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./3.rs[]
+----
 
 == `fold()`
 
 Reduce a sequence of values down to a single value:
 
-<pre><code data-source="chapters/shared/code/iterators/4.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./4.rs[]
+----
 
 == `cycle()` & `take()`
 
 Cause iterators to repeat, and end early:
 
-<pre><code data-source="chapters/shared/code/iterators/5.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./5.rs[]
+----
 
 == `zip()` & `unzip()`
 
 Join iterators, and split them apart again:
 
-<pre><code data-source="chapters/shared/code/iterators/6.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./6.rs[]
+----
 
 == `max()` & `min()`
 
-<pre><code data-source="chapters/shared/code/iterators/7.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./7.rs[]
+----
 
 == Gotcha
 
 This doesn't work:
 
-<pre><code data-source="chapters/shared/code/iterators/8.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./8.rs[]
+----
 Why? (Think about scoping & ownership!)

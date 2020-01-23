@@ -47,7 +47,10 @@ async-await was stabilized yesterday
 
 == What are Futures?
 
-<pre><code data-source="chapters/shared/code/async-await/1.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./1.rs[]
+----
 
 == Futures
 
@@ -60,11 +63,17 @@ async-await was stabilized yesterday
 
 ==
 
-<pre><code data-source="chapters/shared/code/async-await/2.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./2.rs[]
+----
 
 == async-await functions and Futures
 
-<pre><code data-source="chapters/shared/code/async-await/3.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./3.rs[]
+----
 
 == Async blocks
 
@@ -73,7 +82,10 @@ async-await was stabilized yesterday
 
 ---
 
-<pre><code data-source="chapters/shared/code/async-await/4.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./4.rs[]
+----
 
 == Cold Futures
 
@@ -82,7 +94,10 @@ async-await was stabilized yesterday
 
 == Tasks
 
-<pre><code data-source="chapters/shared/code/async-await/5.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./5.rs[]
+----
 
 == Tasks
 

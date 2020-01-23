@@ -34,7 +34,10 @@ This is called property testing
 
 == Crate: **proptest**
 
-<pre><code data-source="chapters/shared/code/proptest/1.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./1.rs[]
+----
 
 == Crate: **proptest**
 
@@ -50,17 +53,26 @@ Wonderful for testing codecs, serialization,
 compression, or any set of operations that
 should retain equality.
 
-<pre><code data-source="chapters/shared/code/proptest/4.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./4.rs[]
+----
 
 ---
 
 It's easy to generate more structured input, too
 
-<pre><code data-source="chapters/shared/code/proptest/5.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./5.rs[]
+----
 
 == Configuration is a great target
 
-<pre><code data-source="chapters/shared/code/proptest/6.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./6.rs[]
+----
 
 == Miscellaneous Tips
 

@@ -16,7 +16,10 @@ Any function with known error conditions returns a `Result<T,E>`.
 
 ---
 
-<pre><code data-source="chapters/shared/code/error-handling/1.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./1.rs[]
+----
 
 == Results Must Be Used
 
