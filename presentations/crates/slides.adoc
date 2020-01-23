@@ -6,7 +6,7 @@
 link:./index.html[Table of Contents]
 
 
----
+== !
 
 Rust calls libraries `crates`. Management of crates is generally done through `cargo`, but this is not strictly necessary.
 
@@ -21,7 +21,7 @@ include::./0.rs[]
 
 This imports the "SERialisation/DEserialisation"-Framework.
 
----
+== !
 
 In Rust 2018 this is no longer required. 
 Libraries that were declared via cargo can simply be used with `use`-statements.
@@ -44,7 +44,7 @@ include::./2.rs[]
 
 You might still encounter older Rust code which relies on `#[macro_use]`
 
----
+== !
 
 Crates can be renamed, just like normal use statements:
 
@@ -55,7 +55,7 @@ include::./3.rs[]
 
 Note the `crate` keyword before it's usage. You're using a local alias. The original still exists.
 
----
+== !
 
 Alternative: rename dependencies via cargo:
 

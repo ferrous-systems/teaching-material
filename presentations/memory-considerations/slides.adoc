@@ -6,7 +6,7 @@
 link:./index.html[Table of Contents]
 
 
----
+== !
 
 `size_of` and `size_of_val` help to inspect the size of a type (in bytes).
 
@@ -73,7 +73,7 @@ Enums need the size of their largest value, 1 byte for a discriminant, plus padd
 include::./7.rs[]
 ----
 
----
+== !
 
 If 0 is not a legal value, Option uses this as a the `None`-Case.
 

@@ -5,13 +5,13 @@
 
 link:./index.html[Table of Contents]
 
----
+== !
 
 Rusts type system provides many guarantees, but sometimes, they make specific solutions hard or impossible.
 
 For that reason, Rust has the concept of "unsafe code".
 
----
+== !
 
 Unsafe code is allowed to:
 -   freely access memory
@@ -20,14 +20,14 @@ Unsafe code is allowed to:
 -   declare values `Send` and `Sync`
 -   write to unsynced global variables
 
----
+== !
 
 Not unsafe are:
 
 -   conversion to raw pointers
 -   memory leaks
 
----
+== !
 
 Unsafe code should never:
 
@@ -41,7 +41,7 @@ When implementing data structures, unsafe isn't unusual.
 
 Safe Rust is the worst language to implement linked lists. There's a full [text on this](https://rust-unofficial.github.io/too-many-lists/)
 
----
+== !
 
 Unsafe code must *always* be marked `unsafe`.
 
@@ -57,7 +57,7 @@ include::./1.rs[]
 -   `unsafe` can lead to a value having 2 owners -&gt; double free
 -   `unsafe` can make immutable data temporarily mutable, which will lead to broken promises and tears.
 
----
+== !
 
 Rust allows you to shoot yourself in the foot, it just requires you to take your gun out of the holster and remove the safety first.
 

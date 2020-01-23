@@ -6,7 +6,7 @@
 link:./index.html[Table of Contents]
 
 
----
+== !
 
 There are two special traits in Rust for concurrency semantics.
 
@@ -14,7 +14,7 @@ There are two special traits in Rust for concurrency semantics.
 -   `Sync` marks a structure safe to *share* between threads.
     -   (`&T` is `Send`)
 
----
+== !
 
 These traits are what Rust uses to prevent data races.
 
@@ -27,7 +27,7 @@ They are *automatically derived* for all types if appropriate.
 include::./1.rs[]
 ----
 
----
+== !
 
 There are some notable types which are not `Send` or `Sync`.
 

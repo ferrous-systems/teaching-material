@@ -6,7 +6,7 @@
 link:./index.html[Table of Contents]
 
 
----
+== !
 
 Testing is fundamental to Rust.
 

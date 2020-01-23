@@ -18,7 +18,7 @@ Moving data out of collections is not easy, if you don't immediately place anoth
 
 Indiana Jones uses `std::mem::swap` or `std::mem::replace`.
 
----
+== !
 
 In some cases, `Drain` can be used, an iterator that drains values one-by-one from a collection and shrinks it at the same time.
 
@@ -47,7 +47,7 @@ Avoid passing around generic parameters that can be evaluated to a specific type
 include::./1.rs[]
 ----
 
----
+== !
 
 [source,rust]
 ----

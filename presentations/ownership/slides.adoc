@@ -6,7 +6,7 @@
 link:./index.html[Table of Contents]
 
 
----
+== !
 
 Ownership is the basis for the memory management of Rust.
 
@@ -18,7 +18,7 @@ Ownership is the basis for the memory management of Rust.
 -   The owner has all powers over the data and can mutate it
 
 
----
+== !
 
 These rules:
 
@@ -33,15 +33,15 @@ These rules:
 include::./1.rs[]
 ----
 
----
+== !
 
 <pre class="diagram" data-source="chapters/shared/diagram/ownership/1.diagram"></pre>
 
----
+== !
 
 What happens if we try to use `dot` a second time?
 
----
+== !
 
 [source,rust]
 ----
@@ -50,7 +50,7 @@ include::./2.rs[]
 
 == Oops!
 
----
+== !
 
 In Rust-Lingo, this is called `consuming`. `pacman` consumes `dot`.
 
@@ -64,18 +64,18 @@ When calling `pacman` with `dot`, the value is "moved" into the arguments of `pa
 
 What, if that behaviour is unwanted? We can create a second copy of the data!
 
----
+== !
 
 [source,rust]
 ----
 include::./3.rs[]
 ----
 
----
+== !
 
 <pre class="diagram" data-source="chapters/shared/diagram/ownership/2.diagram"></pre>
 
----
+== !
 
 Cloning is a general operation that - depending on the complexity of the data at hand - can be costly.
 
@@ -86,16 +86,16 @@ Cloning is a general operation that - depending on the complexity of the data at
 include::./4.rs[]
 ----
 
----
+== !
 
 Copy is meant for data that can be quickly copied in memory (using memcopy) and are allowed to be copied (e.g.: not File pointers).
 
 
----
+== !
 
 Values that are copy follow the standard ownership rules, but they are copied when ownership is passed on.
 
----
+== !
 
 # Warning
 
@@ -119,7 +119,7 @@ What would happen if we use could use File after calling `use_file`?
 include::./6.rs[]
 ----
 
----
+== !
 
 [source,rust]
 ----

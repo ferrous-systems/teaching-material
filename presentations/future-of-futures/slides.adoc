@@ -6,13 +6,13 @@
 link:./index.html[Table of Contents]
 
 
----
+== !
 
 Hurry up and wait
 
 `async` & `await`
 
----
+== !
 
 Future = asynchronous computation
 
@@ -20,23 +20,23 @@ Future = asynchronous computation
 * Message from another thread or computer
 * Chained operations
 
----
+== !
 
 Rust has no implicit runtime event loop (like i.e. node.js)
 
 == Layers of abstractions
 
----
+== !
 
 `Future<T>` and `Poll<T>`
 
 Part of `libcore` and `libstd`
 
----
+== !
 
 `futures-rs` abstraction crate on top of those
 
----
+== !
 
 `tokio` abstraction crate provides event-loop
 
@@ -44,21 +44,21 @@ Part of `libcore` and `libstd`
 
 Requires nightly and `futures_api` feature-flag
 
----
+== !
 
 [source,rust]
 ----
 include::./1.rs[]
 ----
 
----
+== !
 
 [source,rust]
 ----
 include::./2.rs[]
 ----
 
----
+== !
 
 Most futures won't be ready immediately.
 
@@ -66,13 +66,13 @@ Instead return `Poll::Pending` until ready.
 
 `poll()` future from event-loop.
 
----
+== !
 
 ![](img/futures-rs-logo.svg)
 
 `futures-rs` to the rescue
 
----
+== !
 
 There's `oneshot`
 
@@ -81,7 +81,7 @@ There's `oneshot`
 include::./3.rs[]
 ----
 
----
+== !
 
 And combinators on futures
 
@@ -96,7 +96,7 @@ include::./4.rs[]
 
 `tokio-rs` to the rescue
 
----
+== !
 
 `tokio` provides an async-executor and runtime
 
@@ -117,7 +117,7 @@ include::./5.rs[]
 
 <small>* (ish)</small>
 
----
+== !
 
 [source,rust]
 ----

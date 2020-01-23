@@ -46,7 +46,7 @@ The versions of the toolchain are quite important. Verify there are no errors ru
 
 <pre><code data-source="chapters/shared/code/wasm/3.bash" data-trim="hljs bash"></code></pre>
 
----
+== !
 
 # Standalone Executable
 
@@ -85,7 +85,7 @@ Running `python -m SimpleHTTPServer` or equivalent, browsing to `localhost:8000/
 
 <pre><code data-source="chapters/shared/code/wasm/10.output" data-trim="hljs bash"></code></pre>
 
----
+== !
 
 # Rust from JS
 
@@ -128,7 +128,7 @@ Running `python -m SimpleHTTPServer` or equivalent, browsing to `localhost:8000/
 
 <pre><code data-source="chapters/shared/code/wasm/15.output" data-trim="hljs bash"></code></pre>
 
----
+== !
 
 # JS from Rust
 

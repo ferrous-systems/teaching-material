@@ -6,7 +6,7 @@
 link:./index.html[Table of Contents]
 
 
----
+== !
 
 Rust defaults to allocation on the stack
 
@@ -45,6 +45,6 @@ It is currently *not* possible to allocate values at a self-chosen location. The
 
 [Detailed discussion here](https://internals.rust-lang.org/t/lang-team-minutes-feature-status-report-placement-in-and-box/4646)
 
----
+== !
 
 In most cases, LLVM already optimizes the stack allocation and the subsequent move to the heap to a direct heap allocation.

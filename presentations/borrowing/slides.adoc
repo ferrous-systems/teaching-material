@@ -8,45 +8,45 @@ link:./index.html[Table of Contents]
 
 == What you own, you can borrow
 
----
+== !
 
 Ownership provides a solid semantic base, but becomes impractical in for the long run.
 
----
+== !
 
 Reuse of data after a function call is not possible with ownership if the called function doesn't return the ownership to the value again.
 
----
+== !
 
 Let's borrow instead!
 
----
+== !
 
 [source,rust]
 ----
 include::./1.rs[]
 ----
 
----
+== !
 
 <pre class="diagram" data-source="chapters/shared/diagram/borrowing/1.diagram"></pre>
 
----
+== !
 
 Simple borrowing can happen as often as you want.
 
----
+== !
 
 What if we want to change the value?
 
----
+== !
 
 [source,rust]
 ----
 include::./2.rs[]
 ----
 
----
+== !
 
 Mutable borrows are exclusive!
 
@@ -59,7 +59,7 @@ Values can be:
 
 Ownership remains in the calling context, as well as the deallocation.
 
----
+== !
 
 What does this save us from?
 
@@ -70,7 +70,7 @@ What does this save us from?
 include::./3.rs[]
 ----
 
----
+== !
 
 It follows:
 

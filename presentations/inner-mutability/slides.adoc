@@ -6,7 +6,7 @@
 link:./index.html[Table of Contents]
 
 
----
+== !
 
 In Rust, values are immutable by default.
 
@@ -14,7 +14,7 @@ We can make them mutable with the `mut` keyword.
 
 What if we want just partial mutability? Can we do this?
 
----
+== !
 
 Of course we can!
 
@@ -55,7 +55,7 @@ Let's see our previous example with `Cell`.
 
 <pre><code data-source="chapters/shared/code/inner-mutability/5.rs" data-trim="hljs rust"  class="lang-rust"></code></pre>
 
----
+== !
 
 > ...interior mutability is something of a last resort.
 

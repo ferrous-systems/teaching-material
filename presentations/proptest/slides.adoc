@@ -23,12 +23,12 @@ Don't write tests
 
 Write expectations
 
----
+== !
 
 -   Have the machine generate random test cases
 -   Make beliefs explicit, force them to pay rent
 
----
+== !
 
 This is called property testing
 
@@ -47,7 +47,7 @@ include::./1.rs[]
 
 <pre><code data-source="chapters/shared/code/proptest/3.txt" data-trim="hljs bash" class="lang-bash"></code></pre>
 
----
+== !
 
 Wonderful for testing codecs, serialization,
 compression, or any set of operations that
@@ -58,7 +58,7 @@ should retain equality.
 include::./4.rs[]
 ----
 
----
+== !
 
 It's easy to generate more structured input, too
 
@@ -81,6 +81,6 @@ include::./6.rs[]
 -   Try not to use unwrap() everywhere, at least use expect("helpful message") to speed up debugging
 -   When propagating errors, include context that helps you get back to the root
 
----
+== !
 
 Try it out!

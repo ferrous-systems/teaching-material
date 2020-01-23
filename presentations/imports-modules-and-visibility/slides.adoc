@@ -67,13 +67,13 @@ include::./6.rs[]
 
 The module system of Rust is similar to Python.
 
----
+== !
 
 -   every source file is a module
 -   submodules can be in the same file or in another
 -   libraries are called "crates" and contain modules
 
----
+== !
 
 By convention, the root module of a library is found in `src/lib.rs`.
 
@@ -112,7 +112,7 @@ Or declare a module via `mod.rs`
 include::./9.rs[]
 ----
 
----
+== !
 
 In both cases, the module must be registered with the root module.
 
@@ -121,7 +121,7 @@ In both cases, the module must be registered with the root module.
 include::./10.rs[]
 ----
 
----
+== !
 
 With the last approach, you can create additional modules relative to `mod.rs`.
 
@@ -138,7 +138,7 @@ Public types and functions that can be reached through a public module path are 
 include::./11.rs[]
 ----
 
----
+== !
 
 Traits must be public and imported before use.
 
@@ -150,21 +150,21 @@ Structs are a little more complex. They don't export fields, which makes their u
 
 Also, struct functions are not exported by default.
 
----
+== !
 
 [source,rust]
 ----
 include::./12.rs[]
 ----
 
----
+== !
 
 [source,rust]
 ----
 include::./13.rs[]
 ----
 
----
+== !
 
 In general, exporting fields should be avoided:
 

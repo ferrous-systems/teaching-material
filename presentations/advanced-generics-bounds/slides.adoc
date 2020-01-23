@@ -6,17 +6,17 @@
 link:./index.html[Table of Contents]
 
 
----
+== !
 
 Sometimes, we want to constrain a type to certain aspects, while still writing generic code.
 
 To achieve this, we can constrain type parameters.
 
----
+== !
 
 This can happen at any point where type parameters are used.
 
----
+== !
 
 Example: `println("{:?}")` requires Debug
  
@@ -25,7 +25,7 @@ Example: `println("{:?}")` requires Debug
 include::./1.rs[]
 ----
 
----
+== !
 
 Example: A generic Struct that requires inner values to implement `Debug`
 
@@ -34,7 +34,7 @@ Example: A generic Struct that requires inner values to implement `Debug`
 include::./2.rs[]
 ----
 
----
+== !
 
 Bounds can also be expressed for implementation targets:
 
@@ -43,7 +43,7 @@ Bounds can also be expressed for implementation targets:
 include::./3.rs[]
 ----
 
----
+== !
 
 Traits can also directly require prerequisites:
 
@@ -52,7 +52,7 @@ Traits can also directly require prerequisites:
 include::./4.rs[]
 ----
 
----
+== !
 
 Rust does not allow negative Bounds (Trait A and *not* Trait B)
 
@@ -65,11 +65,11 @@ If not specified otherwise, all type parameters carry the bound `Sized` (the typ
 include::./5.rs[]
 ----
 
----
+== !
 
 This has ergonomic reasons, as passing types by value is common and requires a known size.
 
----
+== !
 
 Bounds can be used everywhere, which can be used to de-facto constrain types at the call site.
 
@@ -78,11 +78,11 @@ Bounds can be used everywhere, which can be used to de-facto constrain types at 
 include::./6.rs[]
 ----
 
----
+== !
 
 This can be very practical, as this allows expressing different bounds during construction and at call sites.
 
----
+== !
 
 Bounds are very common in conversion functions.
 

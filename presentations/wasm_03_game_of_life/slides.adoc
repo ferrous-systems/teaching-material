@@ -6,15 +6,15 @@
 link:./index.html[Table of Contents]
 
 
----
+== !
 
 Conveys Game of life - The Rules.
 
----
+== !
 
 Design Decisions ?
 
----
+== !
 
 
 A type definition for cells: Enums
@@ -24,7 +24,7 @@ A type definition for cells: Enums
 include::./03_game_of_life/4.rs[]
 ----
 
----
+== !
 
 
 Type definition for the universe: structs
@@ -34,7 +34,7 @@ Type definition for the universe: structs
 include::./03_game_of_life/5.rs[]
 ----
 
----
+== !
 
 
 implement the universe
@@ -44,4 +44,4 @@ implement the universe
 include::./03_game_of_life/5.rs[]
 ----
 
----
+== !

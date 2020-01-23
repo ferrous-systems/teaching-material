@@ -12,17 +12,17 @@ What is coming in the near future for Rust?
 
 == Rust 2018
 
----
+== !
 
 At the end of 2018 the culmination of feature stabilization throughout the year was released as `Rust 2018`
 
----
+== !
 
 Languages change over time.
 
 But stability and backwards compatibility are fundamental.
 
----
+== !
 
 Making core changes to the language without breaking *any* existing code.
 
@@ -76,7 +76,7 @@ Unamed types that implement a specific trait vs dynamic trait objects
 include::./6.rs[]
 ----
 
----
+== !
 
 `dyn Trait` is the new syntax for trait objects.
 

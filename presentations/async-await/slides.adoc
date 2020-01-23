@@ -80,7 +80,7 @@ include::./3.rs[]
 * Async blocks are blocks that get transformed into futures
 * `await` can only be called in async contexts
 
----
+== !
 
 [source,rust]
 ----

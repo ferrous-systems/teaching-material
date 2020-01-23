@@ -6,7 +6,7 @@
 link:./index.html[Table of Contents]
 
 
----
+== !
 
 What happens in detail when values drop?
 
@@ -29,7 +29,7 @@ Sometimes, certain actions must be taken before deallocation.
 
 For this, the `Drop` trait can be implemented.
 
----
+== !
 
 [source,rust]
 ----
@@ -55,7 +55,7 @@ Rust also has another error mechanism: `panic!`
 include::./2.rs[]
 ----
 
----
+== !
 
 In case of a panic, the following happens:
 
@@ -63,7 +63,7 @@ In case of a panic, the following happens:
 * The stack is unwound
 * All affected values are dropped and their destructors run
 
----
+== !
 
 Panics are implementation-wise similar to C++-Exceptions, but should only be used for fatal errors. They cannot be (normally) caught.
 
@@ -77,7 +77,7 @@ Panicing across FFI-boundaries is undefined behaviour. In these cases, panics _m
 
 [std::panic::set\_hook](https://doc.rust-lang.org/std/panic/fn.set_hook.html) allows setting a global handler that is run *before* the unwinding happens.
 
----
+== !
 
 In general, `Result` is always the right way to propagate errors if they are to be handled.
 

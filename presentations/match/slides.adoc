@@ -6,11 +6,11 @@
 link:./index.html[Table of Contents]
 
 
----
+== !
 
 To check variants of enums, `match` is used.
 
----
+== !
 
 [source,rust]
 ----
@@ -24,14 +24,14 @@ include::./1.rs[]
 include::./2.rs[]
 ----
 
----
+== !
 
 [source,rust]
 ----
 include::./3.rs[]
 ----
 
----
+== !
 
 Matches must cover all variants!
 
@@ -40,7 +40,7 @@ Matches must cover all variants!
 <pre><code data-source="chapters/shared/code/match/4.rs" data-trim="hljs rust"
 class="lang-rust"></code></pre>
 
----
+== !
 
 Results carry a special marker: they must not be ignored!
 
@@ -52,7 +52,7 @@ include::./5.rs[]
 
 Solution: match or pass on.
 
----
+== !
 
 `match` does not only work on enums:
 
@@ -61,7 +61,7 @@ Solution: match or pass on.
 include::./6.rs[]
 ----
 
----
+== !
 
 `match` and `if` expressions:
 
@@ -69,4 +69,3 @@ include::./6.rs[]
 ----
 include::./7.rs[]
 ----
-

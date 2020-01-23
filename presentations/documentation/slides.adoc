@@ -95,7 +95,7 @@ This command builds and opens the docs to your current project:
 $ cargo doc --open
 ```
 
----
+== !
 
 ```sh
 $ cargo doc --document-private-items --open

@@ -6,7 +6,7 @@
 link:./index.html[Table of Contents]
 
 
----
+== !
 
 Sometimes, we want to take the decision of which implementation to use at runtime instead of letting the compiler monomorphize the code.
 

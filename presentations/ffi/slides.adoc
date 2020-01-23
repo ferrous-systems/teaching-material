@@ -12,21 +12,21 @@ link:./index.html[Table of Contents]
 
 *» efficient C bindings «*
 
----
+== !
 
 Rust ABI is *not* stable.
 
----
+== !
 
 Rust supports the platform-ABI.
 
----
+== !
 
 Interact with shared/static libraries.
 
 Or _be_ one.
 
----
+== !
 
 *» efficient C bindings «*
 
@@ -40,7 +40,7 @@ There are no conversion costs
 
 Hello world from C
 
----
+== !
 
 Let's assume you _really_ want to use printf
 
@@ -157,7 +157,7 @@ Binding imagemagick to rust!
 include::./7.rs[]
 ----
 
----
+== !
 
 At this point including bindings is easy\*
 
@@ -189,7 +189,7 @@ include::./10.rs[]
 include::./11.rs[]
 ----
 
----
+== !
 
 **Structs with one field vanish at runtime.**
 
@@ -197,7 +197,7 @@ Isolates lifecycle management of the pointer from the rest of the code.
 
 == Using Rust from C
 
----
+== !
 
 Works simmilarly to what you've already seen.
 
@@ -209,7 +209,7 @@ Use platform-ABI in reverse – emit a native library
 
 <pre><code data-source="chapters/shared/code/ffi/12.toml" data-trim="hljs toml"></code></pre>
 
----
+== !
 
 Otherwise similar concept.
 
@@ -217,13 +217,13 @@ Otherwise similar concept.
 * `#[repr(C)]` structures/ enums.
 * Making data C compatible.
 
----
+== !
 
 <pre><code data-source="chapters/shared/code/ffi/13.rs" data-trim="hljs toml"></code></pre>
 
 <small>You saw the rest of the function earlier</small>
 
----
+== !
 
 Now what?
 
@@ -235,15 +235,15 @@ C code needs `.h` files to include – define Rust functions there.
 
 `cbindgen` is a great tool to auto-generate them.
 
----
+== !
 
 But: not required here, because plugin API is specified via weechat!
 
----
+== !
 
 <pre><code data-source="chapters/shared/code/ffi/14.rs" data-trim="hljs toml"></code></pre>
 
----
+== !
 
 Full code here: [spacekookie/weechat-rs](https://github.com/spacekookie/weechat-rs/tree/master/examples/hello_weechat)
 
@@ -251,8 +251,8 @@ Feel free to run, play, test, ...
 
 == Some things not covered
 
----
+== !
 
 
 
----
+== !

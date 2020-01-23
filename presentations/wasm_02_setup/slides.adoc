@@ -6,7 +6,7 @@
 link:./index.html[Table of Contents]
 
 
----
+== !
 
 Overview
 
@@ -20,7 +20,7 @@ http://rustup.rs/
 
 <pre><code data-source="chapters/shared/code/wasm_workshop/02_setup/01_important_commands.sh" data-trim="hljs sh"></code></pre>
 
----
+== !
 
 # First Steps
 
@@ -36,11 +36,11 @@ This loads the sources of the default library and documentation for completion a
 include::./02_setup/4.rs[]
 ----
 
----
+== !
 
 <pre><code data-source="chapters/shared/code/wasm_workshop/02_setup/5a.sh" data-trim="hljs sh"></code></pre>
 
----
+== !
 
 declaring of variables, scope,
 
@@ -79,7 +79,7 @@ New project name:
 * Use wasm-bindgen to generate the JavaScript API for using the Rust-generated WebAssembly
 
 
----
+== !
 
 What's inside pkg/?
 
@@ -90,20 +90,20 @@ What's inside pkg/?
 
 <pre><code data-source="chapters/shared/code/wasm_workshop/02_setup/08_npm_init_wasm.sh" data-trim="hljs sh"></code></pre>
 
----
+== !
 
 #What's inside www?
 
 <pre><code data-source="chapters/shared/code/wasm_workshop/02_setup/09_www.sh" data-trim="hljs sh"></code></pre>
 
 
----
+== !
 
 Install dependencies
 
 <pre><code data-source="chapters/shared/code/wasm_workshop/02_setup/10_npm_install.sh" data-trim="hljs sh"></code></pre>
 
----
+== !
 
 Using Local wasm-game-of-life Package in www
 
@@ -111,13 +111,13 @@ Using Local wasm-game-of-life Package in www
 
 <pre><code data-source="chapters/shared/code/wasm_workshop/02_setup/12_npm_link.sh" data-trim="hljs sh"></code></pre>
 
----
+== !
 
 Modify index.js to import wasm-game-of-life instead of the hello-wasm-pack package:
 
 <pre><code data-source="chapters/shared/code/wasm_workshop/02_setup/13_modify_index.js" data-trim="hljs js"></code></pre>
 
----
+== !
 
 The Web page is now ready to be served locally!
 
@@ -125,11 +125,11 @@ The Web page is now ready to be served locally!
 
 Navigate your Web browser to http://localhost:8080/
 
----
+== !
 
 Picture?
 
----
+== !
 
 Rust Syntax on Example
 
@@ -138,14 +138,14 @@ Rust Syntax on Example
 include::./02_setup/00_syntax_on_example.rs[]
 ----
 
----
+== !
 
 
 Rebuild the `.wasm` binary with `wasm-pack build`, refresh http://localhost:8080/
 
 <pre><code data-source="chapters/shared/code/wasm_workshop/02_setup/00_syntax_on_example.rs"></code></pre>
 
----
+== !
 
 Solution:
 
@@ -156,4 +156,4 @@ include::./02_setup/00_solution_lib.rs[]
 
 <pre><code data-source="chapters/shared/code/wasm_workshop/02_setup/00_index_.js" data-trim="hljs js"></code></pre>
 
----
+== !

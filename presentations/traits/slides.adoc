@@ -6,11 +6,11 @@
 link:./index.html[Table of Contents]
 
 
----
+== !
 
 Rust offers the possibility to bind functions to types.
 
----
+== !
 
 # Warning
 
@@ -67,15 +67,15 @@ include::./3.rs[]
 
 Traits are Rusts variant of abstracting over types.
 
----
+== !
 
 We've already met a trait: `Debug`.
 
----
+== !
 
 Traits define functions types must implement. They can then be used generically.
 
----
+== !
 
 [source,rust]
 ----
@@ -90,14 +90,14 @@ include::./4.rs[]
 
 Traits can have type parameters.
 
----
+== !
 
 [source,rust]
 ----
 include::./5.rs[]
 ----
 
----
+== !
 
 Working with generic traits is very usual.
 
@@ -120,7 +120,7 @@ include::./6.rs[]
 
 Associated types are generic parameters, but they are ignored during inference.
 
----
+== !
 
 [source,rust]
 ----
@@ -142,7 +142,7 @@ fn make_iter<'a>(v: &'a Vec<u8>) -> impl Iterator<Item=u8> + 'a {
 }
 ```
 
----
+== !
 
 ```rust
 fn main() {
@@ -156,12 +156,12 @@ fn double<'a>(i: impl Iterator<Item=&'a u8> + 'a) -> impl Iterator<Item=u8> + 'a
 }
 ```
 
----
+== !
 
 Limitations:
 * No `impl Trait` in trait methods
 
----
+== !
 
 ```rust
 trait Foo {}
