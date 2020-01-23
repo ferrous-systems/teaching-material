@@ -64,7 +64,7 @@ include::./4.rs[]
 
 == Toes in the CPU pool
 
-`futures-rs` comes with [`futures_cpupool`](https://docs.rs/futures-cpupool/0.1.7/futures_cpupool/) which provides a simple, easy to use CPU Pool type.
+`futures-rs` comes with https://docs.rs/futures-cpupool/0.1.7/futures_cpupool/[`futures_cpupool`] which provides a simple, easy to use CPU Pool type.
 
 This allows for us to dispatch arbitrary (heterogeneous!) jobs to a pool without worrying about where (and when) it gets executed.
 
