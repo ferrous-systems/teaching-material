@@ -6,13 +6,11 @@
 link:./index.html[Table of Contents]
 
 
----
+== !
 
 What is coming in the near future for Rust?
 
---
-
-# Rust 2018
+== Rust 2018
 
 ---
 
@@ -34,41 +32,29 @@ Changes are opt-in.
 
 == Some of the changes
 
----
-
-### Module system rework
+=== Module system rework
 
 <pre><code data-source="chapters/shared/code/outlook/1.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
 <pre><code data-source="chapters/shared/code/outlook/2.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
----
-
-### Path clarity
+=== Path clarity
 
 <pre><code data-source="chapters/shared/code/outlook/3.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
----
+=== No more `extern crate`
 
-### No more `extern crate`
-
----
-
-### `?` in `main()`
+=== `?` in `main()`
 
 <pre><code data-source="chapters/shared/code/outlook/4.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
----
-
-### Loops can `break` a value
+=== Loops can `break` a value
 
 <pre><code data-source="chapters/shared/code/outlook/5.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
----
+=== `impl Trait` vs `dyn Trait`
 
-### `impl Trait` vs `dyn Trait`
-
-Unamed types that implement a specific trait vs dynamic trait objects 
+Unamed types that implement a specific trait vs dynamic trait objects
 
 <pre><code data-source="chapters/shared/code/outlook/6.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
@@ -80,9 +66,7 @@ It turned out that the syntax `impl T` vs `T` was confusing and asymmetric.
 
 <pre><code data-source="chapters/shared/code/outlook/7.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
----
-
-### Many, many more things
+=== Many, many more things
 
 Too many too list. Here's a short list
 

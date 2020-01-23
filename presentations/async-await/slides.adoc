@@ -6,18 +6,14 @@
 link:./index.html[Table of Contents]
 
 
----
-
-# Welcome
+==  Welcome
 
 * Own your experience
 * Focus on understanding, not on the finish line
 * Feel free to code your own
 * Ask questions
 
----
-
-# Warning
+==  Warning
 
 async-await was stabilized yesterday
 * Use newest nightly!
@@ -25,8 +21,7 @@ async-await was stabilized yesterday
 
 == Agenda
 
----
-
+== !
 * Intro (30 min)
 * Coding (20 min)
 * Programming (20min)
@@ -63,7 +58,7 @@ async-await was stabilized yesterday
 
 == async-await functions and Futures
 
----
+==
 
 <pre><code data-source="chapters/shared/code/async-await/2.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
