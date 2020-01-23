@@ -15,63 +15,63 @@ Specific functionality will be covered later.
 
 [source,rust]
 ----
-include::1.rs[]
+include::./1.rs[]
 ----
 
 == `if`
 
 [source,rust]
 ----
-include::2.rs[]
+include::./2.rs[]
 ----
 
 == `match`
 
 [source,rust]
 ----
-include::3.rs[]
+include::./3.rs[]
 ----
 
 == `if let`
 
 [source,rust]
 ----
-include::4.rs[]
+include::./4.rs[]
 ----
 
 == `loop` and `while`
 
 [source,rust]
 ----
-include::5.rs[]
+include::./5.rs[]
 ----
 
 == `for` and `while let`
 
 [source,rust]
 ----
-include::6.rs[]
+include::./6.rs[]
 ----
 
 == `struct`, `type`, and `enum`
 
 [source,rust]
 ----
-include::7.rs[]
+include::./7.rs[]
 ----
 
 == `impl` and `trait`
 
 [source,rust]
 ----
-include::8.rs[]
+include::./8.rs[]
 ----
 
 == Borrowing
 
 [source,rust]
 ----
-include::9.rs[]
+include::./9.rs[]
 ----
 
 == Lifetimes
@@ -80,7 +80,7 @@ include::9.rs[]
 
 [source,rust]
 ----
-include::10.rs[]
+include::./10.rs[]
 ----
 
 == Scopes
@@ -89,21 +89,21 @@ Rust is block scoped. Scopes can return values.
 
 [source,rust]
 ----
-include::11.rs[]
+include::./11.rs[]
 ----
 
 == Closures
 
 [source,rust]
 ----
-include::12.rs[]
+include::./12.rs[]
 ----
 
 == Generics
 
 [source,rust]
 ----
-include::13.rs[]
+include::./13.rs[]
 ----
 
 Generally the `where` syntax is preferred.
@@ -112,7 +112,7 @@ Generally the `where` syntax is preferred.
 
 [source,rust]
 ----
-include::14.rs[]
+include::./14.rs[]
 ----
 
 == Attributes
@@ -121,7 +121,7 @@ Rust attributes are used for a number of different things. There is a full list 
 
 [source,rust]
 ----
-include::15.rs[]
+include::./15.rs[]
 ----
 
 == On Semicolons
@@ -130,5 +130,5 @@ A line without a semi-colon implictly returns. Don't worry, the compiler will te
 
 [source,rust]
 ----
-include::16.rs[]
+include::./16.rs[]
 ----

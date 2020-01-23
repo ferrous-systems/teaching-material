@@ -15,7 +15,7 @@ http://rustup.rs/
 
 [source,sh]
 ----
-include::1.sh[]
+include::./1.sh[]
 ----
 
 == Content of the Toolchain
@@ -32,7 +32,7 @@ The debugger installed is platform dependent.
 
 [source,sh]
 ----
-include::3.sh[]
+include::./3.sh[]
 ----
 
 The Rust compiler builds and links Rust code.
@@ -43,21 +43,21 @@ The Rust compiler builds and links Rust code.
 
 [source,sh]
 ----
-include::4.rs[]
+include::./4.rs[]
 ----
 
 == !
 
 [source,sh]
 ----
-include::5b.sh[]
+include::./5b.sh[]
 ----
 
 == Cargo
 
 [source,sh]
 ----
-include::6.sh[]
+include::./6.sh[]
 ----
 
 == !
@@ -70,7 +70,7 @@ Cargo is installed along with `rustc`, but is not tightly bound to a `rustc` ver
 
 [source,sh]
 ----
-include::7.sh[]
+include::./7.sh[]
 ----
 
 

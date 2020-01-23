@@ -113,19 +113,19 @@ Cargo knows 3 different kinds of dependencies:
 
 [source,toml]
 ----
-include::2.toml[]
+include::./2.toml[]
 ----
 
 == Dependencies in detail
 
 [source,toml]
 ----
-include::3.toml[]
+include::./3.toml[]
 ----
 
 [source,toml]
 ----
-include::4.toml[]
+include::./4.toml[]
 ----
 
 == Aside
@@ -138,7 +138,7 @@ It is possible to temporarily replace libraries though local ones. For this, the
 
 [source,toml]
 ----
-include::5.toml[]
+include::./5.toml[]
 ----
 
 Libraries found here will be preferred. This allows easy testing of patches.
@@ -166,7 +166,7 @@ See the http://doc.crates.io/manifest.html[manifest documentation] for details.
 
 [source,rust]
 ----
-include::6.rs[]
+include::./6.rs[]
 ----
 
 == !
@@ -175,7 +175,7 @@ These can be registered in `Cargo.toml`.
 
 [source,toml]
 ----
-include::7.toml[]
+include::./7.toml[]
 ----
 
 == !
@@ -184,7 +184,7 @@ And then be expressed on a dependency:
 
 [source,toml]
 ----
-include::8.toml[]
+include::./8.toml[]
 ----
 
 == Directly invoking `rustc`
