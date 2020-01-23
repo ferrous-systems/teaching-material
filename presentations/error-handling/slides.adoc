@@ -73,7 +73,10 @@ It's possible to change a `Result<T,E>` into a `Result<U,E>` without unwrapping 
 
 Transforming a `Result<T,E>` into a `Result<T,X>` is also possible.
 
-<pre class="diagram" data-source="chapters/shared/diagram/error-handling/1.diagram"></pre>
+[source]
+----
+include::./1.diagram[]
+----
 
 == Mapping Result Values
 
@@ -86,4 +89,3 @@ include::./7.rs[]
 == Reporting Errors Only
 
 If you only have to report an error, but don't have a meaningful return value, use `Result<(), Error>`.
-

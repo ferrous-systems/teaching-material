@@ -37,8 +37,10 @@ Matches must cover all variants!
 
 == Ignoring variants
 
-<pre><code data-source="chapters/shared/code/match/4.rs" data-trim="hljs rust"
-class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./4.rs[]
+----
 
 == !
 

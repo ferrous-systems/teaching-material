@@ -29,7 +29,10 @@ include::./1.rs[]
 
 == !
 
-<pre class="diagram" data-source="chapters/shared/diagram/borrowing/1.diagram"></pre>
+[source]
+----
+include::./1.diagram[]
+----
 
 == !
 

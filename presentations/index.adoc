@@ -11,4 +11,5 @@
 * link:./functions.html[Functions]
 * link:./generics-basics.html[Basic Generics]
 * link:./match.html[Match]
+* link:./ownership.html[Ownership]
 * link:./cargo.html[Cargo]

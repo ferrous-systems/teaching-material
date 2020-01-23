@@ -35,7 +35,10 @@ include::./1.rs[]
 
 == !
 
-<pre class="diagram" data-source="chapters/shared/diagram/ownership/1.diagram"></pre>
+[source]
+----
+include::./1.diagram[]
+----
 
 == !
 
@@ -73,7 +76,10 @@ include::./3.rs[]
 
 == !
 
-<pre class="diagram" data-source="chapters/shared/diagram/ownership/2.diagram"></pre>
+[source]
+----
+include::./2.diagram[]
+----
 
 == !
 
@@ -125,4 +131,3 @@ include::./6.rs[]
 ----
 include::./7.rs[]
 ----
-
