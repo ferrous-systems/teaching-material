@@ -1,0 +1,54 @@
+= Functions
+:revealjs_width: 1920
+:revealjs_height: 1080
+:source-highlighter: highlightjs
+
+link:./index.html[Table of Contents]
+
+== Declaration
+
+[source,rust]
+----
+include::./1.rs[]
+----
+
+== Arguments
+
+[source,rust]
+----
+include::./2.rs[]
+----
+
+== Returning
+
+Returning is optional. Signatures must be complete.
+
+[source,rust]
+----
+include::./3.rs[]
+----
+
+== Generic Functions
+
+Generic functions have type parameters.
+
+[source,rust]
+----
+include::./4.rs[]
+----
+
+== With Bounds
+
+Generic functions can also have bounds.
+
+These are equivalent:
+
+[source,rust]
+----
+include::./5.rs[]
+----
+
+== Remarks
+
+- Types which do not have the `Copy` trait are consumed when passed by value.
+- Returning references may involve clarifying lifetimes (discussed later.)

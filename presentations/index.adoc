@@ -8,4 +8,5 @@
 * link:./mutability.html[Mutability]
 * link:./basic-types.html[Basic Types]
 * link:./data-structures.html[Data Structures]
+* link:./functions.html[Functions]
 * link:./cargo.html[Cargo]
