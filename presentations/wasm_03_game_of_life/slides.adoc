@@ -18,7 +18,7 @@ A type definition for cells: Enums
 
 [source,rust]
 ----
-include::./03_game_of_life/4.rs[]
+include::./4.rs[]
 ----
 
 == !
@@ -28,7 +28,7 @@ Type definition for the universe: structs
 
 [source,rust]
 ----
-include::./03_game_of_life/5.rs[]
+include::./5.rs[]
 ----
 
 == !
@@ -38,7 +38,5 @@ implement the universe
 
 [source,rust]
 ----
-include::./03_game_of_life/5.rs[]
+include::./5.rs[]
 ----
-
-== !
