@@ -15,6 +15,7 @@
 * link:./ownership.html[Ownership]
 * link:./borrowing.html[Borrowing]
 * link:./stack-and-heap.html[Stack and Heap]
+* link:./error-handling.html[Error Handling]
 * link:./cargo.html[Cargo]
 
 .Advanced

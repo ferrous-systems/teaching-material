@@ -20,7 +20,10 @@ include::./1.rs[]
 
 == Results Must Be Used
 
-<pre><code data-source="chapters/shared/code/error-handling/2.output" data-trim="hljs output"></code></pre>
+[source]
+----
+include::./6.output[]
+----
 
 == Using Results With `match`
 
@@ -51,7 +54,11 @@ include::./5.rs[]
 
 Output:
 
-<pre><code data-source="chapters/shared/code/error-handling/6.output" data-trim="hljs output"></code></pre>
+[source,rust]
+----
+include::./6.output[]
+----
+
 Note the early exit.
 
 == Using `?` in `main`
