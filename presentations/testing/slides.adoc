@@ -33,7 +33,10 @@ include::./1.rs[]
 
 == Unit Tests
 
-<pre><code data-source="chapters/shared/code/testing/2.bash" data-trim="hljs bash"></code></pre>
+[source,bash]
+----
+include::./2.bash[]
+----
 
 == `tests` Submodule
 
@@ -50,7 +53,10 @@ include::./3.rs[]
 
 == `tests` Submodule
 
-<pre><code data-source="chapters/shared/code/testing/4.bash" data-trim="hljs bash"></code></pre>
+[source,bash]
+----
+include::./4.bash[]
+----
 
 == Documentation Tests
 
@@ -60,17 +66,22 @@ include::./3.rs[]
 
 == Documentation Tests
 
-<pre><code>
+[source,rust]
+----
 /// ```rust
 /// use example::Direction;
 /// let way_home = Direction::North;
 /// ```
 pub enum Direction { North, South, East, West }
-</code></pre>
+----
+
 
 == Documentation Tests
 
-<pre><code data-source="chapters/shared/code/testing/5.bash" data-trim="hljs bash"></code></pre>
+[source,bash]
+----
+include::./5.bash[]
+----
 
 == Integration Tests
 
@@ -79,13 +90,17 @@ pub enum Direction { North, South, East, West }
 
 == Integration Tests
 
-`/tests/basic.rs`:
-
+.`/tests/basic.rs`
 [source,rust]
 ----
 include::./6.rs[]
 ----
 
+<1> an callout
+
 == Integration Tests
 
-<pre><code data-source="chapters/shared/code/testing/7.bash" data-trim="hljs bash"></code></pre>
+[source,bash]
+----
+include::./7.bash[]
+----

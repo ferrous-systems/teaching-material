@@ -7,6 +7,7 @@ ATTRS="\
 --attribute=revealjs_height=1080 \
 --attribute=source-highlighter=highlightjs \
 --attribute=revealjs_theme=simple \
+--attribute=icons=font \
 "
 
 bundle exec asciidoctor $ATTRS ./presentations/index.adoc -o ./target/index.html

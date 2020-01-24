@@ -14,7 +14,7 @@ Rusts iterators are:
 == Where Do They Come From?
 
 -   Collections like `Vec<T>` have an `iter()` function which yields an iterator.
--   Things like `std::net::TcpListener` which provides an iterator of `TcpStream`s via `incoming()`.
+-   Things like `std::net::TcpListener` which provides an iterator of ``TcpStream``s via ``incoming()``.
 -   Iterators can be implemented on other structures as well.
 
 == Common Uses
