@@ -24,6 +24,7 @@
 * link:./cargo.html[Cargo]
 * link:./traits.html[Traits]
 * link:./dynamic-dispatch.html[Dynamic Dispatch]
+* link:./advanced-generics-bounds.html[Advanced Generics]
 
 .Unfinished
 * link:./wasm.html[WebAssembly]
