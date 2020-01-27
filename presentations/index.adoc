@@ -31,6 +31,7 @@
 * link:./crates.html[Crates]
 * link:./libcore-and-libstd.html[libcore and libstd]
 * link:./std-lib-tour.html[The stdlib]
+* link:./iterators-again.html[Iterators Again]
 
 .Unfinished
 * link:./wasm.html[WebAssembly]
