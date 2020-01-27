@@ -19,10 +19,11 @@
 * link:./iterators.html[Iterators]
 * link:./testing.html[Testing]
 * link:./little-helpers.html[Small Helpers]
-* link:./cargo.html[Cargo]
 
 .Advanced
+* link:./cargo.html[Cargo]
 * link:./traits.html[Traits]
+* link:./dynamic-dispatch.html[Dynamic Dispatch]
 
 .Unfinished
 * link:./wasm.html[WebAssembly]

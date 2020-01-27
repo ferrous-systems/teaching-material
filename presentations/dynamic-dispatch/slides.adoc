@@ -37,19 +37,19 @@ Trait objects are a pair of pointers to a virtual function table and the data.
 
 == Limitations
 
--   You can only use one trait per object
--   This trait must fulfill certain conditions
+- You can only use one trait per object
+- This trait must fulfill certain conditions
 
 == Rules for object-safe traits
 
--   Object-safe traits are *not* allowed to require `Self: Sized`
--   All methods are object-safe
-    -   They have no type parameters
-    -   They don't use `Self`
+- Object-safe traits are *not* allowed to require `Self: Sized`
+- All methods are object-safe
+    * They have no type parameters
+    * They don't use `Self`
 
 == Further properties
 
--   As trait objects know about their exact type at runtime, they support downcasts.
+- As trait objects know about their exact type at runtime, they support downcasts.
 
 [source,rust]
 ----
