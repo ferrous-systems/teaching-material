@@ -29,6 +29,8 @@
 * link:./closures.html[Closures]
 * link:./imports-modules-and-visibility.html[Imports, Modules, and Visibility]
 * link:./crates.html[Crates]
+* link:./libcore-and-libstd.html[libcore and libstd]
+* link:./std-lib-tour.html[The stdlib]
 
 .Unfinished
 * link:./wasm.html[WebAssembly]

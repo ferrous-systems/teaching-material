@@ -28,11 +28,11 @@ There's never anything wrong with sending a mail to `community-team@rust-lang.or
 
 -   <https://rust-lang.org>
 -   <https://community.rs>
--   [URLO users.rust-lang.org](https://users.rust-lang.org)
--   [IRLO internals.rust-lang.org](https://internals.rust-lang.org)
+-   https://users.rust-lang.org[URLO users.rust-lang.org]
+-   https://internals.rust-lang.org[IRLO internals.rust-lang.org]
 -   Semi-Official: Reddit /r/rust
 
-[Code of Conduct](https://www.rust-lang.org/en-US/conduct.html)
+https://www.rust-lang.org/en-US/conduct.html[Code of Conduct]
 
 == IRC
 
@@ -58,7 +58,7 @@ There's never anything wrong with sending a mail to `community-team@rust-lang.or
 
 Changes to the language and the standard library require an RFC:
 
--   [RFCS](https://github.com/rust-lang/rfcs)
+-   https://github.com/rust-lang/rfcs[RFCS]
 
 == Conferences
 
@@ -68,8 +68,8 @@ Changes to the language and the standard library require an RFC:
 
 == Staying up-to-date
 
--   [Community Calendar](https://calendar.google.com/calendar/embed?src=apd9vmbc22egenmtu5l6c5jbfc@group.calendar.google.com)
--   [TWIR - This Week in Rust](https://this-week-in-rust.org/)
+-   https://calendar.google.com/calendar/embed?src=apd9vmbc22egenmtu5l6c5jbfc@group.calendar.google.com[Community Calendar]
+-   https://this-week-in-rust.org/[TWIR - This Week in Rust]
 -   And many more "this week in"-newsletters
 
 == Contribution

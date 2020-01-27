@@ -41,7 +41,7 @@ Compiler Plugins add additional capabilities to Rust. For example:
 
 -   (Previously) custom derive
 -   Linters
--   Libraries like [`regex_macros`](https://github.com/rust-lang/regex#usage-regex-compiler-plugin)
+-   Libraries like https://github.com/rust-lang/regex#usage-regex-compiler-plugin[`regex_macros`]
 
 == Enabling Compiler Plugins
 
