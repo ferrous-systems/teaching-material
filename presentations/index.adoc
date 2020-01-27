@@ -25,6 +25,7 @@
 * link:./traits.html[Traits]
 * link:./dynamic-dispatch.html[Dynamic Dispatch]
 * link:./advanced-generics-bounds.html[Advanced Generics]
+* link:./conversion-patterns.html[Conversions]
 
 .Unfinished
 * link:./wasm.html[WebAssembly]
