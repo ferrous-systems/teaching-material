@@ -27,6 +27,7 @@
 * link:./advanced-generics-bounds.html[Advanced Generics]
 * link:./conversion-patterns.html[Conversions]
 * link:./closures.html[Closures]
+* link:./imports-modules-and-visibility.html[Imports, Modules, and Visibility]
 
 .Unfinished
 * link:./wasm.html[WebAssembly]
