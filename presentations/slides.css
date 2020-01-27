@@ -4,3 +4,6 @@
 .line-through {
     text-decoration: line-through;
 }
+.reveal .hljs-keyword {
+    font-weight: bold;
+}

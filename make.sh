@@ -9,6 +9,7 @@ ATTRS="\
 --attribute revealjs_theme=simple \
 --attribute icons=font \
 --attribute revealjs_history=true \
+--attribute highlightjs-theme=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/idea.min.css \
 "
 
 bundle exec asciidoctor $ATTRS ./presentations/index.adoc -o ./target/index.html
