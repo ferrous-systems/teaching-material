@@ -18,6 +18,7 @@
 * link:./error-handling.html[Error Handling]
 * link:./iterators.html[Iterators]
 * link:./testing.html[Testing]
+* link:./little-helpers.html[Small Helpers]
 * link:./cargo.html[Cargo]
 
 .Advanced

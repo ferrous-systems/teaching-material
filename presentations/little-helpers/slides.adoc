@@ -2,7 +2,6 @@
 
 link:./index.html[Table of Contents]
 
-
 == !
 
 Strings in Rust are a topic on their own.
@@ -22,7 +21,7 @@ include::./1.rs[]
 -   No tabs
 -   Block breaks on a separate line.
 
-== println!()
+== `println!()`
 
 [source,rust]
 ----
@@ -42,7 +41,7 @@ We will use for the first steps:
 include::./3.rs[]
 ----
 
-== \#\[derive(Debug)\]
+== ``#[derive(Debug)]``
 
 [source,rust]
 ----
