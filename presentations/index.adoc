@@ -5,16 +5,16 @@
 .Basics
 * link:./overview.html[Overview]
 * link:./installation.html[Installation]
+* link:./basic-types.html[Basic Types]
+* link:./data-structures.html[Data Structures]
 * link:./mutability.html[Mutability]
 * link:./ownership.html[Ownership]
-* link:./basic-types.html[Basic Types]
 * link:./control-flow.html[Control Flow]
 * link:./little-helpers.html[Little Helpers]
 
 * link:./borrowing.html[Borrowing]
 * link:./iterators.html[Iterators]
 
-* link:./data-structures.html[Data Structures]
 * link:./functions.html[Functions]
 * link:./borrowing.html[Borrowing]
 * link:./stack-and-heap.html[Stack and Heap]
