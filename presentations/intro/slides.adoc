@@ -1,3 +1,0 @@
-= Rust in three days
-
-link:./index.html[Table of Contents]

@@ -7,7 +7,7 @@ struct Dot {
 fn main() {
     let dot = Dot { x: 1, y: 2 };
     pacman(dot);
-    pacman(dot);
+    pacman(dot); <1>
 }
 
 fn pacman(dot: Dot) {

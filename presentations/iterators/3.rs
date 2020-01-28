@@ -1,7 +1,10 @@
 fn main() {
-    let evens = (0..10_000)
-        .filter(|x| x % 2 == 0);
-    for item in evens {
-        println!("{}", item);
+    let mut vec = vec![1,2,3];
+    let iter_mut = vec.iter_mut();
+    
+    for i in iter_mut {
+       *i += 1
     }
+
+    println!("{:?}", vec);
 }

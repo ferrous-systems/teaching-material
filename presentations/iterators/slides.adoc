@@ -15,7 +15,31 @@ Rusts iterators are:
 
 -   Collections like `Vec<T>` have an `iter()` function which yields an iterator.
 -   Things like `std::net::TcpListener` which provides an iterator of ``TcpStream``s via ``incoming()``.
+-   Functions like `str#split` and `str#split_n`
 -   Iterators can be implemented on other structures as well.
+
+== Owned iterators
+
+[source,rust]
+----
+include::./1.rs[]
+----
+
+<1> this won't work
+
+== Borrowed iterators
+
+[source,rust]
+----
+include::./2.rs[]
+----
+
+== Mutably Borrowed iterators
+
+[source,rust]
+----
+include::./3.rs[]
+----
 
 == Common Uses
 
@@ -25,67 +49,23 @@ Iterators can be manually progressed:
 
 [source,rust]
 ----
-include::./1.rs[]
-----
-
-== `map()`
-
-Transform items as they are evaluated:
-
-[source,rust]
-----
-include::./2.rs[]
-----
-
-== `filter()`
-
-Filter out unwanted values, skipping further computation on them:
-
-[source,rust]
-----
-include::./3.rs[]
-----
-
-== `fold()`
-
-Reduce a sequence of values down to a single value:
-
-[source,rust]
-----
 include::./4.rs[]
 ----
 
-== `cycle()` & `take()`
+== Combinators: `map()`
 
-Cause iterators to repeat, and end early:
+Transform items as they are evaluated:
 
 [source,rust]
 ----
 include::./5.rs[]
 ----
 
-== `zip()` & `unzip()`
+== Combinators: `filter()`
 
-Join iterators, and split them apart again:
+Filter out unwanted values, skipping further computation on them:
 
 [source,rust]
 ----
 include::./6.rs[]
 ----
-
-== `max()` & `min()`
-
-[source,rust]
-----
-include::./7.rs[]
-----
-
-== Gotcha
-
-This doesn't work:
-
-[source,rust]
-----
-include::./8.rs[]
-----
-Why? (Think about scoping & ownership!)

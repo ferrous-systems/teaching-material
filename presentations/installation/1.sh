@@ -15,6 +15,3 @@ $ rustup target list
 
 # Add and install a target to the toolchain
 $ rustup target add <target>
-
-# List and add components
-$ rustup component list|add

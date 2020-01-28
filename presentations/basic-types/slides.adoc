@@ -64,13 +64,3 @@ Slices carry a pointer to the array and a length. Slices cannot be resized.
 ----
 include::./4.rs[]
 ----
-
-
-== The Unit Type
-
-Expressions without a specific return value return the unit type `()`.
-
-[source,rust]
-----
-include::./5.rs[]
-----

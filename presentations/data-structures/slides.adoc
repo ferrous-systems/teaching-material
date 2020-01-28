@@ -71,6 +71,12 @@ include::./8.rs[]
 
 Does not exist.
 
-== Are There Variant Types?
+== `()`
 
-No, not at the moment!
+The empty tuple `()` represents the absence of data.
+
+[source,rust]
+----
+include::./9.rs[]
+----
+
