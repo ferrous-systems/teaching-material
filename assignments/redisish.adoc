@@ -35,6 +35,7 @@ With the additional properties:
 1. Create a library project called `redisish`.
 2. Read the documentation for `str` (primitive), especially `splitn` and `trim`. Pay attention to their return type. `splitn` has a complex signature, but comes with a number of useful examples.
 3. Implement the following function so that it implements the rules above.
++
 [source,rust]
 ----
 pub fn parse(input: &str) -> Result<Command, Error> {

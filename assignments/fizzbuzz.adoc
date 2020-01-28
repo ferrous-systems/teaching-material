@@ -18,15 +18,15 @@ You will learn:
 
 1. Use Cargo to create a new project called `fizzbuzz`
 2. Implement the following function:
-
-  [source,rust]
-  ----
-  fn fizzbuzz(i: u32) -> String {
-      ///....
-  }
-  ----
-
-  Implementing the following rules:
++
+[source,rust]
+----
+fn fizzbuzz(i: u32) -> String {
+    ///....
+}
+----
++
+Implementing the following rules:
 
   * If `i` is divisible by `3`, return the String "Fizz"
   * If `i` is divisible by `5`, return the String "Buzz"
