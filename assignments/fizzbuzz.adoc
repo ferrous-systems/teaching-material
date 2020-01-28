@@ -100,7 +100,7 @@ The recommended way to print to the console in this exercise is `println!`. `pri
 [source,rust]
 ----
 let s = String::from("Fizz");
-println("{}", s);
+println!("{}", s);
 ----
 
 
