@@ -1,12 +1,5 @@
 fn main() {
-    let mut data = vec!['a', 'b', 'c'];
-    let slice = &mut data[..];
-    do_something(slice);
-    data.push('d');
-    data.push('e');
-    data.push('f');
-}
-
-fn do_something(slice: &[char]) {
-
+    let number: &mut i32 = &mut 4;
+    *number = 10;
+    println!("{}", number);
 }

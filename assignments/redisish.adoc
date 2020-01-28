@@ -1,0 +1,301 @@
+= Exercise: redisish
+:icons: font
+:source-highlighter: pygments
+:pygments-style: borland
+
+:source-language: rust
+
+In this exercise, we will implement a toy protocol parser for a simple, redis-like protocol.
+
+You will learn:
+
+* How to write a simple Rust library
+* How to interact with borrowed and owned memory, especially how to take ownership
+* How to handle cases using the `match` syntax
+* How to create a safe protocol parser in Rust manually
+
+The library does not handle I/O.
+
+== Protocol Specification
+
+The protocol has two commands:
+
+* `PUBLISH <message>\n`
+* `RETRIEVE\n`
+
+With the additional properties:
+
+1. Messages cannot contain newlines.
+2. A missing newline at the end of the message is an error.
+3. Data after the first newline is an error.
+4. Empty messages are allowed. In this case, the message is `PUBLISH \n`.
+
+== Task
+
+1. Create a library project called `redisish`.
+2. Read the documentation for `str` (primitive), especially `splitn` and `trim`. Pay attention to their return type. `splitn` has a complex signature, but comes with a number of useful examples.
+3. Implement the following function so that it implements the rules above.
+[source,rust]
+----
+pub fn parse(input: &str) -> Result<Command, Error> {
+    unimplemented!()
+}
+----
+4. Along the way, implement appropriate datastructures for `Command` and `Error`.
+5. Write tests.
+6. Finishing touches: implement `std::error::Error` for you `Error` type. Run `clippy` on your codebase. Run `rustfmt` on your codebase.
+
+== Help
+
+This section gives partial solutions to look at or refer to.
+
+In general, we also recommend to use the Rust documentation to figure out things you are missing to familiarise yourself with it. If you ever feel completely stuck or that you haven't understood something, please hail the trainers quickly.
+
+=== Getting Started
+
+Create a new Cargo project, check the build and the test setup:
+
+[source]
+----
+$ cargo new --lib redisish
+$ cd redisish
+$ cargo build
+$ cargo test
+----
+
+=== Appropriate data structures
+
+The appropriate data structure kinds for `Command` and `Error` are:
+
+[source,rust]
+----
+pub enum Command {
+    //....
+}
+
+pub enum Error {
+    //....
+}
+----
+
+The reason is that both describe can take multiple cases, which can be listed. Especially the `Command` type benefits a lot by encoding that only `Publish` carries data.
+
+=== Full Data definition
+
+Here's a full definition:
+
+[source,rust]
+----
+#[derive(Eq,PartialEq,Debug)] <1><2>
+pub enum Command { <3>
+    Publish(String),
+    Retrieve, <4>
+}
+
+#[derive(Eq, PartialEq, Debug)]
+pub enum Error { <5>
+    UnknownVerb,
+    UnexpectedPayload,
+    MissingPayload,
+    EmptyMessage,
+    IncompleteMessage,
+}
+----
+
+<1> This enables comparison between 2 instances of the type, by comparing every field/variant. This enables the `assert_eq!` macro, which relies on equality being defined. `Eq` for total equality isn't strictly necessary for this example, but it is good practice to derive it if it applies.
+<2> This enables automatic debug output for the type. The `assert_eq!` macro requires this for testing.
+<3> `Command` has 2 variants for the two possible commands. One carries data (the message), the other not.
+<4> The trailing comma here is optional, but considered good style.
+<5> `Error` is just a list of error _kinds_. This could be expanded by carrying more information, e.g. where the error was found in the input.
+
+=== Dealing with borrowed data
+
+If you run into the case where Rust doesn't let you return an `&str`, heap allocate it, by turning it into a `String`.
+
+[source,rust]
+----
+pub fn parse(input: &str) -> Result<Command, Error> {
+    let message: &str = { <1><2>
+        //  a lot of parsing happening here 
+    };
+
+    let owned_message: String = message.to_string();
+}
+----
+
+<1> Type annotations for clarity.
+<2> Don't use this pattern in your implementation, it's here as a brief filler.
+
+=== Testing
+
+If you struggle finding a good testing pattern or you feel like your tests are verbose, use this pattern:
+
+[source,rust]
+----
+use redisish::{self, Command, Error}; <1>
+
+#[test] <2>
+fn test_publish() {
+    let line = "PUBLISH TestMessage\n"; <3>
+    let result: Result<Command, Error> = redisish::parse(line); <4>
+    let expected = Ok(Command::Publish("TestMessage".into())); <5><6>
+    assert_eq!(result, expected);
+}
+----
+
+<1> Import the types we are testing. `self` imports the `redisish` module, allowing us to call the very generic name `parse` as `redisish::parse` giving it a better visual footprint.
+<2> Functions marked with the `#[test]` attribute are picked up by the compiler and all run. If a test function _panics_, the test is considered failed.
+<3> The message under test, as a _borrowed_ value. (string literals are always borrowed from the data section of your program)
+<4> Parse the borrowed value. Type annotations on the _binding_ not required, but there for clarity.
+<5> Construct a value that matches the expected result.
+<6> `Command::Publish` requires an _owned String_, and `into()` is one way of getting one.
+
+=== Implementation problems: Handling missing data
+
+If you go by the example path that parses data into a vector, you may end up in a situation like this:
+
+[source,rust]
+----
+pub fn parse(input: &str) -> Result<Command, Error> {
+    let tok_input = input.splitn(2, ' ').collect::<Vec<_>>();
+
+    tok_input[1] // panics, if input was `RETRIEVE`
+}
+----
+
+Instead, use vectors `get` function:
+
+[source,rust]
+----
+pub fn parse(input: &str) -> Result<Command, Error> {
+    let tok_input = input.splitn(2, ' ').collect::<Vec<_>>();
+
+    let second_part: Option<&std> = tok_input.get(1); // panics, if input was `RETRIEVE`
+}
+----
+
+This allows you to check if the input was passed, for example by using `match`:
+
+[source,rust]
+----
+match second_part {
+    Some(data) => {
+        // ....
+    }
+    None => {
+        // ....
+    }
+}
+----
+
+Alternatively, consider using the iteration behaviour of `splitn` instead:
+
+[source,rust]
+----
+pub fn parse(input: &str) -> Result<Command, Error> {
+    let mut iterator = input.splitn(2, ' ');
+
+    let first = iterator.next(); <1>
+    let second = iterator.next(); <2>
+}
+----
+
+<1> This will always be `Some`, due to the way `splitn` works.
+<2> This may be `Some` or `None`.
+
+=== Figuring out the passed command
+
+If you need a nice pattern for figuring out what the passed command was, use the ability to `match` on strings:
+
+[source,rust]
+----
+match verb.trim() { <1>
+    "RETRIEVE" => {
+         // retrieve case
+    }
+    "PUBLISH" => {
+         // publish case
+    }
+    "" => {
+        Err(Error::EmptyMessage)
+    }
+    _ => { Err(Error::UnknownVerb) } <2>
+} <3>
+----
+
+<1> Trimming ensures that `PUBLISH\n` doesn't end up being matched, but `PUBLISH` instead.
+<2> `_` is the default case and catches everything that wasn't `PUBLISH`, `RETRIEVE` or the empty string.
+<3> `match` is an expression, so _all_ match branches must return `Result<Command, Error>`.
+
+
+==== Full source code
+
+If all else fails, feel free to copy this solution to play around with it.
+
+[source,rust]
+----
+use std::fmt;
+
+#[derive(Eq,PartialEq,Debug)]
+pub enum Command {
+    Publish(String),
+    Retrieve
+}
+
+#[derive(Eq, PartialEq, Debug)]
+pub enum Error {
+    UnknownVerb,
+    UnexpectedPayload,
+    MissingPayload,
+    EmptyMessage,
+    IncompleteMessage,
+    TrailingData,
+}
+
+impl fmt::Display for Error {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "Error parsing is command: {:?}!", self)
+    }
+}
+
+impl std::error::Error for Error {
+    
+}
+
+pub fn parse(input: &str) -> Result<Command, Error> {
+    if let Some(pos) = input.rfind('\n') {
+        if !((pos+1) == input.len()) {
+            return Err(Error::TrailingData)
+        }
+    } else {
+        return Err(Error::IncompleteMessage)
+    }
+
+    let mut split = input.splitn(2, ' ');
+
+    if let Some(verb) = split.next() {
+        match verb.trim() {
+            "RETRIEVE" => {
+                if split.next() == None {
+                    Ok(Command::Retrieve)
+                } else {
+                    Err(Error::UnexpectedPayload)
+                }
+            }
+            "PUBLISH" => {
+                if let Some(payload) = split.next() {
+                    Ok(Command::Publish(String::from(payload.trim())))
+                } else {
+                    Err(Error::MissingPayload)
+                }
+            }
+            "" => {
+                Err(Error::EmptyMessage)
+            }
+            _ => { Err(Error::UnknownVerb) }
+        }
+    } else {
+        unreachable!()
+    }
+}
+----

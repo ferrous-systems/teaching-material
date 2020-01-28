@@ -1,8 +1,10 @@
 fn main() {
-    let items = vec![0, 1, 2];
-    let mut iterator = items.into_iter();
-    println!("{:?}", iterator.next());
-    println!("{:?}", iterator.next());
-    println!("{:?}", iterator.next());
-    println!("{:?}", iterator.next());
+    let vec = vec![1,2,3];
+    let iter = vec.into_iter();
+
+    for i in iter {
+        println!("{}", i);
+    }
+
+    //println!("{:?}", vec); <1>
 }

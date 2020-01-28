@@ -1,13 +1,7 @@
 fn main() {
-    let first = 0..10;
-    let second = 10..20;
-
-    let (first_again, _): (Vec<_>, Vec<_>) = first
-        .zip(second)
-        .inspect(|x| println!("Inspect: {:?}", x))
-        .unzip();
-
-    for item in first_again {
+    let evens = (0..10_000)
+        .filter(|x| x % 2 == 0);
+    for item in evens {
         println!("{}", item);
     }
 }

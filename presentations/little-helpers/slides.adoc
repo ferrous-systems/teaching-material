@@ -2,50 +2,208 @@
 
 link:./index.html[Table of Contents]
 
+[.centered]
+== Overview
 
-== !
+Some collected hints to get you started.
 
-Strings in Rust are a topic on their own.
-
-Therefore they will be covered fully in a separate section later.
-
-== Strings Without Thinking
-
-[source,rust]
-----
-include::./1.rs[]
-----
-
-== Code Style
-
--   4 Spaces
--   No tabs
--   Block breaks on a separate line.
-
-== println!()
+[.two-col]
+== Structs
 
 [source,rust]
 ----
-include::./2.rs[]
+#[derive(Eq, PartialEq, Debug)] <1>
+pub struct Point { <2>
+    x: i32,
+    y: i32,
+}
 ----
 
-== Use Ownership, Luke!
+--
 
-We will use for the first steps:
+<1> Derives allow to generate some standard functionality
+<2> Any type can carry a visibility modifier to export them
+--
 
--   `String`
--   `Vec<T>` (Vectors)
--   Plain `struct`s
+[.two-col]
+== Useful Derives: Debug
 
 [source,rust]
 ----
-include::./3.rs[]
+#[derive(Debug)]
+struct Point {
+    x: i32,
+    y: i32,
+}
+
+fn main() {
+    let p = Point { x: 1, x: 2 },
+    println!("{:?}", p); <1>
+    println!("{:#?}", p); <2>
+}
 ----
 
-== \#\[derive(Debug)\]
+--
+
+<1> Debug makes the `Debug` formatting string work
+<2> There's also a more structured version, also enabled through it
+
+--
+
+[.two-col]
+== Useful Derives: Eq, PartialEq
 
 [source,rust]
 ----
-include::./4.rs[]
+#[derive(Eq,PartialEq,Debug)] <1> <2>
+struct Point {
+    x: i32, <3>
+    y: i32,
+}
+
+fn main() {
+    let p1 = Point { x: 1, x: 2 },
+    let p2 = Point { x: 1, x: 2 },
+    if p1 == p2 { <4>
+        println!("The same!");
+    }
+    assert_eq!(p1, p2); <5>
+}
 ----
-Works for all data structures.
+
+--
+
+<1> `Eq` describes total equality: for every pair of values, equality is defined
+<2> `PartialEq` is enough for getting `==`
+<3> Both can only be derived if all inner fields are both
+<4> Equality in action!
+<5> The `assert_eq!` compares to values and panics if they don't match!
+
+[.two-col]
+== Slices and Vectors
+
+[source,rust]
+----
+fn main() {
+    let bytes: &[u8] = &[1,2,3]; <1>
+    let vec: Vec<u8> = Vec::from(bytes); <2>
+    vec.push(4);
+    let vec_slice: &[u8] = vec.as_slice(); <3>
+}
+----
+
+--
+
+<1> The (reference) slice `&[..]` is a reference to a region of memory. It stores the length of the data and is bounds checked.
+<2> The vector `Vec<..>` is an owned region of memory. It is growable and shrinkable.
+<3> Slices can be taken to the memory a vector owns, binding the slices to the vector.
+
+--
+
+[.two-col]
+== Vector reallocation
+
+[source,rust]
+----
+fn main {
+    let mut v = vec![1,2]; <1>
+    let slice = &v[..]; <2>
+
+    vec.push(4); <3>
+      //^^^^^^^ Error here
+
+    println!("{:?}", slice);
+}
+----
+
+--
+
+<1> This is a shorthand vector initialization macro.
+<2> Taking a slice borrows the memory region the vector owns. `&v[..]` is syntax for "borrow from beginning to end".
+<3> Pushing on vector requires a mutable reference to it, violating borrow rules.
+
+--
+
+[.centered]
+== Strings and their slices
+
+Strings and string slices work much the same.
+
+[source,rust]
+----
+fn main() {
+    let slice: &str = "Hello world!";
+    let string: String = String::from(slice);
+}
+----
+
+Strings and string slices are `Vec<u8>` and `&[u8]` internally, with the added invariant that they are UTF-8.
+
+[.centered]
+== Use owned strings
+
+TIP: Spending the memory to make a heap copy and owning data makes your life a lot easier.
+
+[source,rust]
+----
+struct Owned {
+    string_data: String
+}
+
+struct Borrowed<'a> {
+    slice: &'a str
+}
+----
+
+[.centered]
+== Owned vs. borrowed types
+
+Borrowed types need you to make sure that the pointee is always alive. Owned types are easier. Liberally allocate `String` and `Vec` if you run into problems.
+
+TIP: Rust makes it easy to safely refactor towards more efficient code. Get something working first, before you avoid each and every copy.
+
+[.two-col]
+== Testing
+
+[source,rust]
+----
+use my_library::my_function; <1>
+
+#[test]
+fn my_test() {
+    assert_eq!(1, 1);
+}
+
+#[test]
+#[should_fail]
+fn failing_test() {
+    assert_eq!(1, 2);
+}
+----
+
+--
+
+Rust and Cargo allows you to easily provide test for your code.
+
+These can be put either directly in the source file or in any file in `tests`.
+
+<1> Only needed when putting files in `tests`.
+
+--
+
+[.two-col]
+== Test first
+
+[source,rust]
+----
+fn addition(a: i32, b: i32) -> i32 {
+    unimplemented!()
+}
+
+#[test]
+fn addtion_test() {
+    assert_eq!(addition(1,2), 3);
+}
+----
+
+--

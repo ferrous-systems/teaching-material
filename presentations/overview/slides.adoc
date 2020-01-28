@@ -2,6 +2,30 @@
 
 link:./index.html[Table of Contents]
 
+[.centered]
+== Some Rust
+
+[source,rust]
+----
+use std::io; <1>
+use std::fs::File;
+
+fn main() -> Result<(), io::Error> { <2>
+    let open_file = File::open("test"); <3>
+
+    let mut file = match open_file { <4>
+        Some(file) => file,
+        Err(e) => return io::Error::from(e)
+    };
+
+    let mut buffer = String::new(); <5>
+    file.read_to_string(&mut buffer)?; <6>
+    println!("{}", buffer);
+
+    Ok(()) <7>
+}
+----
+
 == A Little Bit of History
 
 - Rust is roughly 10 years old
@@ -21,12 +45,11 @@ link:./index.html[Table of Contents]
 
 - Always together with a larger project (e.g. Servo)
 - Early adoption of regular releases, deprecations and an RFC process
-- Good software development methodologies
-- "Things are not complete when there is nothing left to add, but when there is nothing left to take away."
 
 == Release Method
 
 - Nightly releases
+  - experimental features are only present on nighly releases
 - Every 6 weeks, the current nightly is promoted to beta
 - After 6 weeks of testing, beta becomes stable
 - Guaranteed backwards-compatibility
@@ -72,7 +95,6 @@ Many examples in this course are very small, which is why we will also spend tim
 - Optimizing compiler based on LLVM
 - Features with runtime cost are explicit and hard to activate "by accident"
 - No reflection (Dracula-Language)
-- Static dispatch per default
 
 == Pragmatic
 
@@ -95,14 +117,3 @@ In almost equal parts from:
 - Dynamic languages (JS, Rubyists and Pythonista)
 - Functional languages like Scala and Haskell
 - C/C++
-
-== Well-known Users
-
-- Mozilla Firefox
-- Mozilla Servo
-- Gnome
-- Dropbox
-- Microsoft
-- Amazon
-- Google
-- http://rust-lang.org/friends.html[Rust Friends]

@@ -6,7 +6,7 @@ link:./index.html[Table of Contents]
 
 Rustup is the standard tool for managing Rusts compiler toolchain.
 
-http://rustup.rs/
+https://rust-lang.org/install
 
 == Important Commands
 
@@ -34,8 +34,6 @@ include::./3.sh[]
 
 The Rust compiler builds and links Rust code.
 
-`rustc` is almost completely written in Rust.
-
 == Functional Test
 
 [source,rust]
@@ -61,7 +59,7 @@ include::./6.sh[]
 
 Cargo is Rusts build and package management tool.
 
-Cargo is installed along with `rustc`, but is not tightly bound to a `rustc` version.
+Cargo is installed along with `rustc`, but is not tightly coupled to a `rustc` version.
 
 == Once more with Cargo
 
@@ -70,10 +68,15 @@ Cargo is installed along with `rustc`, but is not tightly bound to a `rustc` ver
 include::./7.sh[]
 ----
 
-
 == A Little Look Around
 
 - What is in Cargo.toml?
 - What is in Cargo.lock?
 
 For details, check the http://doc.crates.io/manifest.html[Cargo Manifest docs].
+
+== IDEs
+
+* RLS: https://github.com/rust-lang/rls
+* rust-analyzer: https://github.com/rust-analyzer/rust-analyzer
+* Intellij CLion: https://www.jetbrains.com/clion/

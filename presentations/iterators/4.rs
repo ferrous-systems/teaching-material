@@ -1,7 +1,8 @@
-fn factorial(val: usize) -> usize {
-    (1..val).rev().fold(1, |acc, x| acc * x)
-}
-
 fn main() {
-    println!("{}", factorial(10));
+    let items = vec![0, 1, 2];
+    let mut iterator = items.into_iter();
+    println!("{:?}", iterator.next());
+    println!("{:?}", iterator.next());
+    println!("{:?}", iterator.next());
+    println!("{:?}", iterator.next());
 }

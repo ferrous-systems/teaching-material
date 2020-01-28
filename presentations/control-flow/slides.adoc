@@ -1,0 +1,133 @@
+= Control Flow
+
+link:./index.html[Table of Contents]
+
+== Control Flow primitives
+
+* `if`
+* `match` and `enums`
+* `for`, `while` and `loop` loops
+* `return` and `?`
+
+== Control Flow with `if`
+
+[source,rust]
+----
+include::./1.rs[]
+----
+
+<1> Paranthesis around the conditional are not necessary
+<2> Blocks need brackets, no shorthand
+
+== Control Flow with `match`
+
+[source,rust]
+----
+include::./2.rs[]
+----
+
+<1> match arm
+<2> default arm
+
+== Control Flow with `match` and `enums`
+
+[source,rust]
+----
+include::./3.rs[]
+----
+
+<1> `enum` can take multiple forms
+<2> The forms are called "variants" and can carry data
+<3> Enums are inspected by matching ...
+<4> ... on the structure
+
+== 2 important enums
+
+[source,rust]
+----
+include::./4.rs[]
+----
+
+* `Option` describes the possible absence of a value
+* `Result` describes that an operation might return an error instead
+
+== Using `Option` and `Result`
+
+[source,rust]
+----
+include::./5.rs[]
+----
+
+== Using `Option` and `Result`
+
+[source,rust]
+----
+include::./6.rs[]
+----
+
+== Match guards
+
+[source,rust]
+----
+include::./7.rs[]
+----
+
+* Match guards allow further refining of a `match`
+
+== Shorthand: `if let` conditionals
+
+[source,rust]
+----
+include::./8.rs[]
+----
+
+* `if let` are idiomativ if only one case is of interest
+
+== `loop`
+
+[source,rust]
+----
+include::./9.rs[]
+----
+
+`loop` is used for arbitrary loops
+
+== `for`
+
+[source,rust]
+----
+include::./10.rs[]
+----
+
+`for` is used for iteration
+
+== `while`
+
+[source,rust]
+----
+include::./11.rs[]
+----
+
+`while` is used for conditional loops
+
+
+== `return`
+
+[source,rust]
+----
+include::./11.rs[]
+----
+
+* `return` can be used for early returns
+* The result of the last expression of a function is always returned
+
+
+== `?`
+
+
+[source,rust]
+----
+include::./12.rs[]
+----
+
+* `?` is "on error, early return"
