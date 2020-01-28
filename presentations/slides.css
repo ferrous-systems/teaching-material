@@ -12,3 +12,11 @@
     background: none;
     font-style: italic;
 }
+
+.reveal pre code {
+  padding: 20px;
+  border: 1px solid #745d48;
+  font-size: 1.4em;
+  line-height: 1.4em;
+  white-space: pre-wrap;
+}
