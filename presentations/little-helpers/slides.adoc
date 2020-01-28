@@ -6,9 +6,8 @@ link:./index.html[Table of Contents]
 == Overview
 
 Some collected hints to get you started.
-
 [.two-col]
-== Structs
+== Derives
 
 [source,rust]
 ----
@@ -78,6 +77,8 @@ fn main() {
 <3> Both can only be derived if all inner fields are both
 <4> Equality in action!
 <5> The `assert_eq!` compares to values and panics if they don't match!
+
+--
 
 [.two-col]
 == Slices and Vectors

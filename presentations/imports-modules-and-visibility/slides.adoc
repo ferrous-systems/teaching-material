@@ -7,19 +7,28 @@ link:./index.html[Table of Contents]
 
 All used items must be declared. This is similar to Java or Haskell.
 
-<pre><code data-source="chapters/shared/code/imports-modules-and-visibility/1.rs" data-trim="hljs sh" class="lang-sh"></code></pre>
+[source,rust]
+----
+include::./1.rs[]
+----
 
 == Module Imports
 
 It is possible to import the module instead and qualify every use.
 
-<pre><code data-source="chapters/shared/code/imports-modules-and-visibility/2.rs" data-trim="hljs sh" class="lang-sh"></code></pre>
+[source,rust]
+----
+include::./2.rs[]
+----
 
 == Glob Imports
 
 You can also import everything from a module.
 
-<pre><code data-source="chapters/shared/code/imports-modules-and-visibility/3.rs" data-trim="hljs sh" class="lang-sh"></code></pre>
+[source,rust]
+----
+include::./3.rs[]
+----
 
 This is *generally* frowned upon.
 
@@ -31,7 +40,10 @@ One exception to the rule is the "Prelude": This is a special module in the stan
 
 Other libraries offer `prelude`-Modules, one of the most common is `std::io`.
 
-<pre><code data-source="chapters/shared/code/imports-modules-and-visibility/4.rs" data-trim="hljs rust" class="lang-"></code></pre>
+[source,rust]
+----
+include::./4.rs[]
+----
 
 Here, the glob is accepted.
 
@@ -89,7 +101,10 @@ include::./7.rs[]
 
 Our application could also have the following layout:
 
-<pre><code data-source="chapters/shared/code/imports-modules-and-visibility/8.rs" data-trim="hljs sh"></code></pre>
+[source,rust]
+----
+include::./8.rs[]
+----
 
 == A Larger Module as a Directory
 

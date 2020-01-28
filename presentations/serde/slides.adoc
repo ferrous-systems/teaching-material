@@ -5,7 +5,7 @@ link:./index.html[Table of Contents]
 
 == **Ser**ialization and **De**serialization
 
-[https://serde.rs/](https://serde.rs/)
+https://serde.rs/[https://serde.rs/]
 
 == `Serialize` & `Deserialize`
 
@@ -64,4 +64,4 @@ include::./4.rs[]
 include::./5.rs[]
 ----
 
-[https://serde.rs/attributes.html](https://serde.rs/attributes.html)
+https://serde.rs/attributes.html[https://serde.rs/attributes.html]

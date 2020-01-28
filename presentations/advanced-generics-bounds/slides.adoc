@@ -15,7 +15,7 @@ This can happen at any point where type parameters are used.
 
 == !
 
-Example: `println("{:?}")` requires Debug
+Example: `println!("{:?}")` requires Debug
 
 [source,rust]
 ----

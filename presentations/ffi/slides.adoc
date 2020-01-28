@@ -242,7 +242,7 @@ But: not required here, because plugin API is specified via weechat!
 
 == !
 
-Full code here: [spacekookie/weechat-rs](https://github.com/spacekookie/weechat-rs/tree/master/examples/hello_weechat)
+Full code here: https://github.com/spacekookie/weechat-rs/tree/master/examples/hello_weechat[spacekookie/weechat-rs]
 
 Feel free to run, play, test, ...
 

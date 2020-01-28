@@ -4,3 +4,11 @@
 .line-through {
     text-decoration: line-through;
 }
+.reveal .hljs-keyword {
+    font-weight: bold;
+}
+.reveal .hljs-symbol {
+    color: #20999D;
+    background: none;
+    font-style: italic;
+}

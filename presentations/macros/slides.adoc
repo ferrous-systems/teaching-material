@@ -5,7 +5,7 @@ link:./index.html[Table of Contents]
 
 == !
 
-Rust has a macro language. See [The Little Book Of Macros](https://danielkeep.github.io/tlborm/book/README.html).
+Rust has a macro language. See https://danielkeep.github.io/tlborm/book/README.html[The Little Book Of Macros].
 
 == Important Macros
 
@@ -89,7 +89,7 @@ include::./3.rs[]
 
 Macros allow for a limited form of custom syntax and can be used to build simple DSLs.
 
-For a good example of this, see [clap-rs](https://github.com/kbknapp/clap-rs)
+For a good example of this, see https://github.com/kbknapp/clap-rs[clap-rs]
 
 == Downsides of Macros
 

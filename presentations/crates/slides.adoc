@@ -55,11 +55,14 @@ Note the `crate` keyword before it's usage. You're using a local alias. The orig
 
 Alternative: rename dependencies via cargo:
 
-<pre><code data-source="chapters/shared/code/crates/4.toml" data-trim="hljs toml"></code></pre>
+[source,toml]
+----
+include::./4.toml[]
+----
 
 == crates.io
 
-Published crates can be found on [crates.io](https://crates.io), their documentation is automatically published to [docs.rs](https://docs.rs).
+Published crates can be found on https://crates.io[crates.io], their documentation is automatically published to https://docs.rs[docs.rs].
 
 == Crates and Applications
 

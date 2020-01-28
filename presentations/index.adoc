@@ -24,4 +24,14 @@
 * link:./generics-basics.html[Basic Generics]
 
 .Advanced
+* link:./cargo.html[Cargo]
 * link:./traits.html[Traits]
+* link:./dynamic-dispatch.html[Dynamic Dispatch]
+* link:./advanced-generics-bounds.html[Advanced Generics]
+* link:./conversion-patterns.html[Conversions]
+* link:./closures.html[Closures]
+* link:./imports-modules-and-visibility.html[Imports, Modules, and Visibility]
+* link:./crates.html[Crates]
+* link:./libcore-and-libstd.html[libcore and libstd]
+* link:./std-lib-tour.html[The stdlib]
+* link:./iterators-again.html[Iterators Again]

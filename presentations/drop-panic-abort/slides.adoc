@@ -11,7 +11,7 @@ What happens in detail when values drop?
 
 The order in which drops happen is currently *not* standardised. There are good reasons to standardise it in the current form, though.
 
-[Discussion](https://github.com/rust-lang/rfcs/issues/1857)
+https://github.com/rust-lang/rfcs/issues/1857[Discussion]
 
 == Drop-Order
 
@@ -68,11 +68,13 @@ The affected thread dies.
 
 == Catching Panics
 
-Panicing across FFI-boundaries is undefined behaviour. In these cases, panics _must_ be caught. For cases like this, there are [std::panic::catch-unwind](https://doc.rust-lang.org/std/panic/fn.catch_unwind.html) and [std::panic::resume-unwind](https://doc.rust-lang.org/std/panic/fn.resume_unwind.html).
+Panicing across FFI-boundaries is undefined behaviour.
+In these cases, panics _must_ be caught.
+For cases like this, there are https://doc.rust-lang.org/std/panic/fn.catch_unwind.html[std::panic::catch-unwind] and https://doc.rust-lang.org/std/panic/fn.resume_unwind.html[std::panic::resume-unwind].
 
 == Hooks
 
-[std::panic::set\_hook](https://doc.rust-lang.org/std/panic/fn.set_hook.html) allows setting a global handler that is run *before* the unwinding happens.
+https://doc.rust-lang.org/std/panic/fn.set_hook.html[std::panic::set1_hook] allows setting a global handler that is run *before* the unwinding happens.
 
 == !
 

@@ -2,7 +2,6 @@
 
 link:./index.html[Table of Contents]
 
-
 == !
 
 It's time for a tour of some interesting parts in `std`.
@@ -11,18 +10,18 @@ We will focus on parts we have not otherwise covered.
 
 == Collections
 
-[`std::collections`](https://doc.rust-lang.org/std/collections/index.html)
+https://doc.rust-lang.org/std/collections/index.html[`std::collections`]
 
 Contains a number of valuable data structures. In particular:
 
-* [`Vec`](https://doc.rust-lang.org/std/vec/struct.Vec.html) for storing sequences of values.
-* [`HashMap`](https://doc.rust-lang.org/std/collections/struct.HashMap.html) for storing as key value pairs.
+* https://doc.rust-lang.org/std/vec/struct.Vec.html[`Vec`] for storing sequences of values.
+* https://doc.rust-lang.org/std/collections/struct.HashMap.html[`HashMap`] for storing as key value pairs.
 
 When seeking to optimize code other options may be appropriate.
 
 == Entry
 
-[`std::collections::hash_map::Entry`](https://doc.rust-lang.org/std/collections/hash_map/enum.Entry.html)
+https://doc.rust-lang.org/std/collections/hash_map/enum.Entry.html[`std::collections::hash_map::Entry`]
 
 Calling `.entry()` on a `HashMap` accesses this API and allows for 'insert or update' access.
 
@@ -33,7 +32,7 @@ include::./1.rs[]
 
 == PhantomData
 
-[`std::marker::PhantomData`](https://doc.rust-lang.org/std/marker/struct.PhantomData.html)
+https://doc.rust-lang.org/std/marker/struct.PhantomData.html[`std::marker::PhantomData`]
 
 Zero-sized type used to mark things that "act like" they own a `T`. These are useful for types which require markers, generics, or use unsafe code.
 
@@ -44,7 +43,7 @@ include::./2.rs[]
 
 == Command
 
-[`std::process::Command`](https://doc.rust-lang.org/std/process/struct.Command.html)
+https://doc.rust-lang.org/std/process/struct.Command.html[`std::process::Command`]
 
 A process builder, providing fine-grained control over how a new process should be spawned. Used for interacting with other executables.
 
@@ -55,7 +54,7 @@ include::./3.rs[]
 
 == Syncronization Primitives
 
-[`std::sync`](https://doc.rust-lang.org/std/sync/)
+https://doc.rust-lang.org/std/sync/[`std::sync`]
 
 Provides types such a `Mutex`, `RwLock`, `CondVar`, `Arc` and `Barrier`s.
 
@@ -66,9 +65,10 @@ include::./4.rs[]
 
 == Read and Write
 
-[`std::io::Read`](https://doc.rust-lang.org/std/io/trait.Read.html) & [`std::io::Write`](https://doc.rust-lang.org/std/io/trait.Write.html)
+https://doc.rust-lang.org/std/io/trait.Read.html[`std::io::Read`] & https://doc.rust-lang.org/std/io/trait.Write.html[`std::io::Write`]
 
-Generic read and write functionality to files, sockets, buffers, and anything in between. Also part of [`std::io::prelude`]([`std::io::prelude::*`](https://doc.rust-lang.org/std/io/prelude/).
+Generic read and write functionality to files, sockets, buffers, and anything in between.
+Also part of https://doc.rust-lang.org/std/io/prelude/[`std::io::prelude`] (`use std::io::prelude::*`).
 
 [source,rust]
 ----
@@ -77,7 +77,7 @@ include::./5.rs[]
 
 == Filesystem Manipulation
 
-[`std::fs`](https://doc.rust-lang.org/std/fs/) & [`std::path`](https://doc.rust-lang.org/std/path/)
+https://doc.rust-lang.org/std/fs/[`std::fs`] & https://doc.rust-lang.org/std/path/[`std::path`]
 
 Path handling and file manipulation.
 

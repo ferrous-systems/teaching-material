@@ -2,7 +2,6 @@
 
 link:./index.html[Table of Contents]
 
-
 == !
 
 Rust has closures. Multiple, even.
@@ -16,6 +15,7 @@ Rust has closures. Multiple, even.
 ----
 include::./1.rs[]
 ----
+
 [source,rust]
 ----
 include::./2.rs[]
@@ -23,17 +23,12 @@ include::./2.rs[]
 
 == Closure-Types
 
-FnOnce
 
-* The closure consumes its environment
+FnOnce:: The closure consumes its environment
 
-FnMut
+FnMut:: The closure mutates its environment
 
-* The closure mutates its environment
-
-Fn
-
-* The closure references its environment immutably
+Fn:: The closure references its environment immutably
 
 == !
 
