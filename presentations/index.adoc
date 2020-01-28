@@ -35,3 +35,8 @@
 * link:./libcore-and-libstd.html[libcore and libstd]
 * link:./std-lib-tour.html[The stdlib]
 * link:./iterators-again.html[Iterators Again]
+
+.Assignments
+
+* link:./assignments/fizzbuzz.html[FizzBuzz]
+* link:./assignments/redisish.html[Redisish protocol parser]

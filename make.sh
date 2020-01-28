@@ -14,6 +14,7 @@ ATTRS="\
 "
 
 mkdir -p target/intros
+mkdir -p target/assignments
 
 bundle exec asciidoctor $ATTRS ./presentations/index.adoc -o ./target/index.html
 cp ./presentations/slides.css ./target/slides.css
@@ -26,6 +27,14 @@ for d in ./intros/*/; do
        -a revealjsdir=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0 \
        $d/slides.adoc  \
        -o ./target/intros/$(basename $d).html
+done
+
+for file in ./assignments/*.adoc; do
+    echo $file
+    f=$(basename "$file" ".adoc")
+    echo $f
+
+    bundle exec asciidoctor $ATTRS ./assignments/$f.adoc -o ./target/assignments/$f.html
 done
 
 for d in ./presentations/*/; do
