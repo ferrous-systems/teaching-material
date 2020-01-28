@@ -68,7 +68,7 @@ Immutable references _borrow immutably_.
 
 [source,rust]
 ----
-include::./4.rs[]
+include::./3.rs[]
 ----
 
 --
@@ -107,7 +107,7 @@ include::./5.rs[]
 ----
 
 [.two-col]
-== Other kinds of borrowees
+== Other kinds of borrows
 
 [source,rust]
 ----

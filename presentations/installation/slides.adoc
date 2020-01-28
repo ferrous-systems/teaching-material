@@ -75,6 +75,10 @@ include::./7.sh[]
 
 For details, check the http://doc.crates.io/manifest.html[Cargo Manifest docs].
 
+== Playground
+
+* Playground: https://play.rust-lang.org
+
 == IDEs
 
 * RLS: https://github.com/rust-lang/rls

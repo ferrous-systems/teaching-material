@@ -1,5 +1,3 @@
-fn main() {
-    let number: &mut i32 = &mut 4;
-    *number = 10;
-    println!("{}", number);
+fn push_all(on: &mut Vec<u8>, from: &Vec<u8>) {
+
 }
