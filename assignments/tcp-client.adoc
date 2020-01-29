@@ -26,6 +26,8 @@ Use this template:
 
 [source,rust]
 ----
+use std::io;
+
 fn main() -> io::Result<()> {
     let arg = std::env::args().nth(1);
 
@@ -36,6 +38,7 @@ fn main() -> io::Result<()> {
 
  
     //...
+    Ok(())
 }
 ----
 
