@@ -14,7 +14,7 @@ The workspace should contain your server and the redisish library.
 mailbox-server
 |- Cargo.toml
 |- redisish
-|- mailbox-server
+|- mailbox
 ....
 
 ----
