@@ -1,0 +1,73 @@
+= Exercise: TCP server
+:icons: font
+:source-highlighter: pygments
+:pygments-style: borland
+
+:source-language: rust
+
+In this exercise, we will implement a simple TCP server.
+
+You will learn:
+
+* How to write a simple single-threaded server binary
+* Read Strings from the network
+* How to handle a connection lifecycle
+
+== Task
+
+1. Accept TCP connections on port `127.0.0.1:8080`
+2. Read all incoming data as `String`
+3. Print the data to the console
+4. Echo it back to the client
+
+== Getting started
+
+Use this template:
+
+[source,rust]
+----
+use std::net::{TcpListener, TcpStream};
+use std::io;
+
+fn handle_client(stream: TcpStream) -> Result<(), io::Error> {
+    // ...
+}
+
+fn main() -> io::Result<()> {
+    let listener = TcpListener::bind("127.0.0.1:8080")?;
+
+    // accept connections and process them serially
+    for stream in listener.incoming() {
+        handle_client(stream?);
+    }
+    Ok(())
+}
+----
+
+Read the documentation for the `std::io::Read`, `std::io::Write` traits,
+especially `read_to_string` and `write`.
+
+== Hints
+
+=== Blanket import of `io` functionality
+
+[source,rust]
+----
+use std::io::prelude::*;
+----
+
+=== Writing Strings as bytes
+
+[source,rust]
+----
+stream.write(string.as_bytes());
+----
+
+=== Sending Data
+
+You can use `nc` to test the server:
+
+[source]
+----
+$ echo "test" | nc 127.0.0.1 8080
+----

@@ -1,0 +1,42 @@
+= Exercise: TCP client
+:icons: font
+:source-highlighter: pygments
+:pygments-style: borland
+
+:source-language: rust
+
+In this exercise, we will implement a simple TCP client.
+
+You will learn:
+
+* How to write a simple single-threaded client tool
+* Read and write Strings to the
+* How to close parts of a bidirectional stream
+
+== Task
+
+1. Start a TCP connection on port `127.0.0.1:8080`
+2. Send a message over
+3. Close the write end of the connection
+4. Print the response to the console
+
+== Getting started
+
+Use this template:
+
+[source,rust]
+----
+fn main() -> io::Result<()> {
+    let arg = std::env::args().nth(1);
+
+    let message = match arg {
+        Some(msg) => msg,
+        None => String::from("Default Message"),
+    };
+
+ 
+    //...
+}
+----
+
+Read the documentation for the `TcpStream`, especially the `shutdown` methods.

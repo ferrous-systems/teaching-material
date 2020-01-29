@@ -1,0 +1,103 @@
+The mailbox
+-----------
+
+Bring your TCP server and the protocol we wrote yesterday together.
+
+1. Turn you project into a workspace
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Read https://doc.rust-lang.org/book/ch14-03-cargo-workspaces.html
+
+The workspace should contain your server and the redisish library.
+
+....
+mailbox-server
+|- Cargo.toml
+|- redisish
+|- mailbox-server
+....
+
+----
+$ cat Cargo.toml 
+[workspace]
+members = ["redisish", "mailbox"]
+----
+
+----
+$ cat mailbox/Cargo.toml
+[dependencies]
+redisish = { path = "../redisish" }
+----
+
+2. Accept connections and implement the protocol
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1.  Every connection just sends one command
+2.  PUBLISH inserts into a message box
+3.  RETRIEVE retrieves a message, in a FIFO fashion
+
+Use `.unwrap` for all error handling in the beginning.
+
+Use `std::collections::VecDeque` for storing.
+
+3. Do proper error handling
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Implement `std::error::Error` for all your error types and start passing around a dynamically dispatched error.
+
+== Note
+
+To send and receive messages, you can either use `nc` or `telnet`. Alternatively, you can use the client provided: https://github.com/ferrous-systems/rust-three-days-course/tree/master/example/redisish-client
+
+Usage:
+
+----
+cargo run --bin publish -- "This is my message"
+cargo run --bin retrieve
+----
+
+= Help
+
+The help section omits Step 4, "proper error handling" and makes the server panic if bad data is received.
+
+== Parsing a command from a TCPStream
+
+We highly recommend moving reading and parsing into its own function.
+
+[source,rust]
+----
+// At the top of your file
+use std::net::{TcpListener,TcpStream};
+use std::io::prelude::*;
+use redisish;
+
+fn read_command(stream: &mut TcpStream) -> redisish::Command {
+    let mut read_buffer = String::new(); <1>
+    stream.read_to_string(&mut read_buffer).unwrap(); <2>
+
+    redisish::parse(&read_buffer).unwrap(); <3>
+}
+----
+
+<1> Allocate a read buffer.
+<2> Read all data into the buffer until the client sends EOF.
+<3> Parse the incoming buffer
+
+== Efficiently handling the received command handling the received command
+
+You can use this snipped to quickly read a command.
+
+[source,rust]
+----
+let command = read_command(stream);
+match command {
+    redisish::Command::Publish(message) => {
+
+    }
+    redisish::Command::Retrieve => {
+
+    }
+}
+}
+----
+
