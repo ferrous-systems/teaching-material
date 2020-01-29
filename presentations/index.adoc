@@ -40,3 +40,7 @@
 
 * link:./assignments/fizzbuzz.html[FizzBuzz]
 * link:./assignments/redisish.html[Redisish protocol parser]
+* link:./assignments/tcp-server.html[TCP server]
+* link:./assignments/tcp-client.html[TCP client]
+* link:./assignments/connected-mailbox.html[Connected mailbox]
+* link:./assignments/multithreaded-mailbox.html[Multithreaded mailbox]
