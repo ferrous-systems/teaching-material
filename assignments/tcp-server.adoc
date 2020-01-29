@@ -29,7 +29,7 @@ Use this template:
 use std::net::{TcpListener, TcpStream};
 use std::io;
 
-fn handle_client(stream: TcpStream) -> Result<(), io::Error> {
+fn handle_client(mut stream: TcpStream) -> Result<(), io::Error> {
     // ...
     Ok(())
 }
