@@ -46,7 +46,7 @@ fn main() -> io::Result<()> {
 ----
 
 Read the documentation for the `std::io::Read`, `std::io::Write` traits,
-especially `read_to_string` and `write`.
+especially `Read#read_to_string` and `Write#write`.
 
 == Hints
 
