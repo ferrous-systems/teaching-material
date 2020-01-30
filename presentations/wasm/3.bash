@@ -1,1 +1,1 @@
-rustup target add wasm32-unknown-emscripten
+curl https://wasmtime.dev/install.sh -sSf | bash

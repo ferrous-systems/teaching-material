@@ -1,6 +1,0 @@
-= Intro
-
-link:./index.html[Table of Contents]
-
-
-== Intro

@@ -1,1 +1,0 @@
-wasm-game-of-life

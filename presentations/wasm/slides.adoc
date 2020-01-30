@@ -5,203 +5,62 @@ link:./index.html[Table of Contents]
 
 == What?
 
-WebAssembly enables running Rust (among others) in Javascript environments like the web browser.
+WebAssembly(WASM) enables running Rust (among others) in a sandbox environment, including the browser.
 
-It is the successor to asm.js in many ways.
+WebAssembly is supported as a _compile target_.
 
-It is currently a developing standard and is often not enabled by default.
+== High performance
 
-== Gotcha
+WASM is built with speed in mind and executes almost as fast as native code.
 
-WebAssembly is still not widely supported and has a number of rough edges.
+== The WASM sandbox
 
-== Installing
+In its initial state, WASM does only provide memory and execution, no functionality.
 
-Setup is a bit unrefined at this moment, but it should improve in the future.
+This can be added through the host system in various ways.
 
-* Fetch `emsdk` from http://kripken.github.io/emscripten-site/docs/getting_started/downloads.html[emscripten].
-* Unpack it somewhere sensible.
-* Navigate to the directory in your terminal.
-
-== Installing: `emcc`
-
-[source,bash]
+== Hello World
+[source,wat]
 ----
-include::./1.bash[]
+include::./1.wat[]
 ----
 
-The output of the third command will offer instructions for what to add to `$PATH` if desired.
+== WASM targets in Rust
 
-> We use `incoming` to utilize the latest refinements.
+Rust ships 3 WASM targets:
 
-== Installing: `emcc`
+* wasm32-unknown-emscripten (legacy)
+  * ships with an implementations of libc for WASM
+* wasm32-unknown-unknown (stable)
+  * direct compilation to WASM, with no additional tooling
+* wasm32-wasi (in development)
+  * WASM with support for _interface types_, a structured way of adding capabilities
 
-The versions of the toolchain are quite important. Verify there are no errors running the following:
+== Installation: `rustup` Target
+
+`rustup` allows installing multiple compilation targets.
 
 [source,bash]
 ----
 include::./2.bash[]
 ----
 
-== Installing: `rustup` Target
-
-`rustup` allows installing multiple compilation targets.
+== Installing a host runtime
 
 [source,bash]
-----
+---
 include::./3.bash[]
-----
+---
 
-== Standalone Executable
+* Currently need building from git: https://github.com/bytecodealliance/wasmtime
 
-== Standalone Executable
+== Usage: Hello World!
 
 [source,bash]
-----
+---
 include::./4.bash[]
-----
+---
 
-[source,rust]
-----
-include::./5.rs[]
-----
+== Usage: The WASI tutorial example
 
-== Standalone Executable
-
-[source,bash]
-----
-include::./6.bash[]
-----
-
-This will create a directory structure like so:
-
-[source]
-----
-include::./7.output[]
-----
-
-== Standalone Executable
-
-Once we generate the `wasm` and `js` we want to place them in with a `site` folder. We can use a `Makefile` for this.
-
-[source,makefile]
-----
-include::./8.makefile[]
-----
-
-== Standalone Executable
-
-Create `site/index.html`:
-
-[source,html]
-----
-include::./9.html[]
-----
-
-== Standalone Executable
-
-Running `python3 -m http.server` or equivalent, browsing to `localhost:8000/site`, and opening the console yield the following output:
-
-[source]
-----
-include::./10.output[]
-----
-
-== Rust from JS
-
-== Rust from JS
-
-Exporting functions for use in Javascript is a bit more complicated.
-
-Additionally, interactions must be handled like interactions to C.
-
-== Rust from JS
-
-The nightly channel is currently necessary to get this to work properly:
-
-[source,bash]
-----
-include::./11.bash[]
-----
-
-== Rust from JS
-
-[source,bash]
-----
-include::./12.bash[]
-----
-
-[source,rust]
-----
-include::./13.rs[]
-----
-
-== Rust from JS
-
-We can use the same Makefile as before.
-
-[source,makefile]
-----
-include::./8.makefile[]
-----
-
-== Rust from JS
-
-The `onRuntimeInitialized` hook for `Module` defines what is called after the WebAssembly is loaded.
-
-[source,html]
-----
-include::./14.html[]
-----
-
-== Rust from JS
-
-Running `python3 -m http.server` or equivalent, browsing to `localhost:8000/site`, and opening the console yield the following output:
-
-[source]
-----
-include::./15.output[]
-----
-
-== JS from Rust
-
-== JS from Rust
-
-Calling JS code from Rust has similar complications.
-
-It is done primarily through passing the `+--js-library+` flag at link time, which requires the nightly channel of rust.
-
-Passing numerics is relatively simple, but passing more complex things like strings requires extra effort.
-
-== JS from Rust
-
-Returning a string for Rust code:
-
-[source,javascript]
-----
-include::./17.js[]
-----
-
-== JS from Rust
-
-Calling the Javascript function:
-
-[source,rust]
-----
-include::./18.rs[]
-----
-
-== DOM Interaction
-
-There is a https://github.com/tcr/rust-webplatform[WebPlatform crate] to explore and contribute to.
-
-[source,rust]
-----
-include::./19.rs[]
-----
-
-== Future
-
-WebAssembly is rapidly becoming more refined and mature. Rust's integration is also under active work.
-
-Keep your eyes peeled for more, better support!
+https://github.com/kubkon/rust-wasi-tutorial.git

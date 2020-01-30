@@ -1,1 +1,0 @@
-$ cargo install cargo-tree
