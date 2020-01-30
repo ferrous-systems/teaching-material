@@ -36,6 +36,8 @@
 * link:./std-lib-tour.html[The stdlib]
 * link:./iterators-again.html[Iterators Again]
 
+* link:./wasm.html[WASM]
+
 .Assignments
 
 * link:./assignments/fizzbuzz.html[FizzBuzz]
