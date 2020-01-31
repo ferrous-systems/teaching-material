@@ -1,8 +1,8 @@
 # teaching-material
 
-## Prerequsites
+## Prerequisites
 
-You need to have Ruby and bundle installed
+You need to have Ruby and bundle installed.
 
 Run
 
@@ -17,10 +17,9 @@ Once to install AsciiDoctor
 
 [source]
 ----
-$ ./make.sh
+$ ./rake
+$ firefox ./target/index.html
 ----
-
-The results are in the `./target` directory.
 
 ## Links
 

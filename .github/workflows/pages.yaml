@@ -21,7 +21,7 @@ jobs:
         run: |
           gem install bundler
           bundle install --jobs 4 --retry 3
-          ./make.sh
+          ./rake
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v2.6.0-rc0

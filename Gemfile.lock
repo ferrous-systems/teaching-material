@@ -7,6 +7,10 @@ GEM
       concurrent-ruby (~> 1.0)
       thread_safe (~> 0.3.5)
     concurrent-ruby (1.1.5)
+    multi_json (1.14.1)
+    pygments.rb (1.2.1)
+      multi_json (>= 1.0.0)
+    rake (13.0.1)
     thread_safe (0.3.6)
 
 PLATFORMS
@@ -14,6 +18,8 @@ PLATFORMS
 
 DEPENDENCIES
   asciidoctor-revealjs
+  pygments.rb
+  rake
 
 BUNDLED WITH
    1.17.2
