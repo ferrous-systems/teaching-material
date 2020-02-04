@@ -39,6 +39,8 @@ task :presentations => :index do
         revealjs_transition=none
         revealjs_width=1920
         source-highlighter=highlightjs
+        docinfo=shared
+        docinfodir=../
       ATTRS
       backend: 'revealjs',
       to_file: "#{TARGET_DIR}/#{name}.html",
