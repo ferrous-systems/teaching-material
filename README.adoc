@@ -1,20 +1,31 @@
-# teaching-material
+:ferrous: https://ferrous-systems.com/[Ferrous Systems]
 
-## Prerequisites
+# Ferrous Teaching Material
 
-You need to have Ruby and bundle installed.
+This is free workshop material produced by {ferrous} for trainings.
+mailto:contact@ferrous-systems.com[Get in touch] for a custom quote.
+The time for the full course is around three to four days.
 
-Run
+The material is created with people with zero Rust experience but with a programming background in mind.
 
+## Overview
+
+The materials are presented as a set of small, self-contained lessons on a specific topic.
+Lessons can be arranged into courses exploring various aspects of Rust.
+
+## Building
+
+We use https://asciidoctor.org[Asciidoctor] for slides and assignments.
+
+To compile `.adoc` to HTML, you need to have Ruby, bundle and Python2 (for syntax highlighting) installed:
+
+.Prerequisites
 [source]
 ----
 $ bundle --path=.bundle/gems --binstubs=.bundle/.bin
 ----
 
-Once to install AsciiDoctor
-
-## Building
-
+.Building
 [source]
 ----
 $ ./rake
@@ -26,3 +37,26 @@ $ firefox ./target/index.html
 * https://ferrous-systems.github.io/teaching-material/index.html[Rendered Presentations]
 * https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[AsciiDoc Syntax Quick Reference]
 * https://asciidoctor.org/docs/user-manual/[Asciidoctor User Manual]
+
+## Translations
+
+The materials are in English.
+Translation to over languages is allowed and encouraged, if you would like to maintain a translation, send us a pull request with a link.
+
+Partial translations to German, French and Spanish are available in the https://github.com/ferrous-systems/rust-three-days-course/tree/master/presentation/chapters[old repository].
+
+## Credits
+
+The development of this course is financed by {ferrous}.
+
+They are open sourced as a contribution to the growth of the Rust language.
+
+If you want to fund further development of the course, book a training!
+
+## Commercial use
+
+This course is expressively intended for commercial and free use.
+
+## License
+
+https://creativecommons.org/licenses/by-sa/4.0/
