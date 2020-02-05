@@ -20,3 +20,11 @@
   line-height: 1.4em;
   white-space: pre-wrap;
 }
+
+.open-in-playground {
+    background: #a42;
+    font-size: 125%;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}

@@ -1,4 +1,23 @@
 <!-- This thing gets copy-pasted to the end of html with presentation-->
+<!-- When https://github.com/asciidoctor/asciidoctor-reveal.js/issues/177 is fixed, we can move this to a custom template -->
+<!-- FIXME: do we really need jquery here? -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script>
-    console.log("Hello from Asciidoctor docinfo!")
+    const buttons = '<button class="open-in-playground">RUN</button>\n';
+
+    function addButtons() {
+        $('pre code.language-rust').each(function (i, block) {
+            $(block).parent().prepend(buttons);
+        });
+        $('.open-in-playground').click(function () {
+            const code = $(this).siblings('code').text();
+            const baseUrl = 'https://play.rust-lang.org/?version=stable&code=';
+            const payload = encodeURIComponent(code);
+            const url = baseUrl + payload;
+            window.open(url, '_blank');
+        });
+    }
+
+    $(addButtons)
 </script>
