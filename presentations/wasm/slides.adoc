@@ -30,11 +30,11 @@ include::./1.wat[]
 Rust ships 3 WASM targets:
 
 * wasm32-unknown-emscripten (legacy)
-  * ships with an implementations of libc for WASM
+    * ships with an implementations of libc for WASM
 * wasm32-unknown-unknown (stable)
-  * direct compilation to WASM, with no additional tooling
+    * direct compilation to WASM, with no additional tooling
 * wasm32-wasi (in development)
-  * WASM with support for _interface types_, a structured way of adding capabilities
+    * WASM with support for _interface types_, a structured way of adding capabilities
 
 == Installation: `rustup` Target
 
@@ -48,18 +48,18 @@ include::./2.bash[]
 == Installing a host runtime
 
 [source,bash]
----
+----
 include::./3.bash[]
----
+----
 
 * Currently need building from git: https://github.com/bytecodealliance/wasmtime
 
 == Usage: Hello World!
 
 [source,bash]
----
+----
 include::./4.bash[]
----
+----
 
 == Usage: The WASI tutorial example
 
