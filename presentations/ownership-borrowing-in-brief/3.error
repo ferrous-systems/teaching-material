@@ -1,0 +1,8 @@
+8  |     let file = match file_create {
+   |         ---- move occurs because `file` has type `std::fs::File`, which does not implement the `Copy` trait
+...
+13 |     write_and_close(file);
+   |                     ---- value moved here
+14 |     write_and_close(file)
+   |                     ^^^^ value used here after move
+
