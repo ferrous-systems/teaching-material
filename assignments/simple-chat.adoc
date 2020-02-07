@@ -34,6 +34,8 @@ Implement the client function so that it:
 * Then registers the client with the broker
 * Spawns 2 tasks, one to read the incoming messages, one to deliver outgoing
 
+Go step by step, first reading the name from the input, printing it using `println` and then going from there.
+
 = Help
 
 == Clone everywhere
