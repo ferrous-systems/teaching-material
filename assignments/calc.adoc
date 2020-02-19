@@ -1,0 +1,140 @@
+= Exercise: calculator
+:icons: font
+:source-highlighter: pygments
+:pygments-style: borland
+
+:source-language: rust
+
+In this exercise, we will implement a simple calculator.
+
+You will learn:
+
+* How to write a simple Rust library
+* How to interact with borrowed and owned memory, especially how to take ownership
+* How to handle cases using the `match` syntax
+* How to create a safe parser in Rust manually
+
+The library does not handle I/O.
+
+== Syntax Specification
+
+To simplify parsing, we will use prefix notation:
+
+[source]
+----
+expr = number
+     | '+' expr expr
+     | '-' expr expr
+     | '*' expr expr
+     | '/' expr expr
+----
+
+Here are some examples:
+
+|===
+|Prefix notation | Infix notation | Value
+
+|`92`        | `92`           | 92
+|`+ 40 2`    | `40 + 2`       | 42
+|`/ + 1 3 2` | `(1 + 3) / 2`  | 2
+|===
+
+== Task
+
+. Create a library project called `calc`.
+. Read the documentation for `str` (primitive), especially `split`.
+. Define function for parsing expressions:
++
+[source,rust]
+----
+fn parse(input: &str) -> Result<Expr, ParseError> {
+    todo!()
+}
+----
+. Along the way, implement appropriate datastructures for `Expr` and `Error`.
+. Write tests.
+. Define function for evaluating expressions:
++
+[source,rust]
+----
+fn eval(expr: &Expr) -> Result<i64, EvalError> {
+    todo!(),
+}
+----
+. Finishing touches:
+** implement `std::error::Error` for you error types,
+** implement `FromStr` for `Expr`,
+** make `eval` a method,
+** run `clippy` on your codebase,
+** run `rustfmt` on your codebase,
+
+== Help
+
+This section gives partial solutions to look at or refer to.
+
+In general, we also recommend to use the Rust documentation to figure out things you are missing to familiarise yourself with it. If you ever feel completely stuck or that you haven't understood something, please hail the trainers quickly.
+
+=== Getting Started
+
+Create a new Cargo project, check the build and the test setup:
+
+[source]
+----
+$ cargo new --lib calc
+$ cd calc
+$ cargo build
+$ cargo test
+----
+
+=== Appropriate data structures
+
+The appropriate data structure kinds for `Command` and `Error` are:
+
+[source,rust]
+----
+pub enum Command {
+    //....
+}
+
+pub enum ParseError {
+    //....
+}
+
+pub enum EvalError {
+    //....
+}
+----
+
+The reason is that both describe can take multiple cases, which can be listed.
+
+=== Full Data definition
+
+Here's a full definition:
+
+[source,rust]
+----
+#[derive(Debug)]
+enum Expr {
+    Number(i64),
+    BinOp {
+        kind: BinOpKind,
+        lhs: Box<Expr>,
+        rhs: Box<Expr>,
+    }
+}
+
+#[derive(Debug)]
+enum BinOpKind {
+    Add, Sub, Mul, Div
+}
+
+#[derive(Debug)]
+enum ParseError {
+    UnexpectedToken,
+    LeftoverInput
+}
+
+enum EvalError {
+    DivisionByZero
+}
+----
