@@ -3,6 +3,7 @@ use std::str::FromStr;
 #[derive(Debug)]
 pub enum Expr {
     Number(i64),
+    Square(Box<Expr>),
     BinOp {
         op_kind: BinOpKind,
         lhs: Box<Expr>,
@@ -49,6 +50,10 @@ fn parse_expr<'a>(tokens: &mut impl Iterator<Item = &'a str>) -> Result<Expr, Pa
         "-" => BinOpKind::Sub,
         "/" => BinOpKind::Div,
         "*" => BinOpKind::Mul,
+        "sqr" => {
+            let operand = parse_expr(tokens)?;
+            return Ok(Expr::Square(Box::new(operand)));
+        }
         _ => {
             let number = first
                 .parse::<i64>()
@@ -79,6 +84,10 @@ impl Expr {
                     BinOpKind::Mul => lhs * rhs,
                 }
             }
+            Expr::Square(operand) => {
+                let operand = operand.eval()?;
+                operand * operand
+            }
         };
         Ok(res)
     }
@@ -99,5 +108,6 @@ mod tests {
         check_happy("92", 92);
         check_happy("+ 40 2", 42);
         check_happy("/ + 1 3 2", 2);
+        check_happy("- + sqr 3 sqr 4 sqr 5", 0);
     }
 }
