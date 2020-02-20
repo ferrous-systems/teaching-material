@@ -47,6 +47,7 @@
 * link:./assignments/tcp-client.html[TCP client]
 * link:./assignments/connected-mailbox.html[Connected mailbox]
 * link:./assignments/multithreaded-mailbox.html[Multithreaded mailbox]
+* link:./assignments/calc.html[Calculator]
 * link:./assignments/terrarium-http.html[Terrarium: HTTP requests]
 * link:./assignments/terrarium-serde.html[Terrarium: SerDe]
 * link:./assignments/terrarium-kv.html[Terrarium: KV]
