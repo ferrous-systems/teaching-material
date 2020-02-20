@@ -43,7 +43,7 @@ impl FromStr for Expr {
     }
 }
 
-fn parse_expr<'a>(tokens: &mut impl Iterator<Item = &'a str>) -> Result<Expr, ParseError> {
+fn parse_expr<'a, I: Iterator<Item = &'a str>>(tokens: &mut I) -> Result<Expr, ParseError> {
     let first = tokens.next().ok_or(ParseError::UnexpectedEof)?;
     let op_kind = match first {
         "+" => BinOpKind::Add,
