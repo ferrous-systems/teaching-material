@@ -12,6 +12,7 @@
 * link:./ownership-borrowing-in-brief.html[Ownership & Borrowing]
 * link:./control-flow.html[Control Flow]
 * link:./little-helpers.html[Little Helpers]
+* link:./strings.html[Strings]
 
 * link:./borrowing.html[Borrowing]
 * link:./iterators.html[Iterators]
