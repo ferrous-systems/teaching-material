@@ -13,6 +13,7 @@
 * link:./control-flow.html[Control Flow]
 * link:./little-helpers.html[Little Helpers]
 * link:./strings.html[Strings]
+* link:./drop-panic-abort.html[Drop, Panic, Abort]
 
 * link:./borrowing.html[Borrowing]
 * link:./iterators.html[Iterators]
