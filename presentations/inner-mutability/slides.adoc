@@ -25,17 +25,26 @@ Ideally, we would have a `fn view(&self) -> &'static str` to return the content,
 
 == Without `Cell`s
 
-<pre><code data-source="chapters/shared/code/inner-mutability/1.rs" data-trim="hljs rust"  class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./1.rs[]
+----
 
 == Without `Cell`s
 
 This isn't ideal! `view` takes a `&mut self`, meaning this won't work:
 
-<pre><code data-source="chapters/shared/code/inner-mutability/2.rs" data-trim="hljs rust"  class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./2.rs[]
+----
 
 == Without `Cell`s
 
-<pre><code data-source="chapters/shared/code/inner-mutability/3.rs" data-trim="hljs rust"  class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./3.rs[]
+----
 
 == Tossing our views into a `Cell`
 
@@ -46,14 +55,22 @@ Let's see our previous example with `Cell`.
 
 == Tossing our views into a `Cell`
 
-<pre><code data-source="chapters/shared/code/inner-mutability/4.rs" data-trim="hljs rust"  class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./4.rs[]
+----
 
 == Again with `RefCell`
 
-<pre><code data-source="chapters/shared/code/inner-mutability/5.rs" data-trim="hljs rust"  class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./5.rs[]
+----
 
 == !
 
 > ...interior mutability is something of a last resort.
 
+++++
 <iframe src="https://doc.rust-lang.org/std/cell/index.html#when-to-choose-interior-mutability"  width="100%" height="400"></iframe>
+++++

@@ -36,6 +36,7 @@
 * link:./libcore-and-libstd.html[libcore and libstd]
 * link:./std-lib-tour.html[The stdlib]
 * link:./iterators-again.html[Iterators Again]
+* link:./inner-mutability.html[Interior Mutability]
 
 * link:./wasm.html[WASM]
 
