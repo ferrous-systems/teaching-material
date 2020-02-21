@@ -10,12 +10,11 @@ fn main() -> io::Result<()> {
         Err(e) => panic!("File create failed: {}", e),
     };
 
-    write_and_close(file) <1>
+    write_and_close(file) // <1>
 }
 
-fn write_and_close(mut file: File) -> io::Result<()> { <1>
+fn write_and_close(mut file: File) -> io::Result<()> { // <1>
     file.write_all(b"Hello World!")
 
-    <2>
+    // <2>
 }
-

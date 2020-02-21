@@ -11,10 +11,9 @@ fn main() -> io::Result<()> {
     };
 
     write_and_close(file);
-    write_and_close(file) <1>
+    write_and_close(file) // <1>
 }
 
 fn write_and_close(mut file: File) -> io::Result<()> {
     file.write_all(b"Hello World!")
 }
-
