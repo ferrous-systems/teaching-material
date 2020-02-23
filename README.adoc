@@ -358,7 +358,7 @@ architectures.
 
 In this module, attendees will learn:
 
-* Rusts cross-compile toolchain
+* Rust's cross-compile toolchain
 * Dealing with target differences
 * Keeping programs portable
 * Configuring targets in cargo
