@@ -320,7 +320,7 @@ In this module, attendees will learn:
 * Programming techniques for faster programs
 * ``Refactoring towards Speed'': futher deepening for optimising working
 code bases
-* Optimising programs for better resource usage
+* Optimising programs for specific resource usage needs
 
 Rust for Networking
 ~~~~~~~~~~~~~~~~~~~
