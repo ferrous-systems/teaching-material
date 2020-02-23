@@ -6,11 +6,11 @@ This is free workshop material produced by {ferrous} for trainings.
 mailto:contact@ferrous-systems.com[Get in touch] for a custom quote.
 The time for the full course is around three to four days.
 
-The material is created with people with zero Rust experience but with a programming background in mind.
+The material is created with people with zero Rust experience but
+with a programming background in mind.
 
 Ferrous Systems offers a large Rust curriculum for both beginner and
-advanced Rust developers. We are the oldest and most often
-chosen Rust training provider.
+advanced Rust developers.
 
 Ferrous Systems specialises in custom, topic focused workshops for
 enterprises starting or expanding their use of Rust. Supplemental to our courses, we
@@ -26,33 +26,24 @@ Lessons can be arranged into courses exploring various aspects of Rust.
 Pricing
 ~~~~~~~
 
-Ferrous Systems charges on a per-trainer-per-day basis. That allows for easy
-calculation on one-off trainings and a fair and easy discussion about
-the structure of the course. Other agreements are possible. For example,
-that allows clients to quickly change the setup of the group, e.g. by
-adding a person, without changing the contractual setup.
+For standard trainings, Ferrous Systems charges on a per-trainer-per-day basis.
+Quotations for custom trainings are available on request.
 
 We offer training on any Rust subject and will create material that we
 deem resuable at no cost for the client.
 
-We also offer training directly on clients products, against a fee to
-produce the material.
+We can also tailor training material to be directly relevant for customer's products or domain areas.
+Please contact us for a quotation for customized training material.
 
 Group setup
 ~~~~~~~~~~~
-
-Mixed backgrounds allow facilitating discussions within a group about
-approaches and techniques. A similar experience level allows the trainer
-to form better assumptions about what is already understood and what
-not.
 
 Ferrous Systems recommends a trainer per 6 attendees for full trainer
 bandwidth. If possible, we recommend opting for groups of at least 12,
 to efficiently allow for 2 trainers.
 
-We have experiences with both groups of mixed and uniform backgrounds
-and mixed skill levels. We generally recommend groups of mixed
-backgrounds and similar experience levels.
+When selecting groups for training, we recommend that participants have a similar experience level in Rust, and similar goals for using the language when possible.
+We are experienced with training developers from a wide range of backgrounds and experience levels, and can design a training suitable for your team.
 
 Training material
 ~~~~~~~~~~~~~~~~~
@@ -226,8 +217,10 @@ Exercises will be tailored to the chosen special subjects.
 Advanced Generic Programming in Rust
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Using libraries with generics in Rust is taught in the core course. When
-to use them, and how is a big question in library development, though.
+
+
+Although the use of generics is taught in the core course, this section instead focuses on how, and when, to use them effectively.
+For developers of widely used libraries (internal or public), this material is particularly important.
 
 In this module, attendees will learn:
 
@@ -275,9 +268,12 @@ Rust Testing
 
 This module teaches advanced Rust testing techniques.
 
-In this module, attendees will learn: * Fuzzing of Rust applications *
-Using property based testing * Rust in continous integration *
-Documentation testing
+In this module, attendees will learn:
+
+* Fuzzing of Rust applications
+* Using property based testing
+* Rust in continous integration
+* Documentation testing
 
 Rust for Application Development
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
