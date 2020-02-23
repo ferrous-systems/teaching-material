@@ -101,7 +101,7 @@ the event. This interview should happen as early as possible.
 Specifically courses for companies in a transformation towards using
 Rust will be tailored to the companies core subjects.
 
-The ``three days'' core
+The "three days" core
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 Ferrous Systems builds its core course around a _base course_ of three
@@ -120,7 +120,7 @@ Variations
 Variations of the course, such as a shorter or a longer version are
 available.
 
-``Three days'' overview
+"Three days" overview
 +++++++++++++++++++++++
 
 A course that focuses more on an ecosystem overview over a detailed core
@@ -150,7 +150,7 @@ and full productivity.
 ^^^^^^
 
 A condensed version of the three days course. Detailed topic deep dives
-will be reduced and some self-guided exercises reduced to ``code along''
+will be reduced and some self-guided exercises reduced to "code along"
 sessions.
 
 2,4 and 8 hours topic tasters
@@ -209,7 +209,7 @@ learn:
 * Overview the standard library, especially core interface like
 collections, input/output and networking
 * Overview of common libraries
-* ``Refactoring towards Speed'': a core technique to safely derive a
+* "Refactoring towards Speed" a core technique to safely derive a
 fast program from a working program
 
 Exercises will be tailored to the chosen special subjects.
@@ -314,7 +314,7 @@ In this module, attendees will learn:
 
 * Tools to analyse speed and memory consumption
 * Programming techniques for faster programs
-* ``Refactoring towards Speed'': futher deepening for optimising working
+* "Refactoring towards Speed": futher deepening for optimising working
 code bases
 * Optimising programs for specific resource usage needs
 
@@ -322,7 +322,7 @@ Rust for Networking
 ~~~~~~~~~~~~~~~~~~~
 
 This module is meant for developers working on the networking layer. It
-combines well with the ``Asynchronous and Concurrent Rust'' module.
+combines well with the "Asynchronous and Concurrent Rust" module.
 
 In this module, attendees will learn:
 
@@ -336,7 +336,7 @@ Asynchronous and Concurrent Rust
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This module is meant for developers interested in building highly
-concurrent systems. It combines well with the ``Rust for Networking''
+concurrent systems. It combines well with the "Rust for Networking"
 module.
 
 In this module, attendees will learn:
@@ -367,7 +367,7 @@ Embedded Rust
 ~~~~~~~~~~~~~
 
 This module is meant for developers interested in building bare metal
-systems such as microcontrollers. It includes the ``Cross-Compilation''
+systems such as microcontrollers. It includes the "Cross-Compilation"
 module, as far as it applies to microcontrollers.
 
 In this module, attendees will learn:
@@ -375,22 +375,22 @@ In this module, attendees will learn:
 * Cross-compilation of Rust to embedded devices
 * Programming Rust without a standard library
 * Target specific libraries for microcontrollers
-* Rust embedded hardware abstraction layer (``embedded HAL'')
+* Rust embedded hardware abstraction layer ("embedded HAL")
 * Libraries for use in heapless environments
 * Managing memory mapped devices
 
 Embedded Rust using RTFM
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-This module is similar to ``Embedded Rust'', but uses the
-https://rtfm.rs[``Real Time For The Masses''] concurrency framework for
+This module is similar to "Embedded Rust", but uses the
+https://rtfm.rs["Real Time For The Masses"] concurrency framework for
 teaching.
 
 Writing Drivers for Embedded Rust
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This module extends the ``Embedded Rust'' or ``Embedded Rust using
-RTFM'' module.
+This module extends the "Embedded Rust" or "Embedded Rust using
+RTFM" module.
 
 In this module, attendees will learn:
 
@@ -410,7 +410,7 @@ In this module, attendees will learn:
 * General development workflows
 ** Draft coding
 ** Going from draft to stable software
-** ``Refactoring towards speed''
+** "Refactoring towards speed"
 * Fast testing
 * Tools for reactive development workflows (such as `cargo watch`)
 
