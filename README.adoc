@@ -61,13 +61,13 @@ Ferrous Systems offers our training material under MIT/Apache-2.0
 license for source code (examples and exercises) and Creative Commons (CC-BY-SA) for textual
 content.
 
-Course material specifically constructed for you will be proprietary to
+Custom course material developed on request, including any provided examples or exercises, will be delivered directly as part of the training.
 you.
 
 Trainer staff
 ~~~~~~~~~~~~~
 
-The Ferrous Systems trainer staff consists of multiple Rust project
+The Ferrous Systems training staff consists of multiple Rust project
 maintainers and domain experts, active in multiple working groups. This
 makes sure our trainers are always up to speed on new developments and
 can give current and authoritive answers.
@@ -78,11 +78,11 @@ Among those are:
 large enterprises. Rust core team member and community team manager.
 Broad knowledge about all aspects of Rust, with special knowledge on
 network and async/concurrent programming.
-* James Munns: Training Rust since 2018. Focus on general Rust and
+* James Munns: Training Rust since 2017. Focus on general Rust and
 small/embedded systems. Member of the Embedded Working Group Core Team.
 Great knowledge of integrating Rust with C codebases.
 * Aleksey Kladov: Training Rust since 2018 in academic and enterprise
-setting. Member of the Rust tools team. Author of the rust-analyzer IDE.
+settings. Member of the Rust tools team. Author of the rust-analyzer IDE.
 Very broad and exact knowledge of the language and its tooling,
 especially focused on debugging.
 * Jonas Schievek: Training Rust since 2019. Focus on general Rust and
@@ -138,7 +138,7 @@ subject. It may cover up to 4 topics.
 Attendees may not become productive in all areas, but get a good feeling
 for them.
 
-This course is perfect for engineering management, that will most likely
+This course is perfect for engineering management that will most likely
 not end up using Rust daily, but needs broad knowledge to assess Rust as
 a technology. It is also frequently given in academic settings.
 
@@ -146,11 +146,11 @@ a technology. It is also frequently given in academic settings.
 ^^^^^^
 
 The longer versions covers similar subjects as above, but in more
-detail. This allows e.g. the construction of a larger piece of software
+detail. This allows for exercises such as the construction of a larger piece of software
 in the training group collaboratively.
 
 These courses are recommended for people that are intended to be
-multipliers in your organisation.
+multipliers in your organisation, teaching or leading other teams using Rust.
 
 After 5 days, attendees will have solid knowledge in a topical domain
 and full productivity.
@@ -168,21 +168,21 @@ sessions.
 Taster sessions that favor experiences over solid knowledge and get
 people excited.
 
-Perfect for conferences and internal all-hands to expand peoples
+Perfect for conferences and internal all-hands to expand people's
 horizons.
 
 Advanced courses
 ~~~~~~~~~~~~~~~~
 
 Advanced courses deepen a Rust subject and are indended for groups that
-already visited a course before. They quickly refreshen core knowledge
-and then add a topical deep dive on topic. Advanced courses also differ
+have already attended a course previously. They quickly refresh core knowledge
+and then add a specific deep dive on topic. Advanced courses also differ
 from base courses in that they include a number facilitated discussions
 for attendees to share their experience.
 
 Advanced courses are tailored like base courses to the need of the
 group. For example, an basic course for for asynchronous programming
-explains how concurrent execution in Rust works, the advanced one may
+explains how concurrent execution in Rust works, while the advanced one may
 include writing your own execution engine.
 
 Topics
