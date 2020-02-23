@@ -240,7 +240,7 @@ In this module, attendees will learn:
 Rust in C/C++ Environments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Rust is often deployed in existing products, especially withing or among
+Rust is often deployed in existing products, especially within or among
 solutions written in C/C++. This module explains binding efficiently
 from C/C++ to Rust and from Rust to C/C++ codebases.
 
