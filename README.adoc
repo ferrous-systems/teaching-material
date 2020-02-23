@@ -9,7 +9,7 @@ The time for the full course is around three to four days.
 The material is created with people with zero Rust experience but with a programming background in mind.
 
 Ferrous Systems offers a large Rust curriculum for both beginner and
-advanced Rust developer at all levels. We are the oldest and most often
+advanced Rust developers. We are the oldest and most often
 chosen Rust training provider.
 
 Ferrous Systems specialises in custom, topic focused workshops for
