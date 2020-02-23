@@ -57,7 +57,7 @@ backgrounds and similar experience levels.
 Training material
 ~~~~~~~~~~~~~~~~~
 
-Ferrous Systems offers their training material under MIT/Apache-2.0
+Ferrous Systems offers our training material under MIT/Apache-2.0
 license for source code and Creative Commons (CC-BY-SA) for textual
 content.
 
