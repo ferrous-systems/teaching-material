@@ -268,7 +268,7 @@ In this module, attendees will learn:
 * Do’s and Don’ts of unsafe Rust
 * Introduction into support APIs, like non-null pointers
 * Potential undefined behaviour arising from the use of `unsafe`
-* Checking unsafe Rust vor safety
+* Checking unsafe Rust for safety
 
 Rust Testing
 ~~~~~~~~~~~~
