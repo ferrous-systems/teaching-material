@@ -13,7 +13,7 @@ advanced Rust developers. We are the oldest and most often
 chosen Rust training provider.
 
 Ferrous Systems specialises in custom, topic focused workshops for
-enterprises starting moving into Rust. Supplemental to our courses, we
+enterprises starting or expanding their use of Rust. Supplemental to our courses, we
 offer ongoing help and feedback.
 
 Overview
