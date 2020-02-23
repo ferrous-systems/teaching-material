@@ -26,7 +26,7 @@ Lessons can be arranged into courses exploring various aspects of Rust.
 Pricing
 ~~~~~~~
 
-Ferrous Systems usually charges per trainer day. That allows for easy
+Ferrous Systems charges on a per-trainer-per-day basis. That allows for easy
 calculation on one-off trainings and a fair and easy discussion about
 the structure of the course. Other agreements are possible. For example,
 that allows clients to quickly change the setup of the group, e.g. by
