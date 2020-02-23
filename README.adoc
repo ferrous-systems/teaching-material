@@ -84,7 +84,7 @@ Rust for beginners. Part of several Rust learning projects. All Rust
 subjects, from async to bare metal. Great knowledge around beginners
 concerns and how to get started.
 
-Ferrous Systems can also collaborate with local trainers in Europe, US,
+Ferrous Systems can also collaborate with local trainers in Europe, US, Canada,
 South America and South Africa.
 
 Courses
