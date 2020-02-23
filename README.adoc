@@ -20,7 +20,7 @@ Overview
 --------
 
 The materials are presented as a set of small, self-contained lessons on a specific topic.
-Note that lessons might be taken down when deemed outdated and recreated for new audiences.
+Note that lessons might be revised, extended, or removed, when necessary to keep material up to date or relevant to new audiences.
 Lessons can be arranged into courses exploring various aspects of Rust.
 
 Pricing
