@@ -58,7 +58,7 @@ Training material
 ~~~~~~~~~~~~~~~~~
 
 Ferrous Systems offers our training material under MIT/Apache-2.0
-license for source code and Creative Commons (CC-BY-SA) for textual
+license for source code (examples and exercises) and Creative Commons (CC-BY-SA) for textual
 content.
 
 Course material specifically constructed for you will be proprietary to
