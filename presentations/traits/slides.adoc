@@ -34,7 +34,7 @@ include::./2.rs[]
 
 == Borrowing and Ownership of `self`
 
-It is like usual, but at the beginning somewhat unfamiliar.
+It is like normal ownership and borrowing, but at the beginning somewhat unfamiliar.
 
 -   Borrowing through one function *simultaneously borrows self*.
 -   This is especially applicable for mutable borrows!
