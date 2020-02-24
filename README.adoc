@@ -1,5 +1,6 @@
+:toc:
+:toc-placement!:
 :ferrous: https://ferrous-systems.com/[Ferrous Systems]
-:toc: macro
 
 = Ferrous Teaching Material
 
