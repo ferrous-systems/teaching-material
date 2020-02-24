@@ -1,11 +1,8 @@
 [package]
 name = "tcp-mailbox"
 version = "0.1.0"
-authors = ["Florian Gilcher <florian.gilcher@asquera.de>"]
+authors = ["Florian Gilcher <florian.gilcher@ferrous-systems.com>"]
 
 [dependencies]
-futures = "0.1"
-tokio-core = "0.1"
-tokio-service = "0.1"
-tokio-proto = "0.1"
-clap = "2.20"
+async-std = "1" # would also choose 1.5
+clap = "2.2" # would also choose 2.3

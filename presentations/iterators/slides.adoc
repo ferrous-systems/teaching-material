@@ -41,6 +41,17 @@ include::./2.rs[]
 include::./3.rs[]
 ----
 
+== Conventions
+
+|===
+|Owned |Borrowed |Mutably borrowed
+
+|.into_iter()   
+|.iter()
+|.iter_mut()
+
+|===
+
 == Common Uses
 
 == `next()`
@@ -69,3 +80,34 @@ Filter out unwanted values, skipping further computation on them:
 ----
 include::./6.rs[]
 ----
+
+== Laziness
+
+Iterators are applied lazy, so the process is memory-efficient. It goes column-wise.
+
+
+|===
+|Step | [0] | [1] | [2] | [3]
+
+|
+| 1
+| 2
+| 3
+| 4
+
+|filter(|x| x % 2 == 0 )
+| 
+| 2
+| 
+| 4
+
+
+|map(|x| x * 2)
+|
+| 4
+|
+| 8
+
+|===
+
+

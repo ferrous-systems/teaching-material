@@ -78,7 +78,9 @@ Many examples in this course are very small, which is why we will also spend tim
 - These properties are guaranteed at compile time and have no runtime cost!
 - Optimizing compiler based on LLVM
 - Features with runtime cost are explicit and hard to activate "by accident"
-- No reflection (Dracula-Language)
+- No reflection
+- Zero-cost abstractions
+- "Pay what you use": Rust has features with a runtime cost in an explicit and visible way. Unused features do not come with an associated cost.
 
 == Pragmatic
 
@@ -88,15 +90,9 @@ Many examples in this course are very small, which is why we will also spend tim
 - Great error messages by the compiler
 - Rust gives support for many hard things and trusts you with the rest
 
-== Language features
-
-- Rust is an expression-based language. Each expression has a value, which can be assigned or returned.
-- "Pay what you use": Rust has features with a runtime cost in an explicit and visible way. Features not used don't cost anything.
-- Zero-cost abstractions
-
 == Where do Rustaceans come from?
 
-In almost equal parts from:
+From diverse backgrounds:
 
 - Dynamic languages (JS, Rubyists and Pythonista)
 - Functional languages like Scala and Haskell

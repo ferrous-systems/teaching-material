@@ -36,7 +36,7 @@ include::./4.rs[]
 
 == With Bounds
 
-Generic functions can also have bounds.
+Generic functions can be _constrained_.
 
 These are equivalent:
 
@@ -44,8 +44,3 @@ These are equivalent:
 ----
 include::./5.rs[]
 ----
-
-== Remarks
-
-- Types which do not have the `Copy` trait are consumed when passed by value.
-- Returning references may involve clarifying lifetimes (discussed later.)

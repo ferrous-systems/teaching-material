@@ -64,22 +64,10 @@ Note the early exit.
 == Using `?` in `main`
 
 * `main` can return `Result`
-* Stable in Rust since `1.26`.
 
 [source,rust]
 ----
 include::./6.rs[]
-----
-
-== Results Are Wrapper Types
-
-It's possible to change a `Result<T,E>` into a `Result<U,E>` without unwrapping it.
-
-Transforming a `Result<T,E>` into a `Result<T,X>` is also possible.
-
-[source]
-----
-include::./1.diagram[]
 ----
 
 == Mapping Result Values
@@ -90,6 +78,18 @@ include::./7.rs[]
 ----
 `map_err()` is also available.
 
+== Dynamic errors
+
+Rust has a an idiomatic dynamic error type, which most errors can be converted into:
+
+[source,rust]
+----
+include::./8.rs[]
+----
+
+To be converted like this, errors must implement the std::error::Error trait.
+
 == Reporting Errors Only
 
 If you only have to report an error, but don't have a meaningful return value, use `Result<(), Error>`.
+

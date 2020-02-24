@@ -21,22 +21,17 @@ include::./1.rs[]
 include::./2.rs[]
 ----
 
-== Closure-Types
+== Closure Types
 
+Moving:: The closure consumes its environment. It can only be called once.
 
-FnOnce:: The closure consumes its environment
+Mutating:: The closure mutates its environment
 
-FnMut:: The closure mutates its environment
-
-Fn:: The closure references its environment immutably
+Referencing:: The closure references its environment immutably
 
 == !
 
 `rustc` infers the type automatically, but it is needed for type signatures!
-
-== !
-
-The relationship between the closure types is: Fn is a supertrait FnMut, FnMut is a supertrait of FnOnce.
 
 == Notation of closure arguments
 
@@ -47,7 +42,7 @@ include::./3.rs[]
 
 == Moves and Closures
 
-As the closure environment is implicit, moving types into the closure is explicit.
+To resolve ambiguity, closures borrow by default. Moving needs to be requested.
 
 [source,rust]
 ----

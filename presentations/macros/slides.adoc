@@ -9,7 +9,6 @@ Rust has a macro language. See https://danielkeep.github.io/tlborm/book/README.h
 
 == Important Macros
 
--   `try!(result)` Handling of Results
 -   `println!(pattern, [values])` Easy printing of formatted strings to stdout
 -   `format!(pattern, [values])` like `println!`, but returns Strings
 -   `write!(buf, pattern, string)` Simple writing of formatted data to a buffer

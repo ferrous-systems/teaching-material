@@ -28,7 +28,7 @@ In addition, a cargo project can contain:
 
 ==  The Manifest
 
-The http://doc.crates.io/manifest.html[Cargo-Manifest] is written using http://doc.crates.io/manifest.html[TOML]. It at least contains the name of the project.
+The http://doc.crates.io/manifest.html[Cargo Manifest] is written using http://doc.crates.io/manifest.html[TOML]. It at least contains the name of the project.
 
 [source,toml]
 ----
@@ -62,13 +62,15 @@ The debug profile is default here.
 
 Test use the debug profile per default.
 
-`cargo test` runs all test, including documentation test and compilation of examples!
+`cargo test --all --examples` runs all tests, including documentation test and compilation of examples!
 
 == `cargo bench`
 
 `cargo bench` runs all benchmarks.
 
 Benchmarks default to the release profile.
+
+Benchmarks can be written using the `criterion` crate.
 
 == Versioning
 
@@ -88,6 +90,7 @@ Cargo allow expressing version ranges in different fashions.
 
 - `=1.2.3`: Exact version, cargo will only use that one
 - `0.1`: Any patch version of the "0.1" series
+- `1.0`: Any patch version of the "0.1" series
 - `< 0.8`: Any minor version smaller than "0.8"
 
 For more details, check the http://doc.crates.io/manifest.html[docs]
@@ -96,7 +99,7 @@ For more details, check the http://doc.crates.io/manifest.html[docs]
 
 At the first build (or through `cargo update`), cargo calculates a version tree fulfilling the constraints stated in Cargo.toml. If successful, it will be saved in a Lockfile (Cargo.lock).
 
-It is recommendable to always keep the Lockfile under version control! (for repeatable builds)
+The Lockfile should always be kept under version control for applications, for libraries, it can be checked in to provide a repeatable test environment.
 
 == Dependencies in detail
 
@@ -175,6 +178,7 @@ These can be registered in `Cargo.toml`.
 include::./7.toml[]
 ----
 
+
 == !
 
 And then be expressed on a dependency:
@@ -183,6 +187,8 @@ And then be expressed on a dependency:
 ----
 include::./8.toml[]
 ----
+
+or used with `+cargo build --features experimental,other_feature`
 
 == Directly invoking `rustc`
 

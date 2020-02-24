@@ -34,7 +34,7 @@ include::./3.rs[]
 
 == Other heap allocations
 
-Other types might allocate on the heap, most notably `Vec` and `String`.
+Other types also allocate on the heap, most notably `Vec` and `String`.
 
 == Placement in
 

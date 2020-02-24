@@ -7,7 +7,7 @@ link:./index.html[Table of Contents]
 
 Sometimes, we want to take the decision of which implementation to use at runtime instead of letting the compiler monomorphize the code.
 
-There's two approaches to that.
+There's two approaches.
 
 == Dispatch through Enums
 
@@ -40,7 +40,7 @@ Trait objects are a pair of pointers to a virtual function table and the data.
 - You can only use one trait per object
 - This trait must fulfill certain conditions
 
-== Rules for object-safe traits
+== Rules for object-safe traits (abbrevated)
 
 - Object-safe traits are *not* allowed to require `Self: Sized`
 - All methods are object-safe
@@ -49,7 +49,7 @@ Trait objects are a pair of pointers to a virtual function table and the data.
 
 == Further properties
 
-- As trait objects know about their exact type at runtime, they support downcasts.
+- As trait objects know about their exact type at runtime, they support downcasts through the `Any` trait.
 
 [source,rust]
 ----

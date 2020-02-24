@@ -34,30 +34,33 @@ include::./2.rs[]
 
 == Borrowing and Ownership of `self`
 
-It is not unlike normal, but at the beginning somewhat unfamiliar.
+It is like normal ownership and borrowing, but at the beginning somewhat unfamiliar.
 
 -   Borrowing through one function *simultaneously borrows self*.
 -   This is especially applicable for mutable borrows!
--   `self` without `&` returns ownership to the value from the calling context.
+-   `self` without `&` takes ownership to the value from the calling context.
+
+== Borrowing and Ownership of `self`
+|===
+|Owned |Borrowed |Mutably borrowed
+
+|self   
+|&self
+|&mut self
+
+|===
+
+
 
 == Interesting Differences to Common OO
 
--   Values can replace themselves
+-   Values can be replaced, when calling `&mut` functions
 -   Values, for example, iterators and builders can have methods that consume `self` and are thus invalidated.
--   This solves the problem of invalidating iterators.
+-   This solves the problem of invalidating iterators!
 
 == Sidenote
 
--   Implementations can occur multiple times
-
-== Self
-
-`Self` is a special type in Rust. It always references the type to which the implementation refers.
-
-[source,rust]
-----
-include::./3.rs[]
-----
+-   Implementations can occur multiple times. This is useful when multiple constraints are needed.
 
 == Traits
 
@@ -103,14 +106,14 @@ Type inference of traits is very advanced, but sometimes, undecidable situations
 
 There are multiple techniques.
 
-== UFCS
-
-Unified Function Call Syntax
+== Full qualified function calls
 
 [source,rust]
 ----
 include::./6.rs[]
 ----
+
+Any reachable function in Rust can be addressed with this syntax.
 
 == Associated Types
 

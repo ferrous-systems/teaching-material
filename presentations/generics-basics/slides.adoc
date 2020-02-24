@@ -28,35 +28,6 @@ Signatures must always be fully entered.
 include::./2.rs[]
 ----
 
-== Important Generic Enums
-
-== Option
-
-[source,rust]
-----
-include::./3.rs[]
-----
-
-Describes a value which does not have to be present.
-
-`None` is a value, and should not be confused with `null`.
-
-== Result
-
-[source,rust]
-----
-include::./4.rs[]
-----
-
-Describes whether an operation was successful and returns either the value or an error.
-
-== Typical Results
-
-[source,rust]
-----
-include::./5.rs[]
-----
-
 == Generic Functions
 
 Generic Functions have type parameters.
@@ -65,3 +36,5 @@ Generic Functions have type parameters.
 ----
 include::./6.rs[]
 ----
+
+Generic functions are used when computations can be expressd in the abstract.

@@ -6,6 +6,7 @@ link:./index.html[Table of Contents]
 == Overview
 
 Some collected hints to get you started.
+
 [.two-col]
 == Derives
 
@@ -80,52 +81,20 @@ fn main() {
 
 --
 
-[.two-col]
-== Slices and Vectors
+== Unwrap Results and Option
+
+If you expect something to work or an item to be there, use `unwrap`:
 
 [source,rust]
 ----
 fn main() {
-    let bytes: &[u8] = &[1,2,3]; <1>
-    let vec: Vec<u8> = Vec::from(bytes); <2>
-    vec.push(4);
-    let vec_slice: &[u8] = vec.as_slice(); <3>
+    let file: File = File::open("Cargo.toml").unwrap();
 }
 ----
 
---
+This expects the operation to have worked.
+You can add structured error handling later.
 
-<1> The (reference) slice `&[..]` is a reference to a region of memory. It stores the length of the data and is bounds checked.
-<2> The vector `Vec<..>` is an owned region of memory. It is growable and shrinkable.
-<3> Slices can be taken to the memory a vector owns, binding the slices to the vector.
-
---
-
-[.two-col]
-== Vector reallocation
-
-[source,rust]
-----
-fn main {
-    let mut v = vec![1,2]; <1>
-    let slice = &v[..]; <2>
-
-    vec.push(4); <3>
-      //^^^^^^^ Error here
-
-    println!("{:?}", slice);
-}
-----
-
---
-
-<1> This is a shorthand vector initialization macro.
-<2> Taking a slice borrows the memory region the vector owns. `&v[..]` is syntax for "borrow from beginning to end".
-<3> Pushing on vector requires a mutable reference to it, violating borrow rules.
-
---
-
-[.centered]
 == Strings and their slices
 
 Strings and string slices work much the same.
@@ -138,12 +107,11 @@ fn main() {
 }
 ----
 
-Strings and string slices are `Vec<u8>` and `&[u8]` internally, with the added invariant that they are UTF-8.
 
 [.centered]
-== Use owned strings
+== Use Strings
 
-TIP: Spending the memory to make a heap copy and owning data makes your life a lot easier.
+In the beginning, habitually use `+String`.
 
 [source,rust]
 ----
@@ -151,17 +119,14 @@ struct Owned {
     string_data: String
 }
 
-struct Borrowed<'a> {
-    slice: &'a str
+fn returns_string() -> String {
+    String::from("Hello World")
+}
+
+fn hello(who: &str) -> String {
+    format!("Hello, {}!", who)
 }
 ----
-
-[.centered]
-== Owned vs. borrowed types
-
-Borrowed types need you to make sure that the pointee is always alive. Owned types are easier. Liberally allocate `String` and `Vec` if you run into problems.
-
-TIP: Rust makes it easy to safely refactor towards more efficient code. Get something working first, before you avoid each and every copy.
 
 [.two-col]
 == Testing
