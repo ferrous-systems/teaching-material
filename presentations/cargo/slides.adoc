@@ -62,7 +62,7 @@ The debug profile is default here.
 
 Test use the debug profile per default.
 
-`cargo test --all --examples` runs all test, including documentation test and compilation of examples!
+`cargo test --all --examples` runs all tests, including documentation test and compilation of examples!
 
 == `cargo bench`
 
