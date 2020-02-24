@@ -70,7 +70,7 @@ Test use the debug profile per default.
 
 Benchmarks default to the release profile.
 
-Benchmarks only work on the nightly compiler.
+Benchmarks can be written using the `criterion` crate.
 
 == Versioning
 
