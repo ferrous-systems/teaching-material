@@ -49,9 +49,9 @@ fn main() {
     p.inspect();
     p.move_to(2,3);
     p.inspect();
-    {
-        let x = p.x_mut();
-        *x = 5;
-    }
+
+    let x = p.x_mut();
+    *x = 5;
+
     p.inspect();
 }

@@ -1,4 +1,3 @@
-[dependencies.futures]
-version = "0.1"
-git = "/my/local/path"
-branch = "my-new-feature"
+[dependencies.async-std]
+version = "1"
+path = "/my/local/path"

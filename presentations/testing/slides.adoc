@@ -96,8 +96,6 @@ include::./5.bash[]
 include::./6.rs[]
 ----
 
-<1> an callout
-
 == Integration Tests
 
 [source,bash]

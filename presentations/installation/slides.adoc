@@ -6,7 +6,7 @@ link:./index.html[Table of Contents]
 
 Rustup is the standard tool for managing Rusts compiler toolchain.
 
-https://rust-lang.org/install
+https://rust-lang.org/tools/install
 
 == Important Commands
 
