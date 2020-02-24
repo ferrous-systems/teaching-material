@@ -24,7 +24,7 @@ The materials are presented as a set of small, self-contained lessons on a speci
 Note that lessons might be revised, extended, or removed, when necessary to keep material up to date or relevant to new audiences.
 Lessons can be arranged into courses exploring various aspects of Rust.
 
-Pricing
+== Pricing
 
 For standard trainings, Ferrous Systems charges on a per-trainer-per-day basis.
 Quotations for custom trainings are available on request.
