@@ -1,4 +1,5 @@
 :ferrous: https://ferrous-systems.com/[Ferrous Systems]
+:toc: macro
 
 = Ferrous Teaching Material
 
@@ -16,7 +17,7 @@ Ferrous Systems specialises in custom, topic focused workshops for
 enterprises starting or expanding their use of Rust. Supplemental to our courses, we
 offer ongoing help and feedback.
 
-:toc:
+toc::[]
 
 = Overview
 
