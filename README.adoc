@@ -1,6 +1,6 @@
 :ferrous: https://ferrous-systems.com/[Ferrous Systems]
 
-# Ferrous Teaching Material
+= Ferrous Teaching Material
 
 This is free workshop material produced by {ferrous} for trainings.
 mailto:contact@ferrous-systems.com[Get in touch] for a custom quote.
@@ -16,15 +16,15 @@ Ferrous Systems specialises in custom, topic focused workshops for
 enterprises starting or expanding their use of Rust. Supplemental to our courses, we
 offer ongoing help and feedback.
 
-Overview
---------
+:toc:
+
+= Overview
 
 The materials are presented as a set of small, self-contained lessons on a specific topic.
 Note that lessons might be revised, extended, or removed, when necessary to keep material up to date or relevant to new audiences.
 Lessons can be arranged into courses exploring various aspects of Rust.
 
 Pricing
-~~~~~~~
 
 For standard trainings, Ferrous Systems charges on a per-trainer-per-day basis.
 Quotations for custom trainings are available on request.
@@ -35,8 +35,7 @@ deem resuable at no cost for the client.
 We can also tailor training material to be directly relevant for customer's products or domain areas.
 Please contact us for a quotation for customized training material.
 
-Group setup
-~~~~~~~~~~~
+== Group setup
 
 Ferrous Systems recommends a trainer per 6 attendees for full trainer
 bandwidth. If possible, we recommend opting for groups of at least 12,
@@ -45,8 +44,7 @@ to efficiently allow for 2 trainers.
 When selecting groups for training, we recommend that participants have a similar experience level in Rust, and similar goals for using the language when possible.
 We are experienced with training developers from a wide range of backgrounds and experience levels, and can design a training suitable for your team.
 
-Training material
-~~~~~~~~~~~~~~~~~
+== Training material
 
 Ferrous Systems offers our training material under MIT/Apache-2.0
 license for source code (examples and exercises) and Creative Commons (CC-BY-SA) for textual
@@ -55,8 +53,8 @@ content.
 Custom course material developed on request, including any provided examples or exercises, will be delivered directly as part of the training.
 you.
 
-Trainer staff
-~~~~~~~~~~~~~
+== Trainer staff
+
 
 The Ferrous Systems training staff consists of multiple Rust project
 maintainers and domain experts, active in multiple working groups. This
@@ -87,11 +85,9 @@ concerns and how to get started.
 Ferrous Systems can also collaborate with local trainers in Europe, US, Canada,
 South America and South Africa.
 
-Courses
--------
+= Courses
 
-Tailoring
-~~~~~~~~~
+== Tailoring
 
 Ferrous Systems offers courses in many different settings.
 
@@ -101,8 +97,7 @@ the event. This interview should happen as early as possible.
 Specifically courses for companies in a transformation towards using
 Rust will be tailored to the companies core subjects.
 
-The "three days" core
-~~~~~~~~~~~~~~~~~~~~~~~
+== The "three days" core
 
 Ferrous Systems builds its core course around a _base course_ of three
 days. This course consists of introduction into shared Rust subjects
@@ -114,14 +109,12 @@ After a three days course, attendees will have a solid knowledge in
 Rusts core concepts, especially Ownership and Borrowing. They will also
 have the core skills necessary for efficient self-guided learning.
 
-Variations
-^^^^^^^^^^
+=== Variations
 
 Variations of the course, such as a shorter or a longer version are
 available.
 
-"Three days" overview
-+++++++++++++++++++++++
+==== "Three days" overview
 
 A course that focuses more on an ecosystem overview over a detailed core
 subject. It may cover up to 4 topics.
@@ -133,8 +126,7 @@ This course is perfect for engineering management that will most likely
 not end up using Rust daily, but needs broad knowledge to assess Rust as
 a technology. It is also frequently given in academic settings.
 
-5 days
-^^^^^^
+==== 5 days
 
 The longer versions covers similar subjects as above, but in more
 detail. This allows for exercises such as the construction of a larger piece of software
@@ -146,15 +138,13 @@ multipliers in your organisation, teaching or leading other teams using Rust.
 After 5 days, attendees will have solid knowledge in a topical domain
 and full productivity.
 
-2 days
-^^^^^^
+==== 2 days
 
 A condensed version of the three days course. Detailed topic deep dives
 will be reduced and some self-guided exercises reduced to "code along"
 sessions.
 
-2,4 and 8 hours topic tasters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== 2,4 and 8 hours topic tasters
 
 Taster sessions that favor experiences over solid knowledge and get
 people excited.
@@ -162,8 +152,7 @@ people excited.
 Perfect for conferences and internal all-hands to expand people's
 horizons.
 
-Advanced courses
-~~~~~~~~~~~~~~~~
+== Advanced courses
 
 Advanced courses deepen a Rust subject and are indended for groups that
 have already attended a course previously. They quickly refresh core knowledge
@@ -176,16 +165,14 @@ group. For example, an basic course for for asynchronous programming
 explains how concurrent execution in Rust works, while the advanced one may
 include writing your own execution engine.
 
-Topics
-------
+= Topics
 
 Ferrous Systems offers Rust courses for a wide variety of subjects. The
 following is a non-exhaustive list of subjects.
 
 Every subject with be taught with hands-on exercises.
 
-Core topics
-~~~~~~~~~~~
+== Core topics
 
 This is the core component of the course. In this course, attendees will
 learn:
@@ -214,10 +201,7 @@ fast program from a working program
 
 Exercises will be tailored to the chosen special subjects.
 
-Advanced Generic Programming in Rust
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
+== Advanced Generic Programming in Rust
 
 Although the use of generics is taught in the core course, this section instead focuses on how, and when, to use them effectively.
 For developers of widely used libraries (internal or public), this material is particularly important.
@@ -230,8 +214,7 @@ In this module, attendees will learn:
 * Useful generics patterns
 * Patterns to avoid
 
-Rust in C/C++ Environments
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+== Rust in C/C++ Environments
 
 Rust is often deployed in existing products, especially within or among
 solutions written in C/C++. This module explains binding efficiently
@@ -247,8 +230,7 @@ In this module, attendees will learn:
 * Costs of boundary crossing
 * Assessment of feasibility
 
-Unsafe Rust
-~~~~~~~~~~~
+== Unsafe Rust
 
 Rusts `unsafe` feature is sometimes necessary for speed optimisations or
 implementation of special data structures. This module explains its
@@ -263,8 +245,7 @@ In this module, attendees will learn:
 * Potential undefined behaviour arising from the use of `unsafe`
 * Checking unsafe Rust for safety
 
-Rust Testing
-~~~~~~~~~~~~
+== Rust Testing
 
 This module teaches advanced Rust testing techniques.
 
@@ -275,8 +256,7 @@ In this module, attendees will learn:
 * Rust in continous integration
 * Documentation testing
 
-Rust for Application Development
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== Rust for Application Development
 
 This module is meant for developers that mostly produce application
 layer code and work less on libraries. It focuses less on line-by-line
@@ -290,8 +270,7 @@ In this module, attendees will learn:
 * Error handling at large
 * Logging and tracing
 
-Binary Size Optimisation
-~~~~~~~~~~~~~~~~~~~~~~~~
+== Binary Size Optimisation
 
 This module is meant for developers working on systems with constraints
 on program size, such as switches or IoT gateways. It explains
@@ -303,8 +282,7 @@ In this module, attendees will learn:
 * Programming techniques for smaller programs
 * Tools to further reduce the size of resulting binaries
 
-Rust Speed Optimisation
-~~~~~~~~~~~~~~~~~~~~~~~
+== Rust Speed Optimisation
 
 This module is meant for developers working on systems with high speed
 demands. It explains techniques to test for performance and optimise for
@@ -318,8 +296,7 @@ In this module, attendees will learn:
 code bases
 * Optimising programs for specific resource usage needs
 
-Rust for Networking
-~~~~~~~~~~~~~~~~~~~
+== Rust for Networking
 
 This module is meant for developers working on the networking layer. It
 combines well with the "Asynchronous and Concurrent Rust" module.
@@ -332,8 +309,7 @@ In this module, attendees will learn:
 * Available libraries and frameworks
 * Specifics of Rusts I/O libraries
 
-Asynchronous and Concurrent Rust
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== Asynchronous and Concurrent Rust
 
 This module is meant for developers interested in building highly
 concurrent systems. It combines well with the "Rust for Networking"
@@ -346,8 +322,7 @@ In this module, attendees will learn:
 * Effective memory safety features in concurrent applications
 * Available libraries and frameworks
 
-Cross Compilation
-~~~~~~~~~~~~~~~~~
+== Cross Compilation
 
 This module is meant for developers targeting many different
 architectures.
@@ -363,8 +338,7 @@ In this module, attendees will learn:
 
 The optional targets are taught on client need.
 
-Embedded Rust
-~~~~~~~~~~~~~
+== Embedded Rust
 
 This module is meant for developers interested in building bare metal
 systems such as microcontrollers. It includes the "Cross-Compilation"
@@ -379,15 +353,13 @@ In this module, attendees will learn:
 * Libraries for use in heapless environments
 * Managing memory mapped devices
 
-Embedded Rust using RTFM
-~~~~~~~~~~~~~~~~~~~~~~~~
+== Embedded Rust using RTFM
 
 This module is similar to "Embedded Rust", but uses the
 https://rtfm.rs["Real Time For The Masses"] concurrency framework for
 teaching.
 
-Writing Drivers for Embedded Rust
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== Writing Drivers for Embedded Rust
 
 This module extends the "Embedded Rust" or "Embedded Rust using
 RTFM" module.
@@ -398,10 +370,9 @@ In this module, attendees will learn:
 * Proper modularisation
 * Testing
 
-Productive coding in Rust
-~~~~~~~~~~~~~~~~~~~~~~~~~
+== Productive coding in Rust
 
-This module further teaches Rust techniques, also with the support of
+This module further teaches Rust working techniques, also with the support of
 IDEs.
 
 In this module, attendees will learn:
@@ -414,8 +385,7 @@ In this module, attendees will learn:
 * Fast testing
 * Tools for reactive development workflows (such as `cargo watch`)
 
-Rust and WebAssembly (WASM)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== Rust and WebAssembly (WASM)
 
 WebAssembly (WASM) is a intermediate language optimised for fast
 evaluation in secure sandboxes. This module focuses on understanding the
@@ -429,7 +399,7 @@ In this module, attendees will learn:
 * Common WASM implementations
 * Binding between a host language (usually JavaScript) and WASM
 
-## Credits
+== Credits
 
 The development of this course is financed by {ferrous}.
 
@@ -437,10 +407,10 @@ They are open sourced as a contribution to the growth of the Rust language.
 
 If you want to fund further development of the course, book a training!
 
-## Commercial use
+== Commercial use
 
 This course is expressively intended for commercial and free use.
 
-## License
+== License
 
 https://creativecommons.org/licenses/by-sa/4.0/
