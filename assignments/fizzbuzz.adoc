@@ -28,10 +28,10 @@ fn fizzbuzz(i: u32) -> String {
 +
 Implementing the following rules:
 
-  * If `i` is divisible by `3`, return the String "Fizz"
-  * If `i` is divisible by `5`, return the String "Buzz"
-  * If `i` is divisible by both `3` and `5`, return the String "FizzBuzz"
-  * Return the number as a String, otherwise
+  * If `i` is divisible by `3`, return `String::new("Fizz")`
+  * If `i` is divisible by `5`, return `String::new("Buzz")`
+  * If `i` is divisible by both `3` and `5`, return `String::new("FizzBuzz")`
+  * Return the number as a String, otherwise, using `format!("{}", i)`
 
 3. Write a main function that prints the values from `1` to `100`
 

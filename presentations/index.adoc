@@ -45,6 +45,7 @@
 .Assignments
 
 * link:./assignments/fizzbuzz.html[FizzBuzz]
+* link:./assignments/result-option-assignment.html[Files, match and Results]
 * link:./assignments/redisish.html[Redisish protocol parser]
 * link:./assignments/tcp-server.html[TCP server]
 * link:./assignments/tcp-client.html[TCP client]
