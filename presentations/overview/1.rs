@@ -1,4 +1,5 @@
 use std::io; <1>
+use std::io::prelude::*;
 use std::fs::File;
 
 fn main() -> Result<(), io::Error> { <2>
@@ -6,7 +7,7 @@ fn main() -> Result<(), io::Error> { <2>
 
     let mut file = match open_file { <4>
         Ok(file) => file,
-        Err(e) => return io::Error::from(e)
+        Err(e) => return Err(e)
     };
 
     let mut buffer = String::new(); <5>
