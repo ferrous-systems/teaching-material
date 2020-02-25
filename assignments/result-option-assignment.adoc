@@ -1,4 +1,4 @@
-= Exercise The Option and Result Type and URL parsing
+= Exercise: Files, Option and Result
 
 :source-highlighter: pygments
 :pygments-style: borland
