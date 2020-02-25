@@ -1,0 +1,84 @@
+= Exercise The Option and Result Type and URL parsing
+
+:source-highlighter: pygments
+:pygments-style: borland
+
+:source-language: rust
+
+In this exercise, you will learn
+
+* how to open a file
+* how to handle errors using the `Result`-type.
+* how to use the `Option`-type.
+* how to read a file line by line.
+* how to count the number of lines in a file.
+
+Both the `Option` and `Result` are similar in way. Both have two variants, and
+depending on what those variants are, the program may continue in a different way.
+
+The Option Type can have the variant `Some(<some other type>)` or `None`.
+It is used, when you have to handle optional values, for example if you want to
+be able to leave a field of a struct empty, go assign the option type to it.
+If the field has a value, it is `Some(<value>)`, if it is empty, it is `None`.
+
+The variants of the Result type are `Ok()` and `Err(e)`. It is used to handle errors.
+If an operation was successful, `Ok()` is returned. `Ok()` can be empty or have a
+return value. `Err(e)` contains an error message that can be printed.
+
+# `match`
+
+Both types can be used with the `match` keyword. The received value is matched on patterns, each leads to the execution of a different expression.
+
+----
+match VALUE {
+    PATTERN => EXPRESSION,
+    PATTERN => EXPRESSION,
+    PATTERN => EXPRESSION,
+}
+----
+
+== Task 1: Files and Errors
+
+* Open the file "urls.txt" using https://doc.rust-lang.org/std/fs/struct.File.html#method.open[File::open] and bind the result to the variable `f`.
+* Find out what type the variable f is. Either your IDE shows you, or you can assign a random type to the variable, and run the program.
+* Match the two possible patterns, `Ok(file)` and `Err(e)` to an an appropriate expression, for example: `println!("File opened")` and `println!("Error: {}", e)`
+
+TIP: IDEs often provide a "quick fix" to roll out all match arms quickly
+
+== Task 2: Reading Files... and Errors
+
+* import `std::io::prelude::*`
+* To use the content of the file, bind the result of the `match` statement to a variable.
+* Construct a https://doc.rust-lang.org/std/io/struct.BufReader.html[BufReader] around the file
+* Read the content of the file into a `String`.
+* Print the entire content of the file.
+* Handle potential read errors
+
+== Task 3: Reading files linewise... and Errors
+
+1. Print the content of the file line by line. The `lines()`- method returns an Iterator over the file.
+2. Print the number of lines the file contains.
+3. `lines` returns the `Result`-Type, use it to get to the actual `String`.
+4. Filter out the empty lines, and only print the the others. The https://doc.rust-lang.org/std/string/struct.String.html#method.is_empty[is_empty] method can help you here.
+
+== Task 4: Read URLs from file... and Errors
+
+1. Add `url = "2"` to your dependencies section in `Cargo.toml`
+2. Parse each line using the https://docs.rs/url/2.1.1/url/[Url Type] using a function `fn parse_url(line: String) -> Option<Url>`
+3. If a line can be parsed successfully, return `Some(url)`, `None` otherwise
+4. In the calling context, only print URLs that parse correctly
+
+== Help
+
+=== Typing variables
+
+Variables can be typed by using `:` and a type.
+
+[source,rust]
+----
+let my_value: String = String::from("test");
+----
+
+=== `match`
+
+All arms of the match tree have to result in the same type.
