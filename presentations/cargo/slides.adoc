@@ -62,7 +62,7 @@ The debug profile is default here.
 
 Test use the debug profile per default.
 
-`cargo test --all --examples` runs all test, including documentation test and compilation of examples!
+`cargo test --all --examples` runs all tests, including documentation test and compilation of examples!
 
 == `cargo bench`
 
@@ -70,7 +70,7 @@ Test use the debug profile per default.
 
 Benchmarks default to the release profile.
 
-Benchmarks only work on the nightly compiler.
+Benchmarks can be written using the `criterion` crate.
 
 == Versioning
 
@@ -99,7 +99,7 @@ For more details, check the http://doc.crates.io/manifest.html[docs]
 
 At the first build (or through `cargo update`), cargo calculates a version tree fulfilling the constraints stated in Cargo.toml. If successful, it will be saved in a Lockfile (Cargo.lock).
 
-It can be considered to always keep the Lockfile under version control! (for repeatable builds)
+The Lockfile should always be kept under version control for applications, for libraries, it can be checked in to provide a repeatable test environment.
 
 == Dependencies in detail
 

@@ -92,7 +92,7 @@ fn main() {
 }
 ----
 
-This expect the operation to have worked.
+This expects the operation to have worked.
 You can add structured error handling later.
 
 == Strings and their slices
