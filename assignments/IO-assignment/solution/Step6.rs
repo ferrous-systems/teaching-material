@@ -34,3 +34,13 @@ fn main() {
         }
     }
 }
+
+#[test]
+fn correct_url() {
+    assert!(parse_url("https://example.com").is_some())
+}
+
+#[test]
+fn no_url() {
+    assert!(parse_url("abcdf").is_none())
+}
