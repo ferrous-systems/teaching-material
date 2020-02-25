@@ -7,7 +7,7 @@ fn main() {
     let f = File::open("src/data/content.txt");
 
     match f {
-        Ok(file) => println!("{}"),
-        Err(e) => panic!("Problem opening the file: {:?}", e),
+        Ok(file) => println!("File opened!"),
+        Err(e) => println!("Problem opening the file: {:?}", e),
     };
 }

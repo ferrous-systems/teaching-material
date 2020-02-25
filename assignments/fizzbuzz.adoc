@@ -32,8 +32,10 @@ Implementing the following rules:
   * If `i` is divisible by `5`, return `String::new("Buzz")`
   * If `i` is divisible by both `3` and `5`, return `String::new("FizzBuzz")`
   * Return the number as a String, otherwise, using `format!("{}", i)`
+  * Test the function
 
-3. Write a main function that prints the values from `1` to `100`
+3. Write a main function that loops from `1` to `100` using `for`
+** print the returned value using `println!("{}", fizz)`
 
 == Help
 
@@ -103,4 +105,14 @@ let s = String::from("Fizz");
 println!("{}", s);
 ----
 
+=== Testing
 
+Testing functions are annotated using the `#[test]` attribute, assertions use `assert!(expr == expr)` or `assert_eq!(expr, expr)`.
+
+[source,rust]
+----
+#[test]
+fn my_test() {
+    assert_eq!(1, 1);
+}
+----

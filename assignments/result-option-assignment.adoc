@@ -39,9 +39,9 @@ match VALUE {
 
 == Task 1: Files and Errors
 
-* Open the file "urls.txt" using https://doc.rust-lang.org/std/fs/struct.File.html#method.open[File::open] and bind the result to the variable `f`.
+* Open the file "src/data/contents.txt" using https://doc.rust-lang.org/std/fs/struct.File.html#method.open[File::open] and bind the result to the variable `f`.
 * Find out what type the variable f is. Either your IDE shows you, or you can assign a random type to the variable, and run the program.
-* Match the two possible patterns, `Ok(file)` and `Err(e)` to an an appropriate expression, for example: `println!("File opened")` and `println!("Error: {}", e)`
+* `match` the two possible patterns, `Ok(file)` and `Err(e)` to an an appropriate expression, for example: `println!("File opened")` and `println!("Error: {}", e)`
 
 TIP: IDEs often provide a "quick fix" to roll out all match arms quickly
 
@@ -49,24 +49,26 @@ TIP: IDEs often provide a "quick fix" to roll out all match arms quickly
 
 * import `std::io::prelude::*`
 * To use the content of the file, bind the result of the `match` statement to a variable.
-* Construct a https://doc.rust-lang.org/std/io/struct.BufReader.html[BufReader] around the file
-* Read the content of the file into a `String`.
-* Print the entire content of the file.
-* Handle potential read errors
+** In the other branch of the match statement, change `println!("Error: {}", e)` to `panic!("Error: {}", e)`
+* Read the content of the file into a `String`. Use https://doc.rust-lang.org/std/io/trait.Read.html#method.read_to_string[Read#read_to_string].
+* Print the entire content of the file using `println!`
+* Handle all errors (the compiler will warn you if you miss one)
 
 == Task 3: Reading files linewise... and Errors
 
-1. Print the content of the file line by line. The `lines()`- method returns an Iterator over the file.
-2. Print the number of lines the file contains.
-3. `lines` returns the `Result`-Type, use it to get to the actual `String`.
-4. Filter out the empty lines, and only print the the others. The https://doc.rust-lang.org/std/string/struct.String.html#method.is_empty[is_empty] method can help you here.
+* Construct a https://doc.rust-lang.org/std/io/struct.BufReader.html[BufReader] around the file
+* Print the content of the file line by line. The `lines()`- method returns an Iterator over the file.
+* Print the number of lines the file contains.
+* `lines` returns the `Result`-Type, use it to get to the actual `String`.
+* Filter out the empty lines, and only print the the others. The https://doc.rust-lang.org/std/string/struct.String.html#method.is_empty[is_empty] method can help you here.
 
 == Task 4: Read URLs from file... and Errors
 
-1. Add `url = "2"` to your dependencies section in `Cargo.toml`
-2. Parse each line using the https://docs.rs/url/2.1.1/url/[Url Type] using a function `fn parse_url(line: String) -> Option<Url>`
-3. If a line can be parsed successfully, return `Some(url)`, `None` otherwise
-4. In the calling context, only print URLs that parse correctly
+* Add `url = "2"` to your dependencies section in `Cargo.toml`
+* Parse each line using the https://docs.rs/url/2.1.1/url/[Url Type] in a function `fn parse_url(line: String) -> Option<Url>`
+** If a line can be parsed successfully, return `Some(url)`, `None` otherwise
+** In the calling context, only print URLs that parse correctly
+** Test the `parse_url` function
 
 == Help
 
