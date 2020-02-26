@@ -3,9 +3,9 @@ use std::fs::File;
 
 fn main() {
 
-    let f = File::open("src/data/content.txt");
+    let open_result = File::open("src/data/content.txt");
 
-    let mut file = match f {
+    let mut file = match open_result {
         Ok(file) => file,
         Err(e) => panic!("Problem opening the file: {:?}", e),
     };

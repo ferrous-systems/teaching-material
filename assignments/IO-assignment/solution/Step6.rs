@@ -10,9 +10,9 @@ fn parse_line(line: String) -> Option<Url> {
 }
 
 fn main() {
-    let f = File::open("src/lib/content.txt");
+    let open_result = File::open("src/lib/content.txt");
 
-    let file = match f {
+    let file = match open_result {
         Ok(file) => file,
         Err(e) => panic!("Problem opening the file: {:?}", e),
     };
@@ -23,7 +23,7 @@ fn main() {
 
         let line = match line {
             Ok(content) => content,
-            Err(e) => panic!("Problem opening the file: {:?}", e),
+            Err(e) => panic!("Problem reading the file: {:?}", e),
         };
 
         let url = parse_line(line);
