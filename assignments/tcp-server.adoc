@@ -46,7 +46,7 @@ fn main() -> io::Result<()> {
 ----
 
 Read the documentation for the `std::io::Read`, `std::io::Write` traits,
-especially `Read#read_to_string` and `Write#write`.
+especially `Read#read_to_string` and `Write#write_all`.
 
 == Hints
 
@@ -61,7 +61,7 @@ use std::io::prelude::*;
 
 [source,rust]
 ----
-stream.write(string.as_bytes());
+stream.write_all(string.as_bytes());
 ----
 
 === Sending Data
