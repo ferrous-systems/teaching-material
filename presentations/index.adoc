@@ -49,7 +49,7 @@
 * link:./assignments/redisish.html[Redisish protocol parser]
 * link:./assignments/tcp-server.html[TCP server]
 * link:./assignments/tcp-client.html[TCP client]
-* link:./assignments/simple-chat.html[Calculator]
+* link:./assignments/simple-chat.html[Simple Chat]
 * link:./assignments/connected-mailbox.html[Connected mailbox]
 * link:./assignments/multithreaded-mailbox.html[Multithreaded mailbox]
 * link:./assignments/calc.html[Calculator]
