@@ -28,9 +28,9 @@ fn fizzbuzz(i: u32) -> String {
 +
 Implementing the following rules:
 
-  * If `i` is divisible by `3`, return `String::new("Fizz")`
-  * If `i` is divisible by `5`, return `String::new("Buzz")`
-  * If `i` is divisible by both `3` and `5`, return `String::new("FizzBuzz")`
+  * If `i` is divisible by `3`, return `String::from("Fizz")`
+  * If `i` is divisible by `5`, return `String::from("Buzz")`
+  * If `i` is divisible by both `3` and `5`, return `String::from("FizzBuzz")`
   * Return the number as a String, otherwise, using `format!("{}", i)`
   * Test the function
 
