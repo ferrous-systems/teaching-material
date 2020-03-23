@@ -1,9 +1,6 @@
 = Exercise: calculator
 :icons: font
-:source-highlighter: pygments
-:pygments-style: borland
-
-:source-language: rust
+:source-highlighter: rouge
 
 In this exercise, we will implement a simple calculator.
 

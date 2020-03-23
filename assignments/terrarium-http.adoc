@@ -1,8 +1,4 @@
 = Exercise: HTTP Backend Request
-:icons: font
-:source-highlighter: pygments
-:pygments-style: borland
-
 :source-language: rust
 
 In this exercise, we will make a simple backend request and react on its results.
@@ -50,7 +46,7 @@ In Rust 2015, references need to be dereferenced on match. Use the following pat
 ----
 match *req.method() {
   http::Method::POST => {
-      // ... 
+      // ...
   }
   _ => {
       // ...

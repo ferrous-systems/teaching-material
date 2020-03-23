@@ -1,8 +1,4 @@
 = Exercise: Files, Option and Result
-
-:source-highlighter: pygments
-:pygments-style: borland
-
 :source-language: rust
 
 In this exercise, you will learn

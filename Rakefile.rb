@@ -12,6 +12,10 @@ task :assignments => :index do
     puts "Converting #{doc}"
     Asciidoctor.convert_file doc,
       safe: :unsafe,
+      attributes: <<-ATTRS,
+        icons=font
+        source-highlighter=rouge
+      ATTRS
       to_file: "#{TARGET_DIR}/assignments/#{File.basename doc, '.*'}.html",
       mkdirs: true
   end

@@ -1,8 +1,4 @@
 = Exercise: TCP server
-:icons: font
-:source-highlighter: pygments
-:pygments-style: borland
-
 :source-language: rust
 
 In this exercise, we will implement a simple TCP server.
