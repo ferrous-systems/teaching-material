@@ -1,8 +1,4 @@
 = Exercise: FizzBuzz
-:icons: font
-:source-highlighter: pygments
-:pygments-style: borland
-
 :source-language: rust
 
 In this exercise, we will implement our first tiny program: FizzBuzz. FizzBuzz is easy to implement, but allows for application of Rust patterns in a very clean fasion.

@@ -17,7 +17,7 @@ Lessons can be arranged into courses exploring various aspects of Rust.
 
 We use https://asciidoctor.org[Asciidoctor] for slides and assignments.
 
-To compile `.adoc` to HTML, you need to have Ruby, bundle and Python2 (for syntax highlighting) installed:
+To compile `.adoc` to HTML, you need to have Ruby and bundler installed:
 
 .Prerequisites
 [source]

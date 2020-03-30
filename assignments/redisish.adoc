@@ -1,8 +1,4 @@
 = Exercise: redisish
-:icons: font
-:source-highlighter: pygments
-:pygments-style: borland
-
 :source-language: rust
 
 In this exercise, we will implement a toy protocol parser for a simple, redis-like protocol.
@@ -117,7 +113,7 @@ If you run into the case where Rust doesn't let you return an `&str`, heap alloc
 ----
 pub fn parse(input: &str) -> Result<Command, Error> {
     let message: &str = { <1><2>
-        //  a lot of parsing happening here 
+        //  a lot of parsing happening here
     };
 
     let owned_message: String = message.to_string();
@@ -260,7 +256,7 @@ impl fmt::Display for Error {
 }
 
 impl std::error::Error for Error {
-    
+
 }
 
 pub fn parse(input: &str) -> Result<Command, Error> {

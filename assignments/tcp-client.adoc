@@ -1,8 +1,4 @@
 = Exercise: TCP client
-:icons: font
-:source-highlighter: pygments
-:pygments-style: borland
-
 :source-language: rust
 
 In this exercise, we will implement a simple TCP client.
@@ -36,7 +32,7 @@ fn main() -> io::Result<()> {
         None => String::from("Default Message"),
     };
 
- 
+
     //...
     Ok(())
 }
