@@ -21,8 +21,8 @@ The variants of the Result type are `Ok()` and `Err(e)`. It is used to handle er
 If an operation was successful, `Ok()` is returned. `Ok()` can be empty or have a
 return value. `Err(e)` contains an error message that can be printed.
 
-# `match`
-
+[TIP]
+====
 Both types can be used with the `match` keyword. The received value is matched on patterns, each leads to the execution of a different expression.
 
 ----
@@ -32,8 +32,9 @@ match VALUE {
     PATTERN => EXPRESSION,
 }
 ----
+====
 
-# Template
+== Template
 
 Clone the teaching material repository at https://github.com/ferrous-systems/teaching-material[github.com/ferrous-systems/teaching-material].
 
