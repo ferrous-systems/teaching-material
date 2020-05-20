@@ -1,0 +1,32 @@
+
+## Building
+
+We use https://asciidoctor.org[Asciidoctor] for slides and assignments.
+
+To compile `.adoc` to HTML, you need to have Ruby, bundle and Python2 (for syntax highlighting) installed:
+
+.Prerequisites
+[source]
+----
+$ bundle --path=.bundle/gems --binstubs=.bundle/.bin
+----
+
+.Building
+[source]
+----
+$ ./rake
+$ firefox ./target/index.html
+----
+
+## Links
+
+* https://ferrous-systems.github.io/teaching-material/index.html[Rendered Presentations]
+* https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[AsciiDoc Syntax Quick Reference]
+* https://asciidoctor.org/docs/user-manual/[Asciidoctor User Manual]
+
+## Translations
+
+The materials are in English.
+Translation to over languages is allowed and encouraged, if you would like to maintain a translation, send us a pull request with a link.
+
+Partial translations to German, French and Spanish are available in the https://github.com/ferrous-systems/rust-three-days-course/tree/master/presentation/chapters[old repository].
