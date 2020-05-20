@@ -149,7 +149,7 @@ Rust forbids _shared mutability_.
 
 |String
 |&str
-|&mut String
+|&mut String and &mut str
 |===
 
 
