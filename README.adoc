@@ -26,16 +26,9 @@ The materials are presented as a set of small, self-contained lessons on a speci
 Note that lessons might be revised, extended, or removed, when necessary to keep material up to date or relevant to new audiences.
 Lessons can be arranged into courses exploring various aspects of Rust.
 
-== Pricing
+== Booking
 
-For standard trainings, Ferrous Systems charges on a per-trainer-per-day basis.
-Quotations for custom trainings are available on request.
-
-We offer training on any Rust subject and will create material that we
-deem resuable at no cost for the client.
-
-We can also tailor training material to be directly relevant for customer's products or domain areas.
-Please contact us for a quotation for customized training material.
+See https://ferrous-systems.com/training for open courses or mail office@ferrous-systems.com for custom offers.
 
 == Group setup
 
