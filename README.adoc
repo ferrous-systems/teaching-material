@@ -74,7 +74,7 @@ small/embedded systems. Member of the Embedded Working Group Core Team.
 Great knowledge of integrating Rust with C codebases.
 * Aleksey Kladov: Training Rust since 2018 in academic and enterprise
 settings. Member of the Rust tools team. Author of the rust-analyzer IDE.
-Very broad and exact knowledge of the language and its tooling,
+Contributor to Cargo. Very broad and exact knowledge of the language and its tooling.
 * Jonas Schievek: Training Rust since 2019. Focus on general Rust and
 multiple architectures. Contributor to the Rust compiler. Great
 knowledge of compilation details and performance concerns.
