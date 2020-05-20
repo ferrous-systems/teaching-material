@@ -393,7 +393,7 @@ In this module, attendees will learn:
 * Common WASM implementations
 * Binding between a host language (usually JavaScript) and WASM
 
-== Credits
+= Credits
 
 The development of this course is financed by {ferrous}.
 
@@ -401,10 +401,10 @@ They are open sourced as a contribution to the growth of the Rust language.
 
 If you want to fund further development of the course, book a training!
 
-== Commercial use
+= Commercial use
 
 This course is expressively intended for commercial and free use.
 
-== License
+= License
 
 https://creativecommons.org/licenses/by-sa/4.0/
