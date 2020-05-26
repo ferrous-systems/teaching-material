@@ -111,7 +111,7 @@ fn main() {
 [.centered]
 == Use Strings
 
-In the beginning, habitually use `+String`.
+In the beginning, habitually use `String`.
 
 [source,rust]
 ----
