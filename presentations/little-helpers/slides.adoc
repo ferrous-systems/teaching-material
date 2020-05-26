@@ -171,5 +171,3 @@ fn addtion_test() {
     assert_eq!(addition(1,2), 3);
 }
 ----
-
---
