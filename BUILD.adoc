@@ -3,7 +3,7 @@
 
 We use https://asciidoctor.org[Asciidoctor] for slides and assignments.
 
-To compile `.adoc` to HTML, you need to have Ruby, [bundler](https://rubygems.org/gems/bundler) and Python2 (for syntax highlighting) installed:
+To compile `.adoc` to HTML, you need to have Ruby and [bundler](https://rubygems.org/gems/bundler):
 
 .Prerequisites
 [source]
