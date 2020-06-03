@@ -167,7 +167,7 @@ Instead, use vectors `get` function:
 pub fn parse(input: &str) -> Result<Command, Error> {
     let tok_input = input.splitn(2, ' ').collect::<Vec<_>>();
 
-    let second_part: Option<&std> = tok_input.get(1); // panics, if input was `RETRIEVE`
+    let second_part = tok_input.get(1);
 }
 ----
 
