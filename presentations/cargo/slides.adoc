@@ -99,7 +99,8 @@ For more details, check the http://doc.crates.io/manifest.html[docs]
 
 At the first build (or through `cargo update`), cargo calculates a version tree fulfilling the constraints stated in Cargo.toml. If successful, it will be saved in a Lockfile (Cargo.lock).
 
-The Lockfile should always be kept under version control for applications. For libraries, it can be checked in to provide a repeatable test environment.
+The Lockfile should always be kept under version control for applications.
+For libraries, it can be checked in to provide a repeatable test environment.
 
 == Dependencies in detail
 
