@@ -52,7 +52,7 @@ By default, cargo uses the Debug profile, which means that the resulting binary 
 
 If the project contains an application, you can run it using `+cargo run -- [Arguments]+`.
 
-If it contains multiple, the name of the intended binary can be given using `+--bin <name>+`.
+If it contains multiple binaries, the name of the intended binary can be given using `+--bin <name>+`.
 
 The debug profile is default here.
 
@@ -60,7 +60,7 @@ The debug profile is default here.
 
 `cargo test` runs all tests. You can provide a test name or module name to filter the test being run.
 
-Test use the debug profile per default.
+Tests use the debug profile per default.
 
 `cargo test --all --examples` runs all tests, including documentation test and compilation of examples!
 
@@ -86,7 +86,7 @@ If the version of a library is below `1`, it is considered "pre-release", which 
 
 == Version expressions
 
-Cargo allow expressing version ranges in different fashions.
+Cargo allows expressing version ranges in different fashions.
 
 - `=1.2.3`: Exact version, cargo will only use that one
 - `0.1`: Any patch version of the "0.1" series
@@ -99,7 +99,7 @@ For more details, check the http://doc.crates.io/manifest.html[docs]
 
 At the first build (or through `cargo update`), cargo calculates a version tree fulfilling the constraints stated in Cargo.toml. If successful, it will be saved in a Lockfile (Cargo.lock).
 
-The Lockfile should always be kept under version control for applications, for libraries, it can be checked in to provide a repeatable test environment.
+The Lockfile should always be kept under version control for applications. For libraries, it can be checked in to provide a repeatable test environment.
 
 == Dependencies in detail
 
@@ -134,7 +134,7 @@ Dependencies outside of crates.io are forbidden if a library is to be published 
 
 == Local paths
 
-It is possible to temporarily replace libraries though local ones. For this, their path need to be registered in `$PROJECT_PATH/.cargo/config`.
+It is possible to temporarily replace libraries though local ones. For this, their path needs to be registered in `$PROJECT_PATH/.cargo/config`.
 
 [source,toml]
 ----
