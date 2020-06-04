@@ -28,7 +28,9 @@ In addition, a cargo project can contain:
 
 ==  The Manifest
 
-The http://doc.crates.io/manifest.html[Cargo Manifest] is written using http://doc.crates.io/manifest.html[TOML]. It at least contains the name of the project.
+The http://doc.crates.io/manifest.html[Cargo Manifest] is written using http://doc.crates.io/manifest.html[TOML].
+
+It at least contains the name of the project.
 
 [source,toml]
 ----
@@ -58,7 +60,9 @@ The debug profile is default here.
 
 == `cargo test`
 
-`cargo test` runs all tests. You can provide a test name or module name to filter the test being run.
+`cargo test` runs all tests.
+
+You can provide a test name or module name to filter the test being run.
 
 Tests use the debug profile per default.
 
@@ -97,9 +101,12 @@ For more details, check the http://doc.crates.io/manifest.html[docs]
 
 == Version resolution
 
-At the first build (or through `cargo update`), cargo calculates a version tree fulfilling the constraints stated in Cargo.toml. If successful, it will be saved in a Lockfile (Cargo.lock).
+At the first build (or through `cargo update`), cargo calculates a version tree fulfilling the constraints stated in Cargo.toml.
+
+If successful, it will be saved in a Lockfile (Cargo.lock).
 
 The Lockfile should always be kept under version control for applications.
+
 For libraries, it can be checked in to provide a repeatable test environment.
 
 == Dependencies in detail
@@ -135,7 +142,9 @@ Dependencies outside of crates.io are forbidden if a library is to be published 
 
 == Local paths
 
-It is possible to temporarily replace libraries though local ones. For this, their path needs to be registered in `$PROJECT_PATH/.cargo/config`.
+It is possible to temporarily replace libraries with local ones.
+
+For this, their path needs to be registered in `$PROJECT_PATH/.cargo/config`.
 
 [source,toml]
 ----
@@ -146,7 +155,9 @@ Libraries found here will be preferred. This allows easy testing of patches.
 
 == Profiles
 
-The cargo profiles (release, bench, test...) can be customized. Details can be found in the http://doc.crates.io/manifest.html[Manifest-documentation].
+The cargo profiles (release, bench, test...) can be customized.
+
+Details can be found in the http://doc.crates.io/manifest.html[Manifest-documentation].
 
 == Targets
 
@@ -157,13 +168,17 @@ The cargo profiles (release, bench, test...) can be customized. Details can be f
 
 == Workspaces
 
-Cargo can group multiple projects in a workspace. They then share settings and the same `target` directory.
+Cargo can group multiple projects in a workspace.
+
+They then share settings and the same `target` directory.
 
 See the http://doc.crates.io/manifest.html[manifest documentation] for details.
 
 == Features
 
-`rustc` provides the ability to ignore certain code parts on compilation. This happens through feature flags.
+`rustc` provides the ability to ignore certain code parts on compilation.
+
+This happens through feature flags.
 
 [source,rust]
 ----
