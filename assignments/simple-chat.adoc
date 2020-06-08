@@ -4,6 +4,7 @@ A simple chat
 Implement a simple chat using `async-std`.
 
 In this exercise, you will learn:
+
 * How to use async tasks for synchronisation
 * How to do simple connection handing
 * How to use async channels
