@@ -38,4 +38,4 @@ fn main() -> io::Result<()> {
 }
 ----
 
-Read the documentation for the `TcpStream`, especially the `shutdown` methods.
+Read the documentation for the `TcpStream`, especially the `connect()` and `shutdown()` methods.
