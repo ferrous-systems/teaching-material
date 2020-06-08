@@ -6,7 +6,7 @@ In this exercise, we will implement a simple TCP client.
 You will learn how to:
 
 * write a simple single-threaded client tool
-* to connect to your server and send/receive strings
+* connect to your server and send/receive strings
 * close parts of a bidirectional stream
 
 == Task
