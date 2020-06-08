@@ -23,14 +23,14 @@ We have some posts which have immutable content, and an incrementing view count.
 
 Ideally, we would have a `fn view(&self) -> &'static str` to return the content, and increment the view count.
 
-== Without `Cell`s
+== Without `Cell` s
 
 [source,rust]
 ----
 include::./1.rs[]
 ----
 
-== Without `Cell`s
+== Without `Cell` s
 
 This isn't ideal! `view` takes a `&mut self`, meaning this won't work:
 
@@ -39,7 +39,7 @@ This isn't ideal! `view` takes a `&mut self`, meaning this won't work:
 include::./2.rs[]
 ----
 
-== Without `Cell`s
+== Without `Cell` s
 
 [source,rust]
 ----
