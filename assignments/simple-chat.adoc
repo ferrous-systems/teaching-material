@@ -11,16 +11,14 @@ In this exercise, you will learn:
 
 Note: this is a trimmed down version ot the tutorial found in the https://book.async.rs/tutorial/index.html[async-std book].
 
-1. Clone the template
-~~~~~~~~~~~~~~~~~~~~~
+== 1. Clone the template
 
 [source,rust]
 ----
 $ git clone git@github.com:skade/async-chat-template.git
 ----
 
-2. The protocol
-~~~~~~~~~~~~~~~
+== 2. Protocol Specificatin
 
 The protocol is simple:
 
