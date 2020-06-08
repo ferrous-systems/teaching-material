@@ -60,7 +60,7 @@ include::./3.rs[]
 
 https://doc.rust-lang.org/std/sync/[`std::sync`]
 
-Provides types such a `Mutex`, `RwLock`, `CondVar`, `Arc` and `Barrier`s.
+Provides types such a `Mutex`, `RwLock`, `CondVar`, `Arc` and `Barrier` s.
 
 [source,rust]
 ----
@@ -72,6 +72,7 @@ include::./4.rs[]
 https://doc.rust-lang.org/std/io/trait.Read.html[`std::io::Read`] & https://doc.rust-lang.org/std/io/trait.Write.html[`std::io::Write`]
 
 Generic read and write functionality to files, sockets, buffers, and anything in between.
+
 Also part of https://doc.rust-lang.org/std/io/prelude/[`std::io::prelude`] (`use std::io::prelude::*`).
 
 [source,rust]
