@@ -1,4 +1,4 @@
-= Exercise: TCP server
+= Exercise: TCP Echo Server
 :source-language: rust
 
 In this exercise, we will implement a simple TCP server.
