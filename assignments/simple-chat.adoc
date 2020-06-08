@@ -1,5 +1,4 @@
-A simple chat
--------------
+= A simple chat
 
 Implement a simple chat using `async-std`.
 
