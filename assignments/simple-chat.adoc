@@ -9,7 +9,7 @@ In this exercise, you will learn:
 * How to do simple connection handing
 * How to use async channels
 
-Note: this is a trimmed down version ot the tutorial found in the https://book.async.rs/tutorial/index.html[async-std book].
+Note: this is a trimmed down version of the tutorial found in the https://book.async.rs/tutorial/index.html[async-std book].
 
 == 1. Clone the template
 
@@ -18,7 +18,7 @@ Note: this is a trimmed down version ot the tutorial found in the https://book.a
 $ git clone git@github.com:skade/async-chat-template.git
 ----
 
-== 2. Protocol Specificatin
+== 2. Protocol Specification
 
 The protocol is simple:
 
