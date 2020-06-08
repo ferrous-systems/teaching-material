@@ -62,9 +62,8 @@ stream.write_all(string.as_bytes());
 
 === Sending Data
 
-You can use `nc` to test the server:
+To send test data to your server, you can use our example client implementation:
 
-[source]
-----
-$ echo "test" | nc 127.0.0.1 8080
-----
+$ git clone https://github.com/ferrous-systems/teaching-material.git
+$ cd teaching-material/assignments/solutions/tcp-client
+$ cargo run testmessage
