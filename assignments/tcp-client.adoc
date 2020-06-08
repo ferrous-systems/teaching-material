@@ -3,11 +3,11 @@
 
 In this exercise, we will implement a simple TCP client.
 
-You will learn:
+You will learn how to:
 
-* How to write a simple single-threaded client tool
-* Read and write Strings to the
-* How to close parts of a bidirectional stream
+* write a simple single-threaded client tool
+* connect to your server and send/receive strings
+* close parts of a bidirectional stream
 
 == Task
 
@@ -38,4 +38,4 @@ fn main() -> io::Result<()> {
 }
 ----
 
-Read the documentation for the `TcpStream`, especially the `shutdown` methods.
+Read the documentation for the `TcpStream`, especially the `connect()` and `shutdown()` methods.
