@@ -1,25 +1,23 @@
-A simple chat
--------------
+= A simple chat
 
 Implement a simple chat using `async-std`.
 
 In this exercise, you will learn:
+
 * How to use async tasks for synchronisation
 * How to do simple connection handing
 * How to use async channels
 
-Note: this is a trimmed down version ot the tutorial found in the https://book.async.rs/tutorial/index.html[async-std book].
+Note: this is a trimmed down version of the tutorial found in the https://book.async.rs/tutorial/index.html[async-std book].
 
-1. Clone the template
-~~~~~~~~~~~~~~~~~~~~~
+== 1. Clone the template
 
 [source,rust]
 ----
 $ git clone git@github.com:skade/async-chat-template.git
 ----
 
-2. The protocol
-~~~~~~~~~~~~~~~
+== 2. Protocol Specification
 
 The protocol is simple:
 
