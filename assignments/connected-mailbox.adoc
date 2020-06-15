@@ -1,10 +1,8 @@
-The mailbox
------------
+= Connected Mailbox
 
 Bring your TCP server and the protocol we wrote yesterday together.
 
-1. Turn you project into a workspace
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== 1. Turn your project into a workspace
 
 Read https://doc.rust-lang.org/book/ch14-03-cargo-workspaces.html
 
@@ -18,7 +16,7 @@ mailbox-server
 ....
 
 ----
-$ cat Cargo.toml 
+$ cat Cargo.toml
 [workspace]
 members = ["redisish", "mailbox"]
 ----
@@ -29,8 +27,7 @@ $ cat mailbox/Cargo.toml
 redisish = { path = "../redisish" }
 ----
 
-2. Accept connections and implement the protocol
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== 2. Accept connections and implement the protocol
 
 1.  Every connection just sends one command
 2.  PUBLISH inserts into a message box
@@ -40,12 +37,11 @@ Use `.unwrap` for all error handling in the beginning.
 
 Use `std::collections::VecDeque` for storing.
 
-3. Do proper error handling
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== 3. Do proper error handling
 
 Implement `std::error::Error` for all your error types and start passing around a dynamically dispatched error.
 
-== Note
+=== Note
 
 To send and receive messages, you can either use `nc` or `telnet`. Alternatively, you can use the client provided: https://github.com/ferrous-systems/rust-three-days-course/tree/master/example/redisish-client
 
@@ -56,11 +52,11 @@ cargo run --bin publish -- "This is my message"
 cargo run --bin retrieve
 ----
 
-= Help
+== Help
 
 The help section omits Step 4, "proper error handling" and makes the server panic if bad data is received.
 
-== Parsing a command from a TCPStream
+=== Parsing a command from a TCPStream
 
 We highly recommend moving reading and parsing into its own function.
 
