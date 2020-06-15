@@ -1,6 +1,6 @@
 = The multithreaded mailbox
 
-Bring your TCP server and the protocol we wrote yesterday together.
+Bring your TCP server and your redisish protocol implementation together.
 
 In this exercise, you will learn:
 
