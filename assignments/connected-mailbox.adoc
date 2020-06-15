@@ -56,11 +56,11 @@ cargo run --bin retrieve
 
 == Help
 
-The help section omits Step 4, "proper error handling" and makes the server panic if bad data is received.
+NOTE: The example code below omits "proper error handling" and makes the server panic if bad data is received.
 
 === Parsing a command from a TCPStream
 
-We highly recommend moving reading and parsing into its own function.
+We highly recommend moving reading and parsing into separate functions.
 
 [source,rust]
 ----
@@ -83,7 +83,7 @@ fn read_command(stream: &mut TcpStream) -> redisish::Command {
 
 == Efficiently handling the received command
 
-You can use this snipped to quickly read a command.
+You can use this snippet to quickly read a command.
 
 [source,rust]
 ----
