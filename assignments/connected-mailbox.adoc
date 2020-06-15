@@ -27,7 +27,9 @@ $ cat tcp-server/Cargo.toml
 redisish = { path = "../redisish" }
 ----
 
-== 2. Accept connections and implement the protocol
+== 2. Use redisish in your TCP server
+
+Modify your tcp server code so that it parses input as redisish commands and reacts according to the parsing result.
 
 1.  Every connection just sends one command
 2.  PUBLISH inserts into a message box
@@ -79,7 +81,7 @@ fn read_command(stream: &mut TcpStream) -> redisish::Command {
 <2> Read all data into the buffer until the client sends EOF.
 <3> Parse the incoming buffer
 
-== Efficiently handling the received command handling the received command
+== Efficiently handling the received command
 
 You can use this snipped to quickly read a command.
 
