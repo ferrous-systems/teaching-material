@@ -1,6 +1,5 @@
 = The multithreaded mailbox
-
-Bring your TCP server and your redisish protocol implementation together.
+Modify your connected mailbox implementation so that it handles connections in separate threads.
 
 In this exercise, you will learn:
 
