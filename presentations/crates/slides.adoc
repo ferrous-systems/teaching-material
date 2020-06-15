@@ -49,7 +49,7 @@ Crates can be renamed, just like normal use statements:
 include::./3.rs[]
 ----
 
-Note the `crate` keyword before it's usage. You're using a local alias. The original still exists.
+Note the `crate` keyword before its usage. You're using a local alias. The original still exists.
 
 == !
 

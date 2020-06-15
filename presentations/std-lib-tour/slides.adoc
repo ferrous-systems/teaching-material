@@ -15,7 +15,7 @@ https://doc.rust-lang.org/std/collections/index.html[`std::collections`]
 Contains a number of valuable data structures. In particular:
 
 * https://doc.rust-lang.org/std/vec/struct.Vec.html[`Vec`] for storing sequences of values.
-* https://doc.rust-lang.org/std/collections/struct.HashMap.html[`HashMap`] for storing as key value pairs.
+* https://doc.rust-lang.org/std/collections/struct.HashMap.html[`HashMap`] for storing key value pairs.
 
 When seeking to optimize code other options may be appropriate.
 
@@ -34,7 +34,9 @@ include::./1.rs[]
 
 https://doc.rust-lang.org/std/marker/struct.PhantomData.html[`std::marker::PhantomData`]
 
-Zero-sized type used to mark things that "act like" they own a `T`. These are useful for types which require markers, generics, or use unsafe code.
+Zero-sized types are used to mark things that "act like" they own a `T`.
+
+These are useful for types which require markers, generics, or use unsafe code.
 
 [source,rust]
 ----
@@ -45,18 +47,20 @@ include::./2.rs[]
 
 https://doc.rust-lang.org/std/process/struct.Command.html[`std::process::Command`]
 
-A process builder, providing fine-grained control over how a new process should be spawned. Used for interacting with other executables.
+A process builder, providing fine-grained control over how a new process should be spawned.
+
+Used for interacting with other executables.
 
 [source,rust]
 ----
 include::./3.rs[]
 ----
 
-== Syncronization Primitives
+== Synchronization Primitives
 
 https://doc.rust-lang.org/std/sync/[`std::sync`]
 
-Provides types such a `Mutex`, `RwLock`, `CondVar`, `Arc` and `Barrier`s.
+Provides types such a `Mutex`, `RwLock`, `CondVar`, `Arc` and `Barrier` s.
 
 [source,rust]
 ----
@@ -68,6 +72,7 @@ include::./4.rs[]
 https://doc.rust-lang.org/std/io/trait.Read.html[`std::io::Read`] & https://doc.rust-lang.org/std/io/trait.Write.html[`std::io::Write`]
 
 Generic read and write functionality to files, sockets, buffers, and anything in between.
+
 Also part of https://doc.rust-lang.org/std/io/prelude/[`std::io::prelude`] (`use std::io::prelude::*`).
 
 [source,rust]
