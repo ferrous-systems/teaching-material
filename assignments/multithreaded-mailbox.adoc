@@ -3,6 +3,7 @@
 Bring your TCP server and the protocol we wrote yesterday together.
 
 In this exercise, you will learn:
+
 * To make a single-thread codebase multithreaded
 * The basics of Rusts Thread API
 * How to use the `sync` module to allow sharing between concurrent units
