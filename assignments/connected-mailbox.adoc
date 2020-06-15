@@ -1,12 +1,12 @@
 = Connected Mailbox
 
-Bring your TCP server and the protocol we wrote yesterday together.
+Bring your TCP server and your redisish protocol implementation together.
 
 == 1. Turn your project into a workspace
 
-Read https://doc.rust-lang.org/book/ch14-03-cargo-workspaces.html
+Read https://doc.rust-lang.org/book/ch14-03-cargo-workspaces.html and create a workspace.
 
-The workspace should contain your server and the redisish library.
+The workspace should contain your TCP server and the redisish library.
 
 ....
 mailbox-server
