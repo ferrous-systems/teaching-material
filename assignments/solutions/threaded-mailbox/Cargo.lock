@@ -1,0 +1,11 @@
+[[package]]
+name = "mailbox"
+version = "0.1.0"
+dependencies = [
+ "redisish 0.1.0",
+]
+
+[[package]]
+name = "redisish"
+version = "0.1.0"
+
