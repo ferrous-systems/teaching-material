@@ -1,0 +1,228 @@
+= Async Building Blocks
+
+link:./index.html[Table of Contents]
+
+
+== async
+
+* async programming is often connected to networking
+* it's not fundamentally built around it
+
+== Differences between async & sync
+
+* sync programming often has imperative behaviour
+* async programming is about construcing a process at runtime and then executing it
+* this process is called the "futures tree"
+
+== Differences between async & sync
+
+* sync programming talks fundamentally about the "now"
+* async programming talks fundamentally about the future
+* both are scheduled, but in a different fashion
+    * sync pre-emptive
+    * async cooperative
+
+==  Warning
+
+async-await is a rather new feature.
+
+* It's stable
+* The base technologies are older then the syntax
+* Some things may be come more ergonomic in the future
+
+== A normal Rust function
+
+[source,rust]
+----
+use std::io::prelude::*;
+use std::fs::File;
+
+fn read_from_disk(path: &str) -> std::io::Result<()> {
+    let mut file = File::open(path)?;
+
+    let mut buffer = String::new();
+    file.read_to_string(&mut buffer)?;
+    Ok(buffer)
+}
+----
+
+== An async Rust function
+
+[source,rust]
+----
+async fn read_from_disk(path: &str) -> std::io::Result<String> {
+    let mut file = File::open(path).await?;
+
+    let mut buffer = String::new();
+    file.read_to_string(&mut buffer).await?;
+    Ok(buffer)
+}
+----
+
+== (sketch) Desugaring
+
+[source,rust]
+----
+use async_std::io::prelude::*;
+use async_std::net::TcpStream;
+
+fn read_from_disk(path: &str) -> impl Future<Output=std::io::Result<String>> {
+    async {
+        let mut file = File::open(path).await?;
+
+        let mut buffer = String::new();
+        file.read_to_string(&mut buffer).await?;
+        Ok(buffer)
+    }
+}
+----
+
+== What are Futures
+
+Futures represent a datastructure that - at some point in the future - give us the value that we are waiting for. The Future may be:
+
+* delayed
+* immediate
+* infinite
+
+== Futures are operations
+
+Futures are complete operations that can be awaited for.
+
+Examples:
+
+* `read`: Read (up to) a number of bytes
+* `read_to_end`: Read a complete input stream
+* `connect`: Connect a socket
+
+== .await registers interest in completion
+
+[source,rust]
+----
+use async_std::io::prelude::*;
+use async_std::net::TcpStream;
+
+async fn read_from_disk(path: &str) -> std::io::Result<String> {
+    let mut file = File::open(path).await?;
+
+    let mut buffer = String::new();
+    file.read_to_string(&mut buffer).await?;
+    Ok(buffer)
+}
+----
+
+== Futures are cold
+
+[source,rust]
+----
+fn main() {
+    let read_from_disk = read_from_disk();
+}
+----
+
+== Futures need to be executed
+
+[source,rust]
+----
+fn main() {
+    let read_from_disk_future = read_from_disk("Cargo.toml");
+
+    let result = async_std::task::block_on(async {
+        let task = async_std::task::spawn(read_from_disk);
+        task.await
+    });
+
+    println!("{:?}", result);
+}
+
+use async_std::io::prelude::*;
+use async_std::fs::File;
+
+async fn read_from_disk(path: &str) -> std::io::Result<String> {
+    let mut file = File::open(path).await?;
+
+    let mut buffer = String::new();
+    file.read_to_string(&mut buffer).await?;
+    Ok(buffer)
+}
+----
+
+== Tasks
+
+* A task connects a future to the executor
+* _The task is the concurrent unit_!
+* A task is similar to a thread, but is user-space scheduled
+
+== Futures all the way down: Combining Futures
+
+[source,rust]
+----
+use async_std::io;
+use std::time::Duration;
+
+fn main() {
+    let read_from_disk_future = read_from_disk("Cargo.toml");
+
+    let timeout = Duration::from_millis(1000);
+    let timeout_read = io::timeout(timeout, read_from_disk_future);
+
+    let result = async_std::task::block_on(async {
+        let task = async_std::task::spawn(timeout_read);
+        task.await
+    });
+
+    println!("{:?}", result);
+}
+----
+
+== Ownership/Borrowing Memory in concurrent systems
+
+* Ownership works just like expected - it flows in and out of tasks/futures
+* Borrows work over `.await` points
+    * This means: All owned memory in a Future _must remain at the same place_
+* Sharing between tasks is often done using `Rc/Arc`
+
+== Categories of Executors
+
+* single-threaded
+    * Generally better latency, no synchronisation requirements
+    * Highly susceptible to accidental blockades
+    * Harmed by accidental pre-emption
+* multi-threaded
+    * Generally better resource use, synchronisation requirements
+    * Harmed by accidental pre-emption
+* deblocking
+    * Actively monitor for blocked execution threads and will spin up new ones
+
+== Reference Counting
+
+* Reference counting on single-threaded executors can be done using `Rc`
+* Reference counting on single-threaded executors can be done using `Arc`
+
+== Examples of executors
+
+* async_std
+* tokio/tokio local
+* smol
+* nuclei
+
+== Streams
+
+* Streams are async iterators
+* They represent _potentially infinite arrivals_
+* They cannot be executed, but operations on them are futures
+
+== Classic Stream operations
+
+* iteration
+* merging
+* filtering
+
+== Async iteration
+
+[source,rust]
+----
+while let Some(item) = stream.next().await {
+    //...
+}
+----

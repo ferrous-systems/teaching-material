@@ -1,0 +1,34 @@
+The async mailbox
+-----------
+
+In this exercise, you will learn how to turn a small server implemented using threads
+into an asynchronous server.
+
+Copy `/solutions/threaded-mailbox` to your work directory.
+
+1. Add async-std as a dependency
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Open `Cargo.toml` and add:
+
+----
+[dependencies]
+async-std = "1.6"
+----
+
+2. Replace sync types by async types
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Replace all synchronous/blocking types (e.g. `Thread`, `Mutex`, `TcpListener`) by async types.
+
+Turn functions into async functions if necessary.
+
+3. Observe the result
+~~~~~~~~~~~~~~~~~~~~~
+
+What changed? What stayed the same. Describe your experience.
+
+4. Additional Exercice
+~~~~~~~~~~~~~~~~~~~~~~
+
+Make the program listen on IPV4 and IPV6.
