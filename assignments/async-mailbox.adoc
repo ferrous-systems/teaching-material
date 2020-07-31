@@ -45,7 +45,7 @@ Turn functions into async functions if necessary.
 
 What changed? What stayed the same. Describe your experience.
 
-4. Additional Exercice
+4. Additional Exercise
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Make the program listen on IPV4 and IPV6.
