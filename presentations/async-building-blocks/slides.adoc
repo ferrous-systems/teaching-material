@@ -95,6 +95,10 @@ Examples:
 * `read_to_end`: Read a complete input stream
 * `connect`: Connect a socket
 
+== Futures are readiness-based
+
+They will report once the operation is done and allow you query this state. The moment a future is ready, it _resolves_.
+
 == .await registers interest in completion
 
 [source,rust]
