@@ -1,5 +1,5 @@
 The async mailbox
------------
+-----------------
 
 In this exercise, you will learn how to turn a small server implemented using threads
 into an asynchronous server.
@@ -15,6 +15,16 @@ Open `Cargo.toml` and add:
 [dependencies]
 async-std = "1.6"
 ----
+
+You can test the server by sending:
+
+----
+$ echo "PUBLISH 123231213" | nc 127.0.0.1 7878
+$ echo "RETRIEVE" | nc 127.0.0.1 7878
+----
+
+`PUBLISH <message>` will insert a message into the mailbox.
+`RETRIEVE` will retrieve a message.
 
 2. Replace sync types by async types
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
