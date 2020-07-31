@@ -41,6 +41,9 @@
 
 * link:./wasm.html[WASM]
 
+.Async
+* link:./async-building-blocks.html[Async building blocks]
+
 .Assignments
 
 * link:./assignments/fizzbuzz.html[FizzBuzz]
@@ -52,3 +55,5 @@
 * link:./assignments/connected-mailbox.html[Connected mailbox]
 * link:./assignments/multithreaded-mailbox.html[Multithreaded mailbox]
 * link:./assignments/calc.html[Calculator]
+
+* link:./assignments/async-mailbox.html[Async Mailbox]
