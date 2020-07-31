@@ -9,9 +9,9 @@ fn main() -> std::io::Result<()> {
         None => String::from("Hello!"),
     };
 
-    let mut stream = TcpStream::connect("127.0.0.1:8080")?;
+    let mut stream = TcpStream::connect("127.0.0.1:7878")?;
 
-    stream.write(message.as_bytes())?;
+    writeln!(stream, "{}", message)?;
 
     stream.shutdown(Shutdown::Write)?;
 

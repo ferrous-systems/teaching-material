@@ -26,6 +26,13 @@ $ echo "RETRIEVE" | nc 127.0.0.1 7878
 `PUBLISH <message>` will insert a message into the mailbox.
 `RETRIEVE` will retrieve a message.
 
+Alternatively, you can use the provided `tcp-client` example:
+
+----
+$ cargo run -- "PUBLISH 12345"
+$ cargo run -- "RETRIEVE"
+----
+
 2. Replace sync types by async types
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
