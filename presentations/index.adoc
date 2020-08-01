@@ -43,6 +43,7 @@
 
 .Async
 * link:./async-building-blocks.html[Async building blocks]
+* link:./async-component-interaction.html[Async component interaction]
 
 .Assignments
 
