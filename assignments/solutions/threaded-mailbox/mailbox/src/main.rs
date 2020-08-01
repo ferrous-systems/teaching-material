@@ -1,5 +1,3 @@
-extern crate redisish;
-
 use std::net::{TcpListener,TcpStream};
 use std::io;
 use std::io::prelude::*;
