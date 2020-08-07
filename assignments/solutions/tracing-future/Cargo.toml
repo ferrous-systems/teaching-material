@@ -1,0 +1,11 @@
+[package]
+name = "tracing-future"
+version = "0.1.0"
+authors = ["Florian Gilcher <florian.gilcher@asquera.de>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+async-std = "1"
+pin-project-lite = "0.1"
