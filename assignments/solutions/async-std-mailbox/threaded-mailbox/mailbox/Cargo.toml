@@ -1,8 +1,0 @@
-[package]
-name = "mailbox"
-version = "0.1.0"
-authors = ["Florian Gilcher <florian.gilcher@asquera.de>"]
-edition = "2018"
-
-[dependencies]
-redisish = { path = "../redisish" }
