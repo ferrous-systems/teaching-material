@@ -44,6 +44,7 @@
 .Async
 * link:./async-building-blocks.html[Async building blocks]
 * link:./async-component-interaction.html[Async component interaction]
+* link:./async-growth-handling.html[ Async: Avoiding disaster and unbounded growth]
 
 .Assignments
 

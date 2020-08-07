@@ -1,0 +1,52 @@
+= Async: Avoiding disaster and unbounded growth
+
+link:./index.html[Table of Contents]
+
+== Information gathering
+
+Your project is dynamic:
+* Make it traceable
+* Constantly monitor
+
+== Backpressure
+
+Backpressure is the process of "pushing back" on producers that are to fast.
+
+This throttles the system, but allows it to not fail.
+
+== Bounded vs. unbounded growth
+
+* bounded channels are predictable
+* unbounded are more dynamic
+* bounded provide backpressure
+* unbounded are useful if you know they are never beyond a certain size
+
+
+==  Holding state
+
+* Tasks can hold state (erlang pattern)
+* Otherwise, Mutexes and RWlocks allow sharing
+
+== Dropping futures
+
+* Droping a futures means cancelling it
+* Be aware on what happens if is cancelled
+
+== Shutting down
+
+* Make sure you handle signals centrally
+* Every component should subscribe to a cancel notification
+
+== Implementing a custom Future: Pinning
+
+* Futures are not allowed to move in Memory
+* The type that discribes that is called `Pin`
+* Pinning is hard, but there's support libraries
+
+== The poll protocol
+
+Futures are `poll` based - that means they get asked if they are complete.
+
+* This happens an infinite number of times, until they mark themselves complete
+* The process is optimised through the `Waker` type
+* Implemeting poll yourself is rather easy
