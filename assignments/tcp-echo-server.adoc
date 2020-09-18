@@ -64,6 +64,9 @@ stream.write_all(string.as_bytes());
 
 To send test data to your server, you can use our example client implementation:
 
+[source]
+----
 $ git clone https://github.com/ferrous-systems/teaching-material.git
 $ cd teaching-material/assignments/solutions/tcp-client
 $ cargo run testmessage
+----
