@@ -19,7 +19,14 @@ For every connection:
 to pass it around
 
 
-== Note
+== Notes
+
+=== Base code
+
+If you want to start from a clean state, you can use the solution code from the last exercise: https://github.com/ferrous-systems/teaching-material/tree/master/assignments/solutions/tcp-client
+
+
+=== `tcp-client`
 
 To send and receive messages, you can either use `nc` or `telnet`. Alternatively, you can use the client provided: https://github.com/ferrous-systems/teaching-material/tree/master/assignments/solutions/tcp-client
 
