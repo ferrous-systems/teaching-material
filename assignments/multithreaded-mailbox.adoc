@@ -18,15 +18,16 @@ For every connection:
 3.  wrap the `VecDeque` in a `std::sync::Mutex` and an `std::sync::Arc`
 to pass it around
 
+
 == Note
 
-To send and receive messages, you can either use `nc` or `telnet`. Alternatively, you can use the client provided: https://github.com/ferrous-systems/rust-three-days-course/tree/master/example/redisish-client
+To send and receive messages, you can either use `nc` or `telnet`. Alternatively, you can use the client provided: https://github.com/ferrous-systems/teaching-material/tree/master/assignments/solutions/tcp-client
 
 Usage:
 
 ----
-cargo run --bin publish -- "This is my message"
-cargo run --bin retrieve
+cargo run -- "PUBLISH This is my message"
+cargo run -- "RETRIEVE"
 ----
 
 == Help
@@ -47,7 +48,7 @@ let queue = Arc::new(Mutex::new(VecDeque::new()));
 
 ==== `handle` signature
 
-If you are confused about the new signature for handle, this one is a good start:
+If you are confused about what new signature you need for `handle`, this one is a good start:
 
 [source,rust]
 ----
