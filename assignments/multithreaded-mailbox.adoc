@@ -3,6 +3,7 @@
 Bring your TCP server and the protocol we wrote yesterday together.
 
 In this exercise, you will learn:
+
 * To make a single-thread codebase multithreaded
 * The basics of Rusts Thread API
 * How to use the `sync` module to allow sharing between concurrent units
@@ -13,10 +14,10 @@ Using your existing codebase, implement the following:
 
 For every connection:
 
-1.  spawn a thread using `std::thread::spawn`
-2.  handle the client within this thread
-3.  wrap the `VecDeque` in a `std::sync::Mutex` and an `std::sync::Arc`
-to pass it around
+.  spawn a thread using `std::thread::spawn`
+.  handle the client within this thread
+.  wrap the `VecDeque` in a `std::sync::Mutex` and an `std::sync::Arc`
+   to pass it around
 
 
 == Notes
