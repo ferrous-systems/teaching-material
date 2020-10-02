@@ -41,6 +41,6 @@ Tock, an operating system for Cortex-M processors: [tockos.org](tockos.org)
 == Solution
 
 -   Rust is a driving Force behind better target support in LLVM
-    -   Multiple Targets, espcially AVR, to be released in the next versions
+    -   Multiple Targets, especially AVR, to be released in the next versions
 -   Enthusiastic embedded community
 -   Rust has a very good community process for features that core cannot implement themselves
