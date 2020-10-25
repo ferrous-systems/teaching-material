@@ -5,7 +5,7 @@ fn main() {
         i += 1;
     }
 
-    let iter = vec![1,2,3].into_iter();
+    let mut iter = vec![1,2,3].into_iter();
 
     while let Some(i) = iter.next() {
         println!("number: {}", i);
