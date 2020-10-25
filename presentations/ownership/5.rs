@@ -1,7 +1,7 @@
 use std::fs::File;
 
-fn main() {
-    let file = File::open("test").unwrap();
+fn main() -> io::Result<()> {
+    let file = File::open("test")?;
 
     use_file(file);
 }
