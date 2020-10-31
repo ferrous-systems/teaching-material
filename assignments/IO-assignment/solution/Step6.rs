@@ -1,5 +1,5 @@
 use url::Url;
-use std::io::{Read, BufReader, BufRead, Lines};
+use std::io::{Read, BufReader};
 use std::fs::File;
 
 fn parse_line(line: String) -> Option<Url> {
@@ -37,10 +37,10 @@ fn main() {
 
 #[test]
 fn correct_url() {
-    assert!(parse_url("https://example.com").is_some())
+    assert!(parse_line(String::from("https://example.com")).is_some())
 }
 
 #[test]
 fn no_url() {
-    assert!(parse_url("abcdf").is_none())
+    assert!(parse_line(String::from("abcdf")).is_none())
 }
