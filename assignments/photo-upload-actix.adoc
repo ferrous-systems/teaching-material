@@ -40,8 +40,8 @@ actix-rt = "1"
     * try downloading it
 4. Create a "File upload" endpoint that takes a picture and puts it in the static folder
     * https://github.com/skade/actixtagram/blob/master/src/lib.rs#L17-L37[Example implementation]
-5. After uploading, create a database entry for the file using `sqlx`
-6. Instead of writing the image straight to disk, use the "image" crate to apply a small transformation
+5. Instead of writing the image straight to disk, use the "image" crate to apply a small transformation
+6. After uploading, create a database entry for the file using `sqlx`
 7. Move the image creation and manipulation to a background job using `async-channel` and a self-built task pool
 8. Add the `tracing` crate for better visibility
 
@@ -57,3 +57,17 @@ use actix_files as fs;
 App::new()
     .service(fs::Files::new("/", "/static").show_files_listing())
 ----
+
+### Reading images with the image create
+
+[source,rust]
+----
+let mut reader =  ImageReader::new(Cursor::new(buffer));
+reader.set_format(image::ImageFormat::Png);
+let img = reader.decode().unwrap();
+----
+
+[source,rust]
+----
+img.write_to(&mut f, image::ImageOutputFormat::Png).unwrap();
+---
