@@ -24,6 +24,7 @@ sqlx = { version = "0.4.0", features = [ "runtime-actix-rustls" ] }
 image = "0.23" # image manipulation crate
 async-channel = "1" # executor independent implementation of an async channel
 futures = "0.3"
+env_logger = "0.8"
 ----
 
 ## Tasks
