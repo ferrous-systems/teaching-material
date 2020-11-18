@@ -70,4 +70,4 @@ let img = reader.decode().unwrap();
 [source,rust]
 ----
 img.write_to(&mut f, image::ImageOutputFormat::Png).unwrap();
----
+----
