@@ -3,6 +3,7 @@
 In this exercise, you are going to build a small photo uploading app in https://github.com/actix/actix-web[actix-web].
 
 In this exercise, you will learn:
+
 * How to write a webservice in actix-web
 * How to handle incoming data
 * How to test the application
@@ -18,10 +19,10 @@ Create a new application and use the following dependencies.
 actix-web = "3"
 actix-multipart = "0.3"
 actix-files = "0.4"
-blocking = "1" // executor independent implementation of a blocking threadpool
+blocking = "1" # executor independent implementation of a blocking threadpool
 sqlx = { version = "0.4", default-features = false, features = [ "runtime-tokio", "macros" ] }
-image = "0.23" // image manipulation crate
-async-channel = "1" // executor independent implementation of an async channel
+image = "0.23" # image manipulation crate
+async-channel = "1" # executor independent implementation of an async channel
 futures = "0.3"
 ----
 
@@ -38,6 +39,7 @@ futures = "0.3"
 5. After uploading, create a database entry for the file using `sqlx`
 6. Instead of writing the image straight to disk, use the "image" crate to apply a small transformation
 7. Move the image creation and manipulation to a background job using `async-channel` and a self-built task pool
+8. Add the `tracing` crate for better visibility
 
 
 ## Code snippets
