@@ -36,7 +36,8 @@ futures = "0.3"
 4. Create a "File upload" endpoint that takes a picture and puts it in the static folder
     * https://github.com/skade/actixtagram/blob/master/src/lib.rs#L17-L37[Example implementation]
 5. After uploading, create a database entry for the file using `sqlx`
-6. After reading data, move the image creation to a background job using `async-channel` and a self-built task pool
+6. Instead of writing the image straight to disk, use the "image" crate to apply a small transformation
+7. Move the image creation and manipulation to a background job using `async-channel` and a self-built task pool
 
 
 ## Code snippets
