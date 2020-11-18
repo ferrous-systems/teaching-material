@@ -36,7 +36,7 @@ actix-rt = "1"
     * Discuss the ownership flow there
 2. Write a test to test the index function
 3. Start using actix-files to start serving static files
-    * put https://github.com/skade/actixtagram/tree/master/static["upload.html"] into the static folder
+    * put https://github.com/skade/actixtagram/tree/master/static["upload.html"] into the `static` folder
     * try downloading it
 4. Create a "File upload" endpoint that takes a picture and puts it in the static folder
     * https://github.com/skade/actixtagram/blob/master/src/lib.rs#L17-L37[Example implementation]
@@ -52,6 +52,8 @@ actix-rt = "1"
 
 [source,rust]
 ----
- App::new()
+use actix_files as fs;
+
+App::new()
     .service(fs::Files::new("/", "/static").show_files_listing())
 ----
