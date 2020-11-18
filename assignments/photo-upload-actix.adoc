@@ -1,5 +1,4 @@
-An actix-web based photo uploader
----------------------------------
+# An actix-web based photo uploader
 
 In this exercise, you are going to build a small photo uploading app in https://github.com/actix/actix-web[actix-web].
 
@@ -9,8 +8,7 @@ In this exercise, you will learn:
 * How to test the application
 * How and when to handle async and blocking concerns
 
-1. Create a new app
-~~~~~~~~~~~~~~~~~~~
+## Create a new app
 
 Create a new application and use the following dependencies.
 
@@ -27,8 +25,7 @@ async-channel = "1" // executor independent implementation of an async channel
 futures = "0.3"
 ----
 
-2. Tasks
-~~~~~~~~~~~~~~~~~~~
+## Tasks
 
 1. Use https://github.com/actix/examples/blob/master/hello-world/src/main.rs[The actix hello example] as a template to create a simple "hello world" app
     * Discuss the ownership flow there
@@ -42,9 +39,7 @@ futures = "0.3"
 6. After reading data, move the image creation to a background job using `async-channel` and a self-built task pool
 
 
-
-3. Code snippets
-~~~~~~~~~~~~~~~~
+## Code snippets
 
 ### Serving static files:
 
