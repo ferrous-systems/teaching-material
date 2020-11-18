@@ -1,0 +1,55 @@
+An actix-web based photo uploader
+---------------------------------
+
+In this exercise, you are going to build a small photo uploading app in https://github.com/actix/actix-web[actix-web].
+
+In this exercise, you will learn:
+* How to write a webservice in actix-web
+* How to handle incoming data
+* How to test the application
+* How and when to handle async and blocking concerns
+
+1. Create a new app
+~~~~~~~~~~~~~~~~~~~
+
+Create a new application and use the following dependencies.
+
+[source,rust]
+----
+[dependencies]
+actix-web = "3"
+actix-multipart = "0.3"
+actix-files = "0.4"
+blocking = "1" // executor independent implementation of a blocking threadpool
+sqlx = { version = "0.4", default-features = false, features = [ "runtime-tokio", "macros" ] }
+image = "0.23" // image manipulation crate
+async-channel = "1" // executor independent implementation of an async channel
+futures = "0.3"
+----
+
+2. Tasks
+~~~~~~~~~~~~~~~~~~~
+
+1. Use https://github.com/actix/examples/blob/master/hello-world/src/main.rs[The actix hello example] as a template to create a simple "hello world" app
+    * Discuss the ownership flow there
+2. Write a test to test the index function
+3. Start using actix-files to start serving static files
+    * put https://github.com/skade/actixtagram/tree/master/static["upload.html"] into the static folder
+    * try downloading it
+4. Create a "File upload" endpoint that takes a picture and puts it in the static folder
+    * https://github.com/skade/actixtagram/blob/master/src/lib.rs#L17-L37[Example implementation]
+5. After uploading, create a database entry for the file using `sqlx`
+6. After reading data, move the image creation to a background job using `async-channel` and a self-built task pool
+
+
+
+3. Code snippets
+~~~~~~~~~~~~~~~~
+
+### Serving static files:
+
+[source,rust]
+----
+ App::new()
+    .service(fs::Files::new("/", "/static").show_files_listing())
+----
