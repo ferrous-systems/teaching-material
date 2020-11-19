@@ -5,11 +5,11 @@ struct Dot {
 }
 
 fn main() {
-    let dot = Dot { x: 1, y: 2 }; <1>
+    let dot = Dot { x: 1, y: 2 }; // <1>
     pacman(dot);
 }
 
-fn pacman(dot: Dot) { <2>
+fn pacman(dot: Dot) { // <2>
     println!("Eating {:?}", dot);
-    <3>
+    // <3>
 }
