@@ -6,7 +6,7 @@
 * link:./overview.html[Overview]
 * link:./installation.html[Installation]
 * link:./basic-types.html[Basic Types]
-* link:./data-structures.html[Data Structures]
+* link:./compound-types.html[Compound Types]
 * link:./mutability.html[Mutability]
 * link:./ownership.html[Ownership]
 * link:./ownership-borrowing-in-brief.html[Ownership & Borrowing]

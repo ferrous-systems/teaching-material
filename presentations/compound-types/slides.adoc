@@ -1,4 +1,4 @@
-= Data Structures
+= Compound Types
 
 link:./index.html[Table of Contents]
 
@@ -12,7 +12,7 @@ include::./1.rs[]
 ----
 
 
-== Allocation
+== Construction
 
 [source,rust]
 ----
@@ -21,7 +21,7 @@ include::./2.rs[]
 
 == Sidenote
 
-It's common to hide allocation behind a call to `Point::new()` instead of raw allocation.
+It's common to hide construction behind a call to `Point::new()` instead of using a raw struct literal.
 
 == Field Access
 
@@ -79,4 +79,3 @@ The empty tuple `()` represents the absence of data.
 ----
 include::./9.rs[]
 ----
-
