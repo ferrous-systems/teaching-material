@@ -9,16 +9,14 @@ What happens in detail when values drop?
 
 == Drop-Order
 
-The order in which drops happen is currently *not* standardised. There are good reasons to standardise it in the current form, though.
-
-https://github.com/rust-lang/rfcs/issues/1857[Discussion]
+Rust generally guarantees drop order (https://github.com/rust-lang/rfcs/issues/1857[RFC1857])
 
 == Drop-Order
 
--   Values are dropped at the end of their scope
--   The order is *the reverse introduction order*
--   Unbound values drop immediately
--   Structure fields are dropped *last to first*
+- Values are dropped at the end of their scope
+- The order is *the reverse introduction order*
+- Unbound values drop immediately
+- Structure fields are dropped *first to last*
 
 == Destructors
 
