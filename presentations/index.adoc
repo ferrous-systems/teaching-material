@@ -19,7 +19,6 @@
 * link:./iterators.html[Iterators]
 
 * link:./functions.html[Functions]
-* link:./borrowing.html[Borrowing]
 * link:./stack-and-heap.html[Stack and Heap]
 * link:./error-handling.html[Error Handling]
 * link:./testing.html[Testing]
