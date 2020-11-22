@@ -1,6 +1,5 @@
 use std::fs::File;
-use std::io::Write;
-use std::io;
+use std::io::{self, Write};
 
 fn main() -> io::Result<()> {
     let file_create = File::create("test"); // <1>
