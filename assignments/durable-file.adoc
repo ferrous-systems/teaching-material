@@ -1,0 +1,62 @@
+= Exercise: Durable File
+:source-language: rust
+
+In this exercise, you will learn
+
+* how to implement `Drop` and `Write` traits.
+* the "`Drop guard`" pattern.
+* how to test panicking APIs.
+
+`std::fs::File` type has a
+https://doc.rust-lang.org/stable/std/fs/struct.File.html#method.sync_all[`sync_all`] method which ensures that all data is saved to disk.
+This method is not called by default: syncing is slow and OS has good heuristics for optimistically delaying syncing.
+
+In this assignment, we'll implement a `DurableFile` wrapper for `File`, which helps to ensure that applications calls `sync_all`.
+Specifically, `DurableFile` tracks `sync` operations and panics in destructor if it is dropped with outstanding write operations
+
+
+Step 1::
+--
+Implement `DurableFile` data structure:
+
+[source,rust]
+----
+struct DurableFile {
+    file: std::fs::File,
+    needs_sync: bool,
+}
+----
+--
+
+
+Step 2::
+--
+Implement a constructor:
+
+[source,rust]
+----
+impl DurableFile {
+    pub fn new(file: std::fs::File) -> DurableFile {
+        ...
+    }
+}
+----
+
+Optional: implement `From<std::fs::File> for DurableFile`
+--
+
+Step 3::
+Implement https://doc.rust-lang.org/stable/std/io/trait.Write.html[`Write`] trait for `DurableFile`. Use `sync_all` in the implementation of the `flush` method.
+All write operations should set the `needs_sync` flag, the `flush` method should clear it.
+
+Step 4::
+Implement `Drop` for `DurableFile` to panic if the file is not flushed.
+What is the right behavior for `Drop`?
+Are there any edge cases to worry about?
+
+Step 5::
+Implement `close` method, to explicitly sync&dispose the file and handle potential errors.
+What is the appropriate signature for `close`?
+
+Step 6::
+Write a couple of simple smoke tests. You might find the https://docs.rs/tempdir/0.3.7/tempdir/[`tempdir`] crate and https://doc.rust-lang.org/reference/attributes/testing.html#the-should_panic-attribute[`#[should_panic]`] attribute useful!
