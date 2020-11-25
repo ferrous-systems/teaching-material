@@ -19,6 +19,7 @@ Panic helps to elevate silent potential data loss into a loud failure.
 
 
 Step 1::
++
 --
 Implement `DurableFile` data structure:
 
@@ -33,6 +34,7 @@ struct DurableFile {
 
 
 Step 2::
++
 --
 Implement a constructor:
 
@@ -63,6 +65,8 @@ Add inherent `close` method for for `DurableFile`, to explicitly sync&dispose th
 What is the appropriate signature (type of `self` and the return type) for `close`?
 
 Step 6::
++
+--
 Write a couple of simple smoke tests. You might find the https://docs.rs/tempdir/0.3.7/tempdir/[`tempdir`] crate and https://doc.rust-lang.org/reference/attributes/testing.html#the-should_panic-attribute[`#[should_panic]`] attribute useful!
 
 [source,rust]
@@ -75,3 +79,4 @@ fn smoke_test() {
     todo!()
 }
 ----
+--
