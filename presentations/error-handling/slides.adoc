@@ -22,7 +22,7 @@ include::./1.rs[]
 
 [source]
 ----
-include::./6.output[]
+include::./2.output[]
 ----
 
 == Using Results With `match`
@@ -80,7 +80,7 @@ include::./7.rs[]
 
 == Dynamic errors
 
-Rust has a an idiomatic dynamic error type, which most errors can be converted into:
+Rust has an idiomatic dynamic error type, which most errors can be converted into:
 
 [source,rust]
 ----
@@ -92,4 +92,3 @@ To be converted like this, errors must implement the std::error::Error trait.
 == Reporting Errors Only
 
 If you only have to report an error, but don't have a meaningful return value, use `Result<(), Error>`.
-
