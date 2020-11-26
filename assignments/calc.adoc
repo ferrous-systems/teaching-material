@@ -167,3 +167,8 @@ Now that all the logic is in place, let's wrap it into idiomatic Rust:
 . Use `eval_str` function from the library crate to evaluate it and print the result.
 . Try building the library and the binary crate without `cargo`, using only `rustc`.
 . Modularize the library itself: move parsing code to `mod parse;` and evaluation code to `mod eval;`
+
+== Bonus Task
+
+If you are feeling really adventurous, you can change the syntax to use infix notation by using
+https://matklad.github.io/2020/04/13/simple-but-powerful-pratt-parsing.html[this tutorial].
