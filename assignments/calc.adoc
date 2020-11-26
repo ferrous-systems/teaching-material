@@ -129,6 +129,23 @@ fn parse(input: &str) -> Result<Expr, ParseError> {
 ----
 --
 
+Step 6::
++
+--
+Check that a smoke test works:
+
+[source,rust]
+----
+#[test]
+fn smoke_test() {
+    let input = "3 sqr 4 sqr + 5 sqr -";
+    let expr = parse(input).unwrap();
+    let value = eval(&expr).unwrap();
+    assert_eq!(value, 0);
+}
+----
+--
+
 == Idiomatic API
 
 Now that all the logic is in place, let's wrap it into idiomatic Rust:
