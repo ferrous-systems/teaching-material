@@ -150,12 +150,12 @@ fn smoke_test() {
 
 Now that all the logic is in place, let's wrap it into idiomatic Rust:
 
+. Implement https://doc.rust-lang.org/stable/std/str/trait.FromStr.html[`FromStr`] for `Expr`.
 . Implement `std::error::Error` for `ParseError` and `EvalError`.
 . Add `enum ParseOrEvalError`, which implements `Error`, `From<ParseError>`, `From<EvalError>`.
 . Add top-level `fn eval_str(s: &str) -> Result<i64, ParseOrEvalError>` function.
   Hint: use `?` -- that's why we've added `From` impls!
 . Make `eval` a method of `Expr`.
-. Implement https://doc.rust-lang.org/stable/std/str/trait.FromStr.html[`FromStr`] for `Expr`.
 . Run `clippy` on the codebase.
 . Run `rustfmt` on the codebase.
 
