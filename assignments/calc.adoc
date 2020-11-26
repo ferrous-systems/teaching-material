@@ -163,7 +163,7 @@ Now that all the logic is in place, let's wrap it into idiomatic Rust:
 
 . Add a binary with an empty `fn main() {}` to `src/main.rs`.
 . Make sure you can run the binary with `cargo run`.
-. In the `main`, read the contents of stdin to string. See https://doc.rust-lang.org/stable/std/io/fn.stdin.html#examples[the docs] for an example.
+. In the `main`, read a line of text from standard input. See https://doc.rust-lang.org/stable/std/io/struct.Stdin.html#method.read_line[the docs] for an example.
 . Use `eval_str` function from the library crate to evaluate it and print the result.
 . Try building the library and the binary crate without `cargo`, using only `rustc`.
 . Modularize the library itself: move parsing code to `mod parse;` and evaluation code to `mod eval;`
