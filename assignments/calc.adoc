@@ -165,7 +165,28 @@ Now that all the logic is in place, let's wrap it into idiomatic Rust:
 . Make sure you can run the binary with `cargo run`.
 . In the `main`, read a line of text from standard input. See https://doc.rust-lang.org/stable/std/io/struct.Stdin.html#method.read_line[the docs] for an example.
 . Use `eval_str` function from the library crate to evaluate it and print the result.
-. Try building the library and the binary crate without `cargo`, using only `rustc`.
+  You'll need to import the function into `main.rs` with `use calc::eval_str`.
+. Modify the `main` to implement a read-eval-print loop:
++
+[source,rust]
+----
+loop {
+    let mut buf = String::new();
+    let n_bytes_read = io::stdin().read_line(&mut buf)?;
+    if n_bytes_read == 0 {
+        break;
+    }
+    // Evaluate `buf` and print the result
+}
+----
+. Try building the library and the binary crate without `cargo`, using only `rustc`:
++
+[source]
+----
+$ rustc src/lib.rs  --edition=2018 --crate-type rlib -o libcalc.rlib
+$ rustc src/main.rs --edition=2018 --extern=calc=./libcalc.rlib
+$ ./main
+----
 . Modularize the library itself: move parsing code to `mod parse;` and evaluation code to `mod eval;`
 
 == Bonus Task
