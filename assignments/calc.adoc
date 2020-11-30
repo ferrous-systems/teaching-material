@@ -189,6 +189,24 @@ $ ./main
 ----
 . Modularize the library itself: move parsing code to `mod parse;` and evaluation code to `mod eval;`
 
+== Naive Multithreading
+
+In this task, we'll offload expression evaluation and parsing to a separate thread, to not block the main loop.
+
+. Use https://doc.rust-lang.org/stable/std/thread/fn.spawn.html[`std::thread::spawn`] function in the main loop to do evaluation and printing on the other thread.
+  Note that you'll need a `move ||` closure to move the string buffer into a separate thread.
+. Modify the code to also print the total sum of all the evaluated expressions.
+  To do this, you'll need a bit of state shared between all of the threads.
+  You can share state between the threads using an `Arc`.
+  To modify the counter, you can wrap it into a `Mutex` to allow for concurrent modification:
++
+[source,rust]
+----
+let counter: Arc<Mutex<i64>> = Default::default();
+----
+. Replace the Mutex with lock-free `std::sync::atomic::AtomicI64`.
+
+
 == Bonus Task
 
 If you are feeling really adventurous, you can change the syntax to use infix notation by using
