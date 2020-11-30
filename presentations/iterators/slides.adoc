@@ -46,7 +46,7 @@ include::./3.rs[]
 |===
 |Owned |Borrowed |Mutably borrowed
 
-|.into_iter()   
+|.into_iter()
 |.iter()
 |.iter_mut()
 
@@ -88,26 +88,7 @@ Iterators are applied lazy, so the process is memory-efficient. It goes column-w
 
 |===
 |Step | [0] | [1] | [2] | [3]
-
-|
-| 1
-| 2
-| 3
-| 4
-
-|filter(|x| x % 2 == 0 )
-| 
-| 2
-| 
-| 4
-
-
-|map(|x| x * 2)
-|
-| 4
-|
-| 8
-
+| | 1 | 2 | 3 | 4
+|filter(\|x\| x % 2 == 0 ) | | 2 | | 4
+|map(\|x\| x * 2) | | 4 | | 8
 |===
-
-
