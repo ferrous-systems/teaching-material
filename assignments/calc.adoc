@@ -202,10 +202,24 @@ In this task, we'll offload expression evaluation and parsing to a separate thre
 +
 [source,rust]
 ----
+use std::sync::{Arc, Mutex};
+
 let counter: Arc<Mutex<i64>> = Default::default();
+{
+    let mut counter_guard = counter.lock().unwrap();
+    *counter_guard += 1;
+}
+
 ----
 . Replace the Mutex with lock-free `std::sync::atomic::AtomicI64`.
-
+  To modify the counter, use `fetch_add`
++
+[source,rust]
+----
+use std::sync::{Arc, atomic::{AtomicI64, Ordering}};
+let counter: Arc<AtomicI64> = Default::default();
+counter.fetch_add(1, Ordering::SeqCst);
+----
 
 == Bonus Task
 
