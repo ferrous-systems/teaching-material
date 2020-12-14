@@ -43,9 +43,9 @@ Needed API:
 ### Exercise
 
 1. Implement a simple function that
-    * Opens a database
-        * "create if missing" is a good setting there
-    * Closes it
+** Opens a database
+*** "create if missing" is a good setting there
+*** Closes it
 2. Create Handle types for both Database and Options
 3. Create a `Database` type wrapping the handle
 
@@ -122,10 +122,10 @@ Needed API:
 ### Exercise
 
 1. Implement 2 functions on your `Database` type: 
-    * For simplicity, create write/readoptions within the functions
-    * `pub fn put(&self, key: &[u8], data: &[u8]) -> Result<(), Error>
-    * `pub fn get(&self, key: &[u8]) -> Result<Box<[u8]>, Error>`
-    * Take care to free the value returned by `get` properly
+** For simplicity, create write/readoptions within the functions
+** `pub fn put(&self, key: &[u8], data: &[u8]) -> Result<(), Error>
+** `pub fn get(&self, key: &[u8]) -> Result<Box<[u8]>, Error>`
+** Take care to free the value returned by `get` properly
 2. Write a test
 
 ## Iteration over database values
@@ -152,12 +152,11 @@ The iterator protocol is a little thorny:
 2. Implement an `Iterator` type that holds the necessary state on top of the handle
 3. Implement `pub fn iter(&self) -> Iterator` on the Database
 4. Implement `std::iter::Iterator` for the `Iterator` type
-    * Iterate over `Box<[u8]>`
+** Iterate over `Box<[u8]>`
 5. Make the `Iterator` type reference the Database it was constructed from
-    * Discuss: what changes and how does it help us?
+** Discuss: what changes and how does it help us?
 
 Write an appropriate test.
-
 
 ## Help
 
