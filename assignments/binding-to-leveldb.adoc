@@ -145,6 +145,18 @@ The iterator protocol is a little thorny:
 * End of the iteration is marked by the iterator pointer becoming invalid again
 * Note that iterators free their memory themselves and require you to copy out data
 
+### Help
+
+To correctly create a heap allocated slice, use:
+
+[source,rust]
+----
+let slice = std::slice::from_raw_parts(data as *mut u8, len);
+let result = Box::from(slice);
+
+leveldb_free(data as *mut c_void);
+Ok(Some(result))
+----
 
 ### Exercise
 
