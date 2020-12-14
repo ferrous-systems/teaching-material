@@ -57,6 +57,6 @@
 * link:./assignments/connected-mailbox.html[Connected mailbox]
 * link:./assignments/multithreaded-mailbox.html[Multithreaded mailbox]
 * link:./assignments/calc.html[Calculator]
-* link:./assignments/binding-to-leveldb.html[Async Mailbox]
+* link:./assignments/binding-to-leveldb.html[Binding to leveldb]
 
 * link:./assignments/async-mailbox.html[Async Mailbox]
