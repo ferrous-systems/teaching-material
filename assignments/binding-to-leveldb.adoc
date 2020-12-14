@@ -39,6 +39,9 @@ Needed API:
 * `leveldb_open`: opens a database
 * `leveldb_close`: closes it properly
 
+
+### Exercise
+
 1. Implement a simple function that
     * Opens a database
         * "create if missing" is a good setting there
@@ -116,6 +119,8 @@ Needed API:
 * `leveldb_writeoptions_create`: Create a default `writeoptions_t`
 * `leveldb_free`: Free the value allocation
 
+### Exercise
+
 1. Implement 2 functions on your `Database` type: 
     * For simplicity, create write/readoptions within the functions
     * `pub fn put(&self, key: &[u8], data: &[u8]) -> Result<(), Error>
@@ -133,10 +138,15 @@ Needed API:
 * `leveldb_iter_value`: Read the value at the current iterator position
 * `leveldb_iter_valid`: Check the iterator pointer for validity
 
+### Notes
+
 The iterator protocol is a little thorny:
 * Before the first call to `leveldb_iter_seek_to_first`, the iterator pointer is invalid
 * End of the iteration is marked by the iterator pointer becoming invalid again
 * Note that iterators free their memory themselves and require you to copy out data
+
+
+### Exercise
 
 1. Implement an iterator handle
 2. Implement an `Iterator` type that holds the necessary state on top of the handle
@@ -152,7 +162,6 @@ Write an appropriate test.
 ## Help
 
 ### Full solution
-
 
 [source,rust]
 ----
