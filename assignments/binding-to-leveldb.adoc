@@ -124,7 +124,7 @@ Needed API:
 1. Implement 2 functions on your `Database` type: 
 ** For simplicity, create write/readoptions within the functions
 ** `pub fn put(&self, key: &[u8], data: &[u8]) -> Result<(), Error>
-** `pub fn get(&self, key: &[u8]) -> Result<Box<[u8]>, Error>`
+** `pub fn get(&self, key: &[u8]) -> Result<Option<Box<[u8]>>, Error>`
 ** Take care to free the value returned by `get` properly
 2. Write a test
 
