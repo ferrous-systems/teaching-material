@@ -339,7 +339,7 @@ impl Database {
         }
     }
 
-    pub fn get(&self, key: &[u8]) -> Result<Box<[u8]>, Error> {
+    pub fn get(&self, key: &[u8]) -> Result<Option<Box<[u8]>>, Error> {
         unsafe {
             let read_options = ReadOptions::new();
             let mut len: size_t = 0;
@@ -354,12 +354,19 @@ impl Database {
                 &mut error,
             );
 
-            let slice = std::slice::from_raw_parts(data as *mut u8, len);
 
             if error == ptr::null_mut() {
-                let result = Box::from(slice);
-                leveldb_free(data as *mut c_void);
-                Ok(result)
+                if data == ptr::null_mut() {
+                    Ok(None)
+                } else {
+                    let slice = std::slice::from_raw_parts(data as *mut u8, len);
+
+                    let result = Box::from(slice);
+
+                    leveldb_free(data as *mut c_void);
+
+                    Ok(Some(result))
+                }
             } else {
                 leveldb_free(*error as *mut c_void);
                 Err(Error::GetFail)
@@ -469,13 +476,16 @@ mod test {
         let database = Database::open(tmp.path().join("database"), options).unwrap();
 
         let key: &[u8] = b"test";
+        let missing_key: &[u8] = b"test_missing";
         let value: &[u8] = b"test";
 
         database.put(key, value).unwrap();
 
         let result = database.get(key);
+        assert_eq!(result, Ok(Some(Box::from(value))));
 
-        assert_eq!(result, Ok(Box::from(value)));
+        let result = database.get(missing_key);
+        assert_eq!(result, Ok(None));
     }
 
     #[test]
