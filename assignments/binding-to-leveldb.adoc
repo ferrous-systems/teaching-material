@@ -121,7 +121,7 @@ Needed API:
 
 ### Exercise
 
-1. Implement 2 functions on your `Database` type: 
+1. Implement two functions on your `Database` type: 
 ** For simplicity, create write/readoptions within the functions
 ** `pub fn put(&self, key: &[u8], data: &[u8]) \-> Result<(), Error>`
 ** `pub fn get(&self, key: &[u8]) \-> Result<Option<Box<[u8]>>, Error>`
