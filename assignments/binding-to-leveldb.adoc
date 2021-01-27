@@ -123,7 +123,7 @@ Needed API:
 
 1. Implement 2 functions on your `Database` type: 
 ** For simplicity, create write/readoptions within the functions
-** `pub fn put(&self, key: &[u8], data: &[u8]) -> Result<(), Error>
+** `pub fn put(&self, key: &[u8], data: &[u8]) -> Result<(), Error>`
 ** `pub fn get(&self, key: &[u8]) -> Result<Option<Box<[u8]>>, Error>`
 ** Take care to free the value returned by `get` properly
 2. Write a test
@@ -141,6 +141,7 @@ Needed API:
 ### Notes
 
 The iterator protocol is a little thorny:
+
 * Before the first call to `leveldb_iter_seek_to_first`, the iterator pointer is invalid
 * End of the iteration is marked by the iterator pointer becoming invalid again
 * Note that iterators free their memory themselves and require you to copy out data
