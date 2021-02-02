@@ -21,5 +21,5 @@ fn print_filelen(f: &File) -> io::Result<()> {
 }
 
 fn write_to_file(f: &mut File, data: &str) -> io::Result<()> {
-    file.write_all(b"Hello World!")
+    f.write_all(b"Hello World!")
 }
