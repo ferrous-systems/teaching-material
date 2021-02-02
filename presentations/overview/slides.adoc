@@ -22,7 +22,7 @@ include::./1.rs[]
 
 - Rust has lost many features from 2012 to 2014
 - Garbage collector, evented runtime, complex error handling
-  * All present once, now gone
+** All present once, now gone
 - Orientation towards a usable systems programming language
 
 == Development
@@ -33,7 +33,7 @@ include::./1.rs[]
 == Release Method
 
 - Nightly releases
-  - experimental features are only present on nighly releases
+** experimental features are only present on nighly releases
 - Every 6 weeks, the current nightly is promoted to beta
 - After 6 weeks of testing, beta becomes stable
 - Guaranteed backwards-compatibility
@@ -84,6 +84,7 @@ Many examples in this course are very small, which is why we will also spend tim
 
 == Pragmatic
 
+- Great tooling
 - Sublanguage for unsafe memory access
 - Good techniques to handle these
 - Great FFI support
