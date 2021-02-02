@@ -121,10 +121,10 @@ Needed API:
 
 ### Exercise
 
-1. Implement 2 functions on your `Database` type: 
+1. Implement two functions on your `Database` type: 
 ** For simplicity, create write/readoptions within the functions
-** `pub fn put(&self, key: &[u8], data: &[u8]) -> Result<(), Error>
-** `pub fn get(&self, key: &[u8]) -> Result<Option<Box<[u8]>>, Error>`
+** `pub fn put(&self, key: &[u8], data: &[u8]) \-> Result<(), Error>`
+** `pub fn get(&self, key: &[u8]) \-> Result<Option<Box<[u8]>>, Error>`
 ** Take care to free the value returned by `get` properly
 2. Write a test
 
@@ -141,6 +141,7 @@ Needed API:
 ### Notes
 
 The iterator protocol is a little thorny:
+
 * Before the first call to `leveldb_iter_seek_to_first`, the iterator pointer is invalid
 * End of the iteration is marked by the iterator pointer becoming invalid again
 * Note that iterators free their memory themselves and require you to copy out data
@@ -162,7 +163,7 @@ Ok(Some(result))
 
 1. Implement an iterator handle
 2. Implement an `Iterator` type that holds the necessary state on top of the handle
-3. Implement `pub fn iter(&self) -> Iterator` on the Database
+3. Implement `pub fn iter(&self) \-> Iterator` on the Database
 4. Implement `std::iter::Iterator` for the `Iterator` type
 ** Iterate over `Box<[u8]>`
 5. Make the `Iterator` type reference the Database it was constructed from
