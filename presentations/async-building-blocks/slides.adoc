@@ -95,9 +95,9 @@ Examples:
 * `read_to_end`: Read a complete input stream
 * `connect`: Connect a socket
 
-== Futures are readiness-based
+== Futures are poll-based
 
-They will report once the operation is done and allow you query this state. The moment a future is ready, it _resolves_.
+They can be checked if they are _done_, and are usually mapped to readiness based APIs like `epool`.
 
 == .await registers interest in completion
 
