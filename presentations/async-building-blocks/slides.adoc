@@ -19,8 +19,8 @@ link:./index.html[Table of Contents]
 * sync programming talks fundamentally about the "now"
 * async programming talks fundamentally about the future
 * both are scheduled, but in a different fashion
-    * sync pre-emptive
-    * async cooperative
+** sync pre-emptive
+** async cooperative
 
 ==  Warning
 
@@ -189,14 +189,14 @@ fn main() {
 == Categories of Executors
 
 * single-threaded
-    * Generally better latency, no synchronisation requirements
-    * Highly susceptible to accidental blockades
-    * Harmed by accidental pre-emption
+** Generally better latency, no synchronisation requirements
+** Highly susceptible to accidental blockades
+** Harmed by accidental pre-emption
 * multi-threaded
-    * Generally better resource use, synchronisation requirements
-    * Harmed by accidental pre-emption
+** Generally better resource use, synchronisation requirements
+** Harmed by accidental pre-emption
 * deblocking
-    * Actively monitor for blocked execution threads and will spin up new ones
+** Actively monitor for blocked execution threads and will spin up new ones
 
 == Reference Counting
 
@@ -206,7 +206,7 @@ fn main() {
 == Examples of executors
 
 * async_std
-* tokio/tokio local
+* tokio
 * smol
 * nuclei
 
