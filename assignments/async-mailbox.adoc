@@ -47,10 +47,11 @@ For `tokio`, the most relevant examples are:
 * Mutex: https://docs.rs/tokio/1.1.1/tokio/sync/struct.Mutex.html
 * io: https://docs.rs/tokio/1.1.1/tokio/io/index.html#buffered-readers-and-writers
 
+
 3. Observe the result
 ~~~~~~~~~~~~~~~~~~~~~
 
-What changed? What stayed the same. Describe your experience.
+What changed? What stayed the same? Describe your experience.
 
 4. Testing
 ~~~~~~~~~~
