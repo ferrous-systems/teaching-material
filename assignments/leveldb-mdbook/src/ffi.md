@@ -1,13 +1,14 @@
 # FFI exercise: Binding to LevelDB
 
-In this exercise your task is to create a Rust binding, or foreign function interface (FFI) to the [LevelDB] database library.
+In this exercise your task is to create a Rust binding, or foreign function interface (FFI) to the [LevelDB] database library. Typically, and also in this exercise, "foreign" means "C".
+
 You will learn how to:
-- handle pointers passed to or from the foreign language[^1]
+
+- handle pointers passed to or from the foreign language
 - use low-level C bindings
 - utilize Rust's ownership system to provide safety on top of those raw primitives
 
 [LevelDB]: (https://github.com/google/leveldb)
-[^1]: typically and also in this exercise, that language is C.
 
 # Prerequisites
 
