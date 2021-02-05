@@ -14,13 +14,13 @@ You will learn how to:
 
 This exercise requires knowledge of a few Rust and C concepts:
 
-- [Ownership & Borrowing](https://doc.rust-lang.org/book/ch04-00-understanding-ownership.html)
-- [Lifetime annotations](https://doc.rust-lang.org/book/ch10-03-lifetime-syntax.html)
-- [Traits](https://doc.rust-lang.org/book/ch10-02-traits.html)
-- [Iterators](https://doc.rust-lang.org/book/ch13-02-iterators.html)
+- [Ownership & Borrowing](https://doc.rust-lang.org/1.49.0/book/ch04-00-understanding-ownership.html)
+- [Lifetime annotations](https://doc.rust-lang.org/1.49.0/book/ch10-03-lifetime-syntax.html)
+- [Traits](https://doc.rust-lang.org/1.49.0/book/ch10-02-traits.html)
+- [Iterators](https://doc.rust-lang.org/1.49.0/book/ch13-02-iterators.html)
 - [Casting](https://doc.rust-lang.org/rust-by-example/types/cast.html)
 - [Error handling with `Result` and `Option`](https://doc.rust-lang.org/rust-by-example/error.html)
-- [Unsafe Rust](https://doc.rust-lang.org/book/ch19-01-unsafe-rust.html)
+- [Unsafe Rust](https://doc.rust-lang.org/1.49.0/book/ch19-01-unsafe-rust.html)
 - C strings represented as null-terminated chunks of 8-bit `char`s
 - using C pointers as function parameters for returning multiple results in one call
 
