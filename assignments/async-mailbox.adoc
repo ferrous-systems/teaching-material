@@ -6,15 +6,54 @@ into an asynchronous server.
 
 Copy `/solutions/threaded-mailbox` to your work directory.
 
-1. Add async-std as a dependency
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1. Add async-std or tokio as a dependency
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Open `Cargo.toml` and add:
+Open `Cargo.toml` in your server and add:
 
 ----
 [dependencies]
+#...
 async-std = "1.6"
 ----
+
+or
+
+----
+[dependencies]
+# ...
+tokio = { version = "1", features = ["full"] }
+----
+
+
+2. Replace sync types by async types
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Replace all synchronous/blocking types (mostly `Thread` -> `Task`, `Mutex`, `TcpListener`) by async types.
+
+Turn functions into async functions if necessary.
+
+For `async-std`, the most relevant examples are:
+
+* TcpListener: https://docs.rs/async-std/1.9.0/async_std/net/struct.TcpListener.html#examples
+* Task: https://docs.rs/async-std/1.9.0/async_std/task/index.html
+* Mutex: https://docs.rs/async-std/1.9.0/async_std/sync/struct.Mutex.html
+* io: https://docs.rs/async-std/1.9.0/async_std/io/index.html#bufreader-and-bufwriter
+
+For `tokio`, the most relevant examples are:
+
+* TcpListener: https://docs.rs/tokio/1.1.1/tokio/net/struct.TcpListener.html#examples
+* Task: https://docs.rs/tokio/1.1.1/tokio/task/index.html
+* Mutex: https://docs.rs/tokio/1.1.1/tokio/sync/struct.Mutex.html
+* io: https://docs.rs/tokio/1.1.1/tokio/io/index.html#buffered-readers-and-writers
+
+3. Observe the result
+~~~~~~~~~~~~~~~~~~~~~
+
+What changed? What stayed the same. Describe your experience.
+
+4. Testing
+~~~~~~~~~~
 
 You can test the server by sending:
 
@@ -33,19 +72,8 @@ $ cargo run -- "PUBLISH 12345"
 $ cargo run -- "RETRIEVE"
 ----
 
-2. Replace sync types by async types
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Replace all synchronous/blocking types (e.g. `Thread`, `Mutex`, `TcpListener`) by async types.
-
-Turn functions into async functions if necessary.
-
-3. Observe the result
-~~~~~~~~~~~~~~~~~~~~~
-
-What changed? What stayed the same. Describe your experience.
-
-4. Additional Exercise
+5. Additional Exercise
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Make the program listen on IPV4 and IPV6.
+* Make the program listen on IPV4 and IPV6.
+* Implement the program using `smol` and friends instead of the above
