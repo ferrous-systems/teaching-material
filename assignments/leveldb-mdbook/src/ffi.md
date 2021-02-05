@@ -40,7 +40,7 @@ How is ownership handled in C?
 
 # Setup
 ## The sys crate
-Binding to C is divided into a minimal low-level interface (a so-called "sys crate") that handles linking to the C library and exposes its parts directly, and a higher level crate that uses the sys crate to provide a more Rust-friendly interface instead, safely wrapping the inherently `unsafe` raw parts. Writing a sys crate yourself is outside our scope here - it's [provided for you](https://docs.rs/leveldb-sys/2.0.8/leveldb_sys/) and therefore goes into the `Cargo.toml`'s `[dependencies]` section. You'll also need the `libc` crate which provides C types and other required definitions:
+Binding to C is divided into two parts: a minimal low-level interface, a so-called "sys crate" and a higher level crate. The sys crate handles linking to the C library and exposes its parts directly. The higher level crate uses the sys crate to provide a more Rust-friendly interface by safely wrapping the inherently `unsafe` raw parts. Writing a sys crate yourself is beyond our scope here - it's [provided for you](https://docs.rs/leveldb-sys/2.0.8/leveldb_sys/) and therefore goes into the `Cargo.toml`'s `[dependencies]` section. You'll also need the `libc` crate which provides C types and other required definitions:
 ```
 [dependencies]
 leveldb-sys = "2"
@@ -67,12 +67,12 @@ Conceptually, a LevelDB database is a directory (the "database name") where all 
 
 You'll also need these functions and enums from the `leveldb-sys` crate:
 
-* `leveldb_t`: an opaque handle representing an opened database. The handle is thread-safe.
+* `leveldb_t`: opaque handle representing an opened database. The handle is thread-safe.
 * `leveldb_open`: opens a database, returning `leveldb_t`
-* `leveldb_close`: closes it for a clean shutdown
-* `leveldb_options_t`: an *opaque* handle representing database options
+* `leveldb_close`: closes a `leveldb_t` for a clean shutdown
+* `leveldb_options_t`: opaque handle representing database options
 * `leveldb_options_create`: create an instance of this options struct
-* `leveldb_options_destroy`: deallocates it
+* `leveldb_options_destroy`: deallocates `leveldb_options_t`
 * `leveldb_options_set_create_if_missing`: sets the `create_if_missing` flag on `leveldb_options_t`.
 
 The [LevelDB C header](https://github.com/google/leveldb/blob/master/include/leveldb/c.h) documents some conventions used by its implementation. 
@@ -128,12 +128,12 @@ You'll need a few more items from the sys crate:
 * `leveldb_readoptions_t`: opaque type to specify read operation options
 * `leveldb_writeoptions_t`: opaque type to specify write operation options
 * `leveldb_readoptions_create`: creates a default `readoptions_t`
-* `leveldb_readoptions_destroy`: deallocates it
+* `leveldb_readoptions_destroy`: deallocates `readoptions_t`
 * `leveldb_writeoptions_create`: creates a default `writeoptions_t`
-* `leveldb_writeoptions_destroy`: deallocates it
+* `leveldb_writeoptions_destroy`: deallocates `writeoptions_t`
 * `leveldb_put`: writes a binary value for a given binary key
 * `leveldb_get`: reads a binary value for a given binary key. Returns a `null` pointer for "not found", an *owned* object otherwise.
-* `leveldb_free`: deallocates a value object
+* `leveldb_free`: deallocates a value object returned by `leveldb_get`
 
 ## Your tasks
 
