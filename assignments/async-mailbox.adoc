@@ -47,6 +47,7 @@ For `tokio`, the most relevant examples are:
 * Mutex: https://docs.rs/tokio/1.1.1/tokio/sync/struct.Mutex.html
 * io: https://docs.rs/tokio/1.1.1/tokio/io/index.html#buffered-readers-and-writers
 
+Use those types and modules to replace the types from stdlib.
 
 3. Observe the result
 ~~~~~~~~~~~~~~~~~~~~~
