@@ -185,9 +185,9 @@ An iterator is position invalid before seeking to the first item and after it ha
 
 ✅ Implement [`std::iter::Iterator`](https://doc.rust-lang.org/std/iter/trait.Iterator.html) for your `Iterator` type. Its items should be of type `Box<[u8]>`.
 
-✅ Make the `Iterator` type reference the Database that created it. What has changed and what are the benefits?
+✅ Write a test case to verify that your iterator returns all items lexicographically sorted by key. Also test with an empty database.
 
-✅ Test appropriately.
+✅ Make the `Iterator` type reference the Database that created it. What has changed and what are the benefits?
 
 ✅ Bonus task: what could be used instead of the `Database` reference that achieves the same goal but consumes no memory?
 
