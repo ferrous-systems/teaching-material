@@ -83,7 +83,7 @@ The [LevelDB C header](https://github.com/google/leveldb/blob/master/include/lev
 - opening a database, optionally creating it
 - closing it again
 
-✅ Create Handle structs for the raw `leveldb_t` and `leveldb_options_t` types, taking care of the required cleanup operations
+✅ Create pointer handle structs for the raw `leveldb_t` and `leveldb_options_t` types, taking care of the required cleanup operations. The pointer field should express the fact that it exclusively stores non-`null` pointers using an appropriate Rust type.
 
 ✅ Create a `Database` struct that manages high-level operations, wrapping the handle
 
