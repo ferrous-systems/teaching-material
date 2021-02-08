@@ -43,8 +43,8 @@ How is ownership handled in C?
 Binding to C is divided into two parts: a minimal low-level interface, a so-called "sys crate" and a higher level crate. The sys crate handles linking to the C library and exposes its parts directly. The higher level crate uses the sys crate to provide a more Rust-friendly interface by safely wrapping the inherently `unsafe` raw parts. Writing a sys crate yourself is beyond our scope here - it's [provided for you](https://docs.rs/leveldb-sys/2.0.8/leveldb_sys/) and therefore goes into the `Cargo.toml`'s `[dependencies]` section. You'll also need the `libc` crate which provides C types and other required definitions:
 ```
 [dependencies]
-leveldb-sys = "2"
-libc = "0.2"
+leveldb-sys = "*"
+libc = "*"
 ```
 
 Building `leveldb-sys` requires [CMake](https://cmake.org/) and a C++ compiler (gcc, clang, Visual Studio etc.) to be installed on your system.
@@ -55,7 +55,7 @@ Building `leveldb-sys` requires [CMake](https://cmake.org/) and a C++ compiler (
 LevelDB, being a database, persists data to disk. When writing tests for your binding, creating this data in a temporary fashion is appropriate, saving you from doing cleanup work yourself. The [tempdir](https://docs.rs/tempdir/0.3.7/tempdir/) crate provides this functionality, but if you added it to `[dependencies]` it would also be installed for every user of your library, even if they didn't intend to run your tests. Fortunately, Cargo has a `[dev-dependencies]` section for crates that are only required during development:
 ```
 [dev-dependencies]
-tempdir = "0.3"
+tempdir = "*"
 ```
 
 
@@ -79,6 +79,8 @@ The [LevelDB C header](https://github.com/google/leveldb/blob/master/include/lev
 
 
 ## Your tasks
+✅ Create a new library package project for this group of exercises
+
 ✅ Implement functions for:
 - opening a database, optionally creating it
 - closing it again
@@ -116,80 +118,3 @@ The most straightforward parameter type for the database name is `&str` ([why no
 - Errors can be converted with [`map_err` and `From::from`](https://doc.rust-lang.org/rust-by-example/error/multiple_error_types/reenter_question_mark.html).
 - String types implement <a href="https://doc.rust-lang.org/std/convert/trait.AsRef.html">AsRef&lt;Path&gt;</a>, which makes it a good fit for path parameters.
 
-
-
-# Exercise: Reading and writing database contents
-
-Now that you have an open database, it's time to interact with it by storing and retrieving data. 
-
-## Preparation
-
-You'll need a few more items from the sys crate:
-* `leveldb_readoptions_t`: opaque type to specify read operation options
-* `leveldb_writeoptions_t`: opaque type to specify write operation options
-* `leveldb_readoptions_create`: creates a default `readoptions_t`
-* `leveldb_readoptions_destroy`: deallocates `readoptions_t`
-* `leveldb_writeoptions_create`: creates a default `writeoptions_t`
-* `leveldb_writeoptions_destroy`: deallocates `writeoptions_t`
-* `leveldb_put`: writes a binary value for a given binary key
-* `leveldb_get`: reads a binary value for a given binary key. Returns a `null` pointer for "not found", an *owned* object otherwise.
-* `leveldb_free`: deallocates a value object returned by `leveldb_get`
-
-## Your tasks
-
-✅ Implement two functions on your `Database` type: 
-- `pub fn put(&self, key: &[u8], data: &[u8]) -> Result<(), Error>`
-- `pub fn get(&self, key: &[u8]) -> Result<Option<Box<[u8]>>, Error>`
-
-Be mindful of the API's ownership contract.
-
-✅ Test your implementation.
-
-
-## Help and hints
-- You only need to create (and destroy!) the read/write options objects, not configure them further in any way.
-- Stuck with the wrong primitive type? Try casting it.
-- `b"a string"` is literal syntax for creating an `&[u8]` slice.
-- Here's how to put a slice on the heap (AKA box it):
-  ``` 
-  let slice = std::slice::from_raw_parts(data as *mut u8, len);
-  let result = Box::from(slice);
-  ```
-  ❗ note that you've now created a copy of the data and still own (and therefore have to free) the raw pointer.
-- don't free `null` pointers.
-
-# Exercise: Iterate over database contents
-
-In this last part we'll create an `Iterator` for looping over everything stored in our database.
-
-## Preparation
-
-The iterator functionality is exposed by the sys crate as follows:
-
-* `leveldb_create_iterator`: Creates an opaque `leveldb_iterator_t` handle
-* `leveldb_iter_seek_to_first`: Starts the iteration by seeking to the first item
-* `leveldb_iter_next`: Advances iteration by one element
-* `leveldb_iter_value`: Reads the value at the current iterator position
-* `leveldb_iter_valid`: Indicates whether the iterator is currently valid
-
-
-An iterator is position invalid before seeking to the first item and after it has advanced beyond the last one. Reading its value returns *non-owned* data.
-
-## Your tasks
-
-✅ Implement an iterator handle. It should fully encapsulate any `unsafe` code.
-
-✅ Implement an `Iterator` type that holds the necessary state and makes use of the handle.
-
-✅ Implement `pub fn iter(&self) -> Iterator` for your `Database` struct.
-
-✅ Implement [`std::iter::Iterator`](https://doc.rust-lang.org/std/iter/trait.Iterator.html) for your `Iterator` type. Its items should be of type `Box<[u8]>`.
-
-✅ Write a test case to verify that your iterator returns all items lexicographically sorted by key. Also test with an empty database.
-
-✅ Make the `Iterator` type reference the Database that created it. What has changed and what are the benefits?
-
-✅ Bonus task: what could be used instead of the `Database` reference that achieves the same goal but consumes no memory?
-
-
-🚩 TODO database is send+sync, iterator isn't
