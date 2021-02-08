@@ -60,3 +60,4 @@
 * link:./assignments/binding-to-leveldb.html[Binding to leveldb]
 
 * link:./assignments/async-mailbox.html[Async Mailbox]
+* link:./assignments/async-channels.html[Async Channels]
