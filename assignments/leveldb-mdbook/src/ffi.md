@@ -138,8 +138,8 @@ You'll need a few more items from the sys crate:
 ## Your tasks
 
 ✅ Implement two functions on your `Database` type: 
-- `pub fn put(&self, key: &[u8], data: &[u8]) \-> Result<(), Error>`
-- `pub fn get(&self, key: &[u8]) \-> Result<Option<Box<[u8]>>, Error>`
+- `pub fn put(&self, key: &[u8], data: &[u8]) -> Result<(), Error>`
+- `pub fn get(&self, key: &[u8]) -> Result<Option<Box<[u8]>>, Error>`
 
 Be mindful of the API's ownership contract.
 
@@ -181,7 +181,7 @@ An iterator is position invalid before seeking to the first item and after it ha
 
 ✅ Implement an `Iterator` type that holds the necessary state and makes use of the handle.
 
-✅ Implement `pub fn iter(&self) \-> Iterator` for your `Database` struct.
+✅ Implement `pub fn iter(&self) -> Iterator` for your `Database` struct.
 
 ✅ Implement [`std::iter::Iterator`](https://doc.rust-lang.org/std/iter/trait.Iterator.html) for your `Iterator` type. Its items should be of type `Box<[u8]>`.
 
