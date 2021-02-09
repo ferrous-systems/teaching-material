@@ -1,4 +1,4 @@
-# Solution for exercise 3: get & put
+# Solution for exercise 2: get & put
 
 ``` rust
 // ... previous code ...
@@ -55,7 +55,6 @@ pub enum Error {
 impl Database {
     // ... previous code ...
 
-    // exercise 2 (get/put)
     pub fn get(&self, key: &[u8]) -> Result<Option<Box<[u8]>>, Error> {
         unsafe {
             let read_options = ReadOptions::new();
@@ -90,7 +89,6 @@ impl Database {
         }
     }
 
-    // exercise 2 (get/put)
     pub fn put(&self, key: &[u8], data: &[u8]) -> Result<(), Error> {
         unsafe {
             let write_options = WriteOptions::new();
