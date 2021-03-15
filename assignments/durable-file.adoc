@@ -56,7 +56,7 @@ Use `sync_all` in the implementation of the `flush` method.
 All write operations should set the `needs_sync` flag, the `flush` method should clear it.
 
 Step 4::
-Implement `Drop` for `DurableFile` to panic if the file is not flushed.
+Implement the https://doc.rust-lang.org/std/ops/trait.Drop.html[`std::ops::Drop`] Trait for `DurableFile` to panic if the file is not flushed.
 What is the right behavior for `Drop`?
 Are there any edge cases to worry about?
 
