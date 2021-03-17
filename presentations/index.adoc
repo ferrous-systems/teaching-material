@@ -23,6 +23,7 @@
 * link:./error-handling.html[Error Handling]
 * link:./testing.html[Testing]
 * link:./generics-basics.html[Basic Generics]
+* link:./documentation.html[Documentation]
 
 .Advanced
 * link:./cargo.html[Cargo]
