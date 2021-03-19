@@ -356,7 +356,7 @@ teaching (previously known as "Real Time For The Masses").
 == Writing Drivers for Embedded Rust
 
 This module extends the "Embedded Rust" or "Embedded Rust using
-RTFM" module.
+RTIC" module.
 
 In this module, attendees will learn:
 
