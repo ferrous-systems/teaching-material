@@ -167,7 +167,7 @@ fn addition(a: i32, b: i32) -> i32 {
 }
 
 #[test]
-fn addtion_test() {
+fn addition_test() {
     assert_eq!(addition(1,2), 3);
 }
 ----
