@@ -56,7 +56,7 @@ include::./3.rs[]
 
 == `next()`
 
-Iterators can be manually progressed:
+Iterators can be advanced manually:
 
 [source,rust]
 ----
