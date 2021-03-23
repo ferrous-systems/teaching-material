@@ -39,7 +39,7 @@ Destructors cannot return errors.
 
 Explicit destruction of a value through a consuming function. This cannot be statically enforced currently.
 
-Implementing a `Drop`-bomb (a failing destructor) can make sure this error is called early.
+Implementing a `Drop`-bomb (a failing destructor) can make sure this error is caught early.
 
 == Panics
 
@@ -66,7 +66,7 @@ The affected thread dies.
 
 == Catching Panics
 
-Panicing across FFI-boundaries is undefined behaviour.
+Panicking across FFI-boundaries is undefined behaviour.
 In these cases, panics _must_ be caught.
 For cases like this, there are https://doc.rust-lang.org/std/panic/fn.catch_unwind.html[std::panic::catch-unwind] and https://doc.rust-lang.org/std/panic/fn.resume_unwind.html[std::panic::resume-unwind].
 
@@ -86,4 +86,4 @@ The panic hook is executed.
 
 == Double-panics
 
-Panicing while a panic is being handled - for example in a destructor - invokes undefined behaviour. For that reason, the program will immediately abort.
+Panicking while a panic is being handled - for example in a destructor - invokes undefined behaviour. For that reason, the program will immediately abort.

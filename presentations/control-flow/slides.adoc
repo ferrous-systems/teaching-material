@@ -81,7 +81,7 @@ include::./7.rs[]
 include::./8.rs[]
 ----
 
-* `if let` are idiomativ if only one case is of interest
+* `if let` are idiomatic if only one case is of interest
 
 == `loop`
 
