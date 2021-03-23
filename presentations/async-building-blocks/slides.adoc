@@ -27,7 +27,7 @@ link:./index.html[Table of Contents]
 async-await is a rather new feature.
 
 * It's stable
-* The base technologies are older then the syntax
+* The base technologies are older than the syntax
 * Some things may be come more ergonomic in the future
 
 == A normal Rust function
