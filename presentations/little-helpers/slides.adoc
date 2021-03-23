@@ -37,7 +37,7 @@ struct Point {
 }
 
 fn main() {
-    let p = Point { x: 1, x: 2 },
+    let p = Point { x: 1, y: 2 };
     println!("{:?}", p); <1>
     println!("{:#?}", p); <2>
 }
@@ -62,8 +62,8 @@ struct Point {
 }
 
 fn main() {
-    let p1 = Point { x: 1, x: 2 },
-    let p2 = Point { x: 1, x: 2 },
+    let p1 = Point { x: 1, y: 2 };
+    let p2 = Point { x: 1, y: 2 };
     if p1 == p2 { <4>
         println!("The same!");
     }
