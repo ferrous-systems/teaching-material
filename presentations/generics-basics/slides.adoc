@@ -37,4 +37,4 @@ Generic Functions have type parameters.
 include::./6.rs[]
 ----
 
-Generic functions are used when computations can be expressd in the abstract.
+Generic functions are used when computations can be expressed in an abstract way.
