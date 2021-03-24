@@ -54,8 +54,8 @@ It is like normal ownership and borrowing, but at the beginning somewhat unfamil
 
 == Interesting Differences to Common OO
 
--   Values can be replaced, when calling `&mut` functions
--   Values, for example, iterators and builders can have methods that consume `self` and are thus invalidated.
+-   Values can be replaced when calling `&mut` functions
+-   Values, for example iterators and builders, can have methods that consume `self` and are thus invalidated.
 -   This solves the problem of invalidating iterators!
 
 == Sidenote
@@ -98,7 +98,7 @@ include::./5.rs[]
 
 == !
 
-Working with generic traits is very usual.
+Working with generic traits is very common.
 
 == Inference of Traits
 
