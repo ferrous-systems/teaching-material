@@ -58,7 +58,7 @@ It is like normal ownership and borrowing, but at the beginning somewhat unfamil
 -   Values, for example iterators and builders, can have methods that consume `self` and are thus invalidated.
 -   This solves the problem of invalidating iterators!
 
-== Sidenote
+== Side note
 
 -   Implementations can occur multiple times. This is useful when multiple constraints are needed.
 
