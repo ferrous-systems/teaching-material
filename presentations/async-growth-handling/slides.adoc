@@ -5,6 +5,7 @@ link:./index.html[Table of Contents]
 == Information gathering
 
 Your project is dynamic:
+
 * Make it traceable
 * Constantly monitor
 
