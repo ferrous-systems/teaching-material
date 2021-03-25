@@ -35,7 +35,7 @@ This throttles the system, but allows it to not fail.
 
 == Shutting down
 
-* Make sure you handle signals centrally
+* Make sure your signal handling is centralized
 * Every component should subscribe to a cancel notification
 
 == Implementing a custom Future: Pinning
