@@ -30,7 +30,7 @@ This throttles the system, but allows it to not fail.
 
 == Dropping futures
 
-* Droping a futures means cancelling it
+* Dropping a futures means cancelling it
 * Be aware of what happens if it is cancelled
 
 == Shutting down
