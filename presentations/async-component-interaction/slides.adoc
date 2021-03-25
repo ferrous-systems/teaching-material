@@ -37,7 +37,7 @@ task::spawn_blocking(async {
 == Component interaction with channels
 
 * Channels allow communication between tasks
-* The allows weak binding between components
+* This allows weak binding between components
 * All channels work through Ownership
 
 == Threading vs. async
