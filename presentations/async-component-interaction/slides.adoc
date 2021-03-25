@@ -93,7 +93,7 @@ Be liberal in using others when needed.
 
 Channels act as a natural synchronisation method, as they are read from 1 by 1.
 
-== Fairness and starving
+== Fairness and starvation
 
 Fairness describes the property of a combinator to make sure that every side is equally served. If one is not, it may starve.
 
