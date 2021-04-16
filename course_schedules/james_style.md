@@ -88,6 +88,12 @@ Digression:: set the scene up for "`shared & exclusive`" terminology later in th
 
 === Break
 
+== Basic Traits
+
+Slides:: https://ferrous-systems.github.io/teaching-material/traits.html (without associated types).
+
+Next exercise uses IO, which requires understanding of traits!
+
 === Practice
 
 Exercise:: https://ferrous-systems.github.io/teaching-material/assignments/result-option-assignment.html
@@ -95,13 +101,6 @@ Bonus Points:: re-use the same buffer for all strings, explain why Rust's API is
 Digression:: preludes, allocating a new strings vs re-using existing `&mut buf`.
 
 First complex exercise, spend a lot of time on this one (in general, I severely underestimated the time folks need to go through the exercises).
-
-== Basic Traits
-
-Slides:: https://ferrous-systems.github.io/teaching-material/traits.html (without associated types).
-
-Prob makes sense to push this to __before__ the files exercise?
-IO requires traits :-(
 
 == Day 3
 
