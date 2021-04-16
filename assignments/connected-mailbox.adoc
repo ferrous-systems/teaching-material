@@ -85,7 +85,7 @@ fn read_command(stream: &mut TcpStream) -> redisish::Command {
 
 == Efficiently handling the received command handling the received command
 
-You can use this snipped to quickly read a command.
+You can use this snippet to quickly read a command.
 
 [source,rust]
 ----
