@@ -47,6 +47,12 @@ leveldb-sys = "*"
 libc = "*"
 ```
 
+❗ Declaring a dependency as "any version" using the asterisk is generally not recommended - we're doing it here to prevent stale version numbers and assuming it's safe because these specific crates are very unlikely to have breaking changes. An alternative would be to install [cargo-edit](https://crates.io/crates/cargo-edit) and then use the contained `cargo-add` command to add a dependency on the most recent release version:
+```shell
+$ cargo add leveldb-sys
+$ cargo add libc
+```
+
 Building `leveldb-sys` requires [CMake](https://cmake.org/) and a C++ compiler (gcc, clang, Visual Studio etc.) to be installed on your system.
 
 > 🔎 Should you ever need to write your own sys crate you can find intructions for doing so [here](https://kornel.ski/rust-sys-crate).
@@ -117,4 +123,40 @@ The most straightforward parameter type for the database name is `&str` ([why no
 - To handle paths there's [`std::path::Path`](https://doc.rust-lang.org/std/path/struct.Path.html). For simplicity reasons, assume paths are valid UTF-8, which in the real world isn't always the case. 
 - Errors can be converted with [`map_err` and `From::from`](https://doc.rust-lang.org/rust-by-example/error/multiple_error_types/reenter_question_mark.html).
 - String types implement <a href="https://doc.rust-lang.org/std/convert/trait.AsRef.html">AsRef&lt;Path&gt;</a>, which makes it a good fit for path parameters.
+- You can use this basic template to get started:
 
+```rust
+use leveldb_sys::*;
+use std::ptr;
+use std::ffi::CString;
+
+fn main() {
+    let options = unsafe { leveldb_options_create() };
+
+    unsafe { leveldb_options_set_create_if_missing(options, true as u8) };
+
+    let mut err = ptr::null_mut();
+
+    let name = CString::new("my_db").unwrap();
+
+    let (db_ptr, err_ptr) = unsafe {
+        let db_ptr = leveldb_open(
+            options,
+            name.as_ptr(),
+            &mut err,
+        );
+
+        (db_ptr, err)
+    };
+
+    unsafe { leveldb_options_destroy(options) };
+
+    if err_ptr == ptr::null_mut() {
+        unsafe { leveldb_close(db_ptr) }
+    } else {
+        unsafe {
+            println!("Error opening database: {}", *err_ptr);
+        }
+    }
+}
+```
