@@ -19,7 +19,7 @@ include::./1.rs[]
 include::./2.rs[]
 ----
 
-== Sidenote
+== Side note
 
 It's common to hide construction behind a call to `Point::new()` instead of using a raw struct literal.
 

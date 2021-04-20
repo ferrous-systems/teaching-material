@@ -1,7 +1,7 @@
 fn main() {
-    panicing_function();
+    panicking_function();
 }
 
-fn panicing_function() {
+fn panicking_function() {
     panic!("gosh, don't call me!");
 }

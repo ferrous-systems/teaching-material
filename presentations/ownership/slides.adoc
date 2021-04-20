@@ -9,7 +9,7 @@ Ownership is the basis for the memory management of Rust.
 == Rules
 
 -   Every value has exactly one owner
--   Ownership can be passed on, both to functions and other types
+-   Ownership can be passed on, both to functions and other variables
 -   The owner is responsible for removing the data from memory
 -   The owner has all powers over the data and can mutate it
 

@@ -11,9 +11,10 @@
             $(block).parent().prepend(buttons);
         });
         $('.open-in-playground').click(function () {
-            const code = $(this).siblings('code').text();
+            const code = $(this).siblings('code')[0].cloneNode(true);
+            for (const callout of code.getElementsByClassName("conum")) { callout.nextSibling.remove(); }
             const baseUrl = 'https://play.rust-lang.org/?version=stable&code=';
-            const payload = encodeURIComponent(code);
+            const payload = encodeURIComponent(code.innerText);
             const url = baseUrl + payload;
             window.open(url, '_blank');
         });

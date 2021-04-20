@@ -19,7 +19,7 @@ Our prime accomplices are `Cell<T>` and `RefCell<T>`.
 
 == A motivating example
 
-We have some posts which have immutable content, and an incrementing view count.
+We have some blog posts which have immutable content, and an incrementing view count.
 
 Ideally, we would have a `fn view(&self) -> &'static str` to return the content, and increment the view count.
 

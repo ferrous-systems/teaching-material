@@ -73,7 +73,7 @@ include::./3.rs[]
 
 --
 
-<1> Instead ot `&`, use `&mut` to _mutably borrow_.
+<1> Instead of `&`, use `&mut` to _mutably borrow_.
 <2> Mutable borrows are unique at any time in the program!
 <3> Use `&mut` at the call site. This requires a mutable value!
 <4> Immutable borrows still cannot observe mutation.

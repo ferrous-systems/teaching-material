@@ -17,9 +17,9 @@ include::./1.rs[]
 
 Rust finds the types of all variables and generics with sufficient information.
 
-This only applies *inside* of function limits.
+This only applies *inside* of function bodies.
 
-Signatures must always be fully entered.
+Signatures must always be fully specified.
 
 == Generic Enums
 
@@ -37,4 +37,4 @@ Generic Functions have type parameters.
 include::./6.rs[]
 ----
 
-Generic functions are used when computations can be expressd in the abstract.
+Generic functions are used when computations can be expressed in an abstract way.

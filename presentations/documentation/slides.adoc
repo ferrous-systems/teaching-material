@@ -15,7 +15,11 @@ The standard library documentation is hosted at https://doc.rust-lang.org/std/.
 
 A local, offline version can be opened with:
 
-<pre><code data-source="chapters/shared/code/documentation/1.bash" data-trim="hljs bash"></code></pre>
+[source,bash]
+----
+include::./1.bash[]
+----
+
 
 == Crate Documentation
 
@@ -25,10 +29,10 @@ Some crates may also have other documentation found via the "Documentation" link
 
 == Example: A Module
 
+++++
 <iframe src="https://doc.rust-lang.org/std/vec/" width="100%" height="400">
 </iframe>
-
-== Example: A Module
+++++
 
 This page documents the `vec` module.
 
@@ -47,36 +51,43 @@ include::./2.rs[]
 
 == Example: Components
 
+++++
 <iframe src="https://doc.rust-lang.org/std/string/#structs" width="100%" height="400">
 </iframe>
+++++
 
 == Example: Functions
 
+++++
 <iframe src="https://doc.rust-lang.org/std/string/struct.String.html#method.new" width="100%" height="400">
 </iframe>
+++++
 
 == Code Examples
 
 By default code blocks in documentation are tested.
 
+++++
 <pre><code data-trim="hljs rust">
 /// ```rust
 /// assert_eq!(always_true(), true)
 /// ```
 fn always_true() -> bool { true }
 </code></pre>
+++++
 
 == No-Run Examples
 
 This code will not be run, as it doesn't terminate.
 
+++++
 <pre><code data-trim="hljs rust">
 /// ```rust,no_run
 /// serve();
 /// ```
 fn serve() -> ! { loop {} }
 </code></pre>
-
+++++
 
 == Navigation
 
