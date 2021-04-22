@@ -35,5 +35,5 @@ Be mindful of the API's ownership contract.
   let slice = std::slice::from_raw_parts(data as *mut u8, len);
   let result = Box::from(slice);
   ```
-  ❗ note that you've now created a copy of the data and still own (and therefore have to free) the raw pointer.
+  ❗ note that by creating a `Box` you've copied the data and still own (and therefore have to free) the raw pointer.
 - don't free `null` pointers.
