@@ -201,7 +201,7 @@ fn main() {
 == Reference Counting
 
 * Reference counting on single-threaded executors can be done using `Rc`
-* Reference counting on single-threaded executors can be done using `Arc`
+* Reference counting on multi-threaded executors can be done using `Arc`
 
 == Examples of executors
 
