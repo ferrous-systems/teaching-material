@@ -40,6 +40,7 @@
 * link:./inner-mutability.html[Interior Mutability]
 
 * link:./wasm.html[WASM]
+* link:./lifetimes.html[Lifetimes]
 
 .Async
 * link:./async-building-blocks.html[Async building blocks]
