@@ -150,4 +150,7 @@ include::./11.rs[]
 
 For boxes, the default lifetime bound of the contained value is `'static`. Sometimes, this is too long and can be overwritten:
 
-<pre><code data-source="chapters/shared/code/lifetimes/12.rs" data-trim="hljs rust" class="lang-rust" class="lang-rust"></code></pre>
+[source,rust]
+----
+include::./12.rs[]
+----
