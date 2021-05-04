@@ -40,9 +40,7 @@ include::./2.rs[]
 == Example: `Rc`
 
 ++++
-<pre><code data-source="send-and-sync/3.output" data-trim="hljs output"></code></pre>
-x
-<pre><code data-source="3.output" data-trim="hljs output"></code></pre>
+<pre><code data-source="presentations/send-and-sync/3.output" data-trim="hljs output"></code></pre>
 ++++
 
 == Implementing
