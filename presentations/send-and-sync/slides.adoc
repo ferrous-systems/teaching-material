@@ -39,7 +39,9 @@ include::./2.rs[]
 
 == Example: `Rc`
 
+++++
 <pre><code data-source="chapters/shared/code/send-and-sync/3.output" data-trim="hljs output"></code></pre>
+++++
 
 == Implementing
 
