@@ -39,9 +39,10 @@ include::./2.rs[]
 
 == Example: `Rc`
 
-++++
-<pre><code data-source="presentations/send-and-sync/3.output" data-trim="hljs output"></code></pre>
-++++
+[source,bash]
+----
+include::./3.output[]
+----
 
 == Implementing
 
