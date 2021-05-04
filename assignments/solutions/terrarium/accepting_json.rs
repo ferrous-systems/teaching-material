@@ -36,7 +36,7 @@ pub fn user_entrypoint(req: &Request<Vec<u8>>) -> Response<Vec<u8>> {
           Err(e) => {
             Response::builder()
               .status(422)
-              .body(format!("Error occured: {}", e).into())
+              .body(format!("Error occurred: {}", e).into())
               .unwrap()
           }
         }

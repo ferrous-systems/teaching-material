@@ -50,7 +50,7 @@ fn main() -> io::Result<()> {
                 let res = handle(&mut connection, &storage_handle).await;
     
                 if let Err(e) = res {
-                    println!("Error occured: {:?}", e);
+                    println!("Error occurred: {:?}", e);
                 }
                 println!("task ended!");
 
