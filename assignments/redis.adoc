@@ -26,7 +26,7 @@ Implement a command line handler that lets your program either
 
 You can launch your binary with `cargo run -- your args --and-params=here`. Test argument parsing works as expected using `println!`.
 --
---
+
 
 Step 4::
 +
@@ -40,4 +40,3 @@ Step 5::
 +
 --
 Hook up your command line arguments to the `RedisClient`. In the `get` case, `println!` a String created from the returned value.
---
