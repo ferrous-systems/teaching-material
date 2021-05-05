@@ -50,10 +50,11 @@ Cargo also allows you to specify `git` or `path` (local) dependencies:
 == Error handling: anyhow
 
 https://docs.rs/anyhow/1.0.40/anyhow/index.html[anyhow] is a popular crate for idiomatic error handling, simplifying common cases to quickly get a running. Its counterpart by the same author is https://docs.rs/thiserror/1.0.24/thiserror/[thiserror] which aids in fleshing out custom error types. 
+
 Ref: https://nick.groenen.me/posts/rust-error-handling/[some discussion on the philosophy of error handling & reporting in Rust]
 
 == Handling command line arguments
 
 * Rudimentary handling can be done using `std::env::args`
-* A feature-rich alternative is structopt[https://docs.rs/structopt/0.3.21/structopt/].
+* A feature-rich alternative is structopt[https://docs.rs/structopt/0.3.21/structopt/]
 
