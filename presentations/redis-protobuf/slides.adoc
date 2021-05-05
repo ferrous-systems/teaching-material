@@ -9,7 +9,7 @@ Some projects require additional steps to run before they can be built, e.g. for
 
 == Cargo build scripts (cont.)
 
-* `build.rs` is itself written in Rust.
+* `build.rs` is itself written in Rust. It resides in the root directory of your package, *not* in `src/`.
 * it can have its own list of dependencies via `[build-dependencies]`
 * input is communicated via environment variables
 * output files should be written to `OUT_DIR`
