@@ -1,0 +1,23 @@
+= Exercise: redis client
+:icons: font
+:source-highlighter: rouge
+
+In this exercise, we will extend our redis client with protocol buffers functionality.
+
+== Preparation + Setup
+
+Step 1::
+Create a binary project called `redis-client-protobuf`: `cargo new --bin redis-client-protobuf`
+
+Step 2::
++
+--
+Implement a command line handler that lets your program either
+* get and print the value for a given key, or
+* set a given value for a given key, and
+* defaults to `127.0.0.1` as the server to connect to, but lets you override that
+
+Step 4::
++
+--
+Add a library crate to your package and implement a `RedisClient` struct that can get and set values. Test its functionality with a round trip (set `key` to `value`, assert `get(key) == value`)
