@@ -3,6 +3,7 @@
 :source-highlighter: rouge
 
 In this exercise, we will implement a simple redis client.
+* link:../redis.html[Presentation slides]
 
 == Preparation + Setup
 

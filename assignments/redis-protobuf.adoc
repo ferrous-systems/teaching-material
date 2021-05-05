@@ -1,4 +1,4 @@
-= Exercise: redis client
+= Exercise: Redis client with protocol buffers
 :icons: font
 :source-highlighter: rouge
 
@@ -7,8 +7,9 @@ In this exercise, we will extend our redis client with protocol buffers function
 == Preparation + Setup
 
 Step 1::
-Create a binary project called `redis-client-protobuf`: `cargo new --bin redis-client-protobuf`
+Create a binary project called `redis-client-protobuf`: `cargo new --bin redis-client-protobuf` and add your redis client library as a path dependency.
 
+== Implementation
 Step 2::
 +
 --
