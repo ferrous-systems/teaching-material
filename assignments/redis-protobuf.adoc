@@ -23,3 +23,13 @@ Step 3::
 +
 --
 Store and retrieve configuration and phone book entries in Redis.
+
+Step 4::
++
+--
+Implement a wrapper around `RedisClient` that handles encoding and decoding.
+
+Bonus::
++
+--
+Optimize your build so that code generation is only run when the protobuf definitions change.

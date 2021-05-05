@@ -61,6 +61,6 @@
 * link:./assignments/calc.html[Calculator]
 * link:./assignments/binding-to-leveldb.html[Binding to leveldb]
 * link:./assignments/redis.html[Redis client]
-//* link:./assignments/redis-protobuf.html[Redis client with protocol buffers]
+* link:./assignments/redis-protobuf.html[Redis client with protocol buffers]
 
 * link:./assignments/async-mailbox.html[Async Mailbox]
