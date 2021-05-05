@@ -56,5 +56,5 @@ Ref: https://nick.groenen.me/posts/rust-error-handling/[some discussion on the p
 == Handling command line arguments
 
 * Rudimentary handling can be done using `std::env::args`
-* A feature-rich alternative is structopt[https://docs.rs/structopt/0.3.21/structopt/] 
+* A feature-rich alternative is https://docs.rs/structopt/0.3.21/structopt/[structopt].
 

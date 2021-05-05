@@ -11,13 +11,13 @@ In this exercise, we will extend our redis client with protocol buffers function
 Step 1::
 Create a binary project called `redis-client-protobuf`: `cargo new --bin redis-client-protobuf` and add your redis client library as a path dependency.
 
-Copy the protobuf definitions[https://github.com/ferrous-systems/teaching-material/tree/master/assignments/redis-protobuf] to your source directory.
+Copy the https://github.com/ferrous-systems/teaching-material/tree/master/assignments/redis-protobuf[protobuf definitions] to your source directory.
 
 == Implementation
 Step 2::
 +
 --
-Generate Rust protobuf code for phone book and configuration, using prost_build[https://docs.rs/prost-build/0.7.0/prost_build/] 
+Generate Rust protobuf code for phone book and configuration, using https://docs.rs/prost-build/0.7.0/prost_build/[prost_build] 
 
 Step 3::
 +

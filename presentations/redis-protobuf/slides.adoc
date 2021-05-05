@@ -28,7 +28,7 @@ pub mod generated {
 
 == Protocol buffers in Rust
 
-Several crates exist - we're going to use prost[https://github.com/danburkert/prost] here.
+Several crates exist - we're going to use https://github.com/danburkert/prost[prost] here.
 
 == Prost usage
 
