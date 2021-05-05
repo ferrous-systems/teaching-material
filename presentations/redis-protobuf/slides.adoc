@@ -30,3 +30,15 @@ pub mod generated {
 
 Several crates exist - we're going to use prost[https://github.com/danburkert/prost] here.
 
+== Prost usage
+
+By using `prost::Message` you get encode & decode functionality.
+[source,rust]
+----
+use prost::Message;
+// ...
+let mut buf = Vec::new(3);
+a_proto_object.encode(&mut buf)?;
+
+let another_proto_object = TheProtoObject::decode(a_vec.as_slice())?;
+----

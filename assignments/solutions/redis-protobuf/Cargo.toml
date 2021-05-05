@@ -1,5 +1,5 @@
 [package]
-name = "redis-client"
+name = "ex-redis"
 version = "0.1.0"
 authors = ["Anatol Ulrich <anatol.ulrich@ferrous-systems.com>"]
 edition = "2018"
@@ -8,5 +8,14 @@ edition = "2018"
 
 [dependencies]
 anyhow = "1.0.40"
+bytes = "1.0.1"
+prost = "0.7.0"
 redis = "0.20.0"
-structopt = { version = "0.3.21" }
+redis-client = { path = "../redis"}
+
+[build-dependencies]
+prost-build = "0.7.0"
+
+[profile.dev]
+# speed up compilation on macos (Rust 1.51+ only)
+split-debuginfo = "unpacked"
