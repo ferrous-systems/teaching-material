@@ -1,5 +1,5 @@
 use anyhow::Result;
-use my_redis::RedisClient;
+use redis_client::RedisClient;
 use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]
