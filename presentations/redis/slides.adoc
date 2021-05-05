@@ -10,6 +10,7 @@ Let's revisit & deepen our knowledge of a few areas.
 == Cargo
 
 A Cargo package can (at the same time) contain:
+
 * 0 or 1 library crates
 * 0..n binary crates
 
@@ -28,6 +29,7 @@ By default, the library crate is implemented in `src/lib.rs` and has the same mo
 == Cargo helpers
 
 Cargo can be extended:
+
 * `cargo-tree`: show dependency graph 
 * `cargo-edit`: add/remove/upgrade dependencies
 * `cargo-watch`: recompile/restart project on change
@@ -41,6 +43,7 @@ https://crates.io is the public crates registry. Dependencies specified by versi
 == Cargo crates (cont.)
 
 Cargo also allows you to specify `git` or `path` (local) dependencies:
+
 * `rand = { git = "https://github.com/rust-lang-nursery/rand", branch = "next" }`
 * `hello_utils = { path = "hello_utils" }`
 
