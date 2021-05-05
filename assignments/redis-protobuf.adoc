@@ -9,9 +9,10 @@ In this exercise, we will extend our redis client with protocol buffers function
 == Preparation + Setup
 
 Step 1::
-Create a binary project called `redis-client-protobuf`: `cargo new --bin redis-client-protobuf` and add your redis client library as a path dependency.
 
-Copy the https://github.com/ferrous-systems/teaching-material/tree/master/assignments/redis-protobuf[protobuf definitions] to your source directory.
+* Install the https://grpc.io/docs/protoc-installation/[protoc compiler] (required by `prost-build`).
+* Create a binary project called `redis-client-protobuf`: `cargo new --bin redis-client-protobuf` and add your redis client library as a path dependency.
+* Copy the https://github.com/ferrous-systems/teaching-material/tree/master/assignments/redis-protobuf[protobuf definitions] to your source directory.
 
 == Implementation
 Step 2::
