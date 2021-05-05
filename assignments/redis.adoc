@@ -16,11 +16,13 @@ Step 3::
 +
 --
 Implement a command line handler that lets your program either
+
 * get and print the value for a given key, or
 * set a given value for a given key, and
 * defaults to `127.0.0.1` as the server to connect to, but lets you override that
 
 You can launch your binary with `cargo run -- your args --and-params=here`. Test argument parsing works as expected using `println!`.
+
 
 Step 4::
 +
