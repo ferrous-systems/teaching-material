@@ -1,0 +1,32 @@
+= Redis-protobuf exercise
+
+link:./index.html[Table of Contents]
+
+
+== Cargo build scripts
+
+Some projects require additional steps to run before they can be built, e.g. for code generation. Cargo supports this by means of a `build.rs` file.
+
+== Cargo build scripts (cont.)
+
+* `build.rs` is itself written in Rust.
+* it can have its own list of dependencies via `[build-dependencies]`
+* input is communicated via environment variables
+* output files should be written to `OUT_DIR`
+* Cargo behavior can be controlled by writing commands to stdout.
+
+== Cargo build scripts (cont.)
+
+Generated code is typically then included in another Rust source file:
+
+[source,rust]
+----
+pub mod generated {
+    include!(concat!(env!("OUT_DIR"), "/generated.rs"));
+}
+----
+
+== Protocol buffers in Rust
+
+Several crates exist - we're going to use prost[https://github.com/danburkert/prost] here.
+
