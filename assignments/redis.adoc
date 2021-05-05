@@ -43,3 +43,8 @@ Step 5::
 --
 Hook up your command line arguments to the `RedisClient`. In the `get` case, `println!` a String created from the returned value.
 --
+
+
+== Solution
+
+https://github.com/ferrous-systems/teaching-material/tree/master/assignments/solutions/redis
