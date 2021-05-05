@@ -25,7 +25,7 @@ Implement a command line handler that lets your program either
 * set a given value for a given key, and
 * defaults to `redis://127.0.0.1/` as the server to connect to, but lets you override that
 
-You can launch your binary with `cargo run -- your args --and-params=here`. Test argument parsing works as expected using `println!`.
+You can launch your binary with `cargo run \-- your args --and-params=here`. Test argument parsing works as expected using `println!`.
 --
 
 
@@ -36,8 +36,10 @@ Add a library crate to your package and implement a `RedisClient` struct that ca
 It should be constructable using only a generic `IntoConnectionInfo` parameter and expose no redis-specific functionality (essentially behave like a dictionary).
 
 Test its functionality with a round trip unit test (set `key` to `value`, assert `get(key) == value`).
+--
 
 Step 5::
 +
 --
 Hook up your command line arguments to the `RedisClient`. In the `get` case, `println!` a String created from the returned value.
+--
