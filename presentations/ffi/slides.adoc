@@ -209,21 +209,29 @@ Use platform-ABI in reverse – emit a native library
 
 == Cargo Settings
 
-<pre><code data-source="chapters/shared/code/ffi/12.toml" data-trim="hljs toml"></code></pre>
+[source,toml]
+----
+include::./12.toml[]
+----
 
 == !
 
 Otherwise similar concept.
 
 * `extern "C"` functions.
-* `#[repr(C)]` structures/ enums.
+* `#[repr\(C)]` structures/ enums.
 * Making data C compatible.
 
 == !
 
-<pre><code data-source="chapters/shared/code/ffi/13.rs" data-trim="hljs toml"></code></pre>
+[source,rust]
+----
+include::./13.rs[]
+----
 
++++
 <small>You saw the rest of the function earlier</small>
++++
 
 == !
 
@@ -231,7 +239,9 @@ Now what?
 
 == Creating bindings
 
++++
 <small>(No, this is not a deja-vu)</small>
++++
 
 C code needs `.h` files to include – define Rust functions there.
 
@@ -243,18 +253,5 @@ But: not required here, because plugin API is specified via weechat!
 
 == !
 
-<pre><code data-source="chapters/shared/code/ffi/14.rs" data-trim="hljs toml"></code></pre>
-
-== !
-
 Full code here: https://github.com/spacekookie/weechat-rs/tree/master/examples/hello_weechat[spacekookie/weechat-rs]
 
-Feel free to run, play, test, ...
-
-== Some things not covered
-
-== !
-
-
-
-== !
