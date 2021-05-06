@@ -97,7 +97,7 @@ Examples:
 
 == Futures are poll-based
 
-They can be checked if they are _done_, and are usually mapped to readiness based APIs like `epool`.
+They can be checked if they are _done_, and are usually mapped to readiness based APIs like `epoll`.
 
 == .await registers interest in completion
 
