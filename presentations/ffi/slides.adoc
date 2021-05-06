@@ -74,7 +74,7 @@ Disables some Rust naming lints
 
 == Binding functions
 
-[source,rust]
+[source,c]
 ----
 include::./hello.h[]
 ----
@@ -110,7 +110,7 @@ include::./3.rs[]
 
 The layout of enums and structs is left to the compiler.
 
-`#[repr(C)]` directs the compiler to use the platform-layout.
+`#[repr\(C)]` directs the compiler to use the platform-layout.
 
 [source,rust]
 ----
