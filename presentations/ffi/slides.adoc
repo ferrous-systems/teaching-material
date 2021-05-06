@@ -201,7 +201,7 @@ Isolates lifecycle management of the pointer from the rest of the code.
 
 == !
 
-Works simmilarly to what you've already seen.
+Works similar to what you've already seen.
 
 Use platform-ABI in reverse – emit a native library
 
