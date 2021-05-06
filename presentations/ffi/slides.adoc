@@ -61,14 +61,16 @@ include::./hello.h[]
 
 == Before we get started
 
-[source,rust]
+[source,rust,no_run,noplayground]
 ----
 include::./1.rs[]
 ----
 
 Disables some Rust naming lints
 
+++++
 <small>(which are common in C code)</small>
+++++
 
 == Binding functions
 
