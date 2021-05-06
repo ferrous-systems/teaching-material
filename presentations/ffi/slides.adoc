@@ -61,7 +61,7 @@ include::./hello.h[]
 
 == Before we get started
 
-[source,rust,no_run,noplayground]
+[source,rust]
 ----
 include::./1.rs[]
 ----

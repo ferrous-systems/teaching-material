@@ -59,7 +59,8 @@
 * link:./assignments/connected-mailbox.html[Connected mailbox]
 * link:./assignments/multithreaded-mailbox.html[Multithreaded mailbox]
 * link:./assignments/calc.html[Calculator]
-* link:./assignments/binding-to-leveldb.html[Binding to leveldb]
+* link:./assignments/binding-to-leveldb.html[Binding to LevelDB]
+* https://exercises-2021.ferrous-systems.com/ffi-1-exercise.html[Binding to LevelDB - book version]
 * link:./assignments/redis.html[Redis client]
 * link:./assignments/redis-protobuf.html[Redis client with protocol buffers]
 
