@@ -24,11 +24,11 @@ link:./index.html[Table of Contents]
 
 ==  Warning
 
-async-await is a rather new feature.
+async-await is a somewhat new feature.
 
 * It's stable
 * The base technologies are older than the syntax
-* Some things may be come more ergonomic in the future
+* Some things may become more ergonomic https://rust-lang.github.io/wg-async-foundations/[in the future]
 
 == A normal Rust function
 
