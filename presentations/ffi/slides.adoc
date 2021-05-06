@@ -161,7 +161,7 @@ include::./7.rs[]
 
 == !
 
-At this point including bindings is easy\*
+At this point including bindings is easy*
 
 [source,rust]
 ----
