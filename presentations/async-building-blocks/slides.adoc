@@ -64,7 +64,7 @@ async fn read_from_disk(path: &str) -> std::io::Result<String> {
 [source,rust]
 ----
 use async_std::io::prelude::*;
-use async_std::net::TcpStream;
+use async_std::fs::File;
 
 fn read_from_disk(path: &str) -> impl Future<Output=std::io::Result<String>> {
     async {
