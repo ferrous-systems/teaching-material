@@ -42,12 +42,12 @@ Hello world from C
 
 Let's assume you _really_ want to use printf
 
-[source,rust]
+[source,c]
 ----
 include::./hello.c[]
 ----
 
-[source,rust]
+[source,c]
 ----
 include::./hello.h[]
 ----
