@@ -5,7 +5,9 @@ link:./index.html[Table of Contents]
 
 == Efficiency!
 
+++++
 <small>(This is Germany after all)</small>
+++++
 
 *» efficient C bindings «*
 
@@ -27,7 +29,6 @@ Or _be_ one.
 
 *» efficient C bindings «*
 
-<br/>
 
 There are no conversion costs
 
