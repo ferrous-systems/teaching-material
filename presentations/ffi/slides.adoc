@@ -146,7 +146,9 @@ include::./6.rs[]
 
 Binding imagemagick to rust!
 
+++++
 <small>(Somebody already did that but let's do it again)</small>
+++++
 
 == bindgen
 
