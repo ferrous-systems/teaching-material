@@ -11,7 +11,7 @@ fn main() -> io::Result<()> {
     };
 
     print_filelen(&file)?;
-    write_to_file(&mut file, data);
+    write_to_file(&mut file);
     print_filelen(&file)
 }
 
@@ -20,6 +20,6 @@ fn print_filelen(f: &File) -> io::Result<()> {
     Ok(())
 }
 
-fn write_to_file(f: &mut File, data: &str) -> io::Result<()> {
+fn write_to_file(f: &mut File) -> io::Result<()> {
     f.write_all(b"Hello World!")
 }
