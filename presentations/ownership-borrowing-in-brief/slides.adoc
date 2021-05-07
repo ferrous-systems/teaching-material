@@ -107,7 +107,7 @@ include::./5.rs[]
 * Available only once
 * Always valid (always pointing to living data)
 * Never `null`
-* Guaranteed to never alias (no two `&mut`s point to the same data)
+* Guaranteed to never alias (no two references point to the same data)
 
 [.centered]
 == The Borrowing Rules
