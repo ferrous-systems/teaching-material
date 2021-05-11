@@ -40,7 +40,7 @@ pub fn parse(input: &str) -> Result<Command, Error> {
 ----
 4. Along the way, implement appropriate datastructures for `Command` and `Error`.
 5. Write tests.
-6. Finishing touches: implement `std::error::Error` for you `Error` type. Run `clippy` on your codebase. Run `rustfmt` on your codebase.
+6. Finishing touches: implement `std::error::Error` for your `Error` type. Run `clippy` on your codebase. Run `rustfmt` on your codebase.
 
 == Help
 
