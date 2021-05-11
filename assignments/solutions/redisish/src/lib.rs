@@ -1,9 +1,9 @@
 use std::fmt;
 
-#[derive(Eq,PartialEq,Debug)]
+#[derive(Eq, PartialEq, Debug)]
 pub enum Command {
     Publish(String),
-    Retrieve
+    Retrieve,
 }
 
 #[derive(Eq, PartialEq, Debug)]
@@ -22,17 +22,15 @@ impl fmt::Display for Error {
     }
 }
 
-impl std::error::Error for Error {
-    
-}
+impl std::error::Error for Error {}
 
 pub fn parse(input: &str) -> Result<Command, Error> {
     if let Some(pos) = input.find('\n') {
-        if !((pos+1) == input.len()) {
-            return Err(Error::TrailingData)
+        if !((pos + 1) == input.len()) {
+            return Err(Error::TrailingData);
         }
     } else {
-        return Err(Error::IncompleteMessage)
+        return Err(Error::IncompleteMessage);
     }
 
     let mut split = input.splitn(2, ' ');
@@ -53,10 +51,8 @@ pub fn parse(input: &str) -> Result<Command, Error> {
                     Err(Error::MissingPayload)
                 }
             }
-            "" => {
-                Err(Error::EmptyMessage)
-            }
-            _ => { Err(Error::UnknownVerb) }
+            "" => Err(Error::EmptyMessage),
+            _ => Err(Error::UnknownVerb),
         }
     } else {
         Err(Error::EmptyMessage)
