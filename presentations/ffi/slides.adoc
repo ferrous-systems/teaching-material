@@ -156,7 +156,7 @@ Binding imagemagick to rust!
 
 [source,rust]
 ----
-include::./7.rs[]
+include::./7.rs[tag=!skip]
 ----
 
 == !
