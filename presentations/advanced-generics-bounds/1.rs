@@ -1,3 +1,5 @@
+use std::fmt::Debug;
+
 fn print_everything<T: Debug>(to_print: T) {
     println!("{:?}", to_print);
 }

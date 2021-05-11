@@ -1,3 +1,5 @@
+trait Distance<T> { /* ... */ }
+
 trait Centered {
     fn center(&self) -> (i32, i32);
 }
