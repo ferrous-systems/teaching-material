@@ -86,7 +86,7 @@ In the Rust community https://semver.org[Semantic Versioning] is the recommended
 
 == Pre-release
 
-If the version of a library is below `1`, it is considered "pre-release", which means breaking interface changes can happen with *every minor version*.
+If the version of a library is below `1`, it is considered "pre-release", which means breaking interface changes can happen with *every minor version*, and in the `0.0.x` case, with every *patch* version.
 
 == Version expressions
 
@@ -94,7 +94,7 @@ Cargo allows expressing version ranges in different fashions.
 
 - `=1.2.3`: Exact version, cargo will only use that one
 - `0.1`: Any patch version of the "0.1" series
-- `1.0`: Any patch version of the "0.1" series
+- `1.0`: Any minor version of the "1.x" series
 - `< 0.8`: Any minor version smaller than "0.8"
 
 For more details, check the http://doc.crates.io/manifest.html[docs]
