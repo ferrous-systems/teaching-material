@@ -38,7 +38,7 @@ pub fn parse(input: &str) -> Result<Command, Error> {
     if let Some(verb) = split.next() {
         match verb.trim() {
             "RETRIEVE" => {
-                if split.next() == None {
+                if split.next().is_none() {
                     Ok(Command::Retrieve)
                 } else {
                     Err(Error::UnexpectedPayload)
