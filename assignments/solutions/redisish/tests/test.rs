@@ -10,6 +10,13 @@ fn test_retrieve() {
 }
 
 #[test]
+fn test_retrieve_trailing_space() {
+    let line = "RETRIEVE \n";
+    let result = redisish::parse(line);
+    assert_eq!(result, Err(Error::UnexpectedPayload));
+}
+
+#[test]
 fn test_publish() {
     let line = "PUBLISH TestMessage\n";
     let result = redisish::parse(line);
@@ -62,5 +69,5 @@ fn test_publish_with_empty_payload() {
 fn test_inline_newline() {
     let line = "PUBLISH fooo\nbar\n";
     let result = redisish::parse(line);
-    assert_eq!(result, Err(Error::TrailingData));    
+    assert_eq!(result, Err(Error::TrailingData));
 }
