@@ -40,6 +40,7 @@
 
 * link:./wasm.html[WASM]
 * link:./lifetimes.html[Lifetimes]
+* link:./send-and-sync.html[Send and Sync]
 
 .Async
 * link:./async-building-blocks.html[Async building blocks]
