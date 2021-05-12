@@ -1,0 +1,10 @@
+[package]
+name = "durable_file"
+version = "0.1.0"
+authors = ["Ferrous Systems <office@ferrous-systems.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dev-dependencies]
+tempdir = "0.3.7"
