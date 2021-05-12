@@ -8,6 +8,8 @@ fn main() -> std::io::Result<()> {
         Some(msg) => msg,
         None => String::from("Hello!"),
     };
+    // or:
+    // arg.unwrap_or_default(String::from("Hello!"));
 
     let mut stream = TcpStream::connect("127.0.0.1:8080")?;
 
