@@ -54,7 +54,7 @@
 * link:./assignments/redisish.html[Redisish protocol parser]
 * link:./assignments/tcp-echo-server.html[TCP server]
 * link:./assignments/tcp-client.html[TCP client]
-* link:./assignments/simple-chat.html[Simple async chat]
+
 * link:./assignments/connected-mailbox.html[Connected mailbox]
 * link:./assignments/multithreaded-mailbox.html[Multithreaded mailbox]
 * link:./assignments/calc.html[Calculator]
@@ -63,4 +63,5 @@
 * link:./assignments/redis.html[Redis client]
 * link:./assignments/redis-protobuf.html[Redis client with protocol buffers]
 
+* link:./assignments/simple-chat.html[Simple async chat]
 * link:./assignments/async-mailbox.html[Async Mailbox]
