@@ -72,7 +72,7 @@ For cases like this, there are https://doc.rust-lang.org/std/panic/fn.catch_unwi
 
 == Hooks
 
-https://doc.rust-lang.org/std/panic/fn.set_hook.html[std::panic::set1_hook] allows setting a global handler that is run *before* the unwinding happens.
+https://doc.rust-lang.org/std/panic/fn.set_hook.html[std::panic::set_hook] allows setting a global handler that is run *before* the unwinding happens.
 
 == !
 

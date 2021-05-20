@@ -64,7 +64,7 @@ It is like normal ownership and borrowing, but at the beginning somewhat unfamil
 
 == Traits
 
-Traits are Rusts variant of abstracting over types.
+Traits are Rust's particular way of abstracting over types.
 
 == !
 

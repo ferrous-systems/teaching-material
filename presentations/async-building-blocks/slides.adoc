@@ -24,11 +24,11 @@ link:./index.html[Table of Contents]
 
 ==  Warning
 
-async-await is a rather new feature.
+async-await is a somewhat new feature.
 
 * It's stable
 * The base technologies are older than the syntax
-* Some things may be come more ergonomic in the future
+* Some things may become more ergonomic https://rust-lang.github.io/wg-async-foundations/[in the future]
 
 == A normal Rust function
 
@@ -64,7 +64,7 @@ async fn read_from_disk(path: &str) -> std::io::Result<String> {
 [source,rust]
 ----
 use async_std::io::prelude::*;
-use async_std::net::TcpStream;
+use async_std::fs::File;
 
 fn read_from_disk(path: &str) -> impl Future<Output=std::io::Result<String>> {
     async {
@@ -97,7 +97,7 @@ Examples:
 
 == Futures are poll-based
 
-They can be checked if they are _done_, and are usually mapped to readiness based APIs like `epool`.
+They can be checked if they are _done_, and are usually mapped to readiness based APIs like `epoll`.
 
 == .await registers interest in completion
 

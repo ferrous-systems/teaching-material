@@ -53,7 +53,7 @@ fn main() -> io::Result<()> {
             let mut stream = match connection {
                 Ok(stream ) => stream,
                 Err(e) => {
-                    println!("Error occured: {:?}", e);
+                    println!("Error occurred: {:?}", e);
                     continue;
                 }
             };
@@ -67,7 +67,7 @@ fn main() -> io::Result<()> {
                 .instrument(tracing::span!(Level::INFO, "request", request = request_number)).await;
     
                 if let Err(e) = res {
-                    println!("Error occured: {:?}", e);
+                    println!("Error occurred: {:?}", e);
                 }
             });
         };

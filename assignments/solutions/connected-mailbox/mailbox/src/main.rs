@@ -31,7 +31,7 @@ fn main() -> io::Result<()> {
         let stream = match connection {
             Ok(stream) => stream,
             Err(e) => {
-                println!("Error occured: {:?}", e);
+                println!("Error occurred: {:?}", e);
                 continue;
             }
         };
@@ -39,7 +39,7 @@ fn main() -> io::Result<()> {
         let res = handle(stream, &mut storage);
 
         if let Err(e) = res {
-            println!("Error occured: {:?}", e);
+            println!("Error occurred: {:?}", e);
         }
 
 

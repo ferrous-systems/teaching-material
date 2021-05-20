@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package phone.config;
+
+message Config {
+    enum Mode {
+        ACTIVE = 0;
+        DND = 1;
+        OUT_OF_OFFICE = 2;
+    }
+
+    string serial_number = 1;
+    Mode mode = 2;
+}

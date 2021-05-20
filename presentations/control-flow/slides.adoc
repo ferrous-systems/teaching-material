@@ -115,7 +115,7 @@ include::./11.rs[]
 
 [source,rust]
 ----
-include::./11.rs[]
+include::./11b.rs[]
 ----
 
 * `return` can be used for early returns

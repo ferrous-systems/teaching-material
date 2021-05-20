@@ -11,6 +11,7 @@ For that reason, Rust has the concept of "unsafe code".
 == !
 
 Unsafe code is allowed to:
+
 -   freely access memory
 -   dereference raw pointers
 -   call external functions
@@ -28,11 +29,10 @@ Not unsafe are:
 
 Unsafe code should never:
 
--   be used to manage memory managed by a different allocator
-    - never construct a `std:::vec::Vec` from a C++ vector and drop it
--   cheat on borrowck, for example by changing lifetimes or mutability of a type. The most common source of "but I was so sure that works" bugs.
+- be used to manage memory managed by a different allocator (e.g. construct a `std:::vec::Vec` from a C++ vector and drop it)
+- cheat on the borrow checker, for example by changing lifetimes or mutability of a type. The most common source of "but I was so sure that works" bugs.
 
-== Rusts little secret
+== Rust's little secret
 
 When implementing data structures, unsafe isn't unusual.
 

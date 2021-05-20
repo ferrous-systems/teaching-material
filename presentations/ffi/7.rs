@@ -1,5 +1,7 @@
+// # tag::skip[]
+fn main() {
+// # end::skip[]
 // ... finding imagemagick via pkgconf ...
-
 let bindings = {
     let mut builder = bindgen::Builder::default()
         .header_contents("bindings.h", &header)
@@ -15,3 +17,7 @@ let bindings = {
 
 bindings.write_to_file(out_path.join("bindings.rs"))
         .expect("Couldn't write bindings!");
+
+// # tag::skip[]
+}
+// # end::skip[]
