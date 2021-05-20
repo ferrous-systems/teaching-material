@@ -9,6 +9,7 @@ name = "calc-ffi"
 version = "0.1.0"
 dependencies = [
  "calc",
+ "xshell",
 ]
 
 [[package]]
@@ -25,10 +26,3 @@ name = "xshell-macros"
 version = "0.1.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "58d215d6837186f9f3d0d2d835545c7bf19142296e9184279ad240f90101af30"
-
-[[package]]
-name = "xtask"
-version = "0.1.0"
-dependencies = [
- "xshell",
-]
