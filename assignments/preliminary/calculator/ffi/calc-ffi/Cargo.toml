@@ -1,0 +1,17 @@
+[package]
+name = "calc-ffi"
+version = "0.1.0"
+authors = ["James Munns <james.munns@ferrous-systems.com>"]
+edition = "2018"
+
+[lib]
+# crate-type = ["cdylib"] - Make a dynamic library,
+#                            e.g. a `.so` or `.dll`
+# crate-type = ["staticlib"] - Make a static library,
+#                            e.g. a `.a` or `.lib` file
+crate-type = ["staticlib"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies.calc]
+path = "../../calc"

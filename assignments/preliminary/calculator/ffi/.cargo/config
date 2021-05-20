@@ -1,0 +1,2 @@
+[alias]
+build-ffi = "run --package xtask --"
