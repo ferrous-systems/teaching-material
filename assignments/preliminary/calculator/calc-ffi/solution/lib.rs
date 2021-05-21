@@ -38,7 +38,8 @@ pub extern "C" fn parse_and_eval(maybe_cstr: *const c_char, output: *mut i64) ->
         return -1;
     }
 
-    // Do parse, do eval
+    // next: do parse and then eval
+
     let parsed = match parse(string_data) {
         Ok(p) => p,
         Err(_e) => return -3,
@@ -70,7 +71,6 @@ pub extern "C" fn c_parse(maybe_cstr: *const c_char) -> *mut Expr {
         Err(_e) => return std::ptr::null_mut(),
     };
 
-    // Do parse, do eval
     match parse(string_data) {
         Ok(p) => {
             let ret_val: &'static mut Expr = Box::leak(Box::new(p));
@@ -114,7 +114,3 @@ pub extern "C" fn release_expr(box_expr: *mut Expr) {
         }
     }
 }
-
-//
-// *const -> const *
-// *mut   -> *
