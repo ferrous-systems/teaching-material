@@ -2,23 +2,6 @@ use calc::prelude::*;
 use std::ffi::CStr;
 use std::os::raw::c_char;
 
-// What I want to expose:
-// * single function
-// * takes a C string of "input"
-// * returns (if successful) the output
-
-// parse_and_eval
-//
-// Arguments?
-//    * const char
-// Return type?
-//    * integer
-
-// returns 0 if success, returns nonzero if failure
-// on success, output is updated with the result
-//
-// int parse_and_eval(char*, int64_t* output);
-
 pub use calc::Expr;
 
 #[no_mangle]
