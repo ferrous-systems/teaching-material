@@ -1,5 +1,3 @@
-use std::fmt::Debug;
-
 struct Wrapper<T> {
     inner: T
 }

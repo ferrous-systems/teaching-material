@@ -5,6 +5,7 @@ link:./index.html[Table of Contents]
 == Information gathering
 
 Your project is dynamic:
+
 * Make it traceable
 * Constantly monitor
 
@@ -29,12 +30,12 @@ This throttles the system, but allows it to not fail.
 
 == Dropping futures
 
-* Droping a futures means cancelling it
-* Be aware on what happens if is cancelled
+* Dropping a futures means cancelling it
+* Be aware of what happens if it is cancelled
 
 == Shutting down
 
-* Make sure you handle signals centrally
+* Make sure your signal handling is centralized
 * Every component should subscribe to a cancel notification
 
 == Implementing a custom Future: Pinning

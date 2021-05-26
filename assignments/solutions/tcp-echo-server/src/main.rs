@@ -1,6 +1,6 @@
-use std::net::{TcpListener, TcpStream};
 use std::io;
 use std::io::prelude::*;
+use std::net::{TcpListener, TcpStream};
 
 fn handle_client(mut stream: TcpStream) -> Result<(), io::Error> {
     let mut buffer = String::new();
@@ -19,8 +19,7 @@ fn main() -> io::Result<()> {
 
     // accept connections and process them serially
     for stream in listener.incoming() {
-        handle_client(stream?);
+        handle_client(stream?)?;
     }
     Ok(())
 }
-

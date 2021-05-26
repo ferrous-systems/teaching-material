@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package phone.phonebook;
+
+message Entry {
+    enum Category {
+        PERSONAL = 0;
+        WORK = 1;
+    }
+    enum Kind {
+        PERSON = 0;
+        COMPANY = 1;
+    }
+
+    string name = 1;
+    string number = 2;
+    Category category = 3;
+    Kind kind = 4;
+}
+
+message PhoneBook {
+    repeated Entry entries = 1;
+}

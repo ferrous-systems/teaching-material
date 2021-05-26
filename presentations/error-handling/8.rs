@@ -1,8 +1,6 @@
 use std::fs::File;
 
-type DynError = Box<dyn std::error::Error + Send + Sync + 'static>;
-
-fn main() -> Result<(), DynError> {
+fn main() -> Result<(), Box<dyn std::error::Error>> {
     let f = File::open("broken")?;
 
     let x: i32 = "ABC".parse()?;

@@ -9,7 +9,7 @@ Ownership is the basis for the memory management of Rust.
 == Rules
 
 -   Every value has exactly one owner
--   Ownership can be passed on, both to functions an other types
+-   Ownership can be passed on, both to functions and other types
 -   The owner is responsible for removing the data from memory
 -   The owner has all powers over the data and can mutate it
 
@@ -18,7 +18,7 @@ Ownership is the basis for the memory management of Rust.
 
 These rules:
 
--   are fundamental to Rusts type system
+-   are fundamental to Rust's type system
 -   are enforced at compile time
 -   are practical in many other ways
 
@@ -67,7 +67,7 @@ The value cannot be used anymore.
 
 == Background
 
-When calling `write_and_close` with `file`, the value is "moved" into the arguments of `write_and_close`. 
+When calling `write_and_close` with `file`, the value is "moved" into the arguments of `write_and_close`.
 
 At that moment, ownership passes to `write_and_close`.
 
@@ -107,7 +107,7 @@ include::./5.rs[]
 * Available only once
 * Always valid (always pointing to living data)
 * Never `null`
-* Guaranteed to never alias
+* Guaranteed to never alias (no two references point to the same data)
 
 [.centered]
 == The Borrowing Rules
@@ -125,7 +125,7 @@ Rust forbids _shared mutability_.
 |===
 |Owned |Borrowed |Mutably borrowed
 
-|i32   
+|i32
 |&i32
 |&mut i32
 
@@ -155,7 +155,9 @@ Rust forbids _shared mutability_.
 
 == Working with moves: explicit clone
 
-What, if ownership behaviour is get messy, but we don't want to reference? We can create a second copy of the data!
+What if ownership behaviour is getting messy, but we don't want to reference?
+
+We can create a second copy of the data!
 
 == !
 

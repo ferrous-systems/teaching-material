@@ -7,22 +7,22 @@
 * link:./installation.html[Installation]
 * link:./basic-types.html[Basic Types]
 * link:./compound-types.html[Compound Types]
+* link:./error-handling.html[Error Handling]
 * link:./mutability.html[Mutability]
 * link:./ownership.html[Ownership]
-* link:./ownership-borrowing-in-brief.html[Ownership & Borrowing]
+* link:./borrowing.html[Borrowing]
+* link:./ownership-borrowing-in-brief.html[Ownership & Borrowing in brief]
 * link:./control-flow.html[Control Flow]
 * link:./little-helpers.html[Little Helpers]
 * link:./strings.html[Strings]
 * link:./drop-panic-abort.html[Drop, Panic, Abort]
-
-* link:./borrowing.html[Borrowing]
 * link:./iterators.html[Iterators]
-
 * link:./functions.html[Functions]
 * link:./stack-and-heap.html[Stack and Heap]
-* link:./error-handling.html[Error Handling]
+* link:./documentation.html[Documentation]
 * link:./testing.html[Testing]
 * link:./generics-basics.html[Basic Generics]
+
 
 .Advanced
 * link:./cargo.html[Cargo]
@@ -39,6 +39,8 @@
 * link:./inner-mutability.html[Interior Mutability]
 
 * link:./wasm.html[WASM]
+* link:./lifetimes.html[Lifetimes]
+* link:./send-and-sync.html[Send and Sync]
 
 .Async
 * link:./async-building-blocks.html[Async building blocks]
@@ -53,11 +55,15 @@
 * link:./assignments/redisish.html[Redisish protocol parser]
 * link:./assignments/tcp-echo-server.html[TCP server]
 * link:./assignments/tcp-client.html[TCP client]
-* link:./assignments/simple-chat.html[Simple Chat]
+
 * link:./assignments/connected-mailbox.html[Connected mailbox]
 * link:./assignments/multithreaded-mailbox.html[Multithreaded mailbox]
 * link:./assignments/calc.html[Calculator]
-* link:./assignments/binding-to-leveldb.html[Binding to leveldb]
+* link:./assignments/binding-to-leveldb.html[Binding to LevelDB]
+* https://exercises-2021.ferrous-systems.com/ffi-1-exercise.html[Binding to LevelDB - book version]
+* link:./assignments/redis.html[Redis client]
+* link:./assignments/redis-protobuf.html[Redis client with protocol buffers]
 
+* link:./assignments/simple-chat.html[Simple async chat]
 * link:./assignments/async-mailbox.html[Async Mailbox]
 * link:./assignments/async-channels.html[Async Channels]

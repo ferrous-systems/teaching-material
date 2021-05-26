@@ -54,17 +54,17 @@ It is like normal ownership and borrowing, but at the beginning somewhat unfamil
 
 == Interesting Differences to Common OO
 
--   Values can be replaced, when calling `&mut` functions
--   Values, for example, iterators and builders can have methods that consume `self` and are thus invalidated.
+-   Values can be replaced when calling `&mut` functions
+-   Values, for example iterators and builders, can have methods that consume `self` and are thus invalidated.
 -   This solves the problem of invalidating iterators!
 
-== Sidenote
+== Side note
 
 -   Implementations can occur multiple times. This is useful when multiple constraints are needed.
 
 == Traits
 
-Traits are Rusts variant of abstracting over types.
+Traits are Rust's particular way of abstracting over types.
 
 == !
 
@@ -98,7 +98,7 @@ include::./5.rs[]
 
 == !
 
-Working with generic traits is very usual.
+Working with generic traits is very common.
 
 == Inference of Traits
 

@@ -347,16 +347,16 @@ In this module, attendees will learn:
 * Libraries for use in heapless environments
 * Managing memory mapped devices
 
-== Embedded Rust using RTFM
+== Embedded Rust using RTIC
 
 This module is similar to "Embedded Rust", but uses the
-https://rtfm.rs["Real Time For The Masses"] concurrency framework for
-teaching.
+https://rtic.rs/[RTIC] concurrency framework for
+teaching (previously known as "Real Time For The Masses").
 
 == Writing Drivers for Embedded Rust
 
 This module extends the "Embedded Rust" or "Embedded Rust using
-RTFM" module.
+RTIC" module.
 
 In this module, attendees will learn:
 

@@ -37,7 +37,7 @@ task::spawn_blocking(async {
 == Component interaction with channels
 
 * Channels allow communication between tasks
-* The allows weak binding between components
+* This allows weak binding between components
 * All channels work through Ownership
 
 == Threading vs. async
@@ -93,7 +93,7 @@ Be liberal in using others when needed.
 
 Channels act as a natural synchronisation method, as they are read from 1 by 1.
 
-== Fairness and starving
+== Fairness and starvation
 
 Fairness describes the property of a combinator to make sure that every side is equally served. If one is not, it may starve.
 

@@ -54,7 +54,7 @@ include::./5.rs[]
 
 Output:
 
-[source,rust]
+[source]
 ----
 include::./6.output[]
 ----

@@ -1,0 +1,21 @@
+[package]
+name = "ex-redis"
+version = "0.1.0"
+authors = ["Anatol Ulrich <anatol.ulrich@ferrous-systems.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.40"
+bytes = "1.0.1"
+prost = "0.7.0"
+redis = "0.20.0"
+redis-client = { path = "../redis"}
+
+[build-dependencies]
+prost-build = "0.7.0"
+
+[profile.dev]
+# speed up compilation on macos (Rust 1.51+ only)
+split-debuginfo = "unpacked"
