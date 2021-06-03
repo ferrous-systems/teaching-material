@@ -35,7 +35,7 @@ With the additional properties:
 [source,rust]
 ----
 pub fn parse(input: &str) -> Result<Command, Error> {
-    unimplemented!()
+    todo!()
 }
 ----
 4. Along the way, implement appropriate datastructures for `Command` and `Error`.

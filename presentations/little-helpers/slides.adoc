@@ -163,7 +163,7 @@ These can be put either directly in the source file or in any file in `tests`.
 [source,rust]
 ----
 fn addition(a: i32, b: i32) -> i32 {
-    unimplemented!()
+    todo!()
 }
 
 #[test]
