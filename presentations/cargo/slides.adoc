@@ -66,7 +66,7 @@ You can provide a test name or module name to filter the test being run.
 
 Tests use the debug profile per default.
 
-`cargo test --all --examples` runs all tests, including documentation test and compilation of examples!
+`cargo test --workspace --examples` runs all tests, including documentation test and compilation of examples!
 
 == `cargo bench`
 

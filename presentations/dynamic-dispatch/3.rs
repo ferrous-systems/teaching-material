@@ -3,7 +3,7 @@ use std::any::Any;
 
 // Logger function for any type that implements Debug.
 fn log<T: Any + Debug>(value: &T) {
-    let value_any = value as &Any;
+    let value_any = value as &dyn Any;
 
     // try to convert our value to a String.  If successful, we want to
     // output the String's length as well as its value.  If not, it's a
