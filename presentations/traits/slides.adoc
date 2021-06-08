@@ -160,6 +160,7 @@ fn double<'a>(i: impl Iterator<Item=&'a u8> + 'a) -> impl Iterator<Item=u8> + 'a
 == !
 
 Limitations:
+
 * No `impl Trait` in trait methods
 
 == !
