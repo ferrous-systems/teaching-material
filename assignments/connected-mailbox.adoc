@@ -75,7 +75,7 @@ fn read_command(stream: &mut TcpStream) -> redisish::Command {
     let mut read_buffer = String::new(); <1>
     stream.read_to_string(&mut read_buffer).unwrap(); <2>
 
-    redisish::parse(&read_buffer).unwrap(); <3>
+    redisish::parse(&read_buffer).unwrap() <3>
 }
 ----
 
