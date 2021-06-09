@@ -83,7 +83,7 @@ fn read_command(stream: &mut TcpStream) -> redisish::Command {
 <2> Read all data into the buffer until the client sends EOF.
 <3> Parse the incoming buffer
 
-== Efficiently handling the received command handling the received command
+== Efficiently handling the received command
 
 You can use this snippet to quickly read a command.
 
