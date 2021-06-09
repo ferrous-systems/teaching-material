@@ -39,7 +39,7 @@ include::./2.rs[]
 -   Similar to `Rc`, however the existence of the data is not guaranteed
 -   Single Threaded: The data is guaranteed to be available over the time of an operation
 -   Is *not* automatically dereferenced
--   `Rc` circles are memory leaks, weak pointers prevent that
+-   `Rc` cycles are memory leaks, weak pointers prevent that
 
 == Use
 
