@@ -6,19 +6,30 @@ require 'asciidoctor-revealjs'
 # TODO: add ability to build only a single assignment/presentation:
 # https://stackoverflow.com/questions/9539324
 
+def convert_assignments(doc, assignment_dir)
+  puts "Converting #{doc}"
+  Asciidoctor.convert_file doc,
+  safe: :unsafe,
+  attributes: <<-ATTRS,
+    icons=font
+    source-highlighter=rouge
+  ATTRS
+  to_file: "#{TARGET_DIR}/{assignment_dir}/#{File.basename doc, '.*'}.html",
+  mkdirs: true
+end
+
 desc 'Build assignments'
 task :assignments => :index do
+  # convert regular assignment sheets
   (FileList.new './assignments/*.adoc').each do |doc|
-    puts "Converting #{doc}"
-    Asciidoctor.convert_file doc,
-      safe: :unsafe,
-      attributes: <<-ATTRS,
-        icons=font
-        source-highlighter=rouge
-      ATTRS
-      to_file: "#{TARGET_DIR}/assignments/#{File.basename doc, '.*'}.html",
-      mkdirs: true
+    convert_assignments(doc, 'assignments')
   end
+
+  # convert "fill in the blanks" style assignment documentation
+  (FileList.new './fill_in_the_blanks/*.adoc').each do |doc|
+    convert_assignments(doc, 'fill_in_the_blanks')
+  end
+
 end
 
 desc 'Build presentations'
