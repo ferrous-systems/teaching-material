@@ -6,7 +6,7 @@ In this exercise, we will implement our first tiny program: FizzBuzz. FizzBuzz i
 You will learn:
 
 * How to write a simple Rust program
-* How to create and return owned `String`s
+* How to create and return owned `String` s
 * How to use conditionals
 * How to format strings with and without printing them to the system console
 

@@ -45,7 +45,7 @@ Just because multiple types exist doesn't mean they can't work in harmony.
 ----
 include::./2.rs[]
 ----
-This is because `String`s implement `Deref<Target=str>`.
+This is because `String` s implement `Deref<Target=str>` .
 
 == Exotic String types
 
