@@ -14,7 +14,7 @@ def convert_assignments(doc, assignment_dir)
     icons=font
     source-highlighter=rouge
   ATTRS
-  to_file: "#{TARGET_DIR}/{assignment_dir}/#{File.basename doc, '.*'}.html",
+  to_file: "#{TARGET_DIR}/#{assignment_dir}/#{File.basename doc, '.*'}.html",
   mkdirs: true
 end
 
