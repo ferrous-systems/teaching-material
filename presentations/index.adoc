@@ -66,3 +66,8 @@
 * link:./assignments/simple-chat.html[Simple async chat]
 * link:./assignments/async-mailbox.html[Async Mailbox]
 * link:./assignments/async-channels.html[Async Channels]
+
+."Fill In The Blanks" Assignments
+Quick warm-up exercises that can be distributed in a https://play.rust-lang.org[playground]
+
+* link:./assignments/enums_match.html[Fill In The Blanks: Enums and Match]
