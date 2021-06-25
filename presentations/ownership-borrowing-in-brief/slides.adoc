@@ -104,7 +104,7 @@ include::./5.rs[]
 
 `&mut` is the so-called "mutable" reference. They are:
 
-* Available only once
+* Available only once at a time
 * Always valid (always pointing to living data)
 * Never `null`
 * Guaranteed to never alias (no two references point to the same data)
@@ -115,7 +115,7 @@ include::./5.rs[]
 Values can be:
 
 * Borrowed immutably as often as you'd like
-* Or mutably exactly once
+* Or mutably exactly once at a time
 * The two rules are mutually exclusive.
 
 Rust forbids _shared mutability_.
