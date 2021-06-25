@@ -57,7 +57,7 @@ TIP: IDEs often provide a "quick fix" to roll out all match arms quickly
 * Print the entire content of the file using `println!`
 * Handle all errors (the compiler will warn you if you miss one)
 
-== Task 3: Reading files linewise... and Errors
+== Task 3: Reading files line by line... and Errors
 
 * Construct a https://doc.rust-lang.org/std/io/struct.BufReader.html[BufReader] around the file
 * Print the content of the file line by line. The `lines()`- method returns an Iterator over the file.
