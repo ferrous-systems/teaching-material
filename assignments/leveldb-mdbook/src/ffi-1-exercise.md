@@ -40,11 +40,23 @@ How is ownership handled in C?
 
 # Setup
 ## Required dependencies
-Binding to C is divided into two parts: a minimal low-level interface, a so-called "sys crate" and a higher level crate. The sys crate is responsible for linking to the C library and exposing its contents unchanged. The higher level crate uses the sys crate to provide a more Rust-friendly interface by safely wrapping the inherently `unsafe` raw parts. Writing a sys crate yourself is beyond the scope of this exercise - here it's [provided for you](https://docs.rs/leveldb-sys/2.0.8/leveldb_sys/) and therefore goes into the `Cargo.toml`'s `[dependencies]` section. You'll also need the [`libc`](https://docs.rs/libc/0.2.97/libc/) crate which provides C types and other required definitions:
-```
+Binding to C is divided into two parts: a minimal low-level interface, a so-called "sys crate" and a higher level wrapper crate.
+
+<img src="./ffi_illustration.jpg" width="450px">
+
+The sys crate is responsible for linking to the C library and exposing its contents unchanged.
+
+The higher level crate uses the sys crate to provide a more Rust-friendly interface by safely wrapping the inherently `unsafe` raw parts.
+
+Writing a sys crate yourself is beyond the scope of this exercise. We will be using the [`leveldb` crate provided for you](https://docs.rs/leveldb-sys/2.0.8/leveldb_sys/).
+You will need to specify it on the `Cargo.toml`'s `[dependencies]` section. You'll also need the [`libc`](https://docs.rs/libc/0.2.97/libc/) crate which provides C types and other required definitions:
+
+```diff
+# in Cargo.toml
+
 [dependencies]
-leveldb-sys = "*"
-libc = "*"
++leveldb-sys = "*"
++libc = "*"
 ```
 
 <details>
