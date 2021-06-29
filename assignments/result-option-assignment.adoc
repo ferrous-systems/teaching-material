@@ -68,7 +68,7 @@ TIP: IDEs often provide a "quick fix" to roll out all match arms quickly
 == Task 4: Read URLs from file... and Errors
 
 * Add `url = "2"` to your dependencies section in `Cargo.toml`
-* Parse each line using the https://docs.rs/url/2.1.1/url/[Url Type] in a function `fn parse_url(line: String) -> Option<Url>`
+* Write a function that parses each line using the https://docs.rs/url/2.1.1/url/[Url Type]: `fn parse_url(line: String) -> Option<Url>`
 ** If a line can be parsed successfully, return `Some(url)`, `None` otherwise
 ** In the calling context, only print URLs that parse correctly
 ** Test the `parse_url` function
