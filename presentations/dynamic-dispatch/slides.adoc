@@ -47,15 +47,6 @@ Trait objects are a pair of pointers to a virtual function table and the data.
     * They have no type parameters
     * They don't use `Self`
 
-== Further properties
-
-- As trait objects know about their exact type at runtime, they support downcasts through the `Any` trait.
-
-[source,rust]
-----
-include::./3.rs[]
-----
-
 == Trait Objects and Closures
 
 Closure traits fulfill object safety rules.
@@ -63,4 +54,13 @@ Closure traits fulfill object safety rules.
 [source,rust]
 ----
 include::./4.rs[]
+----
+
+== Further properties
+
+- As trait objects know about their exact type at runtime, they support downcasts through the `Any` trait.
+
+[source,rust]
+----
+include::./3.rs[]
 ----
