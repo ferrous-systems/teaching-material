@@ -25,7 +25,7 @@ include::./1.rs[]
 
 `new` here is purely convention.
 
-== Python Says Hello
+== A Python analogy
 
 [source,rust]
 ----
