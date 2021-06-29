@@ -71,3 +71,4 @@
 Quick warm-up exercises that can be distributed in a https://play.rust-lang.org[playground]
 
 * link:./fill_in_the_blanks/enums_match.html[Fill In The Blanks: Enums and Match]
+* link:./fill_in_the_blanks/closures.html[Fill In The Blanks: Closures]
