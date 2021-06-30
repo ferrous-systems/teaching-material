@@ -29,7 +29,7 @@ With the additional properties:
 == Task
 
 1. Create a library project called `redisish`.
-2. Read the documentation for `str` (primitive), especially `split_once` and `trim`. Pay attention to their return type. `splitn` has a complex signature, but comes with a number of useful examples.
+2. Read the documentation for `str` (primitive), especially `split_once` and `trim`. Pay attention to their return type. Use the result value of `split_once` to guide your logic.
 3. Implement the following function so that it implements the rules above.
 +
 [source,rust]
@@ -147,58 +147,6 @@ fn test_publish() {
 <5> Construct a value that matches the expected result.
 <6> `Command::Publish` requires an _owned String_, and `into()` is one way of getting one.
 
-=== Implementation problems: Handling missing data
-
-If you go by the example path that parses data into a vector, you may end up in a situation like this:
-
-[source,rust]
-----
-pub fn parse(input: &str) -> Result<Command, Error> {
-    let tok_input = input.splitn(2, ' ').collect::<Vec<_>>();
-
-    tok_input[1] // panics, if input was `RETRIEVE`
-}
-----
-
-Instead, use vectors `get` function:
-
-[source,rust]
-----
-pub fn parse(input: &str) -> Result<Command, Error> {
-    let tok_input = input.splitn(2, ' ').collect::<Vec<_>>();
-
-    let second_part = tok_input.get(1);
-}
-----
-
-This allows you to check if the input was passed, for example by using `match`:
-
-[source,rust]
-----
-match second_part {
-    Some(data) => {
-        // ....
-    }
-    None => {
-        // ....
-    }
-}
-----
-
-Alternatively, consider using the iteration behaviour of `splitn` instead:
-
-[source,rust]
-----
-pub fn parse(input: &str) -> Result<Command, Error> {
-    let mut iterator = input.splitn(2, ' ');
-
-    let first = iterator.next(); <1>
-    let second = iterator.next(); <2>
-}
-----
-
-<1> This will always be `Some`, due to the way `splitn` works.
-<2> This may be `Some` or `None`.
 
 === Figuring out the passed command
 
@@ -206,24 +154,21 @@ If you need a nice pattern for figuring out what the passed command was, use the
 
 [source,rust]
 ----
-match verb.trim() { <1>
-    "RETRIEVE" => {
+let split = data.split_once(' ');
+
+match split {
+    Some(("RETRIEVE", payload)) => {
          // retrieve case
     }
-    "PUBLISH" => {
-         // publish case
+    Some((_,_)) {
+        Err(Error::UnknownVerb)
     }
-    "" => {
-        Err(Error::EmptyMessage)
+    None => {
+        // maybe PUBLISH case? check verb
     }
-    _ => { Err(Error::UnknownVerb) } <2>
-} <3>
+    _ => { Err(Error::UnknownVerb) }
+}
 ----
-
-<1> Trimming ensures that `PUBLISH\n` doesn't end up being matched, but `PUBLISH` instead.
-<2> `_` is the default case and catches everything that wasn't `PUBLISH`, `RETRIEVE` or the empty string.
-<3> `match` is an expression, so _all_ match branches must return `Result<Command, Error>`.
-
 
 ==== Full source code
 
@@ -260,39 +205,35 @@ impl std::error::Error for Error {
 }
 
 pub fn parse(input: &str) -> Result<Command, Error> {
-    if let Some(pos) = input.rfind('\n') {
-        if !((pos+1) == input.len()) {
-            return Err(Error::TrailingData)
+    let data = match input.split_once('\n') {
+        Some((data, trailing)) => {
+            if trailing.is_empty() {
+                data
+            } else {
+                return Err(Error::TrailingData);
+            }
+        },
+        None => {
+            return Err(Error::IncompleteMessage);
         }
-    } else {
-        return Err(Error::IncompleteMessage)
-    }
+    };
 
-    let mut split = input.splitn(2, ' ');
+    let split = data.split_once(' ');
 
-    if let Some(verb) = split.next() {
-        match verb.trim() {
-            "RETRIEVE" => {
-                if split.next() == None {
-                    Ok(Command::Retrieve)
-                } else {
-                    Err(Error::UnexpectedPayload)
-                }
-            }
-            "PUBLISH" => {
-                if let Some(payload) = split.next() {
-                    Ok(Command::Publish(String::from(payload.trim())))
-                } else {
-                    Err(Error::MissingPayload)
-                }
-            }
-            "" => {
-                Err(Error::EmptyMessage)
-            }
-            _ => { Err(Error::UnknownVerb) }
+    match split {
+        Some(("PUBLISH", payload)) => {
+            Ok(Command::Publish(String::from(payload.trim())))
+        },
+        Some((_, _)) => {
+            Err(Error::UnknownVerb)
         }
-    } else {
-        unreachable!()
+        None => {
+            if data == "RETRIEVE" {
+                Ok(Command::Retrieve)
+            } else {
+                Err(Error::UnknownVerb)
+            }
+        }
     }
 }
 ----
