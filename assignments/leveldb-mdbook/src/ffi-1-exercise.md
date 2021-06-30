@@ -115,6 +115,7 @@ How's your error handling? `open` should not panic - return a custom error inste
 [the following section]: https://doc.rust-lang.org/edition-guide/rust-2018/error-handling-and-panics/question-mark-in-main-and-tests.html
 
 ✅ Test the success and error cases.
+  - *Note: you can provoke an error by trying to open a database folder to which you don't have write access*
 
 ✅ What type(s) does your `open` function accept as database names? What would offer the most flexibility? Get some inspiration from [std::fs::File](https://doc.rust-lang.org/std/fs/struct.File.html).
 
