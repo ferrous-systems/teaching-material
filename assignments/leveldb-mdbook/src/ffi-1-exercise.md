@@ -40,7 +40,7 @@ How is ownership handled in C?
 
 # Setup
 ## Required dependencies
-Binding to C is divided into two parts: a minimal low-level interface, a so-called "sys crate" and a higher level wrapper crate.
+Binding to C is divided into two parts: a minimal low-level interface (called "sys crate") and a higher level wrapper crate.
 
 <img src="./ffi_illustration.jpg" width="450px">
 
