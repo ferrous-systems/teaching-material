@@ -117,7 +117,9 @@ How's your error handling? `open` should not panic - return a custom error inste
 ✅ Test the success and error cases.
 
 ✅ What type(s) does your `open` function accept as database names? What would offer the most flexibility? Get some inspiration from [std::fs::File](https://doc.rust-lang.org/std/fs/struct.File.html).
+
 ✅ Include the underlying LevelDB error message string in your error type. Mind the ownership!
+
 ✅ Rust Strings are valid UTF-8. What issues might occur
 - as opposed to C strings?
 - regarding valid file system characters? (a LevelDB database is a directory!)
