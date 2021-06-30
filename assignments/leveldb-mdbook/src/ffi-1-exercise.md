@@ -165,7 +165,8 @@ use leveldb_sys::*;
 use std::ptr;
 use std::ffi::CString;
 
-fn main() {
+#[test]
+fn basic_template() {
     let options = unsafe { leveldb_options_create() };
 
     unsafe { leveldb_options_set_create_if_missing(options, true as u8) };
