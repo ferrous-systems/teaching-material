@@ -8,7 +8,7 @@ You will learn how to:
 - use low-level C bindings
 - utilize Rust's ownership system to provide safety on top of those raw primitives
 
-[LevelDB]: (https://github.com/google/leveldb)
+[LevelDB]: https://github.com/google/leveldb
 
 # Prerequisites
 
