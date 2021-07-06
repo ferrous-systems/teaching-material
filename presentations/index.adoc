@@ -46,8 +46,9 @@
 * link:./async-component-interaction.html[Async component interaction]
 * link:./async-growth-handling.html[ Async: Avoiding disaster and unbounded growth]
 
-.Assignments
+== Assignnments
 
+.Exercise Sheets
 * link:./assignments/fizzbuzz.html[FizzBuzz]
 * link:./assignments/result-option-assignment.html[Files, match and Results]
 * link:./assignments/durable-file.html[Durable file]
@@ -67,7 +68,7 @@
 * link:./assignments/async-mailbox.html[Async Mailbox]
 * link:./assignments/async-channels.html[Async Channels]
 
-."Fill In The Blanks" Assignments
+."Fill In The Blanks" warm-ups
 Quick warm-up exercises that can be distributed in a https://play.rust-lang.org[playground]
 
 * link:./fill_in_the_blanks/enums_match.html[Fill In The Blanks: Enums and Match]
