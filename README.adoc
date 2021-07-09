@@ -45,8 +45,7 @@ Ferrous Systems offers our training material under MIT/Apache-2.0
 license for source code (examples and exercises) and Creative Commons (CC-BY-SA) for textual
 content.
 
-Custom course material developed on request, including any provided examples or exercises, will be delivered directly as part of the training.
-you.
+Custom course material developed on request, including any provided examples or exercises, will be delivered directly to you as part of the training.
 
 == Trainer staff
 
@@ -65,9 +64,6 @@ network and async/concurrent programming.
 * James Munns: Training Rust since 2017. Focus on general Rust and
 small/embedded systems. Member of the Embedded Working Group Core Team.
 Great knowledge of integrating Rust with C codebases.
-* Aleksey Kladov: Training Rust since 2018 in academic and enterprise
-settings. Member of the Rust tools team. Author of the rust-analyzer IDE.
-Contributor to Cargo. Very broad and exact knowledge of the language and its tooling.
 * Jonas Schievek: Training Rust since 2019. Focus on general Rust and
 multiple architectures. Contributor to the Rust compiler. Great
 knowledge of compilation details and performance concerns.
@@ -77,7 +73,7 @@ subjects, from async to bare metal. Great knowledge around beginners
 concerns and how to get started.
 
 Ferrous Systems can also collaborate with local trainers in Europe, US, Canada,
-South America and South Africa.
+South America, South Africa, and Oceania.
 
 = Courses
 
