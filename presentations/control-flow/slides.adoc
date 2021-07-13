@@ -31,6 +31,11 @@ include::./2.rs[]
 
 == Control Flow with `match` and `enums`
 
+////
+*possible detour:*
+- binding within match statements
+////
+
 [source,rust]
 ----
 include::./3.rs[]
