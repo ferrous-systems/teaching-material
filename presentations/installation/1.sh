@@ -4,6 +4,9 @@ $ rustup install stable
 # Selection of a default toolchain
 $ rustup default stable
 
+# Display documentation in browser
+$ rustup doc [--std]
+
 # Override the default toolchain in your directory
 $ rustup override set stable
 
