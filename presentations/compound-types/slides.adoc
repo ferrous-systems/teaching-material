@@ -4,6 +4,8 @@ link:./index.html[Table of Contents]
 
 == Structs
 
+`struct`s group and name data of different types.
+
 == Definition
 
 [source,rust]
@@ -45,6 +47,10 @@ include::./5.rs[]
 ----
 
 == Enums
+
+`enum`s represent different variation of the same subject.
+
+== Definition and Construction
 
 [source,rust]
 ----
