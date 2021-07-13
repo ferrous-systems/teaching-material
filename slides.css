@@ -1,0 +1,30 @@
+.reveal pre code {
+    max-height: 800px;
+}
+.line-through {
+    text-decoration: line-through;
+}
+.reveal .hljs-keyword {
+    font-weight: bold;
+}
+.reveal .hljs-symbol {
+    color: #20999D;
+    background: none;
+    font-style: italic;
+}
+
+.reveal pre code {
+  padding: 20px;
+  border: 1px solid #745d48;
+  font-size: 1.4em;
+  line-height: 1.4em;
+  white-space: pre-wrap;
+}
+
+.open-in-playground {
+    background: #a42;
+    font-size: 125%;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
