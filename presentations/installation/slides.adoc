@@ -4,9 +4,11 @@ link:./index.html[Table of Contents]
 
 == Rustup
 
-Rustup is the standard tool for managing Rusts compiler toolchain.
+Rustup installs and manages Rust compiler toolchains
 
 https://rust-lang.org/tools/install
+
+*It is not the Rust compiler!*
 
 == Important Commands
 
@@ -82,7 +84,7 @@ For details, check the http://doc.crates.io/manifest.html[Cargo Manifest docs].
 == IDEs
 
 * RLS: https://github.com/rust-lang/rls
-* rust-analyzer: https://github.com/rust-analyzer/rust-analyzer
+* rust-analyzer: https://rust-analyzer.github.io
 * Intellij CLion: https://www.jetbrains.com/clion/
 
 == Add some tooling
