@@ -74,6 +74,15 @@ include::./7.rs[]
 
 * Match guards allow further refining of a `match`
 
+== Combining matches
+
+You can use the `|` operator to match several values in one arm.
+
+[source,rust]
+----
+include::./7_5.rs[]
+----
+
 == Shorthand: `if let` conditionals
 
 [source,rust]
