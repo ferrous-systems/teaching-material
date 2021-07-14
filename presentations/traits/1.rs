@@ -1,7 +1,7 @@
 #[derive(Debug)]
 struct Point {
     x: i32,
-    y: i32
+    y: i32,
 }
 
 impl Point {
@@ -11,6 +11,6 @@ impl Point {
 }
 
 fn main() {
-    let point = Point::new(1,2);
-    println!("{:?}", point);
+    let my_point = Point::new(1, 2);
+    println!("My point being: {:?}", my_point);
 }

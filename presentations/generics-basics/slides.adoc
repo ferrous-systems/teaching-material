@@ -23,12 +23,27 @@ Signatures must always be fully specified.
 
 == Generic Enums
 
+////
+SPEAKER NOTES
+
+- under the hood: the compiler silently copies for all instances of `Either`
+-> the compiler does the boilerplate-ing for you!
+- similar-ish to C++ templates
+////
+
 [source,rust]
 ----
 include::./2.rs[]
 ----
 
 == Generic Functions
+
+////
+SPEAKER NOTES
+
+- the pattern is always "name<type>" regardless of whether name is a function name,
+  parameter name, etc
+////
 
 Generic Functions have type parameters.
 
@@ -38,3 +53,9 @@ include::./6.rs[]
 ----
 
 Generic functions are used when computations can be expressed in an abstract way.
+
+////
+SPEAKER NOTES
+
+- possible detour: monomorphization, generic contraints (+ where clauses)
+////
