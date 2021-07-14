@@ -26,6 +26,13 @@ include::./1.rs[]
 `new` here is purely convention.
 
 == A Python analogy
+////
+SPEAKER NOTE
+
+- if you're familiar wiht Python's `self`, Rust's use of it is very very similar
+
+////
+
 
 [source,rust]
 ----
@@ -44,7 +51,7 @@ It is like normal ownership and borrowing, but at the beginning somewhat unfamil
 |===
 |Owned |Borrowed |Mutably borrowed
 
-|self   
+|self
 |&self
 |&mut self
 
