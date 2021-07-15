@@ -1,8 +1,8 @@
-use std::net::{TcpListener,TcpStream};
+use std::collections::VecDeque;
 use std::io;
 use std::io::prelude::*;
 use std::io::BufReader;
-use std::collections::VecDeque;
+use std::net::{TcpListener, TcpStream};
 
 #[derive(Debug)]
 enum ServerError {
@@ -41,9 +41,7 @@ fn main() -> io::Result<()> {
         if let Err(e) = res {
             println!("Error occurred: {:?}", e);
         }
-
-
-    };
+    }
 
     Ok(())
 }
@@ -54,17 +52,13 @@ fn handle(mut stream: TcpStream, storage: &mut VecDeque<String>) -> Result<(), S
     match command {
         redisish::Command::Publish(message) => {
             storage.push_back(message);
-        },
+        }
         redisish::Command::Retrieve => {
             let data = storage.pop_front();
 
             match data {
-                Some(message) => { 
-                    write!(stream, "{}", message)?
-                },
-                None => { 
-                    write!(stream, "No message in inbox!\n")?
-                }
+                Some(message) => write!(stream, "{}", message)?,
+                None => write!(stream, "No message in inbox!\n")?,
             }
         }
     }

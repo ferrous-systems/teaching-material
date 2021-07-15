@@ -1,8 +1,8 @@
-use std::net::{TcpListener,TcpStream};
+use std::collections::VecDeque;
 use std::io;
 use std::io::prelude::*;
 use std::io::BufReader;
-use std::collections::VecDeque;
+use std::net::{TcpListener, TcpStream};
 use std::sync::{Arc, Mutex};
 
 #[derive(Debug)]
@@ -31,7 +31,7 @@ fn main() -> io::Result<()> {
 
     for connection in listener.incoming() {
         let mut stream = match connection {
-            Ok(stream ) => stream,
+            Ok(stream) => stream,
             Err(e) => {
                 println!("Error occurred: {:?}", e);
                 continue;
@@ -47,7 +47,7 @@ fn main() -> io::Result<()> {
                 println!("Error occurred: {:?}", e);
             }
         });
-    };
+    }
 
     Ok(())
 }
@@ -64,8 +64,8 @@ fn handle(stream: &mut TcpStream, mutex: &Mutex<VecDeque<String>>) -> Result<(),
             let mut storage = mutex.lock().unwrap();
             let data = storage.pop_front();
             match data {
-                Some(message) => { write!(stream, "{}", message)? },
-                None => { write!(stream, "No message in inbox!\n")? }
+                Some(message) => write!(stream, "{}", message)?,
+                None => write!(stream, "No message in inbox!\n")?,
             };
         }
     }
