@@ -53,7 +53,7 @@ This is because `String` s implement `Deref<Target=str>` .
 
 -   `CStr` and `CString` may show up when working with FFI.
 
-The differences between `*Str` and `*String` are generally the same as the normal types.
+The differences between `[Os|C]Str` and `[Os|C]String` are generally the same as the normal types.
 
 == `OsString` & `OsStr`
 
