@@ -44,19 +44,19 @@ fn main() {
     // ✅ TODO: use `map()` to increase the bale size with every "hay" in the haystack
     let mut bale = BaleOfStraw { size: 0 };
 
-    let new_haystack: Vec<_> = haystack
+    let empty_haystack: Vec<_> = haystack
         .into_iter()
         .filter(|element| *element == "hay")
         .map(|_| bale.size += 1)
         .collect();
 
     println!("bale size: {}", bale.size);
-    println!("new haystack: {:?}", new_haystack);
+    println!("empty haystack: {:?}", empty_haystack);
 
     // ✅ TODO: try uncommenting this line. What happens when you re-compile and why?
     // println!("haystack: {:?}", haystack );
 
-    // ✅  Bonus Task: re-implement the creation of `new_haystack` using `filter_map()`
+    // ✅  Bonus Task: re-implement the creation of `empty_haystack` using `filter_map()`
     let filter_map_haystack: Vec<_> = vec!["hay", "hay", "hay", "needle", "hay", "hay"]
         .into_iter()
         .filter_map(|element| match element {
