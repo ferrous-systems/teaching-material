@@ -1,0 +1,34 @@
+= Exercise: TCP Echo Server
+:source-language: rust
+
+In this exercise, we will implement a crate repository server.
+
+You will learn:
+
+* How to use modules and visibility
+* How to write a simple single-threaded server binary
+* Read Strings from the network
+* How to handle a connection lifecycle
+
+== Task
+
+1. Move all your previous work on `SemVer` into a `lib.rs` module
+2. Create a skeleton TCP server based on https://github.com/ferrous-systems/teaching-material/tree/master/assignments/solutions/tcp-echo-server
+3. Deserialize incoming crates based on the following protocol:
+    - `GET <crate_name>`
+    - `PUT <crate_data>`
+4. on PUT, store the crate data in your repository.
+5. on GET, return a crate from your repository, or a custom error if it cannot be found.
+
+== Note
+
+To send and receive messages, you can either use `nc` or `telnet`. Alternatively, you can use the client provided: https://github.com/ferrous-systems/teaching-material/tree/master/assignments/solutions/tcp-client
+
+The entire source tree can be found here:
+[source]
+----
+$ git clone https://github.com/ferrous-systems/teaching-material.git
+$ cd teaching-material/assignments/solutions/tcp-client
+$ cargo run testmessage
+----
+
