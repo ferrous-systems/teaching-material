@@ -1,4 +1,4 @@
-= Exercise: TCP Echo Server
+= Exercise: TCP Repository Server
 :source-language: rust
 
 In this exercise, we will implement a crate repository server.
@@ -19,6 +19,9 @@ You will learn:
     - `PUT <crate_data_without_newlines>\n`
 4. on PUT, store the crate data in your repository.
 5. on GET, return a crate from your repository, or a custom error if it cannot be found.
+6. Implement `std::fmt::Display` for your custom error. Also derive `std::fmt::Debug`.
+7. Inspect the `std::error::Error` trait. What is needed to make your custom error conform to that trait? Add all that's required.
+8. Any functions returning your Error can now be generalized to return `Box<dyn Error>`. Change them accordingly and simplify existing error handling where possible.
 
 == Note
 
