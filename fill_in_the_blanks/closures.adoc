@@ -23,10 +23,6 @@ empty haystack: [(), (), (), (), ()]
 
 [source,rust]
 ----
-struct BaleOfStraw {
-    size: usize
-}
-
 // NOTE: Once you're done, your ouput could look like this:
 //
 // found: hay
@@ -37,8 +33,7 @@ struct BaleOfStraw {
 // found: hay
 // top of the haystack: hay
 // look, I found the needle: ["needle"]
-// bale size: 5
-// empty haystack: [(), (), (), (), ()]
+// emoji haystack: ["🌾", "🌾", "🌾", "🌾", "🌾"]
 
 fn main(){
     // RECAP: ANATOMY OF A CLOSURE
@@ -78,22 +73,19 @@ fn main(){
     // 👀  a common use case for closures is to transform collections
     //     using e.g. `map()` and `filter()`.
 
-    // ✅ TODO: use `map()` to increase the bale size with every "hay" in the haystack
-    let mut bale = BaleOfStraw{ size: 0 };
-
-    let empty_haystack: Vec<_> = haystack
+    // ✅ TODO: use `map()` to convert every "hay" in the haystack to a "🌾"
+    let emoji_haystack: Vec<_> = haystack
         .into_iter()
         .filter(|element | *element == "hay")
         .map( /* increment bale size here */ )
         .collect();
 
-    println!("bale size: {}", bale.size);
-    println!("empty haystack: {:?}", empty_haystack);
+    println!("emoji haystack: {:?}", emoji_haystack);
 
     // ✅ TODO: try uncommenting  the next line. What happens when you re-compile and why?
     // println!("haystack: {:?}", haystack );
 
-    // ✅  Bonus Task: re-implement the creation of `empty_haystack` using `filter_map()`
+    // ✅  Bonus Task: re-implement the creation of `moji_haystack` using `filter_map()`
     //     https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.filter_map
 }
 ----
