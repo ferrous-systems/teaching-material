@@ -76,8 +76,8 @@ fn main() -> Result<(), std::io::Error> {
         if let Ok(line) = line {
             let mut parts = line.split(",");
             let name = parts.next();
-            let release_history: Vec<SemVer> = parts.map(|release| release.into()).collect();
             if let Some(name) = name {
+                let release_history = parts.map(|release| release.into()).collect();
                 programs.push(Program {
                     name: name.to_string(),
                     release_history,
