@@ -95,5 +95,5 @@ fn main(){
 
 Distribute the code snippet below in a https://play.rust-lang.org[playground]
 
-You can find an example solution in [teaching-material/assignments/solutions/fill_in_the_blanks](https://github.com/ferrous-systems/teaching-material/tree/master/assignments/solutions/fill_in_the_blanks).
+You can find an example solution in https://github.com/ferrous-systems/teaching-material/tree/master/assignments/solutions/fill_in_the_blanks[teaching-material/assignments/solutions/fill_in_the_blanks].
 It is called `closures.rs`. You can run it by calling `cargo run --bin closures` in the `fill_in_the_blanks` directory.
