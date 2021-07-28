@@ -47,7 +47,7 @@ impl DurableFile {
 }
 ----
 
-Optional: implement `From<std::fs::File> for DurableFile`
+Optional: implement https://doc.rust-lang.org/rust-by-example/conversion/from_into.html[`From<std::fs::File>`] for DurableFile
 --
 
 Step 3::
