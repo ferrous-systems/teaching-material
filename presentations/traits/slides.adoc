@@ -29,7 +29,7 @@ include::./1.rs[]
 ////
 SPEAKER NOTE
 
-- if you're familiar wiht Python's `self`, Rust's use of it is very very similar
+- if you're familiar with Python's `self`, Rust's use of it is very very similar
 
 ////
 
