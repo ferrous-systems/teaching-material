@@ -48,7 +48,7 @@ fn test_num_bulls_and_cows() {
 }
 ```
 
-# Step 1.
+== Step 1.
 
 You can use the "rand" crate to generate guesses.
 
@@ -56,7 +56,7 @@ You can use the "rand" crate to generate guesses.
     let secret : Vec<_> = (0..NUM_DIGITS).map(|_| ??? ).collect();
 ```
 
-# Step 2.
+== Step 2.
 
 Parse an input string.
 
@@ -73,7 +73,7 @@ Parse an input string.
     }
 ```
 
-# Step 3.
+== Step 3.
 
 If the guess is correctly formed, count the number of bulls and cows.
 
@@ -83,7 +83,7 @@ If the guess is correctly formed, count the number of bulls and cows.
                 eprintln!("{:?} has {} bulls and {} cows", guess, bulls, cows);
 ```
 
-# Step 4.
+== Step 4.
 
 Write the bulls and cows function.
 
@@ -94,6 +94,6 @@ Then check the cows. This way you don't count anything twice.
 
 Make sure all the tests pass.
 
-# Step 5.
+== Step 5.
 
 Play the game.
