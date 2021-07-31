@@ -4,30 +4,33 @@ use rand::prelude::*;
 const NUM_DIGITS : usize = 4;
 
 // Write this function.
+//
+// Hints:
+//   Copy the guess and secrets arrays using Vec::from()
+//   return (num_bulls, num_cows)
 fn num_bulls_and_cows(guess: &[i32], secret: &[i32]) -> (i32, i32) {
+    // Duplicate the secret, to we can tick off the ones we find.
     let mut secret = Vec::from(secret);
     let mut guess = Vec::from(guess);
 
-    // Count the number of bulls and tick them off.
+    // Count the bulls (exact matches) first and tick them off.
     let mut num_bulls = 0;
-    for i in 0..NUM_DIGITS {
-        if guess[i] == secret[i] {
+    for (g, s) in guess.iter_mut().zip(secret.iter_mut()) {
+        if *g == *s {
             num_bulls += 1;
-            guess[i] = -1;
-            secret[i] = -2;
+            *s = 0;
+            *g = -1;
         }
     }
 
-    // Count the number of cows and tick them off.
+    // Count the number of cows (inexact matches) and tick them off.
     let mut num_cows = 0;
-    for i in 0..NUM_DIGITS {
-        if let Some(pos) = secret.iter().position(|s| *s == guess[i]) {
+    for g in guess {
+        if let Some(pos) = secret.iter().position(|s| *s == g) {
+            secret[pos] = 0;
             num_cows += 1;
-            guess[i] = -1;
-            secret[pos] = -2;
         }
     }
-
     (num_bulls, num_cows)
 }
 
