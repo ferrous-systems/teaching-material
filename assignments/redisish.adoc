@@ -205,35 +205,15 @@ impl std::error::Error for Error {
 }
 
 pub fn parse(input: &str) -> Result<Command, Error> {
-    let data = match input.split_once('\n') {
-        Some((data, trailing)) => {
-            if trailing.is_empty() {
-                data
-            } else {
-                return Err(Error::TrailingData);
-            }
+    match input.split_once('\n') {
+        Some(("RETRIEVE", "")) => Ok(Command::Retrieve),
+        Some((data, "")) => match data.split_once(' ') {
+            Some(("PUBLISH", payload)) => Ok(Command::Publish(String::from(payload.trim()))),
+            Some((_, _)) => Err(Error::UnknownVerb),
+            None => Err(Error::IncompleteMessage)
         },
-        None => {
-            return Err(Error::IncompleteMessage);
-        }
-    };
-
-    let split = data.split_once(' ');
-
-    match split {
-        Some(("PUBLISH", payload)) => {
-            Ok(Command::Publish(String::from(payload.trim())))
-        },
-        Some((_, _)) => {
-            Err(Error::UnknownVerb)
-        }
-        None => {
-            if data == "RETRIEVE" {
-                Ok(Command::Retrieve)
-            } else {
-                Err(Error::UnknownVerb)
-            }
-        }
+        Some((data, _)) => Err(Error::TrailingData),
+        None => Err(Error::IncompleteMessage),
     }
 }
 ----
