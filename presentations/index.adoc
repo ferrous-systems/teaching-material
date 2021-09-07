@@ -46,7 +46,7 @@
 * link:./async-component-interaction.html[Async component interaction]
 * link:./async-growth-handling.html[ Async: Avoiding disaster and unbounded growth]
 
-== Assignnments
+== Assignments
 
 .Exercise Sheets
 * link:./assignments/fizzbuzz.html[FizzBuzz]
