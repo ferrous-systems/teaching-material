@@ -3,6 +3,7 @@
 #include "calc_ffi.h"
 #include "stdio.h"
 
+// macos notes:
 // Doesn't work
 // `gcc -L. -l:libcalc_ffi.a demo.c -o ./demo`
 // Does work (modulo linking)
@@ -10,7 +11,6 @@
 
 int main()
 {
-
     ////////////////////////////////
     // Everything at once
     ////////////////////////////////
@@ -19,15 +19,15 @@ int main()
 
     printf("Evaluating: '%s'\n", text);
 
-    intptr_t retcode = parse_and_eval(text, &output);
+    Result result = parse_and_eval(text, &output);
 
-    if (!retcode)
+    if (result == Ok)
     {
         printf("Result: %lli\n", output);
     }
     else
     {
-        printf("FAILED: error code: %" PRIxPTR "\n", retcode);
+        printf("FAILED: error code: %i\n", result);
     }
 
     ////////////////////////////////
@@ -46,18 +46,18 @@ int main()
     }
     else
     {
-        printf("FAILED: error code: %" PRIxPTR "\n", retcode);
+        printf("FAILED\n");
     }
 
-    retcode = c_eval(box_expr, &output);
+    result = c_eval(box_expr, &output);
 
-    if (!retcode)
+    if (result == Ok)
     {
         printf("Result: %lli\n", output);
     }
     else
     {
-        printf("FAILED: error code: %" PRIxPTR "\n", retcode);
+        printf("FAILED: error code: %i\n", result);
     }
 
     release_expr(box_expr);

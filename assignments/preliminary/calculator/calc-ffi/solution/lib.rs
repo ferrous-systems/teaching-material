@@ -21,41 +21,50 @@ use std::os::raw::c_char;
 
 pub use calc::Expr;
 
+#[repr(C)]
+pub enum Result {
+    Ok = 0,
+    UnexpectedNullPointer,
+    InvalidStringData,
+    ParseError,
+    EvalError,
+}
+
 #[no_mangle]
 pub extern "C" fn parse_and_eval(maybe_cstr: *const c_char, output: *mut i64) -> isize {
     // Check if cstr is valid
     if maybe_cstr.is_null() {
-        return -1;
+        return Result::UnexpectedNullPointer;
     }
     let cstr = unsafe { CStr::from_ptr(maybe_cstr) };
     let string_data = match cstr.to_str() {
         Ok(s) => s,
-        Err(_e) => return -2,
+        Err(_e) => return Result::InvalidStringData,
     };
 
     // check if output is non-null
     if output.is_null() {
-        return -1;
+        return Result::UnexpectedNullPointer;
     }
 
     // next: do parse and then eval
 
     let parsed = match parse(string_data) {
         Ok(p) => p,
-        Err(_e) => return -3,
+        Err(_e) => return Result::ParseError,
     };
 
     // if successful, set error code, return
     let evaled = match eval(&parsed) {
         Ok(ev) => ev,
-        Err(_e) => return -4,
+        Err(_e) => return Result::EvalError,
     };
 
     unsafe {
         *output = evaled;
     }
 
-    0
+    Result::Ok
 }
 
 /// This will return null if unsuccessful
@@ -85,25 +94,25 @@ pub extern "C" fn c_parse(maybe_cstr: *const c_char) -> *mut Expr {
 pub extern "C" fn c_eval(expr: *const Expr, output: *mut i64) -> isize {
     // Check if cstr is valid
     if expr.is_null() {
-        return -1;
+        return Result::UnexpectedNullPointer;
     }
 
     // check if output is non-null
     if output.is_null() {
-        return -1;
+        return Result::UnexpectedNullPointer;
     }
 
     // if successful, set error code, return
     let evaled = match eval(unsafe { &*expr }) {
         Ok(ev) => ev,
-        Err(_e) => return -4,
+        Err(_e) => return Result::EvalError,
     };
 
     unsafe {
         *output = evaled;
     }
 
-    0
+    Result::Ok
 }
 
 #[no_mangle]

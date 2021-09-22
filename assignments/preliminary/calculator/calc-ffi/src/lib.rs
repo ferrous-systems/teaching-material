@@ -4,8 +4,14 @@ use std::os::raw::c_char;
 
 pub use calc::Expr;
 
+#[repr(C)]
+pub enum Result {
+    Ok = 0,
+    //... some errors
+}
+
 #[no_mangle]
-pub extern "C" fn parse_and_eval(maybe_cstr: *const c_char, output: *mut i64) -> isize {
+pub extern "C" fn parse_and_eval(maybe_cstr: *const c_char, output: *mut i64) -> Result {
     // Validate input parameters
     todo!();
 
@@ -14,6 +20,7 @@ pub extern "C" fn parse_and_eval(maybe_cstr: *const c_char, output: *mut i64) ->
 
     // if successful, set output. Mind the ownership!
     todo!();
+    Result::Ok
 }
 
 /// This will return null if unsuccessful
