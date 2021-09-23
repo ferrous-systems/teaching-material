@@ -1,7 +1,7 @@
 # Full solution
-``` rust
+```rust
 use libc::{c_void, size_t};
-use std::ffi::CString;
+use std::ffi::{CStr, CString};
 use std::path::Path;
 use std::ptr;
 use std::ptr::NonNull;
@@ -60,20 +60,26 @@ pub struct Database {
 
 #[derive(Debug, Eq, PartialEq)]
 pub enum Error {
-    OpenFail,
+    OpenFail(String),
     // exercise 2 (get/put)
-    GetFail,
+    GetFail(String),
     // exercise 2 (get/put)
-    PutFail,
-    NonUtf8Path,
+    PutFail(String),
+    InvalidString,
+}
+
+unsafe fn into_rust_string(ptr: *const i8) -> String {
+    let error_s = CStr::from_ptr(ptr).to_string_lossy().to_string();
+    leveldb_free(ptr as *mut c_void);
+    error_s
 }
 
 impl Database {
     pub fn open<P: AsRef<Path>>(path: P, options: Options) -> Result<Database, Error> {
         let mut error = ptr::null_mut();
 
-        let c_string = CString::new(path.as_ref().to_str().ok_or(Error::NonUtf8Path)?)
-            .map_err(|_| Error::NonUtf8Path)?;
+        let c_string = CString::new(path.as_ref().to_str().ok_or(Error::InvalidString)?)
+            .map_err(|_| Error::InvalidString)?;
         unsafe {
             let db = leveldb_open(options.as_ptr(), c_string.as_ptr(), &mut error);
 
@@ -84,7 +90,7 @@ impl Database {
                     },
                 })
             } else {
-                Err(Error::OpenFail)
+                Err(Error::OpenFail(into_rust_string(error)))
             }
         }
     }
@@ -118,8 +124,7 @@ impl Database {
                     Ok(Some(result))
                 }
             } else {
-                leveldb_free(*error as *mut c_void);
-                Err(Error::GetFail)
+                Err(Error::GetFail(into_rust_string(error)))
             }
         }
     }
@@ -143,8 +148,7 @@ impl Database {
             if error == ptr::null_mut() {
                 Ok(())
             } else {
-                leveldb_free(*error as *mut c_void);
-                Err(Error::PutFail)
+                Err(Error::PutFail(into_rust_string(error)))
             }
         }
     }
@@ -300,6 +304,8 @@ impl<'iterator> std::iter::Iterator for Iterator<'iterator> {
 
 #[cfg(test)]
 mod test {
+    use core::panic;
+
     use super::*;
     use tempdir::TempDir;
 
@@ -312,6 +318,29 @@ mod test {
 
         let database = Database::open(tmp.path().join("database"), options);
         assert!(database.is_ok());
+    }
+
+    #[test]
+    fn test_create_open_fails() {
+        let mut options = Options::new();
+        options.create_if_missing(true);
+
+        let database = Database::open("/invalid/location", options);
+        match database {
+            Err(Error::OpenFail(_)) => {}
+            _ => panic!(),
+        }
+    }
+
+    #[test]
+    fn test_open_nonexistent_fails() {
+        let options = Options::new();
+
+        let database = Database::open("/invalid/location", options);
+        match database {
+            Err(Error::OpenFail(_)) => {}
+            _ => panic!(),
+        }
     }
 
     // exercise 2 (get/put)

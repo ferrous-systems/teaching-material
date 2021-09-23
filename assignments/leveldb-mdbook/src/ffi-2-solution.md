@@ -48,8 +48,8 @@ impl Drop for ReadOptions {
 #[derive(Debug, Eq, PartialEq)]
 pub enum Error {
     // ... previous code ...
-    GetFail,
-    PutFail,
+    GetFail(String),
+    PutFail(String),
 }
 
 impl Database {
@@ -83,8 +83,7 @@ impl Database {
                     Ok(Some(result))
                 }
             } else {
-                leveldb_free(*error as *mut c_void);
-                Err(Error::GetFail)
+                Err(Error::GetFail(into_rust_string(error)))
             }
         }
     }
@@ -107,8 +106,7 @@ impl Database {
             if error == ptr::null_mut() {
                 Ok(())
             } else {
-                leveldb_free(*error as *mut c_void);
-                Err(Error::PutFail)
+                Err(Error::PutFail(into_rust_string(error)))
             }
         }
     }
