@@ -73,11 +73,7 @@ pub extern "C" fn c_parse(maybe_cstr: *const c_char) -> *mut Expr {
         };
 
         match parse(string_data) {
-            Ok(p) => {
-                let ret_val: &'static mut Expr = Box::leak(Box::new(p));
-                let ret_val_ptr = ret_val as *mut Expr;
-                ret_val_ptr
-            }
+            Ok(p) => Box::into_raw(Box::new(p)),
             Err(_e) => std::ptr::null_mut(),
         }
     });
