@@ -52,10 +52,7 @@ pub extern "C" fn parse_and_eval(maybe_cstr: *const c_char, output: *mut i64) ->
         Result::Ok
     });
 
-    match res {
-        Ok(inner) => inner,
-        Err(_) => Result::Fatal,
-    }
+    res.unwrap_or(Result::Fatal)
 }
 
 /// This will return null if unsuccessful
@@ -78,10 +75,7 @@ pub extern "C" fn c_parse(maybe_cstr: *const c_char) -> *mut Expr {
         }
     });
 
-    match res {
-        Ok(inner) => inner,
-        Err(_) => std::ptr::null_mut(),
-    }
+    res.unwrap_or(std::ptr::null_mut())
 }
 
 #[no_mangle]
@@ -110,17 +104,12 @@ pub extern "C" fn c_eval(expr: *const Expr, output: *mut i64) -> Result {
         Result::Ok
     });
 
-    match res {
-        Ok(inner) => inner,
-        Err(_) => Result::Fatal,
-    }
+    res.unwrap_or(Result::Fatal)
 }
 
 #[no_mangle]
-pub extern "C" fn release_expr(box_expr: *mut Expr) {
+pub unsafe extern "C" fn release_expr(box_expr: *mut Expr) {
     if !box_expr.is_null() {
-        unsafe {
-            let _box = Box::from_raw(box_expr);
-        }
+        let _box = Box::from_raw(box_expr);
     }
 }
