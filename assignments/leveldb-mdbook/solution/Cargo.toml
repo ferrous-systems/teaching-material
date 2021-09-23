@@ -1,0 +1,11 @@
+[package]
+name = "leveldb-rs"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+leveldb-sys = "2.0"
+libc = "0.2"
+tempdir = "0.3"
