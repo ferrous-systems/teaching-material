@@ -65,5 +65,3 @@ int main()
 
     return 0;
 }
-
-// -L. -ltestlib

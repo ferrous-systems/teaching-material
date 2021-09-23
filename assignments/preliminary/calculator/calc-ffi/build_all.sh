@@ -11,4 +11,5 @@ gcc \
     -lcalc_ffi \
     -lpthread \
     -ldl \
+    -lm \
     -o demo
