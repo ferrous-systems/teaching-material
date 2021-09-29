@@ -84,7 +84,6 @@ impl FromStr for SemVer {
         }
     }
 }
-
 #[derive(Debug, Deserialize, Serialize, Clone)]
 pub struct Program {
     name: String,
@@ -309,5 +308,33 @@ mod tests {
         let p = Crate::Program(Program::new("hello_bin"));
         let s: String = p.try_into()?;
         Ok(())
+    }
+
+    #[test]
+    fn from_str() {
+        assert_eq!(
+            SemVer::from_str("x.2.3"),
+            Err("major is invalid".to_string())
+        );
+        assert_eq!(SemVer::from_str("1"), Err("minor is missing".to_string()));
+
+        assert_eq!(
+            SemVer::from_str("1.2.x"),
+            Err("patch is invalid".to_string())
+        );
+
+        assert_eq!(
+            SemVer::from_str("1.2.3."),
+            Err("invalid trailing input".to_string())
+        );
+
+        assert_eq!(
+            SemVer::from_str("1.2.3"),
+            Ok(SemVer {
+                major: 1,
+                minor: 2,
+                patch: 3
+            })
+        );
     }
 }
