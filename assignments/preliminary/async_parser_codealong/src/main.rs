@@ -5,7 +5,7 @@ use tokio::task::JoinHandle;
 
 #[tokio::main]
 async fn main() {
-    // console_subscriber::init();
+    console_subscriber::init();
 
     let bad_task = async_blocking_task();
     //let good_task = good_task();
