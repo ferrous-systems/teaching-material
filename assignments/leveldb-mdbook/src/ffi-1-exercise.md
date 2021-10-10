@@ -48,7 +48,7 @@ The sys crate is responsible for linking to the C library and exposing its conte
 
 The higher level crate uses the sys crate to provide a more Rust-friendly interface by safely wrapping the inherently `unsafe` raw parts.
 
-Writing a sys crate yourself is beyond the scope of this exercise. We will be using the [`leveldb-sys` crate provided for you](https://docs.rs/leveldb-sys/2.0.8/leveldb_sys/).
+Writing a sys crate yourself is beyond the scope of this exercise. We will be using the [`leveldb-sys` crate provided for you](https://docs.rs/leveldb-sys/2.0.9/leveldb_sys).
 
 Additionally, you'll also need the [`libc`](https://docs.rs/libc/0.2.97/libc/) crate which provides C types and other required definitions.
 
