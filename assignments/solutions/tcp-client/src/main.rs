@@ -9,7 +9,7 @@ fn main() -> std::io::Result<()> {
         None => String::from("Hello!"),
     };
     // or:
-    // arg.unwrap_or_default(String::from("Hello!"));
+    // arg.unwrap_or(String::from("Hello!"));
 
     let mut stream = TcpStream::connect("127.0.0.1:7878")?;
 
