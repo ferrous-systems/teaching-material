@@ -178,7 +178,7 @@ learn:
 * General Rust patterns
 * Error Handling
 * Using Generic APIs
-* Using Rusts guarantees for security gains
+* Using Rust's guarantees as foundation for secure programming
 * Testing and Debugging
 * Documentation tooling
 * Basics of concurrency safety
