@@ -1,8 +1,11 @@
-use std::net::{TcpListener, TcpStream};
 use std::sync::{Arc, Mutex};
 use std::{convert::TryInto, io};
 use std::{env, io::prelude::*};
 use std::{io::BufReader, thread};
+use std::{
+    net::{TcpListener, TcpStream},
+    str::FromStr,
+};
 
 use semver::EnumRepository;
 use semver_api::{ApiError, Command};
@@ -58,7 +61,7 @@ fn handle(
         Command::Get(crate_name) => {
             let crt = repository
                 .get(&crate_name)
-                .map_err(|e| ApiError::Underlying(e))?;
+                .map_err(|e| ApiError::ParseError(format!("{:?}", e)))?;
             let s: Result<String, _> = crt.try_into().map_err(|_| ApiError::Internal);
             s.map(|data| Some(data))
         }
@@ -80,5 +83,5 @@ fn read_command(stream: &mut TcpStream) -> Result<Command, ApiError> {
     buffered_stream
         .read_line(&mut read_buffer)
         .map_err(|_| ApiError::InvalidCommand)?;
-    read_buffer.as_str().try_into()
+    Command::from_str(&read_buffer)
 }

@@ -5,7 +5,7 @@ use async_std::sync::{Arc, Mutex};
 use async_std::task;
 use semver::EnumRepository;
 use semver_api::{ApiError, Command};
-use std::{convert::TryInto, env, io};
+use std::{convert::TryInto, env, io, str::FromStr};
 
 fn main() -> io::Result<()> {
     task::block_on(async {
@@ -57,7 +57,9 @@ async fn handle(
     let mut repository = repository.lock().await;
     let response = match command {
         Command::Get(crate_name) => {
-            let crt = repository.get(&crate_name).map_err(ApiError::Underlying)?;
+            let crt = repository
+                .get(&crate_name)
+                .map_err(|e| ApiError::ParseError(format!("{:?}", e)))?;
             crt.try_into().map_err(|_| ApiError::Internal).map(Some)
         }
         Command::Put(crt) => {
@@ -79,5 +81,5 @@ async fn read_command(stream: &mut TcpStream) -> Result<Command, ApiError> {
         .read_line(&mut read_buffer)
         .await
         .map_err(|_| ApiError::InvalidCommand)?;
-    read_buffer.as_str().try_into()
+    Command::from_str(&read_buffer)
 }

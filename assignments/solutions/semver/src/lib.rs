@@ -2,7 +2,7 @@
 
 use std::{
     collections::HashMap,
-    convert::TryFrom,
+    convert::{TryFrom, TryInto},
     fmt::{Debug, Display},
     str::FromStr,
     time::SystemTime,
@@ -198,11 +198,11 @@ impl CrateFuncs for Crate {
     }
 }
 
-impl TryFrom<Crate> for String {
+impl TryFrom<&Crate> for String {
     type Error = serde_json::Error;
 
-    fn try_from(value: Crate) -> Result<Self, Self::Error> {
-        serde_json::to_string(&value)
+    fn try_from(value: &Crate) -> Result<Self, Self::Error> {
+        serde_json::to_string(value)
     }
 }
 

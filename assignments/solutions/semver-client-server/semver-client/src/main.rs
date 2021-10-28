@@ -1,7 +1,9 @@
 use std::{
+    convert::TryInto,
     error::Error,
     io::{Read, Write},
     net::{Shutdown, TcpStream},
+    str::FromStr,
 };
 
 use log::{error, info};
@@ -47,7 +49,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     send_command(Command::Get(program_name.clone()), |crt| match crt {
         Some(crt) => {
-            let c: Crate = crt.as_str().try_into().expect("deserialization failed");
+            let c: Crate = Crate::from_str(&crt).expect("deserialization failed");
             info!("got crate: {:#?}", c);
         }
         None => error!("load crate data failed"),
