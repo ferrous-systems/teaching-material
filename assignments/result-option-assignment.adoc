@@ -17,9 +17,10 @@ It is used, when you have to handle optional values, for example if you want to
 be able to leave a field of a struct empty, go assign the option type to it.
 If the field has a value, it is `Some(<value>)`, if it is empty, it is `None`.
 
-The variants of the Result type are `Ok()` and `Err(e)`. It is used to handle errors.
-If an operation was successful, `Ok()` is returned. `Ok()` can be empty or have a
-return value. `Err(e)` contains an error message that can be printed.
+The variants of the Result type are `Ok(t)` and `Err(e)`. It is used to handle errors.
+If an operation was successful, `Ok(t)` is returned.
+In `Ok(t)`, `t` can be the empty tuple or a return value.
+In `Err(e)`, `e` contains an error message that can be printed.
 
 [TIP]
 ====
