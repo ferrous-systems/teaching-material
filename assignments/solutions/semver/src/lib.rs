@@ -316,7 +316,7 @@ mod tests {
             SemVer::from_str("x.2.3"),
             Err("major is invalid".to_string())
         );
-        assert_eq!(SemVer::from_str("1"), Err("minor is missing".to_string()));
+        assert_eq!("1".parse::<SemVer>(), Err("minor is missing".to_string()));
 
         assert_eq!(
             SemVer::from_str("1.2.x"),
