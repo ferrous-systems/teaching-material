@@ -1,8 +1,8 @@
 fn main() {
-    let mut iter = vec![1, 2, 3].into_iter();
+    let sum: Option<u8> = 5_u8.checked_add(5);
 
-    match iter.next() {
-        Some(x) if x % 2 == 0 => println!("even number!"),
-        _                     => println!("not even"),
+    match sum {
+        Some(sum) if sum % 2 == 0 => println!("5+5 is even!"),
+        _ => println!("5+5 ... isn't even?"),
     }
 }

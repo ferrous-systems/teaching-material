@@ -1,8 +1,7 @@
 fn main() {
-    let mut iter = vec![1,2].into_iter();
-
-    match iter.next() {
-        Some(x) => println!("number: {}", x),
-        None    => println!("No next item")
+    let will_overflow: Option<u8> = 10_u8.checked_add(250);
+    match will_overflow {
+        Some(sum) => println!("interesting: {}", sum),
+        None => eprintln!("addition overflow!"),
     }
 }
