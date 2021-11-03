@@ -3,11 +3,14 @@
 
 We use https://asciidoctor.org[Asciidoctor] for slides and assignments.
 
-To compile `.adoc` to HTML, you need to have Ruby and [bundler](https://rubygems.org/gems/bundler):
+To compile `.adoc` to HTML, you need to have Ruby and [bundler](https://rubygems.org/gems/bundler).
+Using [`rbenv`](https://github.com/rbenv/rbenv) for project-local ruby package installation is recommended.
 
 .Prerequisites
 [source]
 ----
+$ eval "$(rbenv init -)" # when using rbenv
+$ gem install bundler # only needed once
 $ bundle --path=.bundle/gems --binstubs=.bundle/.bin
 ----
 
