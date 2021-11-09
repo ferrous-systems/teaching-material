@@ -20,6 +20,11 @@ include::./1.rs[]
 
 == Results Must Be Used
 
+[source,rust]
+----
+include::./2.rs[]
+----
+
 [source]
 ----
 include::./2.output[]
