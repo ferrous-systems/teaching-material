@@ -70,7 +70,7 @@
 * link:./assignments/async-channels.html[Async Channels]
 
 .SemVer trail
-* link:./assignments/semver_from_file[SemVer from file]
+* link:./assignments/semver_from_file.html[SemVer from file]
 
 ."Fill In The Blanks" warm-ups
 Quick warm-up exercises that can be distributed in a https://play.rust-lang.org[playground]
