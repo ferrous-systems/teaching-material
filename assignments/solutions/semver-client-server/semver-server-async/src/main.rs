@@ -32,7 +32,7 @@ fn main() -> io::Result<()> {
                 if result.is_err() {
                     eprintln!("Error occurred: {:?}", result);
                 }
-                let response: Result<String, _> = semver_api::ApiResult(result).try_into();
+                let response: Result<String, _> = semver_api::ApiResponse(result).try_into();
                 match response {
                     Ok(response) => {
                         let _ = stream.write(response.as_bytes()).await;

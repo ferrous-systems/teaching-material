@@ -34,7 +34,7 @@ fn main() -> io::Result<()> {
                 eprintln!("Error occurred: {:?}", result);
             }
 
-            let response: Result<String, _> = semver_api::ApiResult(result).try_into();
+            let response: Result<String, _> = semver_api::ApiResponse(result).try_into();
             match response {
                 Ok(response) => {
                     let _ = write!(stream, "{}", response);

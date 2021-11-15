@@ -8,7 +8,7 @@ use std::{
 
 use log::{error, info};
 use semver::{Crate, Program, SemVer};
-use semver_api::{ApiResult, Command, Update};
+use semver_api::{ApiResponse, Command, Update};
 
 fn main() -> Result<(), Box<dyn Error>> {
     pretty_env_logger::init();
@@ -66,7 +66,7 @@ fn send_command<F: Fn(Option<String>)>(command: Command, handler: F) -> Result<(
     connection.shutdown(Shutdown::Write)?;
     let mut buffer = String::new();
     connection.read_to_string(&mut buffer)?;
-    let result: ApiResult = buffer.as_str().try_into()?;
+    let result: ApiResponse = buffer.as_str().try_into()?;
     dbg!();
     match result.0 {
         Ok(payload) => {
