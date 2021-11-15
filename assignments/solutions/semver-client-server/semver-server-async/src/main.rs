@@ -20,8 +20,8 @@ fn main() -> io::Result<()> {
         while let Some(connection) = incoming.next().await {
             let mut stream = match connection {
                 Ok(stream) => stream,
-                Err(_) => {
-                    // unreachable as per documentation
+                Err(e) => {
+                    eprintln!("Connection error: {:?}", e);
                     continue;
                 }
             };
@@ -38,7 +38,7 @@ fn main() -> io::Result<()> {
                         let _ = stream.write(response.as_bytes()).await;
                     }
                     Err(e) => {
-                        eprintln!("Error occurred: {:?}", e);
+                        eprintln!("Could not convert to API response: {:?}", e);
                     }
                 };
             });
