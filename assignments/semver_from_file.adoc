@@ -38,6 +38,6 @@ match VALUE {
 
 Clone the teaching material repository at https://github.com/ferrous-systems/teaching-material[github.com/ferrous-systems/teaching-material].
 
-A template with example data can be found in `assignments/semver/parse_file/template/`. It already imports (`use` s) all required items.
+A template with example data can be found in folder https://github.com/ferrous-systems/teaching-material/tree/master/assignments/semver/parse_file/template[assignments/semver/parse_file/template]. It already imports (`use` s) all required items.
 
 == Task: see template for details
