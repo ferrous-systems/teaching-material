@@ -20,6 +20,7 @@ impl Write for DurableFile {
         Ok(amt)
     }
     fn flush(&mut self) -> Result<()> {
+        
         self.file.sync_all()?;
         self.needs_sync = false;
         Ok(())

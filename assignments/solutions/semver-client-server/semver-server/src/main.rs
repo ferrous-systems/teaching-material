@@ -17,24 +17,25 @@ fn main() -> io::Result<()> {
     for connection in listener.incoming() {
         let mut stream = match connection {
             Ok(stream) => stream,
-            Err(_) => {
-                // unreachable as per documentation
+            Err(e) => {
+                eprintln!("Connection error: {:?}", e);
                 continue;
             }
         };
 
         let result = handle(&mut stream, &mut repository);
         if result.is_err() {
-            eprintln!("Error occurred: {:?}", result);
+            eprintln!("Error handling request: {:?}", result);
         }
 
-        let response: Result<String, _> = semver_api::ApiResult(result).try_into();
+        let response: Result<String, _> = semver_api::ApiResponse(result).try_into();
         match response {
             Ok(response) => {
+                // ignore errors during response write
                 let _ = write!(stream, "{}", response);
             }
             Err(e) => {
-                eprintln!("Error occurred: {:?}", e);
+                eprintln!("Could not convert to API response: {:?}", e);
             }
         };
     }

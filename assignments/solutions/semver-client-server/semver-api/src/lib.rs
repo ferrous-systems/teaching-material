@@ -16,17 +16,17 @@ pub struct Update {
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct ApiResult(pub Result<Option<String>, ApiError>);
+pub struct ApiResponse(pub Result<Option<String>, ApiError>);
 
-impl TryFrom<ApiResult> for String {
+impl TryFrom<ApiResponse> for String {
     type Error = serde_json::Error;
 
-    fn try_from(value: ApiResult) -> Result<Self, Self::Error> {
+    fn try_from(value: ApiResponse) -> Result<Self, Self::Error> {
         serde_json::to_string(&value)
     }
 }
 
-impl TryFrom<&str> for ApiResult {
+impl TryFrom<&str> for ApiResponse {
     type Error = serde_json::Error;
 
     fn try_from(value: &str) -> Result<Self, Self::Error> {
@@ -95,3 +95,27 @@ impl Display for ApiError {
 }
 
 impl std::error::Error for ApiError {}
+
+#[cfg(test)]
+mod tests {
+    use std::convert::TryInto;
+
+    use super::*;
+
+    #[test]
+    fn convert_ok() {
+        let result = ApiResponse(Ok(None));
+        let response: Result<String, _> = result.try_into();
+        assert!(response.is_ok());
+        assert_eq!(response.unwrap(), r#"{"Ok":null}"#);
+    }
+
+    #[test]
+    fn convert_err() {
+        let result = ApiResponse(Err(ApiError::Internal));
+        let response: Result<String, _> = result.try_into();
+        assert!(response.is_ok());
+        // TODO: should be "internal" (lower case i), using ToString
+        assert_eq!(response.unwrap(), r#"{"Err":"Internal"}"#);
+    }
+}
