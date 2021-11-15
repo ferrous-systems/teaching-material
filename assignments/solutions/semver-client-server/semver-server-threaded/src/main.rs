@@ -14,15 +14,15 @@ fn main() -> io::Result<()> {
     let port = env::var("PORT").unwrap_or("7878".to_string());
     let addr = format!("127.0.0.1:{}", port);
     println!("serving at {}", addr);
-    let listener = TcpListener::bind(addr).unwrap();
+    let listener = TcpListener::bind(addr)?;
 
     let repository = Arc::new(Mutex::new(EnumRepository::new()));
 
     for connection in listener.incoming() {
         let mut stream = match connection {
             Ok(stream) => stream,
-            Err(_) => {
-                // unreachable as per documentation
+            Err(e) => {
+                eprintln!("Connection error: {:?}", e);
                 continue;
             }
         };
@@ -31,7 +31,7 @@ fn main() -> io::Result<()> {
         thread::spawn(move || {
             let result = handle(&mut stream, &*repository);
             if result.is_err() {
-                eprintln!("Error occurred: {:?}", result);
+                eprintln!("Error handling request: {:?}", result);
             }
 
             let response: Result<String, _> = semver_api::ApiResponse(result).try_into();
@@ -40,7 +40,7 @@ fn main() -> io::Result<()> {
                     let _ = write!(stream, "{}", response);
                 }
                 Err(e) => {
-                    eprintln!("Error occurred: {:?}", e);
+                    eprintln!("Could not convert to API response: {:?}", e);
                 }
             };
         });
