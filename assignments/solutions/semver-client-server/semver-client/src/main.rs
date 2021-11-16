@@ -4,6 +4,7 @@ use std::{
     io::{Read, Write},
     net::{Shutdown, TcpStream},
     str::FromStr,
+    thread,
 };
 
 use log::{error, info};
@@ -14,46 +15,53 @@ fn main() -> Result<(), Box<dyn Error>> {
     pretty_env_logger::init();
     let program_name = "hello_bin".to_string();
     let program = Program::new(program_name.clone());
-    send_command(Command::Put(Crate::Program(program)), drop)?;
-    send_command(
+
+    let commands = vec![
+        Command::Put(Crate::Program(program)),
         Command::Update(Update {
             crate_name: "ertjwjbrkwrkerbwkhrba".to_string(),
             version: SemVer::new_short(1),
         }),
-        drop,
-    )?;
-
-    send_command(
         Command::Update(Update {
             crate_name: program_name.clone(),
             version: SemVer::new_short(1),
         }),
-        drop,
-    )?;
-
-    send_command(
         Command::Update(Update {
             crate_name: program_name.clone(),
             version: SemVer::new_short(2),
         }),
-        drop,
-    )?;
-
-    send_command(
         Command::Update(Update {
             crate_name: program_name.clone(),
             version: SemVer::new_short(2),
         }),
-        drop,
-    )?;
+        Command::Get(program_name.clone()),
+    ];
 
-    send_command(Command::Get(program_name.clone()), |crt| match crt {
-        Some(crt) => {
-            let c: Crate = Crate::from_str(&crt).expect("deserialization failed");
-            info!("got crate: {:#?}", c);
+    let erratic = true;
+
+    let mut threads = vec![];
+    for command in commands {
+        if erratic {
+            threads.push(thread::spawn(|| match send_command(command, drop) {
+                Ok(_) => {}
+                Err(e) => error!("{}", e),
+            }));
+        } else {
+            send_command(command, drop)?;
         }
-        None => error!("load crate data failed"),
-    })?;
+    }
+
+    for thread in threads {
+        thread.join().unwrap();
+    }
+
+    // send_command(Command::Get(program_name.clone()), |crt| match crt {
+    //     Some(crt) => {
+    //         let c: Crate = Crate::from_str(&crt).expect("deserialization failed");
+    //         info!("got crate: {:#?}", c);
+    //     }
+    //     None => error!("load crate data failed"),
+    // })?;
     Ok(())
 }
 
@@ -67,7 +75,6 @@ fn send_command<F: Fn(Option<String>)>(command: Command, handler: F) -> Result<(
     let mut buffer = String::new();
     connection.read_to_string(&mut buffer)?;
     let result: ApiResponse = buffer.as_str().try_into()?;
-    dbg!();
     match result.0 {
         Ok(payload) => {
             info!("← OK {:?}", payload);
