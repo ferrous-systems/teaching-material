@@ -12,6 +12,9 @@ use awc::{
 };
 use bytes::Bytes;
 use futures::stream::{SplitSink, StreamExt};
+use log::warn;
+use semver_api::Command;
+use serde_json::json;
 
 fn main() {
     ::std::env::set_var("RUST_LOG", "actix_web=info");
@@ -43,7 +46,14 @@ fn main() {
                 println!("error");
                 return;
             }
-            addr.do_send(ClientCommand(cmd));
+
+            match serde_json::from_str::<Command>(&cmd) {
+                Ok(command) => {
+                    println!("COMMAND: {:?}", command);
+                    addr.do_send(ClientCommand(command));
+                }
+                Err(err) => println!("Failed to parse command '{}'", err),
+            }
         });
     });
     sys.run().unwrap();
@@ -53,9 +63,7 @@ struct ChatClient(SinkWrite<Message, SplitSink<Framed<BoxedSocket, Codec>, Messa
 
 #[derive(Message)]
 #[rtype(result = "()")]
-struct ClientCommand {
-    command: semver_api::Command,
-}
+struct ClientCommand(semver_api::Command);
 
 impl Actor for ChatClient {
     type Context = Context<Self>;
@@ -90,8 +98,8 @@ impl Handler<ClientCommand> for ChatClient {
     type Result = ();
 
     fn handle(&mut self, msg: ClientCommand, _ctx: &mut Context<Self>) {
-        // self.0.write(Message::Text(msg.0));
-        let payload = serde_json::to_string(json!({""}));
+        let text = serde_json::to_string(&msg.0).unwrap();
+        self.0.write(Message::Text(text));
     }
 }
 
