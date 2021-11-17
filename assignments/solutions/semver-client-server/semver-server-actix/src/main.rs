@@ -206,7 +206,7 @@ impl Actor for RepoServer {
 async fn main() -> std::io::Result<()> {
     std::env::set_var(
         "RUST_LOG",
-        "websocket_server=debug,actix_server=info,actix_web=info",
+        "semver-actix-websockets=debug,actix_server=info,actix_web=info",
     ); // 👆 dash vs underscore
     pretty_env_logger::init();
 

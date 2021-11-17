@@ -1,8 +1,7 @@
 [package]
-name = "websocket"
+name = "semver-actix-websockets"
 version = "2.0.0"
-authors = ["Nikolay Kim <fafhrd91@gmail.com>"]
-edition = "2018"
+edition = "2021"
 
 # simple example with one repo per connection
 [[bin]]
@@ -25,7 +24,8 @@ actix-web = "3"
 actix-web-actors = "3"
 actix-files = "0.3"
 awc = "2"
-pretty_env_logger = "0.4" # 👆
+env_logger = "0.8" # 👆
+pretty_env_logger = "0.4"
 log = "0.4" # 👆
 futures = "0.3.1"
 bytes = "0.5.3"
