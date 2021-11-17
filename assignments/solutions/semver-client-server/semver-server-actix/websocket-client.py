@@ -66,7 +66,6 @@ async def main(url):
         async with session.ws_connect(url, autoclose=False, autoping=False) as ws:
             await asyncio.gather(input_task(loop, reader, ws), ws_loop(ws))
 
-    print("oh no, here")
     try:
         loop.run_forever()
     finally:
