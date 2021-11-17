@@ -92,7 +92,9 @@ impl WsChatSession {
     /// executed periodically.
     fn heartbeat(&self, ctx: &mut ws::WebsocketContext<Self>) {
         ctx.run_interval(HEARTBEAT_INTERVAL, |session, ctx| {
-            // 
+            // TODO
+            // * implement check the client disconnected, then send a `Disconnect` message
+            // * otherwise send ping
         });
     }
 }

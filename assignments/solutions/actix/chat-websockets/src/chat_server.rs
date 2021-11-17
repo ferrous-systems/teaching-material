@@ -26,9 +26,14 @@ pub struct ClientMessage {
     pub message: String,
 }
 
-/// TODO add a Disconnect message that removes the session from the chat server
+/// Disconnect message that removes the session from the chat server
 /// similar to `Join`.
-pub struct Disconnect {}
+#[derive(actix::Message, Debug)]
+#[rtype(result = "()")]
+pub struct Disconnect {
+    /// The session to disconnect
+    pub id: SessionId,
+}
 
 pub struct ChatServer {
     /// The list of current sessions
@@ -94,5 +99,20 @@ impl Handler<ClientMessage> for ChatServer {
     /// The message is simply forwarded to the chat server
     fn handle(&mut self, msg: ClientMessage, _ctx: &mut Self::Context) -> Self::Result {
         self.send_message(&msg.message, msg.session_id);
+    }
+}
+
+/// Implement the Message handler to disconnect a client from chat
+impl Handler<Disconnect> for ChatServer {
+    type Result = ();
+
+    fn handle(&mut self, msg: Disconnect, ctx: &mut Self::Context) -> Self::Result {
+        println!("Someone disconnected");
+
+        // remove the client from the sessions list
+        self.sessions.remove(&msg.id);
+
+        // notify others of disconnect
+        self.send_message("Someone disconnected", msg.id);
     }
 }

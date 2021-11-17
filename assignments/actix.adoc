@@ -16,6 +16,7 @@ The web server runs at http://localhost:8080. Once started, open the link in a b
 1. Broadcast the client message to all other connected clients
 2. Implement a custom message to disconnect from the chat server
   - you should not receive new messages from other clients thereafter
+  - notify other clients of disconnect
 3. Check that you do not receive your own chat message back
 4. Add heartbeat logic to remove a client from the chat server after 10s of inactivity (e.g. tab closed)
   - use link:https://docs.rs/actix/0.10.0/actix/trait.AsyncContext.html#method.run_interval[`actix::AsyncContext::run_interval`] to run a background job to check if client has timed out

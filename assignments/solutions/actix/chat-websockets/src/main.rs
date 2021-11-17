@@ -52,8 +52,7 @@ impl actix::Actor for WsChatSession {
 
     /// Actor is stopping the session
     fn stopping(&mut self, _: &mut Self::Context) -> Running {
-        // TODO send a Disconnect message to chat server to disconnect client
-
+        self.server.do_send(chat_server::Disconnect { id: self.id });
         Running::Stop
     }
 }
@@ -72,10 +71,18 @@ impl StreamHandler<Result<ws::Message, ws::ProtocolError>> for WsChatSession {
     fn handle(&mut self, msg: Result<ws::Message, ws::ProtocolError>, ctx: &mut Self::Context) {
         info!("WS: {:?}", msg);
         match msg {
-            Ok(ws::Message::Ping(msg)) => ctx.pong(&msg),
-            Ok(ws::Message::Pong(_)) => (),
+            Ok(ws::Message::Ping(msg)) => {
+                self.heartbeat = Instant::now();
+                ctx.pong(&msg);
+            }
+            Ok(ws::Message::Pong(_)) => {
+                self.heartbeat = Instant::now();
+            }
             Ok(ws::Message::Text(message)) => {
-                // TODO send message to others
+                self.server.do_send(chat_server::ClientMessage {
+                    session_id: self.id,
+                    message,
+                });
             }
             Ok(ws::Message::Binary(bin)) => ctx.binary(bin),
             Ok(ws::Message::Close(reason)) => {
@@ -100,7 +107,9 @@ impl WsChatSession {
                 println!("Websocket Client heartbeat failed, disconnecting!");
 
                 // Send chat server a Disconnect message
-                session.server.do_send(chat_server::Disconnect { id: session.id });
+                session
+                    .server
+                    .do_send(chat_server::Disconnect { id: session.id });
 
                 // stop actor
                 ctx.stop();
