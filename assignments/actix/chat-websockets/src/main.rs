@@ -1,5 +1,7 @@
 mod chat_server;
 
+use std::time::{Duration, Instant};
+
 use actix::{
     fut, Actor, ActorContext, ActorFuture, Addr, AsyncContext, ContextFutureSpawner, Handler,
     Running, StreamHandler, WrapFuture,
