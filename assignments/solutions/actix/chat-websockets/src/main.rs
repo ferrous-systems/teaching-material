@@ -54,7 +54,10 @@ impl actix::Actor for WsChatSession {
 
     /// Actor is stopping the session
     fn stopping(&mut self, _: &mut Self::Context) -> Running {
-        self.server.do_send(chat_server::Disconnect { id: self.id });
+        self.server.do_send(chat_server::Disconnect {
+            id: self.id,
+            name: self.name.clone(),
+        });
         Running::Stop
     }
 }
@@ -87,6 +90,7 @@ impl StreamHandler<Result<ws::Message, ws::ProtocolError>> for WsChatSession {
                             self.server.do_send(chat_server::ClientMessage {
                                 session_id: self.id,
                                 message: message.to_string(),
+                                name: self.name.clone(),
                             });
                         }
                         "name" => {
@@ -128,9 +132,10 @@ impl WsChatSession {
                 println!("Websocket Client heartbeat failed, disconnecting!");
 
                 // Send chat server a Disconnect message
-                session
-                    .server
-                    .do_send(chat_server::Disconnect { id: session.id });
+                session.server.do_send(chat_server::Disconnect {
+                    id: session.id,
+                    name: session.name.clone(),
+                });
 
                 // stop actor
                 ctx.stop();

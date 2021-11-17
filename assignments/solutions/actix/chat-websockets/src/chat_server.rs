@@ -22,6 +22,8 @@ pub struct Join {
 pub struct ClientMessage {
     /// The session id from client
     pub session_id: SessionId,
+    /// The name of the client
+    pub name: Option<String>,
     /// The message from the client
     pub message: String,
 }
@@ -33,6 +35,8 @@ pub struct ClientMessage {
 pub struct Disconnect {
     /// The session to disconnect
     pub id: SessionId,
+    /// Name of the session if available
+    pub name: Option<String>,
 }
 
 pub struct ChatServer {
@@ -107,12 +111,13 @@ impl Handler<Disconnect> for ChatServer {
     type Result = ();
 
     fn handle(&mut self, msg: Disconnect, ctx: &mut Self::Context) -> Self::Result {
-        println!("Someone disconnected");
+        let name = msg.name.unwrap_or("Someone".to_string());
+        println!("{} disconnected", name);
 
         // remove the client from the sessions list
         self.sessions.remove(&msg.id);
 
         // notify others of disconnect
-        self.send_message("Someone disconnected", msg.id);
+        self.send_message(&format!("{} disconnected", name), msg.id);
     }
 }
