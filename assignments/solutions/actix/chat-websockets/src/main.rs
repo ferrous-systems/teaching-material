@@ -23,6 +23,8 @@ struct WsChatSession {
     server: Addr<chat_server::ChatServer>,
     /// Client must ping regularly in a time interval, otherwise will time out
     heartbeat: Instant,
+    /// The name of the client if given
+    name: Option<String>,
 }
 
 impl actix::Actor for WsChatSession {
@@ -79,10 +81,29 @@ impl StreamHandler<Result<ws::Message, ws::ProtocolError>> for WsChatSession {
                 self.heartbeat = Instant::now();
             }
             Ok(ws::Message::Text(message)) => {
-                self.server.do_send(chat_server::ClientMessage {
-                    session_id: self.id,
-                    message,
-                });
+                if let Some((command, message)) = message.trim().split_once(":") {
+                    match command {
+                        "text" => {
+                            self.server.do_send(chat_server::ClientMessage {
+                                session_id: self.id,
+                                message: message.to_string(),
+                            });
+                        }
+                        "name" => {
+                            let name = message.trim();
+                            if name.len() > 0 {
+                                self.name = Some(name.to_string());
+                            } else {
+                                self.name = None;
+                            }
+                        }
+                        c => {
+                            warn!("Unsupported command '{}' found", c);
+                        }
+                    }
+                } else {
+                    warn!("Failed to parse message '{}'", message);
+                }
             }
             Ok(ws::Message::Binary(bin)) => ctx.binary(bin),
             Ok(ws::Message::Close(reason)) => {
@@ -135,6 +156,7 @@ async fn chat_index(
             id: 0,
             server: service.get_ref().clone(),
             heartbeat: Instant::now(),
+            name: None,
         },
         &req,
         stream,
