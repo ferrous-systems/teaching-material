@@ -19,7 +19,7 @@ use serde_json::json;
 
 fn main() {
     ::std::env::set_var("RUST_LOG", "actix_web=info");
-    env_logger::init();
+    pretty_env_logger::init();
 
     let sys = System::new("websocket-client");
 
@@ -40,52 +40,12 @@ fn main() {
             ChatClient(SinkWrite::new(sink, ctx))
         });
 
-        let program_name = "hello_bin".to_string();
-        let program = Program::new(program_name.clone());
+        // TODO send a number commands via websocket to web server:
+        // for example as here: https://github.com/ferrous-systems/teaching-material/blob/master/assignments/solutions/semver-client-server/semver-client/src/main.rs#L14
+        //
+        // Useful documentation https://docs.rs/actix/0.12.0/actix/prelude/struct.Recipient.html#method.do_send on how to send data
+        // see `semver_api::Command` on the different Repository commands
 
-        let commands = vec![
-            Command::Put(Crate::Program(program)),
-            Command::Update(Update {
-                crate_name: "ertjwjbrkwrkerbwkhrba".to_string(),
-                version: SemVer::new_short(1),
-            }),
-            Command::Update(Update {
-                crate_name: program_name.clone(),
-                version: SemVer::new_short(1),
-            }),
-            Command::Update(Update {
-                crate_name: program_name.clone(),
-                version: SemVer::new_short(2),
-            }),
-            Command::Update(Update {
-                crate_name: program_name.clone(),
-                version: SemVer::new_short(2),
-            }),
-            Command::Get(program_name.clone()),
-        ];
-
-        for command in commands {
-            addr.do_send(ClientCommand(command));
-        }
-
-        // start console loop
-        /*
-        thread::spawn(move || loop {
-            let mut cmd = String::new();
-            if io::stdin().read_line(&mut cmd).is_err() {
-                println!("error");
-                return;
-            }
-
-            match serde_json::from_str::<Command>(&cmd) {
-                Ok(command) => {
-                    println!("COMMAND: {:?}", command);
-                    addr.do_send(ClientCommand(command));
-                }
-                Err(err) => println!("Failed to parse command '{}'", err),
-            }
-        });
-        */
     });
     sys.run().unwrap();
 }

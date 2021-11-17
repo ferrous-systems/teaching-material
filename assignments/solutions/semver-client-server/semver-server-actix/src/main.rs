@@ -1,8 +1,3 @@
-//! Simple echo websocket server.
-//! Open `http://localhost:8080/index.html` in browser
-//! or [python console client](https://github.com/actix/examples/blob/master/websocket/websocket-client.py)
-//! could be used for testing.
-
 use std::{
     convert::TryInto,
     time::{Duration, Instant},
@@ -67,33 +62,12 @@ impl StreamHandler<Result<ws::Message, ws::ProtocolError>> for MyWebSocket {
             }
             // 👆 ctx.text()/binary() send data to client
             Ok(ws::Message::Text(text)) => {
-                // 👆 no trailing newline anymore - parsing has changed! (talk about API stuff, newline to terminate command, blah)
-                dbg!(&text);
-                if let Ok(command) = serde_json::from_str::<Command>(&text) {
-                    // 👆 error handling (anyhow)
-                    let repository = &mut self.repo;
-                    let response: Result<Option<String>, ApiError> = match command {
-                        Command::Get(crate_name) => {
-                            repository
-                                .get(&crate_name)
-                                .map_err(|e| ApiError::ParseError(format!("{:?}", e)))
-                                // 👇 either clone() or use serde_json::to_string
-                                // 👇 unwrap is a bit meh, solution? --> Johann/Sebastian
-                                .map(|crt| serde_json::to_string(crt).unwrap())
-                                .map(Some)
-                        }
-                        Command::Put(crt) => {
-                            repository.insert(crt);
-                            Ok(None)
-                        }
-                        Command::Update(update) => repository
-                            .add_release(update.crate_name, update.version)
-                            .map_err(|_| ApiError::Internal)
-                            .map(|_| None),
-                        // 👆 useful conversion whoop whoop
-                    };
-                    ctx.text(serde_json::to_string(&response).unwrap());
-                }
+                dbg!(&text); // 👆 debug helper
+                
+                // 👆 text does not contain trailing newline anymore -> parsing has changed!
+                
+                // ... your code here ...
+                
             }
             Ok(ws::Message::Binary(bin)) => ctx.binary(bin),
             Ok(ws::Message::Close(reason)) => {
@@ -139,7 +113,7 @@ impl MyWebSocket {
 async fn main() -> std::io::Result<()> {
     std::env::set_var(
         "RUST_LOG",
-        "semver-actix-websockets=debug,actix_server=info,actix_web=info",
+        "websocket_server=debug,actix_server=info,actix_web=info",
     ); // 👆 dash vs underscore
     pretty_env_logger::init();
 

@@ -640,20 +640,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "44533bbbb3bb3c1fa17d9f2e4e38bbbaf8396ba82193c4cb1b6445d711445d36"
 dependencies = [
  "atty",
- "humantime 1.3.0",
- "log",
- "regex",
- "termcolor",
-]
-
-[[package]]
-name = "env_logger"
-version = "0.8.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a19187fea3ac7e84da7dacf48de0c45d63c6a76f9490dae389aead16c243fce3"
-dependencies = [
- "atty",
- "humantime 2.1.0",
+ "humantime",
  "log",
  "regex",
  "termcolor",
@@ -907,12 +894,6 @@ checksum = "df004cfca50ef23c36850aaaa59ad52cc70d0e90243c3c7737a4dd32dc7a3c4f"
 dependencies = [
  "quick-error",
 ]
-
-[[package]]
-name = "humantime"
-version = "2.1.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9a3a5bfb195931eeb336b2a7b4d761daec841b97f947d34394601737a7bba5e4"
 
 [[package]]
 name = "idna"
@@ -1277,7 +1258,7 @@ version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "926d36b9553851b8b0005f1275891b392ee4d2d833852c417ed025477350fb9d"
 dependencies = [
- "env_logger 0.7.1",
+ "env_logger",
  "log",
 ]
 
@@ -1448,26 +1429,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f301af10236f6df4160f7c3f04eec6dbc70ace82d23326abad5edee88801c6b6"
 dependencies = [
  "semver-parser 0.10.2",
-]
-
-[[package]]
-name = "semver-actix-websockets"
-version = "2.0.0"
-dependencies = [
- "actix",
- "actix-codec",
- "actix-files",
- "actix-web",
- "actix-web-actors",
- "awc",
- "bytes 0.5.6",
- "env_logger 0.8.4",
- "futures",
- "log",
- "pretty_env_logger",
- "semver 0.1.0",
- "semver_api",
- "serde_json",
 ]
 
 [[package]]
@@ -2017,6 +1978,25 @@ name = "wasm-bindgen-shared"
 version = "0.2.78"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0237232789cf037d5480773fe568aac745bfe2afbc11a863e97901780a6b47cc"
+
+[[package]]
+name = "websocket"
+version = "2.0.0"
+dependencies = [
+ "actix",
+ "actix-codec",
+ "actix-files",
+ "actix-web",
+ "actix-web-actors",
+ "awc",
+ "bytes 0.5.6",
+ "futures",
+ "log",
+ "pretty_env_logger",
+ "semver 0.1.0",
+ "semver_api",
+ "serde_json",
+]
 
 [[package]]
 name = "widestring"
