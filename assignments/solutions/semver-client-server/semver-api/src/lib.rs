@@ -9,7 +9,7 @@ use semver::Error as RepositoryError;
 use semver::{Crate, SemVer};
 use serde::{Deserialize, Serialize};
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct Update {
     pub crate_name: String,
     pub version: SemVer,
@@ -34,7 +34,7 @@ impl TryFrom<&str> for ApiResponse {
     }
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug, Clone)]
 pub enum Command {
     Get(String),
     Put(Crate),
