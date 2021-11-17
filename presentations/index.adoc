@@ -68,6 +68,7 @@
 * link:./assignments/simple-chat.html[Simple async chat]
 * link:./assignments/async-mailbox.html[Async Mailbox]
 * link:./assignments/async-channels.html[Async Channels]
+* link:./assignments/actix.html[Actix Chat using Websockets]
 
 .SemVer trail
 * link:./assignments/semver_from_file.html[SemVer from file]
