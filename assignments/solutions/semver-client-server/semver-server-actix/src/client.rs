@@ -13,7 +13,8 @@ use awc::{
 use bytes::Bytes;
 use futures::stream::{SplitSink, StreamExt};
 use log::warn;
-use semver_api::Command;
+use semver::{Crate, Program, SemVer};
+use semver_api::{Command, Update};
 use serde_json::json;
 
 fn main() {
@@ -39,7 +40,36 @@ fn main() {
             ChatClient(SinkWrite::new(sink, ctx))
         });
 
+        let program_name = "hello_bin".to_string();
+        let program = Program::new(program_name.clone());
+
+        let commands = vec![
+            Command::Put(Crate::Program(program)),
+            Command::Update(Update {
+                crate_name: "ertjwjbrkwrkerbwkhrba".to_string(),
+                version: SemVer::new_short(1),
+            }),
+            Command::Update(Update {
+                crate_name: program_name.clone(),
+                version: SemVer::new_short(1),
+            }),
+            Command::Update(Update {
+                crate_name: program_name.clone(),
+                version: SemVer::new_short(2),
+            }),
+            Command::Update(Update {
+                crate_name: program_name.clone(),
+                version: SemVer::new_short(2),
+            }),
+            Command::Get(program_name.clone()),
+        ];
+
+        for command in commands {
+            addr.do_send(ClientCommand(command));
+        }
+
         // start console loop
+        /*
         thread::spawn(move || loop {
             let mut cmd = String::new();
             if io::stdin().read_line(&mut cmd).is_err() {
@@ -55,6 +85,7 @@ fn main() {
                 Err(err) => println!("Failed to parse command '{}'", err),
             }
         });
+        */
     });
     sys.run().unwrap();
 }
