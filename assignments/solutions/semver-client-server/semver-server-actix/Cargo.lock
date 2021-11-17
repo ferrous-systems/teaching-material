@@ -1447,6 +1447,25 @@ dependencies = [
 ]
 
 [[package]]
+name = "semver-sockets"
+version = "2.0.0"
+dependencies = [
+ "actix",
+ "actix-codec",
+ "actix-files",
+ "actix-web",
+ "actix-web-actors",
+ "awc",
+ "bytes 0.5.6",
+ "futures",
+ "log",
+ "pretty_env_logger",
+ "semver 0.1.0",
+ "semver_api",
+ "serde_json",
+]
+
+[[package]]
 name = "semver_api"
 version = "0.1.0"
 dependencies = [
@@ -1978,25 +1997,6 @@ name = "wasm-bindgen-shared"
 version = "0.2.78"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0237232789cf037d5480773fe568aac745bfe2afbc11a863e97901780a6b47cc"
-
-[[package]]
-name = "websocket"
-version = "2.0.0"
-dependencies = [
- "actix",
- "actix-codec",
- "actix-files",
- "actix-web",
- "actix-web-actors",
- "awc",
- "bytes 0.5.6",
- "futures",
- "log",
- "pretty_env_logger",
- "semver 0.1.0",
- "semver_api",
- "serde_json",
-]
 
 [[package]]
 name = "widestring"

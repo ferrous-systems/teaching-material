@@ -53,7 +53,9 @@ struct ChatClient(SinkWrite<Message, SplitSink<Framed<BoxedSocket, Codec>, Messa
 
 #[derive(Message)]
 #[rtype(result = "()")]
-struct ClientCommand(String);
+struct ClientCommand {
+    command: semver_api::Command,
+}
 
 impl Actor for ChatClient {
     type Context = Context<Self>;
@@ -88,7 +90,8 @@ impl Handler<ClientCommand> for ChatClient {
     type Result = ();
 
     fn handle(&mut self, msg: ClientCommand, _ctx: &mut Context<Self>) {
-        self.0.write(Message::Text(msg.0));
+        // self.0.write(Message::Text(msg.0));
+        let payload = serde_json::to_string(json!({""}));
     }
 }
 
