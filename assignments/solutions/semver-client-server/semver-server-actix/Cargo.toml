@@ -11,7 +11,7 @@ path = "src/simple-server.rs"
 # repo shared between multiple instances
 [[bin]]
 name = "shared-server"
-path = "src/shared-repo.rs"
+path = "src/shared-server.rs"
 
 [[bin]]
 name = "websocket-client"

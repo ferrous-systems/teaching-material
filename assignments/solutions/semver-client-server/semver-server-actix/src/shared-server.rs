@@ -74,7 +74,7 @@ impl StreamHandler<Result<ws::Message, ws::ProtocolError>> for MyWebSocket {
             // 👆 ctx.text()/binary() send data to client
             Ok(ws::Message::Text(text)) => {
                 // 👆 no trailing newline anymore - parsing has changed! (talk about API stuff, newline to terminate command, blah)
-                dbg!(&text);
+                debug!("received {}", text);
                 if let Ok(command) = serde_json::from_str::<Command>(&text) {
                     // 👆 error handling (anyhow)
 
@@ -173,7 +173,7 @@ impl Handler<ActixCommand> for RepoServer {
             Command::Get(crate_name) => {
                 repository
                     .get(&crate_name)
-                    .map_err(|e| ApiError::ParseError(format!("{:?}", e)))
+                    .map_err(|e| e.into())
                     // 👇 either clone() or use serde_json::to_string
                     // 👇 unwrap is a bit meh, solution? --> Johann/Sebastian
                     .map(|crt| serde_json::to_string(crt).unwrap())
@@ -185,7 +185,7 @@ impl Handler<ActixCommand> for RepoServer {
             }
             Command::Update(update) => repository
                 .add_release(update.crate_name, update.version)
-                .map_err(|_| ApiError::Internal)
+                .map_err(|e| e.into())
                 .map(|_| None),
             // 👆 useful conversion whoop whoop
         };
@@ -205,7 +205,7 @@ impl Actor for RepoServer {
 async fn main() -> std::io::Result<()> {
     std::env::set_var(
         "RUST_LOG",
-        "websocket_server=debug,actix_server=info,actix_web=info",
+        "shared_server=debug,actix_server=info,actix_web=info",
     ); // 👆 dash vs underscore
     pretty_env_logger::init();
 
