@@ -31,6 +31,7 @@ CAUTION: The given dependencies of the `Cargo.toml` are not the most recent vers
 == Help
 
 * link:https://docs.rs/actix-web-actors/3.0.0/actix_web_actors/[actix-web-actors] API documentation, check `Message` enum
+* link:https://docs.rs/actix/0.10.0/actix/struct.Recipient.html#method.do_send[actix::Recipient#do_send] API documentation to send a message to an actor
 * link:https://docs.rs/actix/0.10.0/actix/trait.AsyncContext.html#method.run_interval[actix::ASyncContext] documentation
 
 
