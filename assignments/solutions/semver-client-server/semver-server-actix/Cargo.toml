@@ -4,9 +4,15 @@ version = "2.0.0"
 authors = ["Nikolay Kim <fafhrd91@gmail.com>"]
 edition = "2018"
 
+# simple example with one repo per connection
 [[bin]]
 name = "websocket-server"
 path = "src/main.rs"
+
+# repo shared between multiple instances
+[[bin]]
+name = "shared-server"
+path = "src/shared-repo.rs"
 
 [[bin]]
 name = "websocket-client"

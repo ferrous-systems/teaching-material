@@ -1,4 +1,3 @@
-//! Simple echo websocket server.
 //! Open `http://localhost:8080/index.html` in browser
 //! or [python console client](https://github.com/actix/examples/blob/master/websocket/websocket-client.py)
 //! could be used for testing.
@@ -195,7 +194,7 @@ impl Handler<ActixCommand> for RepoServer {
     }
 }
 
-/// Make actor from `ChatServer`
+/// Make actor from `RepoServer`
 impl Actor for RepoServer {
     /// We are going to use simple Context, we just need ability to communicate
     /// with other actors.
