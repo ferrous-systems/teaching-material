@@ -20,8 +20,9 @@ The web server runs at http://localhost:8080. Once started, open the link in a b
   - notify other clients of disconnect
 3. Check that you do not receive your own chat message back
 4. Add heartbeat logic to remove a client from the chat server after 10s of inactivity (e.g. tab closed)
-  - use link:https://docs.rs/actix/0.10.0/actix/trait.AsyncContext.html#method.run_interval[`actix::AsyncContext::run_interval`] to run a background job to check if client has timed out
-  - see link:https://doc.rust-lang.org/std/time/struct.Instant.html[`std::time::Instant`] and link:https://doc.rust-lang.org/std/time/struct.Duration.html[`std::time::Duration`] to determine time difference
+  - keep a time in `WsChatSession` to compare timeout with
+  - the link:https://docs.rs/actix/0.10.0/actix/trait.AsyncContext.html#method.run_interval[`actix::AsyncContext::run_interval`] method is used to run a background job to check if client has timed out
+  - see link:https://doc.rust-lang.org/std/time/struct.Instant.html[`std::time::Instant`] and link:https://doc.rust-lang.org/std/time/struct.Duration.html[`std::time::Duration`] to determine the time difference
   - use link:https://docs.rs/actix-web-actors/1.0.0/actix_web_actors/ws/struct.WebsocketContext.html[`WebsocketContext::ping`] to ping client
 
 == Getting Started
@@ -34,15 +35,19 @@ CAUTION: The given dependencies of the `Cargo.toml` are not the most recent vers
 
 == Help
 
+Further documentation
+
 * link:https://docs.rs/actix-web-actors/3.0.0/actix_web_actors/[actix-web-actors] API documentation, check `Message` enum
-* link:https://docs.rs/actix/0.10.0/actix/struct.Recipient.html#method.do_send[actix::Recipient#do_send] API documentation to send a message to an actor
+* link:https://docs.rs/actix/0.10.0/actix/struct.Recipient.html#method.do_send[actix::Recipient#do_send] API documentation to send a message to an Actor
 * link:https://docs.rs/actix/0.10.0/actix/trait.AsyncContext.html#method.run_interval[actix::ASyncContext] documentation
 
 
 == Bonus Tasks
 
-1. Add support to send the name initially
-  - For this you need to adapt `index.html` page, remove the `visibility:hidden;` style from the `name` input field
-  - Think about how to distinguish setting the name from sending a text, e.g. using a prefix, then send the name
+1. Add support to enter & display the client name
+  - For this you need to adapt the `index.html` page, remove the `visibility:hidden;` style from the `name` input field
+  - Think about how to distinguish setting the name from sending a text, e.g. using a prefix
   - Expand the `WsChatSession` struct to store the name, adapt code accordingly
-  - If name is available output it instead of displaying `Someone` in code
+  - If the name is available output it instead of displaying the text `"Someone"` in code
+2. What issues might the chat server have?
+  - What is not working as you would expect?
