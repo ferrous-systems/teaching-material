@@ -1,5 +1,5 @@
 [package]
-name = "semver-sockets"
+name = "semver-actix-websockets"
 version = "2.0.0"
 edition = "2021"
 
