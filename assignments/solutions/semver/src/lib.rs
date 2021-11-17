@@ -167,7 +167,7 @@ impl CrateFuncs for Library {
     }
 }
 
-#[derive(Debug, Deserialize, Serialize, PartialEq, Eq)]
+#[derive(Debug, Deserialize, Serialize, PartialEq, Eq, Clone)]
 pub enum Crate {
     Library(Library),
     Program(Program),
@@ -198,11 +198,11 @@ impl CrateFuncs for Crate {
     }
 }
 
-impl TryFrom<&Crate> for String {
+impl TryFrom<Crate> for String {
     type Error = serde_json::Error;
 
-    fn try_from(value: &Crate) -> Result<Self, Self::Error> {
-        serde_json::to_string(value)
+    fn try_from(value: Crate) -> Result<Self, Self::Error> {
+        serde_json::to_string(&value)
     }
 }
 
@@ -236,7 +236,7 @@ impl Release {
     }
 }
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Debug, Default, Deserialize, Serialize)]
 pub struct EnumRepository {
     pub crates: HashMap<String, Crate>,
 }
