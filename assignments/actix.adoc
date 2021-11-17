@@ -18,7 +18,9 @@ The web server runs at http://localhost:8080. Once started, open the link in a b
   - you should not receive new messages from other clients thereafter
 3. Check that you do not receive your own chat message back
 4. Add heartbeat logic to remove a client from the chat server after 10s of inactivity (e.g. tab closed)
-  - use link:https://docs.rs/actix/0.10.0/actix/trait.AsyncContext.html#method.run_interval[`actix::AsyncContext::run_interval`] to run the 
+  - use link:https://docs.rs/actix/0.10.0/actix/trait.AsyncContext.html#method.run_interval[`actix::AsyncContext::run_interval`] to run a background job to check if client has timed out
+  - see link:https://doc.rust-lang.org/std/time/struct.Instant.html[`std::time::Instant`] and link:https://doc.rust-lang.org/std/time/struct.Duration.html[`std::time::Duration`] to determine time difference
+  - use link:https://docs.rs/actix-web-actors/1.0.0/actix_web_actors/ws/struct.WebsocketContext.html[`WebsocketContext::ping`] to ping client
 
 == Getting Started
 

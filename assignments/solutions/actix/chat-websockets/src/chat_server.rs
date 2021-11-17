@@ -54,6 +54,12 @@ impl ChatServer {
         // * avoid sending the message back to same client
         // see https://docs.rs/actix/0.10.0/actix/struct.Recipient.html#method.do_send
 
+        for (id, session) in &self.sessions {
+            // do not send message back to sender
+            if *id != session_id {
+                let _ = session.do_send(Message(message.to_owned()));
+            }
+        }
     }
 }
 

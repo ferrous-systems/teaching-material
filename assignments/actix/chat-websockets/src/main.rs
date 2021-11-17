@@ -10,6 +10,10 @@ use actix_web_actors::ws;
 use chat_server::Join;
 use log::{error, info, warn};
 
+/// 
+const HEARTBEAT_INTERVAL: Duration = Duration::from_secs(2);
+const CLIENT_TIMEOUT: Duration = Duration::from_secs(10);
+
 /// Define HTTP actor
 struct WsChatSession {
     /// unique session id
@@ -23,6 +27,9 @@ impl actix::Actor for WsChatSession {
 
     /// Actor has started
     fn started(&mut self, ctx: &mut Self::Context) {
+        // Start heart beat check once here
+        self.heartbeat(ctx);
+
         let addr = ctx.address();
         // send Join message to chat server, wait until chat server responds with session id
         self.server
@@ -74,6 +81,19 @@ impl StreamHandler<Result<ws::Message, ws::ProtocolError>> for WsChatSession {
             Ok(ws::Message::Continuation(_)) => (),
             _ => (),
         }
+    }
+}
+
+impl WsChatSession {
+    /// A helper method that sends a PING to client every second to determine if
+    /// still connected. In case there is no response in time, disconnect client.
+    ///
+    /// This function should be called only once, the closure to `AsyncContext#run_interval` is
+    /// executed periodically.
+    fn heartbeat(&self, ctx: &mut ws::WebsocketContext<Self>) {
+        ctx.run_interval(HEARTBEAT_INTERVAL, |session, ctx| {
+            // 
+        });
     }
 }
 
