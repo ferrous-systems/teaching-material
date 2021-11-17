@@ -3,7 +3,6 @@
 //! could be used for testing.
 
 use std::{
-    convert::TryInto,
     sync::{Arc, Mutex},
     time::{Duration, Instant},
 };
@@ -13,7 +12,7 @@ use actix_files as fs;
 use actix_web::{middleware, web, App, Error, HttpRequest, HttpResponse, HttpServer};
 use actix_web_actors::ws;
 
-use log::{debug, error, info, warn};
+use log::{debug, error, warn};
 use semver::EnumRepository;
 use semver_api::{ApiError, ApiResponse, Command};
 
@@ -34,7 +33,7 @@ async fn ws_index(
     stream: web::Payload,
     srv: web::Data<Addr<RepoServer>>,
 ) -> Result<HttpResponse, Error> {
-    debug!("{:?}", r); // 👆 log::debug instead of println
+    debug!("{:?}", r);
     let res = ws::start(MyWebSocket::new(srv.get_ref().clone()), &r, stream);
     debug!("{:?}", res);
     res
@@ -149,36 +148,17 @@ impl RepoServer {
     }
 }
 
-impl RepoServer {
-    /// Send message to all users in the room
-    fn send_message(&self, room: &str, message: &str, skip_id: usize) {
-        // if let Some(sessions) = self.rooms.get(room) {
-        //     for id in sessions {
-        //         if *id != skip_id {
-        //             if let Some(addr) = self.sessions.get(id) {
-        //                 let _ = addr.do_send(Message(message.to_owned()));
-        //             }
-        //         }
-        //     }
-        // }
-    }
-}
-
 impl Handler<ActixCommand> for RepoServer {
     type Result = MessageResult<ActixCommand>;
 
     fn handle(&mut self, msg: ActixCommand, _: &mut Context<Self>) -> Self::Result {
         let repository = &mut *self.repo.lock().unwrap();
         let response: Result<Option<String>, ApiError> = match msg.0 {
-            Command::Get(crate_name) => {
-                repository
-                    .get(&crate_name)
-                    .map_err(|e| e.into())
-                    // 👇 either clone() or use serde_json::to_string
-                    // 👇 unwrap is a bit meh, solution? --> Johann/Sebastian
-                    .map(|crt| serde_json::to_string(crt).unwrap())
-                    .map(Some)
-            }
+            Command::Get(crate_name) => repository
+                .get(&crate_name)
+                .map_err(|e| e.into())
+                .map(|crt| serde_json::to_string(crt).unwrap())
+                .map(Some),
             Command::Put(crt) => {
                 repository.insert(crt);
                 Ok(None)
@@ -187,7 +167,6 @@ impl Handler<ActixCommand> for RepoServer {
                 .add_release(update.crate_name, update.version)
                 .map_err(|e| e.into())
                 .map(|_| None),
-            // 👆 useful conversion whoop whoop
         };
 
         MessageResult(ApiResponse(response))
@@ -209,7 +188,7 @@ async fn main() -> std::io::Result<()> {
     ); // 👆 dash vs underscore
     pretty_env_logger::init();
 
-    let app_state: Repo = Default::default(); // 👆 derive this (pull repo)
+    let app_state: Repo = Default::default();
 
     let server = RepoServer::new(app_state.clone()).start();
 

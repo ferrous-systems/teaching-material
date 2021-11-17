@@ -12,14 +12,12 @@ use awc::{
 };
 use bytes::Bytes;
 use futures::stream::{SplitSink, StreamExt};
-use log::warn;
 use semver::{Crate, Program, SemVer};
 use semver_api::{Command, Update};
-use serde_json::json;
 
 fn main() {
-    ::std::env::set_var("RUST_LOG", "actix_web=info");
-    env_logger::init();
+    std::env::set_var("RUST_LOG", "actix_web=info");
+    pretty_env_logger::init();
 
     let sys = System::new("websocket-client");
 
@@ -35,9 +33,9 @@ fn main() {
 
         println!("{:?}", response);
         let (sink, stream) = framed.split();
-        let addr = ChatClient::create(|ctx| {
-            ChatClient::add_stream(stream, ctx);
-            ChatClient(SinkWrite::new(sink, ctx))
+        let addr = RepoClient::create(|ctx| {
+            RepoClient::add_stream(stream, ctx);
+            RepoClient(SinkWrite::new(sink, ctx))
         });
 
         let program_name = "hello_bin".to_string();
@@ -90,13 +88,13 @@ fn main() {
     sys.run().unwrap();
 }
 
-struct ChatClient(SinkWrite<Message, SplitSink<Framed<BoxedSocket, Codec>, Message>>);
+struct RepoClient(SinkWrite<Message, SplitSink<Framed<BoxedSocket, Codec>, Message>>);
 
 #[derive(Message)]
 #[rtype(result = "()")]
 struct ClientCommand(semver_api::Command);
 
-impl Actor for ChatClient {
+impl Actor for RepoClient {
     type Context = Context<Self>;
 
     fn started(&mut self, ctx: &mut Context<Self>) {
@@ -112,7 +110,7 @@ impl Actor for ChatClient {
     }
 }
 
-impl ChatClient {
+impl RepoClient {
     fn hb(&self, ctx: &mut Context<Self>) {
         ctx.run_later(Duration::new(1, 0), |act, ctx| {
             act.0.write(Message::Ping(Bytes::from_static(b"")));
@@ -125,7 +123,7 @@ impl ChatClient {
 }
 
 /// Handle stdin commands
-impl Handler<ClientCommand> for ChatClient {
+impl Handler<ClientCommand> for RepoClient {
     type Result = ();
 
     fn handle(&mut self, msg: ClientCommand, _ctx: &mut Context<Self>) {
@@ -135,7 +133,7 @@ impl Handler<ClientCommand> for ChatClient {
 }
 
 /// Handle server websocket messages
-impl StreamHandler<Result<Frame, WsProtocolError>> for ChatClient {
+impl StreamHandler<Result<Frame, WsProtocolError>> for RepoClient {
     fn handle(&mut self, msg: Result<Frame, WsProtocolError>, _: &mut Context<Self>) {
         if let Ok(Frame::Text(txt)) = msg {
             println!("Server: {:?}", txt)
@@ -152,4 +150,4 @@ impl StreamHandler<Result<Frame, WsProtocolError>> for ChatClient {
     }
 }
 
-impl actix::io::WriteHandler<WsProtocolError> for ChatClient {}
+impl actix::io::WriteHandler<WsProtocolError> for RepoClient {}
