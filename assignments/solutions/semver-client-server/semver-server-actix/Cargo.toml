@@ -5,8 +5,8 @@ edition = "2021"
 
 # simple example with one repo per connection
 [[bin]]
-name = "websocket-server"
-path = "src/main.rs"
+name = "simple-server"
+path = "src/simple-server.rs"
 
 # repo shared between multiple instances
 [[bin]]
