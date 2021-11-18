@@ -68,6 +68,7 @@
 * link:./assignments/simple-chat.html[Simple async chat]
 * link:./assignments/async-mailbox.html[Async Mailbox]
 * link:./assignments/async-channels.html[Async Channels]
+* link:./assignments/actix.html[Actix Chat using Websockets]
 
 .SemVer trail
 * link:./assignments/semver_from_file.html[SemVer from file]
@@ -77,3 +78,4 @@ Quick warm-up exercises that can be distributed in a https://play.rust-lang.org[
 
 * link:./fill_in_the_blanks/enums_match.html[Fill In The Blanks: Enums and Match]
 * link:./fill_in_the_blanks/closures.html[Fill In The Blanks: Closures]
+* https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=762c5965f08b2d0a3c7375a372da6928[FFI - libc get_time()]
