@@ -81,13 +81,13 @@ Conceptually, a LevelDB database is a directory (the "database name") where all 
 
 You'll also need these functions and enums from the `leveldb-sys` crate:
 
-* [`leveldb_t`](https://docs.rs/leveldb-sys/2.0.8/leveldb_sys/enum.leveldb_t.html): opaque handle representing an opened database. The handle is thread-safe.
-* [`leveldb_open`](https://docs.rs/leveldb-sys/2.0.8/leveldb_sys/fn.leveldb_open.html): opens a database, returning `leveldb_t`
-* [`leveldb_close`](https://docs.rs/leveldb-sys/2.0.8/leveldb_sys/fn.leveldb_close.html): closes a `leveldb_t` for a clean shutdown
-* [`leveldb_options_t`](https://docs.rs/leveldb-sys/2.0.8/leveldb_sys/enum.leveldb_options_t.html): opaque handle representing database options
-* [`leveldb_options_create`](https://docs.rs/leveldb-sys/2.0.8/leveldb_sys/fn.leveldb_options_create.html): create an instance of this options struct
-* [`leveldb_options_destroy`](https://docs.rs/leveldb-sys/2.0.8/leveldb_sys/fn.leveldb_options_destroy.html): deallocates `leveldb_options_t`
-* [`leveldb_options_set_create_if_missing`](https://docs.rs/leveldb-sys/2.0.8/leveldb_sys/fn.leveldb_options_set_create_if_missing.html): sets the `create_if_missing` flag on `leveldb_options_t`.
+* [`leveldb_t`](https://docs.rs/leveldb-sys/2.0.9/leveldb_sys/enum.leveldb_t.html): opaque handle representing an opened database. The handle is thread-safe.
+* [`leveldb_open`](https://docs.rs/leveldb-sys/2.0.9/leveldb_sys/fn.leveldb_open.html): opens a database, returning `leveldb_t`
+* [`leveldb_close`](https://docs.rs/leveldb-sys/2.0.9/leveldb_sys/fn.leveldb_close.html): closes a `leveldb_t` for a clean shutdown
+* [`leveldb_options_t`](https://docs.rs/leveldb-sys/2.0.9/leveldb_sys/enum.leveldb_options_t.html): opaque handle representing database options
+* [`leveldb_options_create`](https://docs.rs/leveldb-sys/2.0.9/leveldb_sys/fn.leveldb_options_create.html): create an instance of this options struct
+* [`leveldb_options_destroy`](https://docs.rs/leveldb-sys/2.0.9/leveldb_sys/fn.leveldb_options_destroy.html): deallocates `leveldb_options_t`
+* [`leveldb_options_set_create_if_missing`](https://docs.rs/leveldb-sys/2.0.9/leveldb_sys/fn.leveldb_options_set_create_if_missing.html): sets the `create_if_missing` flag on `leveldb_options_t`.
 
 The [LevelDB C header](https://github.com/google/leveldb/blob/master/include/leveldb/c.h) documents some conventions used by its implementation. 
 
