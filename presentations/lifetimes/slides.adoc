@@ -2,24 +2,22 @@
 
 link:./index.html[Table of Contents]
 
-
 == !
 
 [source,rust]
 ----
 include::./1.rs[]
 ----
-
+ 
 == !
 
 [source,rust]
 ----
 include::./2.rs[]
-----
 
 == !
 
-Rusts lifetimes are notorious for being hard to understand.
+Rust's lifetimes are notorious for being hard to understand.
 
 == !
 
@@ -60,10 +58,10 @@ include::./5.rs[]
 
 == !
 
-Wrapper is now:
+Container is now:
 
 * Generic over the type T
-* As well as a lifetime 'a (its own)
+* As well as a lifetime `'container` (its own)
 * The borrowed values must live *at least equally long*
 
 == !

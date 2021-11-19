@@ -1,5 +1,5 @@
 struct Container<T> {
-    inner: &T
+    inner: &T,
 }
 
 impl<T> Container<T> {
@@ -8,16 +8,15 @@ impl<T> Container<T> {
     }
 }
 
-fn inner_drops_before_wrapper() {
+fn inner_drops_before_container() {
     let n: i32 = 42;
-    let w = Container { inner: &n };
+    let c = Container { inner: &n };
     drop(n);
 }
 
-
-fn wrapper_drops_with_active_borrow() {
+fn container_drops_with_active_borrow() {
     let n: i32 = 42;
-    let w = Container { inner: &n };
-    let borrowed_n = w.borrow_inner();
+    let c = Container { inner: &n };
+    let borrowed_n = c.borrow_inner();
     drop(w);
 }
