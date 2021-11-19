@@ -54,7 +54,8 @@ fn handle(
             let crt = repository
                 .get(&crate_name)
                 .map_err(|e| ApiError::ParseError(format!("{:?}", e)))?;
-            let s: Result<String, _> = crt.try_into().map_err(|_| ApiError::Internal);
+            // TODO get rid of clone
+            let s: Result<String, _> = crt.clone().try_into().map_err(|_| ApiError::Internal);
             s.map(|data| Some(data))
         }
         Command::Put(crt) => {

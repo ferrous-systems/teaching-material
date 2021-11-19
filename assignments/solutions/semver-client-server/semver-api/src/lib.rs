@@ -15,7 +15,7 @@ pub struct Update {
     pub version: SemVer,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct ApiResponse(pub Result<Option<String>, ApiError>);
 
 impl TryFrom<ApiResponse> for String {

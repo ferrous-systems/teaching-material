@@ -69,6 +69,8 @@ impl StreamHandler<Result<ws::Message, ws::ProtocolError>> for MyWebSocket {
                             .map_err(|e| e.into()) // hidden gem 👆
                             .map(|crt| serde_json::to_string(crt).unwrap())
                             .map(Some),
+                        // the same as:
+                        //.map(|s| Some(s)),
                         Command::Put(crt) => {
                             repository.insert(crt);
                             Ok(None)

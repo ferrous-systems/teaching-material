@@ -10,3 +10,5 @@ async-std = "1.10"
 futures = "0.3"
 semver = { path = "../../semver"}
 semver_api = { path = "../semver-api" }
+log = "0.4"
+pretty_env_logger = "0.4"

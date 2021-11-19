@@ -1,6 +1,6 @@
 //! Simple websocket client.
-use std::time::Duration;
 use std::{io, thread};
+use std::{str::from_utf8, time::Duration};
 
 use actix::io::SinkWrite;
 use actix::*;
@@ -13,7 +13,7 @@ use awc::{
 use bytes::Bytes;
 use futures::stream::{SplitSink, StreamExt};
 use semver::{Crate, Program, SemVer};
-use semver_api::{Command, Update};
+use semver_api::{ApiResponse, Command, Update};
 
 fn main() {
     std::env::set_var("RUST_LOG", "actix_web=info");
@@ -136,7 +136,11 @@ impl Handler<ClientCommand> for RepoClient {
 impl StreamHandler<Result<Frame, WsProtocolError>> for RepoClient {
     fn handle(&mut self, msg: Result<Frame, WsProtocolError>, _: &mut Context<Self>) {
         if let Ok(Frame::Text(txt)) = msg {
-            println!("Server: {:?}", txt)
+            if let Ok(string) = from_utf8(&txt) {
+                if let Ok(response) = serde_json::from_str::<ApiResponse>(string) {
+                    println!("Server: {:?}", response)
+                }
+            }
         }
     }
 
