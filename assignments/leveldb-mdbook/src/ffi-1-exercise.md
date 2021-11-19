@@ -81,7 +81,7 @@ Conceptually, a LevelDB database is a directory (the "database name") where all 
 
 You'll also need these functions and enums from the `leveldb-sys` crate:
 
-* [`leveldb_t`](https://docs.rs/leveldb-sys/2.0.9/leveldb_sys/enum.leveldb_t.html): opaque handle representing an opened database. The handle is thread-safe.
+* [`leveldb_t`](https://docs.rs/leveldb-sys/2.0.9/leveldb_sys/struct.leveldb_t.html): opaque handle representing an opened database. The handle is thread-safe.
 * [`leveldb_open`](https://docs.rs/leveldb-sys/2.0.9/leveldb_sys/fn.leveldb_open.html): opens a database, returning `leveldb_t`
 * [`leveldb_close`](https://docs.rs/leveldb-sys/2.0.9/leveldb_sys/fn.leveldb_close.html): closes a `leveldb_t` for a clean shutdown
 * [`leveldb_options_t`](https://docs.rs/leveldb-sys/2.0.9/leveldb_sys/enum.leveldb_options_t.html): opaque handle representing database options
