@@ -1,6 +1,9 @@
 # 2021-12-01
+
 ## Semver Codealong
 - add `/semver-codealong` code snippets/instructor notes for semver trail (WIP)
+
+## Misc
 - add `assignments/_templates/concurrency` for a simple `Send+Sync` exercise
 - rename `assignments/preliminary/` to `assignments/_preliminary` 
 
