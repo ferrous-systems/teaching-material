@@ -61,9 +61,9 @@ Among those are:
 large enterprises. Rust core team member and community team manager.
 Broad knowledge about all aspects of Rust, with special knowledge on
 network and async/concurrent programming.
-* James Munns: Training Rust since 2017. Focus on general Rust and
-small/embedded systems. Member of the Embedded Working Group Core Team.
-Great knowledge of integrating Rust with C codebases.
+* Jonathan Pallant: Training Rust since 2018. Focus on Rust for Beginners,
+and Embedded Rust. Member of the Rust Embedded Working Group. Rust 'firsts'
+include running code on the nRF9160, TM4C123 and RP2040 MCUs.
 * Jonas Schievek: Training Rust since 2019. Focus on general Rust and
 multiple architectures. Contributor to the Rust compiler. Great
 knowledge of compilation details and performance concerns.
