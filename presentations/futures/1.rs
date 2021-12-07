@@ -13,6 +13,5 @@ fn main() {
     println!("{}", result);
 }
 
-
 use futures::Future;
 use futures::sync::oneshot;

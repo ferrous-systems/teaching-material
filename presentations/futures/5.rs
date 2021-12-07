@@ -16,7 +16,5 @@ fn main() {
     // Returns `First, 2`
 }
 
-
-
 use futures::future::Future;
 use futures_cpupool::Builder;

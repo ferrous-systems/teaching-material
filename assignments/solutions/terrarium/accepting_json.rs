@@ -1,9 +1,4 @@
-
-
-
 #[macro_use]
-
-
 
 #[derive(Serialize,Deserialize)]
 struct Person {

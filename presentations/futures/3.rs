@@ -23,9 +23,6 @@ fn main() {
     println!("{:?}", result);
 }
 
-
-
-
 use std::thread;
 use futures::Future;
 use futures::future::join_all;

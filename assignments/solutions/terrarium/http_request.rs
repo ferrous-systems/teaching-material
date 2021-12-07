@@ -1,6 +1,5 @@
 #[macro_use]
 
-
 use http_guest::{Request, Response, RequestExt};
 
 pub fn user_entrypoint(req: &Request<Vec<u8>>) -> Response<Vec<u8>> {
@@ -28,7 +27,6 @@ pub fn user_entrypoint(req: &Request<Vec<u8>>) -> Response<Vec<u8>> {
     }
 
 }
-
 
 guest_app!(user_entrypoint);
 

@@ -1,7 +1,3 @@
-
-
-
-
 use serde_transcode::transcode;
 
 fn main() {

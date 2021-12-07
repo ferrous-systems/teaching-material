@@ -11,9 +11,6 @@ fn main() {
     println!("{}", result);
 }
 
-
-
-
 use std::thread;
 use std::time::Duration;
 use futures::Future;

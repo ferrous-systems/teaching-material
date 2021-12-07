@@ -1,4 +1,3 @@
-
 use example::{is_north, Direction};
 
 #[test]

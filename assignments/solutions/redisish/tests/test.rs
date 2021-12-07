@@ -1,5 +1,3 @@
-
-
 use redisish::*;
 
 #[test]

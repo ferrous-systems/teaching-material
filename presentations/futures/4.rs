@@ -35,9 +35,6 @@ fn main() {
     println!("Sum: {}", sum);
 }
 
-
-
-
 use std::time::Duration;
 use std::thread;
 use rand::distributions::{Range, IndependentSample};

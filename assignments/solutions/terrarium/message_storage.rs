@@ -1,8 +1,5 @@
 #[macro_use]
 
-
-
-
 use http_guest::{KVStore, Request, Response};
 
 pub fn user_entrypoint(kvs: &mut KVStore, req: &Request<Vec<u8>>) -> Response<Vec<u8>> {
