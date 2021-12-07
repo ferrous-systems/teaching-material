@@ -1,4 +1,8 @@
 # 2021-12-07
+## Rust 2015
+- remove `extern crate` in `*.rs`
+- cosmetics followup: fold multiple empty lines in `*.rs`
+
 ## Lifetimes
 - convert from Rust 2015 (add `impl` in fn signature)
 - fix typo in variable name

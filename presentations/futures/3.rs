@@ -23,9 +23,6 @@ fn main() {
     println!("{:?}", result);
 }
 
-extern crate rand;
-extern crate futures;
-
 use std::thread;
 use futures::Future;
 use futures::future::join_all;
