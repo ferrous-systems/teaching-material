@@ -9,14 +9,14 @@ impl<T> Container<T> {
 }
 
 fn inner_drops_before_container() {
-    let n: i32 = 42;
-    let c = Container { inner: &n };
-    drop(n);
+    let s = "hello".to_string();
+    let c = Container { inner: &s };
+    drop(s);
 }
 
 fn container_drops_with_active_borrow() {
-    let n: i32 = 42;
-    let c = Container { inner: &n };
-    let borrowed_n = c.borrow_inner();
-    drop(w);
+    let s = "hello".to_string();
+    let c = Container { inner: &s };
+    let borrowed_s = c.borrow_inner();
+    drop(c);
 }

@@ -1,3 +1,10 @@
+# 2021-12-07
+## Lifetimes
+- convert from Rust 2015 (add `impl` in fn signature)
+- fix typo in variable name
+- use non-copy value to illustrate lifetime issues (`String` instead of `i32`)
+- remove german-ism ("Lifetime-Elision")
+
 # 2021-12-01
 
 ## Misc
