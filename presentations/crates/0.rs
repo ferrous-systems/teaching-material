@@ -1,4 +1,4 @@
-extern crate serde_json;
+
 
 fn main() {
     use serde_json::Value;

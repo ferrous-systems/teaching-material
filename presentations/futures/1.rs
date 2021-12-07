@@ -13,6 +13,6 @@ fn main() {
     println!("{}", result);
 }
 
-extern crate futures;
+
 use futures::Future;
 use futures::sync::oneshot;

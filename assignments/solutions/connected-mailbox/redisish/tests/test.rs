@@ -1,4 +1,4 @@
-extern crate redisish;
+
 
 use redisish::*;
 

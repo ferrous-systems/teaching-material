@@ -1,4 +1,4 @@
-#[macro_use] extern crate serde_derive;
+#[macro_use] 
 
 #[derive(Debug, Serialize, Deserialize)]
 struct Move {

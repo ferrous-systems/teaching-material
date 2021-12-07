@@ -1,7 +1,7 @@
 #[macro_use]
-extern crate http_guest;
 
-extern crate http;
+
+
 
 use http_guest::{KVStore, Request, Response};
 

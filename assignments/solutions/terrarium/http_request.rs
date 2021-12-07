@@ -1,5 +1,5 @@
 #[macro_use]
-extern crate http_guest;
+
 
 use http_guest::{Request, Response, RequestExt};
 

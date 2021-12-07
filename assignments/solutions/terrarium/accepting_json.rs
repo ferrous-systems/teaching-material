@@ -1,9 +1,9 @@
-extern crate http_guest;
 
-extern crate serde;
+
+
 #[macro_use]
-extern crate serde_derive;
-extern crate serde_json;
+
+
 
 #[derive(Serialize,Deserialize)]
 struct Person {
