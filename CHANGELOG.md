@@ -3,6 +3,11 @@
 
 # 2021-12-01
 
+## Misc
+- add unlinked slide decks to index under "Other"
+
+# 2021-12-01
+
 ## Semver Codealong
 - add `/semver-codealong` code snippets/instructor notes for semver trail (WIP)
 
