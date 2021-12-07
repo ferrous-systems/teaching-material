@@ -1,3 +1,6 @@
+# 2021-12-03
+- reworked FFI chapter, starting with using Rust code in a C program
+
 # 2021-12-01
 
 ## Semver Codealong
@@ -8,6 +11,7 @@
 - rename `assignments/preliminary/` to `assignments/_preliminary` 
 
 # 2021-11-03
+
 ## Control Flow
 - change `Option` example from `into_iter()` rabbit hole explosion to checked addition
 - add `break`, `continue` + labels
