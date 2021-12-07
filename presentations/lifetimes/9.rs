@@ -1,7 +1,7 @@
 fn foo(bar: &str) -> &str {
-    // implementation
+    todo!();
 }
 
-fn foo<'a>(bar: &'a str) -> &'a str {
-    // implementation
+fn foo_explicit<'a>(bar: &'a str) -> &'a str {
+    todo!();
 }

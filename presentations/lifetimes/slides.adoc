@@ -99,7 +99,8 @@ Common pitfall: you cannot "shorten a lifetime", as it just describes what's alr
 
 == `'static`
 
-`'static` is a lifetime that lives longer than all others. That's not necessarily forever!
+* as part of a reference, `'static` means "lives forever"
+* in trait bounds, the type does not contain any non-static references. That's not necessarily forever!  
 
 == !
 
@@ -125,7 +126,7 @@ Lifetimes describe all types, not only references, therefore they are also bound
 include::./8.rs[]
 ----
 
-== Lifetime-Elision
+== Lifetime Elision
 
 For simple cases, lifetimes are automatically inserted into signatures.
 
