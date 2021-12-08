@@ -4,6 +4,6 @@ fn main() {
     loop {
         i += 1;
 
-        if i > 100 { break }
+        if i > 100 { break; }
     }
 }
