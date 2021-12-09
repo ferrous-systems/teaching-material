@@ -1,3 +1,9 @@
+# 2021-12-09
+
+## Fill in the blanks: Closures
+- clarify closure environment capturing
+- update solution
+
 # 2021-12-07
 ## Rust 2015
 - remove `extern crate` in `*.rs`
