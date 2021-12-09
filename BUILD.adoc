@@ -10,13 +10,14 @@ Using [`rbenv`](https://github.com/rbenv/rbenv) for project-local ruby package i
 [source]
 ----
 $ eval "$(rbenv init -)" # when using rbenv
-$ gem install bundler # only needed once
+$ gem install bundler
 $ bundle --path=.bundle/gems --binstubs=.bundle/.bin
 ----
 
 .Building
 [source]
 ----
+$ eval "$(rbenv init -)" # when using rbenv
 $ ./rake
 $ firefox ./target/index.html
 ----
