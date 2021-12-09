@@ -2,7 +2,6 @@
 
 link:./index.html[Table of Contents]
 
-
 == Efficiency!
 
 ++++
@@ -11,17 +10,49 @@ link:./index.html[Table of Contents]
 
 *» efficient C bindings «*
 
+== Application Binary Interface
+
+(Like an API, but for machine code calling machine code)
+
 == !
 
 Rust ABI is *not* stable.
 
 == !
 
-Rust supports the platform-ABI.
+Rust also supports the platform-ABI(s).
+
+(Windows has two...)
+
+////
+SPEAKER NOTES
+
+Processors don't understand 'function parameters'. They have registers, and they have the stack. The compiler of the caller function must decide where to place each argument - either in a register or on the stack. The compiler of the callee function (the function being called) must decide where to retrieve each argument from. There are also decisions to be made regarding which registers a function can freely re-use, and which registers must be carefully restore to their initial value on return. If a function can freely re-use a register, then the caller needs to think about saving and restoring the register contents. If each function is responsible to putting things back exactly as they were, then the caller has less work to do, but maybe you're saving and restoring registers that no-one cares about. When the stack is used, you also have agree whether the caller or the callee is responsible for resetting the stack point to where it was before the caller called the callee.
+
+Think also what happens if you have a floating-point unit - do f32 and f64 values go into FPU registers, or are they placed in integer registers?
+
+Clearly these two compilers must agree, otherwise the callee will not receive the correct arguments and your program will perform UB!
+
+x86 is ~40 years old and many standards exist on how to do this. See https://en.wikipedia.org/wiki/X86_calling_conventions#Historical_background.
+
+AMD64 is only ~15 years old, and there are two standards - the Microsoft one for Windows, and the Linux one (which is based on System V UNIX).  
+
+////
 
 == !
 
-Interact with shared/static libraries.
+CPUs have registers, and they have a pointer to the stack (in RAM)
+
+Where does this function find its arguments? Where does the return value go?
+
+[source,rust]
+----
+include::./reg.rs[]
+----
+
+== !
+
+Your Rust code might want to interact with shared/static libraries.
 
 Or _be_ one.
 
@@ -29,60 +60,130 @@ Or _be_ one.
 
 *» efficient C bindings «*
 
-
 There are no conversion costs
 
-== Using C from Rust
+== Using Rust from C
 
-== Basic example
+== ! 
 
-Hello world from C
+We have this amazing Rust library, we want to use in our existing C project.
 
-== !
-
-Let's assume you _really_ want to use printf
-
-[source,c]
+[source,rust]
 ----
-include::./hello.c[]
-----
-
-[source,c]
-----
-include::./hello.h[]
+include::./rustlib.rs[]
 ----
 
 == Things TODO
 
-- Bind against functions in header
+- Tell C these functions exist
+- Tell Rust to use C-compatible types and functions
+- Link the external code as a library
+- Provide some C types that match the Rust types
+- Call our Rust functions
+
+== C-flavoured Rust Code
+
+[source,rust]
+----
+include::./rustlib-wrapper.rs[]
+----
+
+////
+SPEAKER NOTES
+
+The `.as_ref()` method on pointers *requires* that the pointer either be null, or that it point at a valid, aligned, fully initialised object. If they just feed you a random integer, bad things will happen!
+////
+
+== Matching C header
+
+[source,c]
+----
+include::./rustlib-wrapper.h[]
+----
+
+== Making a library
+
+You can tell `rustc` to make:
+
+* binaries (bin)
+* libraries (lib)
+    - rlib
+    - dylib
+    - staticlib
+    - cdylib
+
+////
+SPEAKER NOTES
+
+See https://doc.rust-lang.org/reference/linkage.html
+////
+
+== Cargo.toml
+
+[source,toml]
+----
+include::./rustlib-Cargo.toml[]
+----
+
+////
+SPEAKERS NOTE
+
+See ./examples/ffi_use_rust_in_c for a working example.
+////
+
+== Using C from Rust
+
+== !
+
+We have this amazing C library, we want to use as-is in our Rust project.
+
+[source,c]
+----
+include::./cool_library.h[]
+----
+
+[source,c]
+----
+include::./cool_library.c[]
+----
+
+== Things TODO
+
+- Tell Rust these functions exist
 - Link the external code as a library
 - Call those with `unsafe { ... }`
 - Transmute data for C functions
 
-== Before we get started
+== Naming things is hard
 
 [source,rust]
 ----
-include::./1.rs[]
+include::./naming.rs[]
 ----
 
 Disables some Rust naming lints
-
-++++
-<small>(which are common in C code)</small>
-++++
 
 == Binding functions
 
 [source,c]
 ----
-include::./hello.h[]
+include::./cool_library.h[]
 ----
 
 [source,rust]
 ----
-include::./2.rs[]
+include::./cool_library.rs[]
 ----
+
+////
+SPEAKERS NOTE
+
+Note that `uint32_t` doesn't really exist to the C compiler. It is a typedef for either `unsigned int` or `unsigned long int` - depending on the platform - which is provided by `stdint.h`.
+
+See https://doc.rust-lang.org/std/os/raw/index.html for the c_uint type.
+
+You cannot do `extern "C" fn some_function();` with no function body - you must use the block.
+////
 
 == Primitive types
 
@@ -90,47 +191,38 @@ Some type conversions can be infered by the compiler.
 
 * `c_uint` ↔ `u32`
 * `c_int` ↔ `i32`
+* `char` ↔ `u8` (not `char`!)
 * `c_void` ↔ `()`
 * ...etc...
+
+////
+SPEAKERS NOTE
+
+These C types are in `std`, not `core` - because you need the OS/platform to define the size of an `int`.
+////
 
 == Calling this
 
 [source,rust]
 ----
-include::./3.rs[]
+include::./using_cool_library.rs[]
 ----
+
+== Some more specific details...
 
 == Cargo (build-system) support
 
 * Build native code via build-dependency crates
-  * `gcc`, `clang`, `cmake`, ...
-* `build.rs` file responsible for linking code
-
-== Structs
-
-The layout of enums and structs is left to the compiler.
-
-`#[repr\(C)]` directs the compiler to use the platform-layout.
-
-[source,rust]
-----
-include::./4-1.rs[]
-----
-
-== Enums
-
-[source,rust]
-----
-include::./4-3.rs[]
-----
+    - `https://crates.io/crates/cc[cc]`, `https://crates.io/crates/cmake[cmake]`, ...
+* `build.rs` can give linker extra arguments
 
 == Opaque types
 
-When not knowing (or caring) about internal layout, opaque structs can be used.
+When not knowing (or caring) about internal layout, https://doc.rust-lang.org/nomicon/ffi.html#representing-opaque-structs[opaque structs] can be used.
 
 [source,rust]
 ----
-include::./4-2.rs[]
+include::./opaque.rs[]
 ----
 
 == Callbacks
@@ -139,119 +231,42 @@ include::./4-2.rs[]
 
 [source,rust]
 ----
-include::./6.rs[]
+include::./callbacks.rs[]
 ----
 
-== Real example
+== But this is a lot of manual work?
 
-Binding imagemagick to rust!
+There's a better way!
 
-++++
-<small>(Somebody already did that but let's do it again)</small>
-++++
+== Making C headers from Rust
 
-== bindgen
+https://crates.io/crates/cbindgen[cbindgen]
 
-`imagemagick` has a _lot_ of functions. Don't write all those `extern "C"` blocks yourself – generate them!
+== Making Rust source from C headers
+
+https://crates.io/crates/bindgen[bindgen]
+
+== Loading auto-generated Rust source
 
 [source,rust]
 ----
-include::./7.rs[tag=!skip]
+include::./load_bindings.rs[]
 ----
 
-== !
+== Calling these tools:
 
-At this point including bindings is easy*
+* On the command line
+* Executing a command in `build.rs`
+* Calling a library function in `build.rs`
 
-[source,rust]
-----
-include::./8.rs[]
-----
+== sys crates
 
-== Building Layers
+`xxxx-sys` is a Rust crate that provides a thin wrapper around some C library `xxxx`.
 
-[source,rust]
-----
-include::./9.rs[]
-----
+You normally have a higher-level `xxxx` crate that provides a Rust interface
 
-== Building Layers
+////
+SPEAKER NOTES
 
-[source,rust]
-----
-include::./10.rs[]
-----
-
-== Wrap unsafe code in safe Rust
-
-== Memory Management
-
-[source,rust]
-----
-include::./11.rs[]
-----
-
-== !
-
-**Structs with one field vanish at runtime.**
-
-Isolates lifecycle management of the pointer from the rest of the code.
-
-== Using Rust from C
-
-== !
-
-Works similar to what you've already seen.
-
-Use platform-ABI in reverse – emit a native library
-
-== Example: plugin for `weechat`
-
-== Cargo Settings
-
-[source,toml]
-----
-include::./12.toml[]
-----
-
-== !
-
-Otherwise similar concept.
-
-* `extern "C"` functions.
-* `#[repr\(C)]` structures/ enums.
-* Making data C compatible.
-
-== !
-
-[source,rust]
-----
-include::./13.rs[]
-----
-
-+++
-<small>You saw the rest of the function earlier</small>
-+++
-
-== !
-
-Now what?
-
-== Creating bindings
-
-+++
-<small>(No, this is not a deja-vu)</small>
-+++
-
-C code needs `.h` files to include – define Rust functions there.
-
-`cbindgen` is a great tool to auto-generate them.
-
-== !
-
-But: not required here, because plugin API is specified via weechat!
-
-== !
-
-Full code here: https://github.com/spacekookie/weechat-rs/tree/master/examples/hello_weechat[spacekookie/weechat-rs]
-
+For example libgit2-sys (wraps libgit2), or nrfxlib-sys (nRF9160 support)
+////

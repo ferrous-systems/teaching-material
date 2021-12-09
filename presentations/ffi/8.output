@@ -1,3 +1,0 @@
-// Versioning
-pub fn leveldb_major_version() -> c_int;
-pub fn leveldb_minor_version() -> c_int;
