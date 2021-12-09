@@ -1,6 +1,9 @@
 # 2021-12-03
-- reworked FFI chapter, starting with using Rust code in a C program
-
+- reworked FFI chapter:
+  - add `/examples/use_{rust,c}_in_{c,rust}` projects
+  - add speaker notes as comments in `slides.adoc`
+  - starting with using Rust code in a C program
+  - replace ImageMagick and weechat examples with simple addition math
 # 2021-12-01
 
 ## Misc
