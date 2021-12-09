@@ -1,3 +1,3 @@
-fn inspect<'a, T: Debug + 'a>(t: T) {
-    //...
+fn inspect<'a, T: std::fmt::Debug + 'a>(t: T) {
+    println!("{:?}", t);
 }

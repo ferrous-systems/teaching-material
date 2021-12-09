@@ -11,9 +11,6 @@ fn main() {
     println!("{}", result);
 }
 
-extern crate futures;
-extern crate rand;
-
 use std::thread;
 use std::time::Duration;
 use futures::Future;

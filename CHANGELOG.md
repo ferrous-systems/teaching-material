@@ -1,9 +1,21 @@
+# 2021-12-07
+## Rust 2015
+- remove `extern crate` in `*.rs`
+- cosmetics followup: fold multiple empty lines in `*.rs`
+
+## Lifetimes
+- convert from Rust 2015 (add `impl` in fn signature)
+- fix typo in variable name
+- use non-copy value to illustrate lifetime issues (`String` instead of `i32`)
+- remove german-ism ("Lifetime-Elision")
+
 # 2021-12-03
 - reworked FFI chapter:
   - add `/examples/use_{rust,c}_in_{c,rust}` projects
   - add speaker notes as comments in `slides.adoc`
   - starting with using Rust code in a C program
   - replace ImageMagick and weechat examples with simple addition math
+
 # 2021-12-01
 
 ## Misc

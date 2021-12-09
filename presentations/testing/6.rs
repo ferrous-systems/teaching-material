@@ -1,4 +1,3 @@
-extern crate example;
 use example::{is_north, Direction};
 
 #[test]

@@ -1,4 +1,3 @@
-
 use rand::prelude::*;
 
 const NUM_DIGITS : usize = 4;
