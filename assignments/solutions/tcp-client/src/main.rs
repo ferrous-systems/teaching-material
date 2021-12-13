@@ -11,7 +11,7 @@ fn main() -> std::io::Result<()> {
     // or:
     // arg.unwrap_or_default(String::from("Hello!"));
 
-    let mut stream = TcpStream::connect("127.0.0.1:7878")?;
+    let mut stream = TcpStream::connect("127.0.0.1:8080")?;
 
     writeln!(stream, "{}", message)?;
 
