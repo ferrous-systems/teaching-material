@@ -11,7 +11,7 @@ You will learn how to:
 
 == Task
 
-1. Start a TCP connection on port `127.0.0.1:8080`
+1. Start a TCP connection on port `127.0.0.1:7878`
 2. Send a message over
 3. Close the write end of the connection
 4. Print the response to the console
