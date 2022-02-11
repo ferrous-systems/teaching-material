@@ -1,10 +1,11 @@
 struct Point {
     x: i32,
-    y: i32
+    y: i32,
 }
 
-fn return_point<'a>() -> &'a Point {
-    let p = Point { x: 1, y: 2};
+// error[E0106]: missing lifetime specifier
+fn return_point() -> &Point {
+    let p = Point { x: 1, y: 2 };
     &p
 }
 

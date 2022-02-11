@@ -99,12 +99,12 @@ include::./6.rs[]
 
 == Laziness
 
-Iterators are applied lazy, so the process is memory-efficient. It goes column-wise.
+Iterators are applied lazily, so the process is efficient:
 
 
 |===
 |Step | [0] | [1] | [2] | [3]
 | | 1 | 2 | 3 | 4
-|filter(\|x\| x % 2 == 0 ) | | 2 | | 4
+|filter(\|x\| x % 2 == 0) | | 2 | | 4
 |map(\|x\| x * 2) | | 4 | | 8
 |===

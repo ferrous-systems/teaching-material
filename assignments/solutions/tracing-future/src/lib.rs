@@ -52,7 +52,6 @@ impl<F: Future> Future for Deadline<F> {
             *this.start = Some(time::Instant::now());
         }
 
-
         let res = this.fut.poll(cx);
 
         match &res {

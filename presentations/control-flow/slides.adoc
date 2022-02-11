@@ -74,6 +74,15 @@ include::./7.rs[]
 
 * Match guards allow further refining of a `match`
 
+== Combining matches
+
+You can use the `|` operator to match several values in one arm.
+
+[source,rust]
+----
+include::./7_5.rs[]
+----
+
 == Shorthand: `if let` conditionals
 
 [source,rust]
@@ -90,7 +99,7 @@ include::./8.rs[]
 include::./9.rs[]
 ----
 
-`loop` is used for arbitrary loops
+`loop` is used for (potentially) infinite loops
 
 == `for`
 
@@ -110,6 +119,15 @@ include::./11.rs[]
 
 `while` is used for conditional loops
 
+
+== `break`, `continue`
+
+[source,rust]
+----
+include::./11a.rs[]
+----
+
+terminate current iteration or entire loop, using optional labels if not referring to innermost loop
 
 == `return`
 

@@ -35,9 +35,6 @@ fn main() {
     println!("Sum: {}", sum);
 }
 
-extern crate rand;
-extern crate futures;
-
 use std::time::Duration;
 use std::thread;
 use rand::distributions::{Range, IndependentSample};

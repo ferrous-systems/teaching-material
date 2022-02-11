@@ -1,4 +1,4 @@
-= Inner Mutability
+= Interior Mutability
 
 link:./index.html[Table of Contents]
 

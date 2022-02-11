@@ -1,4 +1,4 @@
-= # Unsafe Rust
+= Unsafe Rust
 
 link:./index.html[Table of Contents]
 

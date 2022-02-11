@@ -48,7 +48,7 @@ The sys crate is responsible for linking to the C library and exposing its conte
 
 The higher level crate uses the sys crate to provide a more Rust-friendly interface by safely wrapping the inherently `unsafe` raw parts.
 
-Writing a sys crate yourself is beyond the scope of this exercise. We will be using the [`leveldb-sys` crate provided for you](https://docs.rs/leveldb-sys/2.0.8/leveldb_sys/).
+Writing a sys crate yourself is beyond the scope of this exercise. We will be using the [`leveldb-sys` crate provided for you](https://docs.rs/leveldb-sys/*/leveldb_sys).
 
 Additionally, you'll also need the [`libc`](https://docs.rs/libc/0.2.97/libc/) crate which provides C types and other required definitions.
 
@@ -81,13 +81,13 @@ Conceptually, a LevelDB database is a directory (the "database name") where all 
 
 You'll also need these functions and enums from the `leveldb-sys` crate:
 
-* [`leveldb_t`](https://docs.rs/leveldb-sys/2.0.8/leveldb_sys/enum.leveldb_t.html): opaque handle representing an opened database. The handle is thread-safe.
-* [`leveldb_open`](https://docs.rs/leveldb-sys/2.0.8/leveldb_sys/fn.leveldb_open.html): opens a database, returning `leveldb_t`
-* [`leveldb_close`](https://docs.rs/leveldb-sys/2.0.8/leveldb_sys/fn.leveldb_close.html): closes a `leveldb_t` for a clean shutdown
-* [`leveldb_options_t`](https://docs.rs/leveldb-sys/2.0.8/leveldb_sys/enum.leveldb_options_t.html): opaque handle representing database options
-* [`leveldb_options_create`](https://docs.rs/leveldb-sys/2.0.8/leveldb_sys/fn.leveldb_options_create.html): create an instance of this options struct
-* [`leveldb_options_destroy`](https://docs.rs/leveldb-sys/2.0.8/leveldb_sys/fn.leveldb_options_destroy.html): deallocates `leveldb_options_t`
-* [`leveldb_options_set_create_if_missing`](https://docs.rs/leveldb-sys/2.0.8/leveldb_sys/fn.leveldb_options_set_create_if_missing.html): sets the `create_if_missing` flag on `leveldb_options_t`.
+* [`leveldb_t`](https://docs.rs/leveldb-sys/2.0.9/leveldb_sys/struct.leveldb_t.html): opaque handle representing an opened database. The handle is thread-safe.
+* [`leveldb_open`](https://docs.rs/leveldb-sys/2.0.9/leveldb_sys/fn.leveldb_open.html): opens a database, returning `leveldb_t`
+* [`leveldb_close`](https://docs.rs/leveldb-sys/2.0.9/leveldb_sys/fn.leveldb_close.html): closes a `leveldb_t` for a clean shutdown
+* [`leveldb_options_t`](https://docs.rs/leveldb-sys/2.0.9/leveldb_sys/enum.leveldb_options_t.html): opaque handle representing database options
+* [`leveldb_options_create`](https://docs.rs/leveldb-sys/2.0.9/leveldb_sys/fn.leveldb_options_create.html): create an instance of this options struct
+* [`leveldb_options_destroy`](https://docs.rs/leveldb-sys/2.0.9/leveldb_sys/fn.leveldb_options_destroy.html): deallocates `leveldb_options_t`
+* [`leveldb_options_set_create_if_missing`](https://docs.rs/leveldb-sys/2.0.9/leveldb_sys/fn.leveldb_options_set_create_if_missing.html): sets the `create_if_missing` flag on `leveldb_options_t`.
 
 The [LevelDB C header](https://github.com/google/leveldb/blob/master/include/leveldb/c.h) documents some conventions used by its implementation. 
 

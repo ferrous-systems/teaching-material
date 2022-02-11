@@ -55,7 +55,6 @@ fn parse(input: &str) -> Result<Expr, ParseError> {
     Ok(res)
 }
 
-
 impl Expr {
     // TODO Step 3: Define a recursive eval function to compute the value of an expression.
     pub fn eval(&self) -> Result<i64, EvalError> {

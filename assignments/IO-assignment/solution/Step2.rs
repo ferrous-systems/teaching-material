@@ -1,7 +1,6 @@
 use std::io::{Read, BufReader, BufRead, Lines};
 use std::fs::File;
 
-
 fn main() {
 
     let open_result = File::open("src/data/content.txt");

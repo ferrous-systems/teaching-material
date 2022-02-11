@@ -59,18 +59,24 @@ pub struct Database {
     handle: DBHandle,
 }
 
+unsafe fn into_rust_string(ptr: *const i8) -> String {
+    let error_s = CStr::from_ptr(ptr).to_string_lossy().to_string();
+    leveldb_free(ptr as *mut c_void);
+    error_s
+}
+
 #[derive(Debug, Eq, PartialEq)]
 pub enum Error {
-    OpenFail,
-    NonUtf8Path,
+    OpenFail(String),
+    InvalidString,
 }
 
 impl Database {
     pub fn open<P: AsRef<Path>>(path: P, options: Options) -> Result<Database, Error> {
         let mut error = ptr::null_mut();
 
-        let c_string = CString::new(path.as_ref().to_str().ok_or(Error::NonUtf8Path)?)
-            .map_err(|_| Error::NonUtf8Path)?;
+        let c_string = CString::new(path.as_ref().to_str().ok_or(Error::InvalidString)?)
+            .map_err(|_| Error::InvalidString)?;
         unsafe {
             let db = leveldb_open(options.as_ptr(), c_string.as_ptr(), &mut error);
 
@@ -81,7 +87,7 @@ impl Database {
                     },
                 })
             } else {
-                Err(Error::OpenFail)
+                Err(Error::OpenFail(into_rust_string(error)))
             }
         }
     }

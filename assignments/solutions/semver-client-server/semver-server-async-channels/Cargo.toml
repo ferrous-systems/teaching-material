@@ -1,0 +1,14 @@
+[package]
+name = "semver-server-async-channels"
+version = "0.1.0"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+async-std = "1.10"
+futures = "0.3"
+semver = { path = "../../semver"}
+semver_api = { path = "../semver-api" }
+log = "0.4"
+pretty_env_logger = "0.4"

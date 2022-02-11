@@ -4,6 +4,8 @@ link:./index.html[Table of Contents]
 
 == Structs
 
+`struct`s group and name data of different types.
+
 == Definition
 
 [source,rust]
@@ -56,11 +58,15 @@ include::./5.rs[]
 
 == Enums
 
+`enum`s represent different variation of the same subject.
+
 ////
 SPEAKER NOTES
 - stress that enums are an "either or" type: you can only have one variant at a time (you're not accumulating data as with structs)
 - stress that you can only have the variants, not the enum itself (i.e. `Movement::Left`. but not `Movement`)
 ////
+
+== Definition and Construction
 
 [source,rust]
 ----

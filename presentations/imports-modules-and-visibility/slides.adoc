@@ -158,9 +158,10 @@ The compiler will detect if you use an un-imported trait.
 
 == Structs
 
-Structs are a little more complex. They don't export fields, which makes their usage and the construction impossible. This is often intended.
+Struct fields are not exported (public) by default.
+A struct with non-public members can't be constructed or fully used outside of its module. This is often intended.
 
-Also, struct functions are not exported by default.
+Struct functions are also not exported by default.
 
 == !
 

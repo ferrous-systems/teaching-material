@@ -29,12 +29,12 @@ You will learn:
 }
 ----
 3. Validate the JSON structure to have all those fields
-4. On success, return the structure with a 200 OK
-5. On error, return status 422, along with the resulting error
+4. On success, return the structure with a `200 OK`
+5. On error, return status `422`, along with the resulting error
 
 == Extension Task
 
-6. Make it optional to send the Address
+1. Make it optional to send the Address
 
 == Helpers
 
@@ -51,7 +51,7 @@ curl -XPOST --data-binary @my_json_file.json $URL
 
 Use https://serde.rs[SerDe]:
 
-[source,sh]
+[source,rust]
 ----
 extern crate serde;
 
@@ -62,14 +62,14 @@ extern crate serde_json;
 
 SerDe JSON allows either deserializing into a generic JSON value:
 
-[source,sh]
+[source,rust]
 ----
 let parsed_person = serde_json::from_slice::<serde_json::Value>(req.body());
 ----
 
 Or you can define a structure to be serializable and deserializable:
 
-[source,sh]
+[source,rust]
 ----
 #[derive(Serialize,Deserialize)]
 struct MyType {

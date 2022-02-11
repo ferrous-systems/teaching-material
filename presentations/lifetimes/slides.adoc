@@ -2,14 +2,13 @@
 
 link:./index.html[Table of Contents]
 
-
 == !
 
 [source,rust]
 ----
 include::./1.rs[]
 ----
-
+ 
 == !
 
 [source,rust]
@@ -19,7 +18,7 @@ include::./2.rs[]
 
 == !
 
-Rusts lifetimes are notorious for being hard to understand.
+Rust's lifetimes are notorious for being hard to understand.
 
 == !
 
@@ -60,10 +59,10 @@ include::./5.rs[]
 
 == !
 
-Wrapper is now:
+Container is now:
 
 * Generic over the type T
-* As well as a lifetime 'a (its own)
+* As well as a lifetime `'container` (its own)
 * The borrowed values must live *at least equally long*
 
 == !
@@ -100,7 +99,8 @@ Common pitfall: you cannot "shorten a lifetime", as it just describes what's alr
 
 == `'static`
 
-`'static` is a lifetime that lives longer than all others. That's not necessarily forever!
+* as part of a reference, `'static` means "lives forever"
+* in trait bounds, the type does not contain any non-static references. That's not necessarily forever!  
 
 == !
 
@@ -126,7 +126,7 @@ Lifetimes describe all types, not only references, therefore they are also bound
 include::./8.rs[]
 ----
 
-== Lifetime-Elision
+== Lifetime Elision
 
 For simple cases, lifetimes are automatically inserted into signatures.
 

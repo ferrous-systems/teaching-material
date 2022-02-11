@@ -46,7 +46,30 @@
 * link:./async-component-interaction.html[Async component interaction]
 * link:./async-growth-handling.html[ Async: Avoiding disaster and unbounded growth]
 
-== Assignnments
+.Other
+* link:./async-await.html[Async Await]
+* link:./community-map.html[Community Map]
+* link:./deref-coersions.html[Deref Coersions]
+* link:./dynamic-and-static-libs.html[Dynamic and Static Libs]
+* link:./effective-rust.html[Effective Rust]
+* link:./embedded.html[Embedded]
+* link:./ffi.html[FFI]
+* link:./futures.html[Futures]
+* link:./macros.html[Macros]
+* link:./match.html[Match]
+* link:./memory-considerations.html[Memory Considerations]
+* link:./proptest.html[Proptest]
+* link:./redis.html[Redis]
+* link:./redis-protobuf.html[Redis Protobuf]
+* link:./serde.html[Serde]
+* link:./smart-pointers.html[Smart Pointers]
+* link:./standard-types.html[Standard Types]
+* link:./syntax.html[Syntax]
+* link:./unsafe.html[Unsafe]
+* link:./usage-examples.html[Usage Examples]
+* link:./working-with-nightly.html[Working With Nightly]
+
+== Assignments
 
 .Exercise Sheets
 * link:./assignments/fizzbuzz.html[FizzBuzz]
@@ -55,6 +78,7 @@
 * link:./assignments/redisish.html[Redisish protocol parser]
 * link:./assignments/tcp-echo-server.html[TCP server]
 * link:./assignments/tcp-client.html[TCP client]
+* link:./assignments/bullsncows.html[Bulls and Cows game]
 
 * link:./assignments/connected-mailbox.html[Connected mailbox]
 * link:./assignments/multithreaded-mailbox.html[Multithreaded mailbox]
@@ -67,8 +91,14 @@
 * link:./assignments/simple-chat.html[Simple async chat]
 * link:./assignments/async-mailbox.html[Async Mailbox]
 * link:./assignments/async-channels.html[Async Channels]
+* link:./assignments/actix.html[Actix Chat using Websockets]
+
+.SemVer trail
+* link:./assignments/semver_from_file.html[SemVer from file]
 
 ."Fill In The Blanks" warm-ups
 Quick warm-up exercises that can be distributed in a https://play.rust-lang.org[playground]
 
 * link:./fill_in_the_blanks/enums_match.html[Fill In The Blanks: Enums and Match]
+* link:./fill_in_the_blanks/closures.html[Fill In The Blanks: Closures]
+* https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=762c5965f08b2d0a3c7375a372da6928[FFI - libc get_time()]

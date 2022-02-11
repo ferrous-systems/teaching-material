@@ -1,0 +1,35 @@
+[package]
+name = "semver-actix-websockets"
+version = "2.0.0"
+edition = "2021"
+
+# simple example with one repo per connection
+[[bin]]
+name = "simple-server"
+path = "src/simple-server.rs"
+
+# repo shared between multiple instances
+[[bin]]
+name = "shared-server"
+path = "src/shared-server.rs"
+
+[[bin]]
+name = "websocket-client"
+path = "src/client.rs"
+
+[dependencies]
+actix = "0.10"
+actix-codec = "0.3"
+actix-web = "3"
+actix-web-actors = "3"
+actix-files = "0.3"
+awc = "2"
+pretty_env_logger = "0.4"
+log = "0.4" # 👆
+futures = "0.3.1"
+bytes = "0.5.3"
+
+semver = { path = "../../semver"}
+semver_api = { path = "../semver-api" }
+
+serde_json = "1.0"

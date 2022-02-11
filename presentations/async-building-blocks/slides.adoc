@@ -50,6 +50,9 @@ fn read_from_disk(path: &str) -> std::io::Result<()> {
 
 [source,rust]
 ----
+use async_std::fs::File;
+use async_std::prelude::*;
+
 async fn read_from_disk(path: &str) -> std::io::Result<String> {
     let mut file = File::open(path).await?;
 
@@ -207,8 +210,7 @@ fn main() {
 
 * async_std
 * tokio
-* smol
-* nuclei
+* embassy (embedded)
 
 == Streams
 

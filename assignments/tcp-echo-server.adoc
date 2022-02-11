@@ -11,7 +11,7 @@ You will learn:
 
 == Task
 
-1. Accept TCP connections on port `127.0.0.1:8080`
+1. Accept TCP connections on port `127.0.0.1:7878`
 2. Read all incoming data as `String`
 3. Print the data to the console
 4. Echo it back to the client
