@@ -16,6 +16,11 @@ include::./1.rs[]
 
 == Construction
 
+////
+SPEAKER NOTES:
+- there is no partial initialization
+////
+
 [source,rust]
 ----
 include::./2.rs[]
@@ -26,6 +31,11 @@ include::./2.rs[]
 It's common to hide construction behind a call to `Point::new()` instead of using a raw struct literal.
 
 == Field Access
+
+////
+SPEAKER NOTES:
+- note: no `->` operator for structs behind pointers, always `.`
+////
 
 [source,rust]
 ----
@@ -50,6 +60,12 @@ include::./5.rs[]
 
 `enum`s represent different variation of the same subject.
 
+////
+SPEAKER NOTES
+- stress that enums are an "either or" type: you can only have one variant at a time (you're not accumulating data as with structs)
+- stress that you can only have the variants, not the enum itself (i.e. `Movement::Left`. but not `Movement`)
+////
+
 == Definition and Construction
 
 [source,rust]
@@ -68,6 +84,25 @@ include::./7.rs[]
 
 == Enums with Structured Variants
 
+////
+SPEAKER NOTES
+- each enum variant will be its *worst-case* size! (e.g. the size of its biggest member)
+
+*possible interactive detour:*
+- Q: what's the size of `Actions` on bytes?
+    - correct A: 12, because we have a tagged union:
+
+    ```pseudo-c
+    struct {
+        tag: u32 // discriminant is always u32 => 4 bytes
+        data: union {
+            stick_around: (), // 0 bytes
+            move_to: tsruct{ x: i21, y: i32} // 4 bytes
+        }
+    }
+    ```
+////
+
 [source,rust]
 ----
 include::./8.rs[]
@@ -78,6 +113,11 @@ include::./8.rs[]
 Does not exist.
 
 == `()`
+
+////
+SPEAKER NOTES
+- we often use this similarly to how you'd use `void` in C
+////
 
 The empty tuple `()` represents the absence of data.
 
