@@ -9,7 +9,7 @@ In this exercise, you will learn how to
 * read a file line by line
 * use standard library features to quickly parse lines to structs.
 
-Both the `Option` and `Result` are similar in way. Both have two variants, and
+Both the `Option` and `Result` are similar in a way. Both have two variants, and
 depending on what those variants are, the program may continue in a different way.
 
 The Option Type can have the variant `Some(<some other type>)` or `None`.
