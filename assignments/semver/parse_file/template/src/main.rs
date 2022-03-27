@@ -70,20 +70,36 @@ struct Program {
 
 fn main() -> Result<(), std::io::Error> {
     // create a `Vec` to hold the list of programs
+    let mut program_list :Vec<Program> = vec![];
 
     // open "releases.txt", bail on error
+    let mut releases = File::open("releases.txt")?;
 
     // use a `BufReader` to iterate over the lines of the file handle
+    let mut br = BufReader::new(releases);
 
     // if the line can be read (it might be invalid data), split it on ","
-
-    // take the first element of your split - that's the name
-
-    // the rest is a list of &str slices that each can be MAPPED INTO a SemVer!
-
-    // we're still in iterator land - time to collect and push the result to our program vec
+    for line in br.lines() {
+        if let Ok(raw) = line{
+            let mut chunks = raw.split(",");
+            // take the first element of your split - that's the name
+            if let Some(name) = chunks.next(){
+                // the rest is a list of &str slices that each can be MAPPED INTO a SemVer!
+                let mut vers :Vec<SemVer> = vec![];
+                for v in chunks {
+                    vers.push(SemVer::from(v));
+                }
+                if vers.len() == 0{
+                    return Err(std::io::Error::new(std::io::ErrorKind::Other, "Malformed Line"));
+                }
+                // we're still in iterator land - time to collect and push the result to our program vec
+                program_list.push(Program{name: name.to_string(), release_history: vers})
+            }
+        }
+    }
 
     // finally, print the program vec.
+    println!("{:?}",program_list);
 
     Ok(())
 }
