@@ -1,3 +1,6 @@
+.reveal a {
+    text-decoration: underline;
+}
 .reveal pre code {
     max-height: 800px;
 }
