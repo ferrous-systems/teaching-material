@@ -22,13 +22,11 @@ link:./index.html[Table of Contents]
 ** sync pre-emptive
 ** async cooperative
 
-==  Warning
+==  General information
 
-async-await is a somewhat new feature.
-
-* It's stable
+* Rust's async is stable
 * The base technologies are older than the syntax
-* Some things may become more ergonomic https://rust-lang.github.io/wg-async-foundations/[in the future]
+* https://rust-lang.github.io/wg-async-foundations/[See the async Working Group for more details]
 
 == A normal Rust function
 
@@ -37,7 +35,7 @@ async-await is a somewhat new feature.
 use std::io::prelude::*;
 use std::fs::File;
 
-fn read_from_disk(path: &str) -> std::io::Result<()> {
+fn read_from_disk(path: &str) -> std::io::Result<String> {
     let mut file = File::open(path)?;
 
     let mut buffer = String::new();
@@ -123,7 +121,7 @@ async fn read_from_disk(path: &str) -> std::io::Result<String> {
 [source,rust]
 ----
 fn main() {
-    let read_from_disk = read_from_disk();
+    let read_from_disk_future = read_from_disk();
 }
 ----
 
@@ -135,7 +133,7 @@ fn main() {
     let read_from_disk_future = read_from_disk("Cargo.toml");
 
     let result = async_std::task::block_on(async {
-        let task = async_std::task::spawn(read_from_disk);
+        let task = async_std::task::spawn(read_from_disk_future);
         task.await
     });
 
