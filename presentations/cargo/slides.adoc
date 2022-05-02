@@ -115,7 +115,7 @@ Cargo knows 3 different kinds of dependencies:
 
 - normal dependencies
 - build dependencies
-- test dependencies
+- development/test dependencies
 
 == Example
 
