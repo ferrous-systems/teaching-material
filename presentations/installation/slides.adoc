@@ -85,7 +85,7 @@ For details, check the http://doc.crates.io/manifest.html[Cargo Manifest docs].
 
 * RLS: https://github.com/rust-lang/rls
 * rust-analyzer: https://rust-analyzer.github.io
-* Intellij CLion: https://www.jetbrains.com/clion/
+* IntelliJ Rust: https://www.jetbrains.com/rust/
 
 == Add some tooling
 
