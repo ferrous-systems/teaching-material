@@ -6,17 +6,17 @@ link:./index.html[Table of Contents]
 
 Rust comes with all standard int types, with and without sign
 
-- i8, u8
-- i16, u16
-- i32, u32
-- i64, u64
-- i128, u128
+- `i8`, `u8`
+- `i16`, `u16`
+- `i32`, `u32`
+- `i64`, `u64`
+- `i128`, `u128`
 
 == Architecture-dependent numbers
 
-Rust comes with 2 architecture-dependent number types:
+Rust comes with two architecture-dependent number types:
 
-- isize, usize
+- `isize`, `usize`
 
 == Casts
 
@@ -37,11 +37,26 @@ Overflows trigger a trap in Debug mode, but not in release mode. This behaviour 
 
 == Floats
 
-Rust also comes with floats of all standard sizes: f32, f64
+Rust also comes with floats of all standard sizes: `f32`, `f64`
 
 [source,rust]
 ----
 include::./2.rs[]
+----
+
+== Boolean
+
+Boolean in Rust is represented by either of two values: `true` or `false`
+
+== Character
+
+- A literal in single quotes: `'r'`
+- Chars are four bytes in size
+- Represents `Unicode Scalar Value`, can save more than ASCII, like glyphs, emojis, accented characters etc.
+
+[source,rust]
+----
+include::./6.rs[]
 ----
 
 == Arrays
