@@ -50,14 +50,17 @@ Boolean in Rust is represented by either of two values: `true` or `false`
 
 == Character
 
+`char` is a https://www.unicode.org/glossary/#unicode_scalar_value[Unicode Scalar Value] being represented as a "single character"
+
 - A literal in single quotes: `'r'`
-- Chars are four bytes in size
-- Represents `Unicode Scalar Value`, can save more than ASCII, like glyphs, emojis, accented characters etc.
+- Four (4) bytes in size
+- Can save more than ASCII, like glyphs, emojis, accented characters etc.
 
 [source,rust]
 ----
 include::./6.rs[]
 ----
+
 
 == Arrays
 
