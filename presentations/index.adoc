@@ -48,7 +48,6 @@
 .Special topics
 * link:./cargo.html[Cargo]
 * link:./async-await.html[Async Await]
-* link:./community-map.html[Community Map]
 * link:./deref-coersions.html[Deref Coersions]
 * link:./dynamic-and-static-libs.html[Dynamic and Static Libs]
 * link:./effective-rust.html[Effective Rust]
