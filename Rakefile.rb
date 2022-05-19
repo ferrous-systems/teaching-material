@@ -45,7 +45,7 @@ task :presentations => :index do
       safe: :unsafe,
       attributes: <<-ATTRS,
         customcss=slides.css
-        revealjsdir=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0
+        revealjsdir=../vendor/reveal.js-3.7.0
         highlightjs-theme=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/idea.min.css
         icons=font
         revealjs_height=1080
