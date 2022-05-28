@@ -29,12 +29,12 @@ include::./1.rs[]
 
 == Borrowed iterators
 
-////
-SPEAKER NOTES
+[.notes]
+--
 
 - point out that the `for` loop "unwraps" all `Some()`s returned by the iterator for us
 
-////
+--
 
 [source,rust]
 ----
@@ -63,14 +63,14 @@ include::./3.rs[]
 
 == `next()`
 
-////
-SPEAKER NOTES
+[.notes]
+--
 
 - ask participants what they think this returns
 - point out that we see `Some()`s and a `None` here because there's not for loop to unwrap
   the return value of `next()` for us
 
-////
+--
 
 Iterators can be advanced manually:
 

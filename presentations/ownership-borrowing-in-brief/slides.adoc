@@ -1,10 +1,10 @@
 = Ownership & Borrowing
 
-////
-SPEAKER NOTES
+[.notes]
+--
 
 - stress that this is central to understanding Rust and that we will spend as much time on it as needed until everyone feel like they have a grasp on it
-////
+--
 
 link:./index.html[Table of Contents]
 
@@ -14,11 +14,11 @@ Ownership is the basis for the memory management of Rust.
 
 == Rules
 
-////
-SPEAKER NOTES
+[.notes]
+--
 
 - you can use the metaphor of a physical book: I own it, I can decide to mutate it (e.g. by coloring in it or not), I'm responsible for its whereabouts and disposal
-////
+--
 
 -   Every value has exactly one owner
 -   Ownership can be passed on, both to functions and other types
@@ -86,12 +86,12 @@ At that moment, ownership passes to `write_and_close`.
 
 == References & Borrowing
 
-////
-SPEAKER NOTES
+[.notes]
+--
 
 - book metaphor: I can mutably borrow my book to a friend to color in it read it, and then immutably borrow it to another to look at the pretty colors
 
-////
+--
 
 Intuitively: what you own, you can borrow.
 
@@ -120,12 +120,12 @@ include::./5.rs[]
 
 == Mutable references
 
-////
-SPEAKER NOTES
+[.notes]
+--
 
 - hot take: *shared* mutable data is the root of all evil.
   mutable data itself is ok, as long as you follow the ownership rules!
-////
+--
 
 `&mut` is the so-called "mutable" reference. They are:
 
