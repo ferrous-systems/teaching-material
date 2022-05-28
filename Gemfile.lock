@@ -1,21 +1,17 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    asciidoctor (2.0.10)
-    asciidoctor-revealjs (3.1.0)
+    asciidoctor (2.0.17)
+    asciidoctor-revealjs (5.0.0.rc1)
       asciidoctor (>= 2.0.0, < 3.0.0)
-      concurrent-ruby (~> 1.0)
-      thread_safe (~> 0.3.5)
-    concurrent-ruby (1.1.5)
     rake (13.0.1)
     rouge (3.17.0)
-    thread_safe (0.3.6)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  asciidoctor-revealjs
+  asciidoctor-revealjs (= 5.0.0.rc1)
   rake
   rouge
 
