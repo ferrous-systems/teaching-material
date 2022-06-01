@@ -68,6 +68,7 @@
 * link:./unsafe.html[Unsafe]
 * link:./usage-examples.html[Usage Examples]
 * link:./working-with-nightly.html[Working With Nightly]
+* link:./debugging-rust.html[Debugging Rust]
 
 == Assignments
 
