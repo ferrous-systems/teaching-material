@@ -125,9 +125,8 @@ See https://doc.rust-lang.org/reference/linkage.html
 include::./rustlib-Cargo.toml[]
 ----
 
+[.notes]
 --
-SPEAKERS NOTE
-
 See ./examples/ffi_use_rust_in_c for a working example.
 --
 
@@ -175,9 +174,8 @@ include::./cool_library.h[]
 include::./cool_library.rs[]
 ----
 
+[.notes]
 --
-SPEAKERS NOTE
-
 Note that `uint32_t` doesn't really exist to the C compiler. It is a typedef for either `unsigned int` or `unsigned long int` - depending on the platform - which is provided by `stdint.h`.
 
 See https://doc.rust-lang.org/std/os/raw/index.html for the c_uint type.
@@ -195,9 +193,8 @@ Some type conversions can be infered by the compiler.
 * `c_void` ↔ `()`
 * ...etc...
 
+[.notes]
 --
-SPEAKERS NOTE
-
 These C types are in `std`, not `core` - because you need the OS/platform to define the size of an `int`.
 --
 

@@ -12,6 +12,17 @@ Rust comes with all standard int types, with and without sign
 - `i64`, `u64`
 - `i128`, `u128`
 
+== Syntactic clarity in specifying numbers
+
+[source,rust]
+--
+123_456   // underscore as separator
+0x12      // prefix 0x to indicate hex value
+0o23      // prefix 0o to indicate octal value
+0b0001    // prefix 0b to indicate binary value
+b'a'      // A single byte character
+--
+
 == Architecture-dependent numbers
 
 Rust comes with two architecture-dependent number types:
