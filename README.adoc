@@ -395,7 +395,7 @@ The development of this course is financed by {ferrous}.
 
 They are open sourced as a contribution to the growth of the Rust language.
 
-If you want to fund further development of the course, book a training!
+If you want to fund further development of the course, https://ferrous-systems.com/training/[book a training]!
 
 = Commercial use
 
