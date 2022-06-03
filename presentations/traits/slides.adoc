@@ -26,12 +26,11 @@ include::./1.rs[]
 `new` here is purely convention.
 
 == A Python analogy
-////
-SPEAKER NOTE
 
+[.notes]
+--
 - if you're familiar with Python's `self`, Rust's use of it is very very similar
-
-////
+--
 
 
 [source,rust]

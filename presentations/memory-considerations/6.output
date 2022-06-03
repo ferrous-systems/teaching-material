@@ -1,5 +1,0 @@
-fn main() {
-    use std::mem;
-
-    println!("{}", mem::size_of::<Vec<u8>>());
-}

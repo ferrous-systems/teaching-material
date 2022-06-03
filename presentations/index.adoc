@@ -24,7 +24,6 @@
 * link:./generics-basics.html[Basic Generics]
 
 .Advanced
-* link:./cargo.html[Cargo]
 * link:./traits.html[Traits]
 * link:./dynamic-dispatch.html[Dynamic Dispatch]
 * link:./advanced-generics-bounds.html[Advanced Generics]
@@ -46,9 +45,9 @@
 * link:./async-component-interaction.html[Async component interaction]
 * link:./async-growth-handling.html[ Async: Avoiding disaster and unbounded growth]
 
-.Other
+.Special topics
+* link:./cargo.html[Cargo]
 * link:./async-await.html[Async Await]
-* link:./community-map.html[Community Map]
 * link:./deref-coersions.html[Deref Coersions]
 * link:./dynamic-and-static-libs.html[Dynamic and Static Libs]
 * link:./effective-rust.html[Effective Rust]
@@ -59,14 +58,13 @@
 * link:./match.html[Match]
 * link:./memory-considerations.html[Memory Considerations]
 * link:./proptest.html[Proptest]
-* link:./redis.html[Redis]
-* link:./redis-protobuf.html[Redis Protobuf]
+* link:./redis.html[Redis Exercise - Helper Slides]
+* link:./redis-protobuf.html[Redis Protobuf Exercise - Helper Slides]
 * link:./serde.html[Serde]
 * link:./smart-pointers.html[Smart Pointers]
 * link:./standard-types.html[Standard Types]
 * link:./syntax.html[Syntax]
 * link:./unsafe.html[Unsafe]
-* link:./usage-examples.html[Usage Examples]
 * link:./working-with-nightly.html[Working With Nightly]
 
 == Assignments
