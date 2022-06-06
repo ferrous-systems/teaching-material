@@ -171,7 +171,6 @@ Microsoft's extension offers better support for displaying PDB information on Wi
 *   Some values can't be shown: function preferences, closures.
 *   Breakpoints may sometimes not work in closures and in async code.
 *   Trait objects and trait methods may be difficult for debugger to resolve.
-*   ...
 
 == When debugger fails you
 
