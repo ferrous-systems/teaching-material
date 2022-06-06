@@ -4,5 +4,5 @@ async-std = "1"
 [build-dependencies]
 cbindgen = "0.5"
 
-[test-dependencies]
+[dev-dependencies]
 quickcheck = "0.9"
