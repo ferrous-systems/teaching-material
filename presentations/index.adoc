@@ -66,6 +66,7 @@
 * link:./syntax.html[Syntax]
 * link:./unsafe.html[Unsafe]
 * link:./working-with-nightly.html[Working With Nightly]
+* link:./debugging-rust.html[Debugging Rust]
 
 == Assignments
 
