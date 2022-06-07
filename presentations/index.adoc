@@ -77,7 +77,7 @@
 * link:./assignments/redisish.html[Redisish protocol parser]
 * link:./assignments/tcp-echo-server.html[TCP server]
 * link:./assignments/tcp-client.html[TCP client]
-* link:./assignments/bullsncows.html[Bulls and Cows game]
+* link:./assignments/green_yellow.html[Green and Yellow game]
 
 * link:./assignments/connected-mailbox.html[Connected mailbox]
 * link:./assignments/multithreaded-mailbox.html[Multithreaded mailbox]
