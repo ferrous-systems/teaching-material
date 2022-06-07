@@ -34,7 +34,7 @@ Macros are:
 A macro has three parts.
 
 * A name, eg. `println`.
-* A input portion, defining that the macro accepts.
+* A input portion, defining what the macro accepts.
 * An output portion, defining how it expands.
 
 == Macros: Syntax
