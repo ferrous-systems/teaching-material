@@ -3,7 +3,6 @@ use std::{
     error::Error,
     io::{Read, Write},
     net::{Shutdown, TcpStream},
-    str::FromStr,
     thread,
 };
 

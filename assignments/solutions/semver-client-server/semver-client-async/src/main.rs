@@ -4,7 +4,7 @@ use async_std::{
     net::{Shutdown, TcpStream},
     task::{self, sleep},
 };
-use log::{debug, error, info, warn};
+use log::{error, info, warn};
 use rand::Rng;
 use semver::{Crate, Program, SemVer};
 use semver_api::{ApiResponse, Command, Update};
