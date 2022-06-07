@@ -41,9 +41,10 @@
 * link:./send-and-sync.html[Send and Sync]
 
 .Async
+* link:./async-await-intro.html[Intro to Async/Await]
 * link:./async-building-blocks.html[Async building blocks]
 * link:./async-component-interaction.html[Async component interaction]
-* link:./async-growth-handling.html[ Async: Avoiding disaster and unbounded growth]
+* link:./async-growth-handling.html[Async: Avoiding disaster and unbounded growth]
 
 .Special topics
 * link:./cargo.html[Cargo]
