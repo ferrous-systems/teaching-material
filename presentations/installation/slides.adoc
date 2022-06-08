@@ -85,7 +85,7 @@ For details, check the http://doc.crates.io/manifest.html[Cargo Manifest docs].
 == IDEs
 
 * rust-analyzer: https://rust-analyzer.github.io
-* Intellij CLion: https://www.jetbrains.com/clion/ (with https://plugins.jetbrains.com/plugin/8182-rust/docs[Rust plugin])
+* IntelliJ Rust plugin for their IDEs (CLion, Idea, etc.): https://www.jetbrains.com/rust/
 
 == Add some tooling
 
