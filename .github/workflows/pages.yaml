@@ -1,8 +1,5 @@
 name: pages
-on:
-  push:
-   branches:
-     - master
+on: [push, pull_request]
 
 jobs:
   pages:
@@ -24,10 +21,8 @@ jobs:
           ./rake
 
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v2.6.0-rc0
-        env:
-          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          PUBLISH_BRANCH: gh-pages
-          PUBLISH_DIR: ./target/
+        uses: ferrous-systems/shared-github-actions/github-pages@main
         with:
-          forceOrphan: true
+          path: target/
+          token: ${{ secrets.GITHUB_TOKEN  }}
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'

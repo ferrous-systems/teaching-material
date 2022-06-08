@@ -24,8 +24,8 @@ Rust also supports the platform-ABI(s).
 
 (Windows has two...)
 
-////
-SPEAKER NOTES
+[.notes]
+--
 
 Processors don't understand 'function parameters'. They have registers, and they have the stack. The compiler of the caller function must decide where to place each argument - either in a register or on the stack. The compiler of the callee function (the function being called) must decide where to retrieve each argument from. There are also decisions to be made regarding which registers a function can freely re-use, and which registers must be carefully restore to their initial value on return. If a function can freely re-use a register, then the caller needs to think about saving and restoring the register contents. If each function is responsible to putting things back exactly as they were, then the caller has less work to do, but maybe you're saving and restoring registers that no-one cares about. When the stack is used, you also have agree whether the caller or the callee is responsible for resetting the stack point to where it was before the caller called the callee.
 
@@ -37,7 +37,7 @@ x86 is ~40 years old and many standards exist on how to do this. See https://en.
 
 AMD64 is only ~15 years old, and there are two standards - the Microsoft one for Windows, and the Linux one (which is based on System V UNIX).  
 
-////
+--
 
 == !
 
@@ -88,11 +88,11 @@ include::./rustlib.rs[]
 include::./rustlib-wrapper.rs[]
 ----
 
-////
-SPEAKER NOTES
+[.notes]
+--
 
 The `.as_ref()` method on pointers *requires* that the pointer either be null, or that it point at a valid, aligned, fully initialised object. If they just feed you a random integer, bad things will happen!
-////
+--
 
 == Matching C header
 
@@ -112,11 +112,11 @@ You can tell `rustc` to make:
     - staticlib
     - cdylib
 
-////
-SPEAKER NOTES
+[.notes]
+--
 
 See https://doc.rust-lang.org/reference/linkage.html
-////
+--
 
 == Cargo.toml
 
@@ -125,11 +125,10 @@ See https://doc.rust-lang.org/reference/linkage.html
 include::./rustlib-Cargo.toml[]
 ----
 
-////
-SPEAKERS NOTE
-
+[.notes]
+--
 See ./examples/ffi_use_rust_in_c for a working example.
-////
+--
 
 == Using C from Rust
 
@@ -175,15 +174,14 @@ include::./cool_library.h[]
 include::./cool_library.rs[]
 ----
 
-////
-SPEAKERS NOTE
-
+[.notes]
+--
 Note that `uint32_t` doesn't really exist to the C compiler. It is a typedef for either `unsigned int` or `unsigned long int` - depending on the platform - which is provided by `stdint.h`.
 
 See https://doc.rust-lang.org/std/os/raw/index.html for the c_uint type.
 
 You cannot do `extern "C" fn some_function();` with no function body - you must use the block.
-////
+--
 
 == Primitive types
 
@@ -195,11 +193,10 @@ Some type conversions can be infered by the compiler.
 * `c_void` ↔ `()`
 * ...etc...
 
-////
-SPEAKERS NOTE
-
+[.notes]
+--
 These C types are in `std`, not `core` - because you need the OS/platform to define the size of an `int`.
-////
+--
 
 == Calling this
 
@@ -265,8 +262,8 @@ include::./load_bindings.rs[]
 
 You normally have a higher-level `xxxx` crate that provides a Rust interface
 
-////
-SPEAKER NOTES
+[.notes]
+--
 
 For example libgit2-sys (wraps libgit2), or nrfxlib-sys (nRF9160 support)
-////
+--

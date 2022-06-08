@@ -11,7 +11,7 @@ Rust has a macro language. See https://danielkeep.github.io/tlborm/book/README.h
 
 -   `println!(pattern, [values])` Easy printing of formatted strings to stdout
 -   `format!(pattern, [values])` like `println!`, but returns Strings
--   `write!(buf, pattern, string)` Simple writing of formatted data to a buffer
+-   `write!(buf, pattern, [values])` Simple writing of formatted data to a buffer
 
 == What Can They do?
 
@@ -34,7 +34,7 @@ Macros are:
 A macro has three parts.
 
 * A name, eg. `println`.
-* A input portion, defining that the macro accepts.
+* A input portion, defining what the macro accepts.
 * An output portion, defining how it expands.
 
 == Macros: Syntax

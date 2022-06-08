@@ -16,10 +16,10 @@ include::./1.rs[]
 
 == Construction
 
-////
-SPEAKER NOTES:
+[.notes]
+--
 - there is no partial initialization
-////
+--
 
 [source,rust]
 ----
@@ -32,10 +32,10 @@ It's common to hide construction behind a call to `Point::new()` instead of usin
 
 == Field Access
 
-////
-SPEAKER NOTES:
+[.notes]
+--
 - note: no `->` operator for structs behind pointers, always `.`
-////
+--
 
 [source,rust]
 ----
@@ -60,11 +60,11 @@ include::./5.rs[]
 
 `enum`s represent different variation of the same subject.
 
-////
-SPEAKER NOTES
+[.notes]
+--
 - stress that enums are an "either or" type: you can only have one variant at a time (you're not accumulating data as with structs)
 - stress that you can only have the variants, not the enum itself (i.e. `Movement::Left`. but not `Movement`)
-////
+--
 
 == Definition and Construction
 
@@ -84,8 +84,8 @@ include::./7.rs[]
 
 == Enums with Structured Variants
 
-////
-SPEAKER NOTES
+[.notes]
+--
 - each enum variant will be its *worst-case* size! (e.g. the size of its biggest member)
 
 *possible interactive detour:*
@@ -101,7 +101,7 @@ SPEAKER NOTES
         }
     }
     ```
-////
+--
 
 [source,rust]
 ----
@@ -114,10 +114,10 @@ Does not exist.
 
 == `()`
 
-////
-SPEAKER NOTES
+[.notes]
+--
 - we often use this similarly to how you'd use `void` in C
-////
+--
 
 The empty tuple `()` represents the absence of data.
 

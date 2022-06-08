@@ -47,7 +47,7 @@ include::./1.rs[]
 
 == Goals
 
-- Explicit over implicit ^*^
+- Explicit over implicit
 - Predictable runtime behaviour
 - Supporting stable software development for programming at large
 - Pragmatism and easy integration
@@ -91,8 +91,7 @@ Many examples in this course are very small, which is why we will also spend tim
 == Pragmatic
 
 - Great tooling
-- Sublanguage for unsafe memory access
-- Good techniques to handle these
+- Sublanguage for unsafe memory access and techniques to handle these
 - Great FFI support
 - Great error messages by the compiler
 - Rust gives support for many hard things and trusts you with the rest
@@ -101,6 +100,6 @@ Many examples in this course are very small, which is why we will also spend tim
 
 From diverse backgrounds:
 
-- Dynamic languages (JS, Rubyists and Pythonista)
-- Functional languages like Scala and Haskell
+- Dynamic languages (JS, Rubyists and Pythonistas)
+- Functional languages like Haskell and Scala
 - C/C++

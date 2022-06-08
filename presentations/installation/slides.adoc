@@ -10,22 +10,23 @@ https://rust-lang.org/tools/install
 
 *It is not the Rust compiler!*
 
-== Important Commands
+== Important commands
 
 [source,sh]
 ----
 include::./1.sh[]
 ----
 
-== Content of the Toolchain
+For up-to-date information, please see link:https://rust-lang.github.io/rustup-components-history/[Rust Component History]
 
-- rustc
-- cargo
-- rustdoc
-- rust-(lldb|gdb)
+== Contents of the toolchain
+
+- rustc, rust-docs, rust-std, rustfmt, rust-(lldb|gdb)^*^
+- cargo, cargo-fmt
+- clippy
 - libcore/libstd
 
-The debugger installed is platform dependent.
+^*^ The debugger installed is platform dependent.
 
 == rustc
 
@@ -36,14 +37,14 @@ include::./3.sh[]
 
 The Rust compiler builds and links Rust code.
 
-== Functional Test
+== The quintessential beginning
 
 [source,rust]
 ----
 include::./4.rs[]
 ----
 
-== !
+== The quintessential output
 
 [source,sh]
 ----
@@ -57,7 +58,7 @@ include::./5b.sh[]
 include::./6.sh[]
 ----
 
-== !
+== Cargo contd.
 
 Cargo is Rusts build and package management tool.
 
@@ -83,9 +84,8 @@ For details, check the http://doc.crates.io/manifest.html[Cargo Manifest docs].
 
 == IDEs
 
-* RLS: https://github.com/rust-lang/rls
 * rust-analyzer: https://rust-analyzer.github.io
-* IntelliJ Rust: https://www.jetbrains.com/rust/
+* IntelliJ Rust plugin for their IDEs (CLion, Idea, etc.): https://www.jetbrains.com/rust/
 
 == Add some tooling
 

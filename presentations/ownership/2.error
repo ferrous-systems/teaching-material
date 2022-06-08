@@ -1,9 +1,0 @@
-  --> point.rs:10:12
-   |
-8  |     let dot = Dot { x: 1, y: 2 };
-   |         --- move occurs because `dot` has type `Dot`, which does not implement the `Copy` trait
-9  |     pacman(dot);
-   |            --- value moved here
-10 |     pacman(dot);
-   |            ^^^ value used here after move
-
