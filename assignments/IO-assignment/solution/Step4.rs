@@ -1,4 +1,4 @@
-use std::io::{Read, BufReader, BufRead, Lines};
+use std::io::{BufReader, BufRead};
 use std::fs::File;
 
 fn main() {
@@ -10,11 +10,11 @@ fn main() {
         Err(e) => panic!("Problem opening the file: {:?}", e),
     };
 
-    let mut buf_reader = BufReader::new(file).lines();
+    let buf_reader = BufReader::new(file);
 
     let mut number = 0;
 
-    for line in buf_reader {
+    for _line in buf_reader.lines() {
         number += 1;
     }
 

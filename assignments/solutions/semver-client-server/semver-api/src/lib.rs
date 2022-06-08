@@ -73,6 +73,7 @@ pub enum ApiError {
     // we do it here to always be Serializable
     ParseError(String),
     Internal,
+    OverCapacity
 }
 
 impl From<RepositoryError> for ApiError {
@@ -88,6 +89,7 @@ impl Display for ApiError {
             ApiError::ParseError(_) => Cow::from("invalid payload"),
             ApiError::Internal => Cow::from("internal"),
             ApiError::InvalidData(e) => Cow::from(format!("underlying: {:?}", e)),
+            ApiError::OverCapacity => Cow::from("over capacity"),
         };
 
         f.write_str(s.borrow())

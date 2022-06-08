@@ -1,5 +1,4 @@
 //! Simple websocket client.
-use std::{io, thread};
 use std::{str::from_utf8, time::Duration};
 
 use actix::io::SinkWrite;

@@ -1,11 +1,11 @@
 use url::Url;
-use std::io::{Read, BufReader};
+use std::io::{BufReader, BufRead};
 use std::fs::File;
 
 fn parse_line(line: String) -> Option<Url> {
     match Url::parse(&line) {
         Ok(u) => Some(u),
-        Err(e) => None
+        Err(_e) => None
     }
 }
 
@@ -17,9 +17,9 @@ fn main() {
         Err(e) => panic!("Problem opening the file: {:?}", e),
     };
 
-    let mut buf_reader = BufReader::new(file).lines();
+    let buf_reader = BufReader::new(file);
 
-    for line in buf_reader {
+    for line in buf_reader.lines() {
 
         let line = match line {
             Ok(content) => content,

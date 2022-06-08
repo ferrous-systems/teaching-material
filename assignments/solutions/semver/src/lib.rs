@@ -198,6 +198,14 @@ impl CrateFuncs for Crate {
     }
 }
 
+impl TryFrom<&Crate> for String {
+    type Error = serde_json::Error;
+
+    fn try_from(value: &Crate) -> Result<Self, Self::Error> {
+        serde_json::to_string(value)
+    }
+}
+
 impl TryFrom<Crate> for String {
     type Error = serde_json::Error;
 
