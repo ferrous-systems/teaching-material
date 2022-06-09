@@ -1,0 +1,12 @@
+[package]
+name = "async-await-intro"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+hyper = { version = "0.14.19", features = ["full"] }
+hyper-tls = "0.5.0"
+rustls = "0.20.6"
+tokio = { version = "1.19.2", features = ["full"] }

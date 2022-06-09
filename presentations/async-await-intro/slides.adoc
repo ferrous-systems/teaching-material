@@ -53,7 +53,12 @@ link:./index.html[Table of Contents]
 
 == Asynchrony in Rust
 
-* [example of async/await in Rust]
+Example: making an HTTP request
+
+[source,rust]
+----
+include::./1.rs[]
+----
 
 == Async
 
@@ -73,7 +78,10 @@ link:./index.html[Table of Contents]
 
 == Asynchrony in Rust
 
-* [example of async/await with multiple awaits]
+[source,rust]
+----
+include::./2.rs[]
+----
 
 * Question: How many tasks are running concurrently?
 
@@ -87,11 +95,17 @@ link:./index.html[Table of Contents]
 
 == Join example
 
-* [insert join example]
+[source,rust]
+----
+include::./3.rs[]
+----
 
 == Select example
 
-* [insert select example]
+[source,rust]
+----
+include::./4.rs[]
+----
 
 == Running tasks
 
