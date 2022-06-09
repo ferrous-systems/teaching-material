@@ -43,6 +43,7 @@
 .Async
 * link:./async-await-intro.html[Intro to Async/Await]
 * link:./async-building-blocks.html[Async building blocks]
+* link:./async-tokio-intro.html[Intro to Tokio]
 * link:./async-component-interaction.html[Async component interaction]
 * link:./async-growth-handling.html[Async: Avoiding disaster and unbounded growth]
 
