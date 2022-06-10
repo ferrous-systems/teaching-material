@@ -37,12 +37,17 @@ include::./1.rs[]
 ----
 
 == Crate: **proptest**
-
-<pre><code data-source="chapters/shared/code/proptest/2.txt" data-trim="hljs bash" class="lang-bash"></code></pre>
+[source, bash]
+--
+include::./2.txt[]
+--
 
 == Crate: **proptest**
 
-<pre><code data-source="chapters/shared/code/proptest/3.txt" data-trim="hljs bash" class="lang-bash"></code></pre>
+[source, bash]
+--
+include::./3.txt[]
+--
 
 == !
 
