@@ -88,3 +88,14 @@ include::./5.rs[]
 ----
 include::./6.rs[]
 ----
+
+== Pattern: Narrowing variable's scope
+
+- Shadowing allows you to redefine a variable with `let` keyword again.
+- Use it to get the inner Type, say in `Option`.
+- Use it to your advantage to make variable immutable after it's served its purpose.
+
+[source,rust]
+----
+include::./7.rs[]
+----
