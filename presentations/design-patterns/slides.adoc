@@ -71,7 +71,7 @@ include::./4.rs[]
 == Pattern: NewType
 
 - Use Rust type system to convey meaning to the user.
-- Especially for Types that shuold be similar to other Types.
+- Especially for Types that should be similar to other Types.
 - Also used to `impl` external Traits on external Types
 
 [source,rust]
