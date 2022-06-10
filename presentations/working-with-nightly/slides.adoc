@@ -14,7 +14,12 @@ link:./index.html[Table of Contents]
 
 Use `rustup` to override the version used in a specific directory.
 
-<pre><code data-source="chapters/shared/code/working-with-nightly/1.bash" data-trim="hljs bash"></code></pre>
+
+[source,bash]
+----
+include::./1.bash[]
+----
+//<pre><code data-source="chapters/shared/code/working-with-nightly/1.bash" data-trim="hljs bash"></code></pre>
 
 == Features
 

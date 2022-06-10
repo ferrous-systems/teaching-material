@@ -16,22 +16,38 @@ include::./1.rs[]
 
 == C-Header (excerpt)
 
-<pre><code data-source="chapters/shared/code/dynamic-and-static-libs/2.c" data-trim="hljs c"></code></pre>
+[source, c]
+----
+include::./2.c[]
+----
 
 == Cargo
 
-<pre><code data-source="chapters/shared/code/dynamic-and-static-libs/3.toml" data-trim="hljs toml"></code></pre>
+[source, toml]
+----
+include::./3.toml[]
+----
 
 `cargo build` will now build a static lib instead of an rlib. `cdylib`s are a special kind of dylib that also removes all Rust-specific metadata.
 
 == Usage
+[source, c]
+----
+include::./4.c[]
+----
 
-<pre><code data-source="chapters/shared/code/dynamic-and-static-libs/4.c" data-trim="hljs c"></code></pre>
-<pre><code data-source="chapters/shared/code/dynamic-and-static-libs/5.sh" data-trim="hljs sh"></code></pre>
+
+[source, bash]
+----
+include::./5.sh[]
+----
 
 == Execution
 
-<pre><code data-source="chapters/shared/code/dynamic-and-static-libs/6.sh" data-trim="hljs sh"></code></pre>
+[source, 6.sh]
+----
+include::./6.sh[]
+----
 
 == Woops!
 
