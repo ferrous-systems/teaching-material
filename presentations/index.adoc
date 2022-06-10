@@ -11,8 +11,6 @@
 * link:./little-helpers.html[Little Helpers]
 * link:./error-handling.html[Error Handling]
 * link:./mutability.html[Mutability]
-* link:./ownership.html[Ownership]
-* link:./borrowing.html[Borrowing]
 * link:./ownership-borrowing-in-brief.html[Ownership & Borrowing in brief]
 * link:./strings.html[Strings]
 * link:./drop-panic-abort.html[Drop, Panic, Abort]
