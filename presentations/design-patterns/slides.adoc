@@ -78,3 +78,13 @@ include::./4.rs[]
 ----
 include::./5.rs[]
 ----
+
+== Pattern: Extending external Types
+
+- Recall that at least one of Trait or Type should be local to `impl`.
+- This pattern allows you to extend external Type using a local Trait.
+
+[source,rust]
+----
+include::./6.rs[]
+----
