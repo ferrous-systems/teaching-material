@@ -25,7 +25,6 @@
 * link:./traits.html[Traits]
 * link:./dynamic-dispatch.html[Dynamic Dispatch]
 * link:./advanced-generics-bounds.html[Advanced Generics]
-* link:./conversion-patterns.html[Conversions]
 * link:./closures.html[Closures]
 * link:./imports-modules-and-visibility.html[Imports, Modules, and Visibility]
 * link:./crates.html[Crates]
@@ -61,6 +60,7 @@
 * link:./unsafe.html[Unsafe]
 * link:./working-with-nightly.html[Working With Nightly]
 * link:./debugging-rust.html[Debugging Rust]
+* link:./design-patterns.html[Basic Design Patterns]
 
 == Assignments
 

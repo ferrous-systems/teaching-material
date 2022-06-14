@@ -1,0 +1,101 @@
+= Basic Design Patterns
+
+link:./index.html[Table of Contents]
+
+== `.clone()` before Lifetimes
+
+- As a beginner, use `.clone()` to overcome compiler struggle.
+- It is alright! Refactor later.
+
+== `String` before `&str`
+
+- Use "owned" types before references.
+- It is alright! Refactor later.
+
+== String concatenation: Use `format!()`
+
+- Owned type `String` can be generated easily.
+- `let s: String = format!("No fear from {}", "Rust Strings")`
+
+== Clippy is your friend in linting
+
+- A collection of lints to catch common mistakes and improve your Rust code.
+- Installation: `rustup component add clippy`
+- Run: `cargo clippy`
+- Documentation: https://rust-lang.github.io/rust-clippy/stable/index.html
+
+== Pattern: `From<T>`, `Into<T>`
+
+Conversion of one Type into another.
+
+If `X` is `From<T>`, then `T` is `Into<X>` automatically.
+
+The usage depends on the context.
+
+== Pattern: `From<T>`, `Into<T>` - Example
+
+[source,rust]
+----
+include::./1.rs[]
+----
+
+== Pattern: What does `?` do?
+
+[source,rust]
+----
+include::./2.rs[]
+----
+
+== Pattern: `AsRef<T>`
+
+Reference-to-reference-conversion. Indicates that a type can easily produce references to another type.
+
+== Pattern: `AsRef<T>` - Example
+
+[source,rust]
+----
+include::./3.rs[]
+----
+
+== Pattern: Constructor `new()`
+
+- No constructors but convention.
+- An associated function to construct new "instances".
+- Use https://doc.rust-lang.org/stable/std/default/trait.Default.html[`Default` trait]. Try using `#[derive(Default)]` first.
+
+[source,rust]
+----
+include::./4.rs[]
+----
+
+== Pattern: NewType
+
+- Use Rust type system to convey meaning to the user.
+- Especially for Types that should be similar to other Types.
+- Also used to `impl` external Traits on external Types
+
+[source,rust]
+----
+include::./5.rs[]
+----
+
+== Pattern: Extending external Types
+
+- Recall that at least one of Trait or Type should be local to `impl`.
+- This pattern allows you to extend external Type using a local Trait.
+
+[source,rust]
+----
+include::./6.rs[]
+----
+
+== Pattern: Narrowing variable's scope
+
+- Shadowing allows you to redefine a variable with `let` keyword again.
+- Use it to get the inner Type, say in `Option`.
+- Use it to your advantage to make variable immutable after it's served its purpose.
+
+[source,rust]
+----
+include::./7.rs[]
+----
