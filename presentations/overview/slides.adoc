@@ -18,7 +18,7 @@ include::./1.rs[]
 
 == A Little Bit of History
 
-- Rust is roughly 10 years old
+- Rust began around 2008
 - An experimental project by Graydon Hoare
 - Adopted by Mozilla
 - Presented to the general public as version 0.4 in 2012
