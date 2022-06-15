@@ -2,54 +2,22 @@
 
 link:./index.html[Table of Contents]
 
-
 == async
 
-* async programming is often connected to networking
-* it's not fundamentally built around it
+* Built from important "building blocks"
+* Futures, Tasks, Executors, Streams, and more
 
 == Differences between async & sync
 
 * sync programming often has imperative behaviour
-* async programming is about construcing a process at runtime and then executing it
+* async programming is about constructing a process at runtime and then executing it
 * this process is called the "futures tree"
-
-== Differences between async & sync
-
-* sync programming talks fundamentally about the "now"
-* async programming talks fundamentally about the future
-* both are scheduled, but in a different fashion
-** sync pre-emptive
-** async cooperative
-
-==  General information
-
-* Rust's async is stable
-* The base technologies are older than the syntax
-* https://rust-lang.github.io/wg-async-foundations/[See the async Working Group for more details]
-
-== A normal Rust function
-
-[source,rust]
-----
-use std::io::prelude::*;
-use std::fs::File;
-
-fn read_from_disk(path: &str) -> std::io::Result<String> {
-    let mut file = File::open(path)?;
-
-    let mut buffer = String::new();
-    file.read_to_string(&mut buffer)?;
-    Ok(buffer)
-}
-----
 
 == An async Rust function
 
 [source,rust]
 ----
-use async_std::fs::File;
-use async_std::prelude::*;
+use tokio::{fs::File, io::AsyncReadExt};
 
 async fn read_from_disk(path: &str) -> std::io::Result<String> {
     let mut file = File::open(path).await?;
@@ -60,15 +28,18 @@ async fn read_from_disk(path: &str) -> std::io::Result<String> {
 }
 ----
 
-== (sketch) Desugaring
+== (sketch) Desugaring return type
 
 [source,rust]
 ----
-use async_std::io::prelude::*;
-use async_std::fs::File;
+use std::future::Future;
 
-fn read_from_disk(path: &str) -> impl Future<Output=std::io::Result<String>> {
-    async {
+use tokio::{fs::File, io::AsyncReadExt};
+
+fn read_from_disk<'a>(path: &'a str) 
+   -> impl Future<Output = std::io::Result<String>> + 'a 
+{
+    async move {
         let mut file = File::open(path).await?;
 
         let mut buffer = String::new();
@@ -104,8 +75,7 @@ They can be checked if they are _done_, and are usually mapped to readiness base
 
 [source,rust]
 ----
-use async_std::io::prelude::*;
-use async_std::net::TcpStream;
+use tokio::{fs::File, io::AsyncReadExt};
 
 async fn read_from_disk(path: &str) -> std::io::Result<String> {
     let mut file = File::open(path).await?;
@@ -129,19 +99,20 @@ fn main() {
 
 [source,rust]
 ----
-fn main() {
+use tokio::{fs::File, io::AsyncReadExt};
+
+#[tokio::main]
+async fn main() {
     let read_from_disk_future = read_from_disk("Cargo.toml");
 
-    let result = async_std::task::block_on(async {
-        let task = async_std::task::spawn(read_from_disk_future);
+    let result = async {
+        let task = tokio::task::spawn(read_from_disk_future);
         task.await
-    });
+    }
+    .await;
 
     println!("{:?}", result);
 }
-
-use async_std::io::prelude::*;
-use async_std::fs::File;
 
 async fn read_from_disk(path: &str) -> std::io::Result<String> {
     let mut file = File::open(path).await?;
@@ -162,19 +133,22 @@ async fn read_from_disk(path: &str) -> std::io::Result<String> {
 
 [source,rust]
 ----
-use async_std::io;
-use std::time::Duration;
+use tokio::fs::File;
+use tokio::io::AsyncReadExt;
+use tokio::time::Duration;
 
-fn main() {
+#[tokio::main]
+async fn main() {
     let read_from_disk_future = read_from_disk("Cargo.toml");
 
     let timeout = Duration::from_millis(1000);
-    let timeout_read = io::timeout(timeout, read_from_disk_future);
+    let timeout_read = tokio::time::timeout(timeout, read_from_disk_future);
 
-    let result = async_std::task::block_on(async {
-        let task = async_std::task::spawn(timeout_read);
+    let result = async {
+        let task = tokio::task::spawn(timeout_read);
         task.await
-    });
+    }
+    .await;
 
     println!("{:?}", result);
 }
@@ -203,12 +177,6 @@ fn main() {
 
 * Reference counting on single-threaded executors can be done using `Rc`
 * Reference counting on multi-threaded executors can be done using `Arc`
-
-== Examples of executors
-
-* async_std
-* tokio
-* embassy (embedded)
 
 == Streams
 

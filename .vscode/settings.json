@@ -6,5 +6,8 @@
                 "cmd": "./rake"
             }
         ]
-    }
+    },
+    "cSpell.words": [
+        "Asynchrony"
+    ]
 }

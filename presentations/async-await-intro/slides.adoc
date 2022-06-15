@@ -1,0 +1,113 @@
+= Asynchronous Programming
+
+link:./index.html[Table of Contents]
+
+== Concurrency
+
+[ditaa, "ditaa-diagram"]
+....
+                   +-------------+
+      +------------| Concurrency |-------+
+      |            +-------------+       | 
+      |                                  |
+      |                                  |
+      v                                  v
+  /---------------\              /---------------\
+  |               |              |               |
+  |  Asynchrony   |              |  Parallelism  |
+  |               |              |               |
+  \---------------/              \---------------/
+....
+
+== Parallelism
+
+* Running on multiple OS/hardware threads
+* Pre-emptive multitasking
+* Handled by OS
+
+== Parallelism
+
+* Running on multiple OS/hardware threads
+* Pre-emptive multitasking
+* Handled by OS
+* Best for: CPU-bound workloads
+
+== Asynchrony
+
+* Lightweight tasks
+* Interleaving tasks
+* Needs user-level scheduler (executor)
+
+== Asynchrony
+
+* Lightweight tasks
+* Interleaving tasks
+* Needs user-level scheduler (executor)
+* Best for: I/O-bound workloads
+
+== Asynchronous Advantages
+
+* Many thousands of tasks simultaneously
+* Lower overhead per-task
+* Many I/O requests in flight
+
+== Asynchrony in Rust
+
+Example: making an HTTP request
+
+[source,rust]
+----
+include::./1.rs[]
+----
+
+== Async
+
+* 'async' marks a function as asynchronous
+* Changes the return type to a Future
+* Running function creates the future
+
+== Await
+
+* '.await' creates an await point
+* Yields control back to the executor
+* '.await' returns when the future has finished
+
+== Asynchrony in Rust
+
+* [Graph of the example as execution flow]
+
+== Asynchrony in Rust
+
+[source,rust]
+----
+include::./2.rs[]
+----
+
+* Question: How many tasks are running concurrently?
+
+== Asynchrony in Rust
+
+* By default no asynchrony in async/await
+* Needs async operators
+* Most common:
+  * Join: wait for all async tasks to complete
+  * Select: wait for one async task to complete
+
+== Join example
+
+[source,rust]
+----
+include::./3.rs[]
+----
+
+== Select example
+
+[source,rust]
+----
+include::./4.rs[]
+----
+
+== Running tasks
+
+* [insert example of futures::executor::block_on]
+

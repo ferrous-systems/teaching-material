@@ -6,7 +6,7 @@ link:./index.html[Table of Contents]
 
 Blocking is an overloaded term
 
-* Blocking API: an API that _might_ force premption
+* Blocking API: an API that _might_ force pre-emption
 * Blocked Task: A task that runs for too long
 
 == Dealing with blocking in practice
@@ -20,14 +20,12 @@ It's hard to determine for a full program if _all instances of a task are stayin
 
 * `spawn_blocking` is usually the solution for dealing with slightly longer tasks
 
-
 [source,rust]
 ----
 task::spawn_blocking(async {
     std::thread::sleep(Duration::from_secs(1000));
 });
 ----
-
 
 == Solution
 
@@ -57,7 +55,7 @@ task::spawn_blocking(async {
 
 [source,rust]
 ----
-let (s, r) = async_channel::unbounded();
+let (s, r) = mpsc::channel(32);
 
 assert_eq!(s.send("Hello").await, Ok(()));
 assert_eq!(r.recv().await, Ok("Hello"));
