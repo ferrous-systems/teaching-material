@@ -3,6 +3,8 @@ fn prints_anything<T: Debug>(thing: T) {
 }
 
 fn prints_anything<T>(thing: T)
-  where T: Debug {
+where
+    T: Debug,
+{
     println!("{:?}", thing);
 }

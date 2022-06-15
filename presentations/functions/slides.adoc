@@ -44,3 +44,55 @@ These are equivalent:
 ----
 include::./5.rs[]
 ----
+
+== Functions for types
+
+If we didn't have methods (like in C), we'd have to write this:
+
+[source,rust]
+----
+include::./6.rs[]
+----
+
+== Associated Functions
+
+Fortunately, Rust has a better solution than putting `square_` on all our
+function names.
+
+[source,rust]
+----
+include::./7.rs[]
+----
+
+== Methods that access data
+
+When our function needs to access the data inside the associated type, we can use `&self`.
+
+This is a shortcut for `self: &Self`, where `Self` is an alias for whatever `impl Foo` block we're inside of.
+
+[source,rust]
+----
+include::./8.rs[]
+----
+
+== Methods that mutate data
+
+When our function needs to mutate the data inside the associated type, we can use `&mut self`.
+
+This is a shortcut for `self: &mut Self`, where `Self` is an alias for whatever `impl Foo` block we're inside of.
+
+[source,rust]
+----
+include::./9.rs[]
+----
+
+== Methods that taken ownership of the data
+
+When our function needs to take ownership of the variable associated type, we can use `self`.
+
+This is a shortcut for `self: Self`, where `Self` is an alias for whatever `impl Foo` block we're inside of.
+
+[source,rust]
+----
+include::./10.rs[]
+----

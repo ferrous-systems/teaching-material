@@ -5,5 +5,9 @@ fn return_a_random() -> i32 {
 }
 
 fn maybe_return_a_random(should: bool) -> Option<i32> {
-    if should { Some(4) } else { None }
+    if should {
+        Some(4)
+    } else {
+        None
+    }
 }
