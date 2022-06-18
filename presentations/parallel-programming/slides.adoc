@@ -1,0 +1,40 @@
+= Parallel Programming
+
+link:./index.html[Table of Contents]
+
+[.centered]
+== Overview
+
+There's parallelism at every level of the computer stack:
+- Intra/Super Word Parallelism in assembly
+- Pipelining
+- SIMD instructions
+- cores hyper threading I/O
+- CPUs and GPUs
+- Multiple cores on the same computer
+- Many computers connected on a network
+
+[.two-col]
+== Parallel Programming in Rust
+Parallelism here means *different cores* can work towards solving the *same problem*
+at the same time.
+
+We will focus on splitting the work across multiple cores on the same computer.
+
+[.two-col]
+== An example
+
+[source,rust]
+----
+#[derive(Eq, PartialEq, Debug)] <1>
+pub struct Point { <2>
+    x: i32,
+    y: i32,
+}
+----
+
+--
+
+<1> Derives allow to generate some standard functionality
+<2> Any type can carry a visibility modifier to export them
+--
