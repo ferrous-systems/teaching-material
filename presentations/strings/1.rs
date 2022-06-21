@@ -1,5 +1,5 @@
 fn main() {
-    // &'static str
+    // &str
     let this = "Hallo";
     // String
     let that: String = String::from("Hallo");
