@@ -15,7 +15,7 @@ Rusts iterators are:
 
 -   Collections like `Vec<T>` have an `iter()` function which yields an iterator.
 -   Things like `std::net::TcpListener` which provides an iterator of ``TcpStream``s via ``incoming()``.
--   Functions like `str#split` and `str#split_n`
+-   Functions like `str::split` and `str::split_n`
 -   Iterators can be implemented on other structures as well.
 
 == Owned iterators
