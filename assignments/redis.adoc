@@ -47,4 +47,4 @@ Hook up your command line arguments to the `RedisClient`. In the `get` case, `pr
 
 == Solution
 
-https://github.com/ferrous-systems/teaching-material/tree/master/assignments/solutions/redis
+https://github.com/ferrous-systems/teaching-material/tree/main/assignments/solutions/redis
