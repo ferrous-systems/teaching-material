@@ -42,7 +42,7 @@ fn main() -> io::Result<()> {
 ----
 
 Read the documentation for the `std::io::Read`, `std::io::Write` traits,
-especially `Read#read_to_string` and `Write#write_all`.
+especially `Read::read_to_string` and `Write::write_all`.
 
 == Hints
 
