@@ -11,20 +11,28 @@ Read https://doc.rust-lang.org/book/ch14-03-cargo-workspaces.html
 The workspace should contain your server and the redisish library.
 
 ....
-mailbox-server
-|- Cargo.toml
-|- redisish
-|- mailbox
+ 📂 mailbox-server
+ ┣ 📄 Cargo.toml 
+ ┃
+ ┣ 📂 redisish 
+ ┃  ┣ 📄 Cargo.toml 
+ ┃  ┗ ...
+ ┃
+ ┣ 📂 mailbox 
+   ┣ 📄 Cargo.toml 
+   ┗ ...
 ....
 
+[source,console]
 ----
-$ cat Cargo.toml 
+$ cat mailbox-server/Cargo.toml 
 [workspace]
 members = ["redisish", "mailbox"]
 ----
 
+[source,console]
 ----
-$ cat mailbox/Cargo.toml
+$ cat mailbox-server/mailbox/Cargo.toml
 [dependencies]
 redisish = { path = "../redisish" }
 ----
@@ -33,7 +41,7 @@ redisish = { path = "../redisish" }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1.  Every connection just sends one command
-2.  PUBLISH inserts into a message box
+2.  PUBLISH inserts into a message queue
 3.  RETRIEVE retrieves a message, in a FIFO fashion
 
 Use `.unwrap` for all error handling in the beginning.
@@ -51,9 +59,10 @@ To send and receive messages, you can either use `nc` or `telnet`. Alternatively
 
 Usage:
 
+[source,console]
 ----
-cargo run -- "PUBLISH This is my message"
-cargo run -- "RETRIEVE"
+$ cargo run -- "PUBLISH This is my message"
+$ cargo run -- "RETRIEVE"
 ----
 
 = Help
@@ -69,7 +78,6 @@ We highly recommend moving reading and parsing into its own function.
 // At the top of your file
 use std::net::{TcpListener,TcpStream};
 use std::io::prelude::*;
-use redisish;
 
 fn read_command(stream: &mut TcpStream) -> redisish::Command {
     let mut read_buffer = String::new(); <1>
@@ -79,17 +87,17 @@ fn read_command(stream: &mut TcpStream) -> redisish::Command {
 }
 ----
 
-<1> Allocate a read buffer.
+<1> Allocate a read buffer (initially empty).
 <2> Read all data into the buffer until the client sends EOF.
 <3> Parse the incoming buffer
 
-== Efficiently handling the received command
+== Handling the received command
 
-You can use this snippet to quickly read a command.
+You can copy-paste this snippet to quickly set you up reading and matching commands.
 
 [source,rust]
 ----
-let command = read_command(stream);
+let command = read_command(&mut stream);
 match command {
     redisish::Command::Publish(message) => {
 
