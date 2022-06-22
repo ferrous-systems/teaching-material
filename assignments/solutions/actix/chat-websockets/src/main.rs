@@ -123,7 +123,7 @@ impl WsChatSession {
     /// A helper method that sends a PING to client every second to determine if
     /// still connected. In case there is no response in time, disconnect client.
     ///
-    /// This function should be called only once, the closure to `AsyncContext#run_interval` is
+    /// This function should be called only once, the closure to `AsyncContext::run_interval` is
     /// executed periodically.
     fn heartbeat(&self, ctx: &mut ws::WebsocketContext<Self>) {
         ctx.run_interval(HEARTBEAT_INTERVAL, |session, ctx| {
