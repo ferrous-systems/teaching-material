@@ -189,7 +189,7 @@ Some type conversions can be infered by the compiler.
 
 * `c_uint` ↔ `u32`
 * `c_int` ↔ `i32`
-* `char` ↔ `u8` (not `char`!)
+* `c_char` ↔ `u8` (not `char`!)
 * `c_void` ↔ `()`
 * ...etc...
 
