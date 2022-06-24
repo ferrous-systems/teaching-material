@@ -111,3 +111,25 @@ It's possible to accept either rather painlessly:
 ----
 include::./6.rs[]
 ----
+
+== Raw String Literals
+
+-   Starts with `r` followed by zero or more `#` followed by `"`
+-   Ends with `"` followed by the same number of `#`
+-   Can span multiple lines, leading spaces become part of the line
+-   Escape sequences are not processed
+
+[source,rust]
+----
+include::./7.rs[]
+----
+
+== Byte String Literals
+
+* not really strings
+* used to declare static byte slices (have a `&[u8]` type)
+
+[source,rust]
+----
+include::./8.rs[]
+----
