@@ -127,7 +127,7 @@ include::./7.rs[]
 == Byte String Literals
 
 * not really strings
-* used to declare static bite slices (have a `&[u8]` type)
+* used to declare static byte slices (have a `&[u8]` type)
 
 [source,rust]
 ----
