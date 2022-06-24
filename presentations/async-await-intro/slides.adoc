@@ -95,10 +95,98 @@ include::./3.rs[]
 include::./4.rs[]
 ----
 
-== Running tasks
+== Make Futures Go
+
+* `Future`s are *lazy*
+* executor (single-threaded or multi-threaded)
+
+== Make Futures Go
+
+Do lines 1 and 2 print?
 
 [source,rust]
 ----
 include::./5.rs[]
 ----
 
+== Runtimes
+
+[source,rust]
+----
+include::./6.rs[]
+----
+
+== "Async Main" pattern
+
+[source,rust]
+----
+include::./7.rs[]
+----
+
+== Runtimes
+
+* `tokio`, `async-std`, `smol`, `monoio`, ...
+* task executor, scheduler, non-blocking IO APIs
+
+== Multithreading
+
+* `block_on` runs tasks on a single tread
+* you can tell runtime that ta given async block can run on a separate thread
+
+[source,rust]
+----
+include::./8.rs[]
+----
+* other runtimes may have similar APIs
+
+== Multithreading
+
+Use concurrency primitives to pass or share data between async blocks:
+* `Arc`, `Mutex`, channels, etc.
+
+== `std::sync::Mutex` vs `<runtime>::Mutex`
+
+* use `std::sync::Mutex` if critical section is short and doesn't have `await`s in it.
+* use runtime's `Mutex` otherwise.
+
+== Compatibility
+
+* thin compatibility layer based on `std::future::Future`
+* enough to support `async await` syntax only
+* standartization of other APIs is in progress
+
+== Reading an async stream
+
+* no async iterators in the language yet
+* use `while-let-await` loop:
+
+[source,rust]
+----
+include::./9.rs[]
+----
+
+== Async Traits
+
+* a big missing piece of the puzzle
+* cannot be implemented in Rust yet:
+
+[source,rust]
+----
+include::./10.rs[]
+----
+* thus cannot describe common traits for async versions of `fs`, `net`, etc.
+* each runtime brings their own implementations!
+
+== Libraries
+
+* has to either choose one runtime to work on
+* or include adapters for several runtimes
+* `tokio` has the largest ecosystem
+
+== Future of Async in Rust
+
+* async traits!
+* standardize more APIs to remove the need to pick runtimes to support for libraries
+* async iterators
+* streams
+* the progress is slow yet steady
