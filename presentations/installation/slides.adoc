@@ -87,6 +87,12 @@ For details, check the http://doc.crates.io/manifest.html[Cargo Manifest docs].
 * rust-analyzer: https://rust-analyzer.github.io
 * IntelliJ Rust plugin for their IDEs (CLion, Idea, etc.): https://www.jetbrains.com/rust/
 
+== rust-analyzer: Things to know
+
+* With VSCode you need this extension - https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer
+* You must remove the default (now deprecated) Rust extension if you have that installed
+* rust-analyzer helps you have those IDE-like features
+
 == Add some tooling
 
 [source,sh]

@@ -19,7 +19,7 @@ This imports the "SERialisation/DEserialisation"-Framework.
 
 == !
 
-In Rust 2018 this is no longer required.
+Rust 2018 onwards this is no longer required.
 Libraries that were declared via cargo can simply be used with `use`-statements.
 
 [source,rust]

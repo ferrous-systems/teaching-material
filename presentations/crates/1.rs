@@ -1,6 +1,6 @@
-fn main() {
-    use serde_json::{self, Value};
+use serde_json::{self, Value};
 
+fn main() {
     let data = r#" { "name": "John Doe", "age": 43, ... } "#;
     let v: Value = serde_json::from_str(data)?;
     println!(

@@ -33,8 +33,6 @@ include::./1.rs[]
 
 -   `String` is the *easiest* to use when starting out. Refine later.
 -   `String` owns its data, so works well as a field of a `struct` or Enum.
-
--   `&'static str` works well for constant values.
 -   `&str` is typically used in function arguments.
 
 == `Deref` Coercion
