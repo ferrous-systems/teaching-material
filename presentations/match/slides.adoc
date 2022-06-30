@@ -68,3 +68,14 @@ include::./6.rs[]
 ----
 include::./7.rs[]
 ----
+
+== !
+
+`match` can be used on multiple expressions!
+
+[source,rust]
+----
+include::./8.rs[]
+----
+
+**Remember**: `match` arms are evaluated sequentially - first correct choice is chosen.
