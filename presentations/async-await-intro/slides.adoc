@@ -74,10 +74,6 @@ include::./1.rs[]
 
 == Asynchrony in Rust
 
-* [Graph of the example as execution flow]
-
-== Asynchrony in Rust
-
 [source,rust]
 ----
 include::./2.rs[]
@@ -109,5 +105,8 @@ include::./4.rs[]
 
 == Running tasks
 
-* [insert example of futures::executor::block_on]
+[source,rust]
+----
+include::./5.rs[]
+----
 
