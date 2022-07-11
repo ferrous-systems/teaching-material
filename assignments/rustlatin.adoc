@@ -1,4 +1,4 @@
-== Exercise: rustlatin
+= Exercise: rustlatin
 :source-language: rust
 
 In this exercise we will implement a Rust-y, simpler variant of https://en.wikipedia.org/wiki/Pig_Latin[Pig Latin]
@@ -30,7 +30,7 @@ For any given sentence, you have to modify each word of the sentence using the f
 
 === Step 1
 
-Create a new `lib` and name is `rustlatin`. 
+Create a new `lib` and name it `rustlatin`. 
 
 .Click to see the solution
 [%collapsible]
