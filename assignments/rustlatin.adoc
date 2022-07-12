@@ -73,7 +73,7 @@ fn rustlatin(sentence: String) -> String {
 fn rustlatin(sentence: String) -> String {
     let words: Vec<_> = sentence.split(' ').collect();
     let mut new_words = Vec::new();
-    for word in words {
+    for word in sentence.split(' ') {
         let first_char_of_word = word.chars().next().unwrap();
         if VOWELS.contains(&first_char_of_word) {
             new_words.push("sr".to_string() + word);
