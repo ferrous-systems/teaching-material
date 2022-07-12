@@ -73,11 +73,11 @@ fn is_narcissistic(num: u32) -> bool
 ----
 fn is_narcissistic(num: u32) -> bool {
     let digits = get_digits(num);
-    let sum: Vec<u32> = digits
+    let cubed_digits: Vec<u32> = digits
         .iter()
         .map(|d| u32::pow(*d, digits.len() as u32))
         .collect();
-    let sum: u32 = sum.iter().sum();
+    let sum: u32 = cubed_digits.iter().sum();
     sum == num
 }
 ----
