@@ -87,7 +87,8 @@ Iterate over the arguments, calling the `fizzbuzz` function. Pay close attention
 
 Notes:
 
-* Convert the incoming arg to integer, throw failed integer parsing error if parsing fails for any element but the program should continue until the last element.
+* Parse the incoming arg as an integer, and return an integer parsing error if parsing fails for any element.
+* The program should run for all valid args, up to the first invalid one.
 * Use the `parse()` method on the incoming string. What is the return type of parse?
 * Then loop over those args and print the correct string for the value
 
