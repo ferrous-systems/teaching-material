@@ -70,10 +70,10 @@ fn rustlatin(sentence: String) -> String {
 ====
 [source,rust]
 ----
-fn rustlatin(sentence: String) -> String {
+fn rustlatin(sentence: &str) -> String {
     let words: Vec<_> = sentence.split(' ').collect();
     let mut new_words = Vec::new();
-    for word in sentence.split(' ') {
+    for word in words {
         let first_char_of_word = word.chars().next().unwrap();
         if VOWELS.contains(&first_char_of_word) {
             new_words.push("sr".to_string() + word);
@@ -98,20 +98,21 @@ Add tests
 ----
 #[test]
 fn correct_translation() {
+    // Why can we compare `&str` and `String` here?
+    // https://doc.rust-lang.org/stable/std/string/struct.String.html#impl-PartialEq%3C%26%27a%20str%3E
     assert_eq!(
-        "rustrs helpsrs yours sravoid sra lotrs srof srirritating bugsrs".to_string(),
-        rustlatin("rust helps you avoid a lot of irritating bugs".to_string())
+        "rustrs helpsrs yours sravoid sra lotrs srof srirritating bugsrs",
+        rustlatin("rust helps you avoid a lot of irritating bugs")
     )
 }
 
 #[test]
 fn incorrect() {
     assert_ne!(
-        "this shouldrs not workrs".to_string(),
-        rustlatin("this should not work".to_string())
+        "this shouldrs not workrs",
+        rustlatin("this should not work")
     )
 }
-
 ----
 ====
 
@@ -124,7 +125,7 @@ If not already done, use functional techniques of iterators to write the same fu
 ====
 [source,rust]
 ----
-fn rustlatin_match(sentence: String) -> String {
+fn rustlatin_match(sentence: &str) -> String {
     let mut words: Vec<_> = sentence.split(' ').collect();
     // transform incoming words vector to rustlatined outgoing
     let new_words: Vec<_> = words
