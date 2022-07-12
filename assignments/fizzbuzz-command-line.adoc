@@ -83,7 +83,7 @@ fn main() {
 
 === Step 3(b)
 
-Iterator over the argument, calling the `fizzbuzz`. Pay close attention to the first argument in the Vector of args.
+Iterate over the arguments, calling the `fizzbuzz` function. Pay close attention to the first argument in the Vector of args.
 
 Notes:
 
