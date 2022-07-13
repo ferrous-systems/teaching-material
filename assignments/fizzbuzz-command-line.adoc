@@ -108,7 +108,8 @@ fn main() {
             Ok(num) => fizzbuzz(num),
             Err(e) => format!("Error {}", e),
         };
-    println!("{}", res);
+        println!("{}", res);
+    }
 }
 ----
 ====

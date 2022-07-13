@@ -71,9 +71,8 @@ fn rustlatin(sentence: String) -> String {
 [source,rust]
 ----
 fn rustlatin(sentence: &str) -> String {
-    let words: Vec<_> = sentence.split(' ').collect();
     let mut new_words = Vec::new();
-    for word in words {
+    for word in sentence.split(' ') {
         let first_char_of_word = word.chars().next().unwrap();
         if VOWELS.contains(&first_char_of_word) {
             new_words.push("sr".to_string() + word);
@@ -126,10 +125,10 @@ If not already done, use functional techniques of iterators to write the same fu
 [source,rust]
 ----
 fn rustlatin_match(sentence: &str) -> String {
-    let mut words: Vec<_> = sentence.split(' ').collect();
     // transform incoming words vector to rustlatined outgoing
-    let new_words: Vec<_> = words
-        .iter_mut()
+    let new_words: Vec<_> = sentence
+        .split(' ')
+        .into_iter()
         .map(|word| {
             let first_char_of_word = word.chars().next().unwrap();
             if VOWELS.contains(&first_char_of_word) {
