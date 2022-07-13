@@ -13,7 +13,7 @@ fizzbuzzcli 1 2 45 234
 fizzbuzzcli 22 1 43
 ----
 
-You will learn:
+You will learn to:
 
 * Do command line argument parsing and usage in two ways
 * Use `std::env` for basic argument parsing
