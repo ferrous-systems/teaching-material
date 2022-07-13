@@ -59,7 +59,7 @@ fn get_digits(num: u32) -> Vec<u32> {
 
 === Step 3
 
-Create a function that uses the `get_digits` function above to check if a number is Narcissistic number. Signature of the function is -
+Create a function that uses the `get_digits` function above to check if a number is Narcissistic number. The signature of the function is -
 
 [source,rust]
 ----

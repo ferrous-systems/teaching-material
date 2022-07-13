@@ -13,7 +13,7 @@ fizzbuzzcli 1 2 45 234
 fizzbuzzcli 22 1 43
 ----
 
-You will learn:
+You will learn to:
 
 * Do command line argument parsing and usage in two ways
 * Use `std::env` for basic argument parsing
@@ -37,7 +37,7 @@ cargo new --bin fizzbuzzcli
 
 === Step 2
 
-Create a separate function in `main.rs` that does FizzBuzz for a given number passed to it. You can use a previous function/code or write again. The signature of the function is -
+Create a separate function in `main.rs` that does FizzBuzz for a given number passed to it. You could copy it from a previous example, but try to write it out again from scratch. The signature of the function is -
 
 [source,rust]
 ----
