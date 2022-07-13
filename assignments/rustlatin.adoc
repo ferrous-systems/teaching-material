@@ -118,7 +118,7 @@ fn incorrect() {
 
 === Step 5 (optional)
 
-If not already done, use functional techniques of iterators to write the same function. Test this new function as well.
+If not already done, use functional techniques (i.e. methods on https://doc.rust-lang.org/std/iter/trait.Iterator.html[iterators]) to write the same function. Test this new function as well.
 
 .Click to see hints/solutions for this step
 [%collapsible]
