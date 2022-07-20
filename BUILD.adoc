@@ -3,8 +3,10 @@
 
 We use https://asciidoctor.org[Asciidoctor] for slides and assignments.
 
-To compile `.adoc` to HTML, you need to have Ruby and [bundler](https://rubygems.org/gems/bundler).
-Using [`rbenv`](https://github.com/rbenv/rbenv) for project-local ruby package installation is recommended.
+To compile `.adoc` to HTML, you need to have Ruby and https://rubygems.org/gems/bundler[bundler].
+Using https://github.com/rbenv/rbenv[`rbenv`] for project-local ruby package installation is recommended.
+
+We use https://mermaid-js.github.io/[Mermaid.js] for diagrams in slides. It requres Node installed. You can use https://github.com/Schniz/fnm[`fnm`] to manage Node versions.
 
 .Prerequisites
 [source]
@@ -12,6 +14,7 @@ Using [`rbenv`](https://github.com/rbenv/rbenv) for project-local ruby package i
 $ eval "$(rbenv init -)" # when using rbenv
 $ gem install bundler
 $ bundle --path=.bundle/gems --binstubs=.bundle/.bin
+$ npm ci
 ----
 
 .Building

@@ -1,0 +1,22 @@
+{
+  "name": "teaching-material",
+  "version": "1.0.0",
+  "description": "Ferrous Systems Teaching Material",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ferrous-systems/teaching-material.git"
+  },
+  "keywords": [
+    "Rust",
+    "learn Rust"
+  ],
+  "author": "Ferrous Systems GmbH (https://ferrous-systems.com)",
+  "license": "CC-BY-SA-4.0",
+  "bugs": {
+    "url": "https://github.com/ferrous-systems/teaching-material/issues"
+  },
+  "homepage": "https://github.com/ferrous-systems/teaching-material#readme",
+  "dependencies": {
+    "@mermaid-js/mermaid-cli": "^9.1.4"
+  }
+}
