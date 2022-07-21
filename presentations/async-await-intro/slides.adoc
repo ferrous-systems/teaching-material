@@ -22,7 +22,7 @@ graph TD
 * Running on multiple OS/hardware threads
 * Pre-emptive multitasking
 * Handled by OS
-* Best for: CPU-bound workloads
+* Best for: *CPU-bound workloads*
 
 == Asynchrony
 
@@ -35,7 +35,7 @@ graph TD
 * Lightweight tasks
 * Interleaving tasks
 * Needs user-level scheduler (executor)
-* Best for: I/O-bound workloads
+* Best for: *I/O-bound workloads*
 
 == Asynchronous Advantages
 
@@ -104,7 +104,7 @@ include::./block_on.rs[]
 
 == Make Futures Go
 
-* `Future`s are *lazy*
+* `Future` s are *lazy*
 * executor (single-threaded or multi-threaded)
 
 == Make Futures Go
@@ -153,7 +153,7 @@ Use concurrency primitives to pass or share data between async blocks:
 
 == `std::sync::Mutex` vs `<runtime>::Mutex`
 
-* use `std::sync::Mutex` if critical section is short and doesn't have `await`s in it.
+* use `std::sync::Mutex` if critical section is short and doesn't have `await` s in it.
 * use runtime's `Mutex` otherwise.
 
 == Compatibility
