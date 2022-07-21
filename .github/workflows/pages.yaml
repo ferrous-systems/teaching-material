@@ -27,7 +27,6 @@ jobs:
 
       - name: Build
         run: |
-          ls -l "$(pwd)/node_modules/.bin/mmdc"
           PATH="$(pwd)/node_modules/.bin:$PATH" ./rake
 
       - name: Deploy

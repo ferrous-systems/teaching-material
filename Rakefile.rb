@@ -40,7 +40,6 @@ task :presentations => :index do
   FileUtils.cp Dir.glob('./presentations/*/*.{svg,jpg}'), './target'
   FileUtils.cp './presentations/slides.css', './target/slides.css'
 
-  puts "PWD #{FileUtils.pwd}"
   (FileList.new './presentations/*/*.adoc').each do |doc|
     puts "Converting #{doc}"
     name = File.basename (File.dirname doc)
