@@ -24,6 +24,7 @@ jobs:
           npm ci
           gem install bundler
           bundle install --jobs 4 --retry 3
+          ls -l ./node_modules/.bin/
           ./rake
 
       - name: Deploy
