@@ -19,13 +19,16 @@ jobs:
         with:
           node-version: 16
 
-      - name: Build
+      - name: Install Dependencies
         run: |
           npm ci
           gem install bundler
           bundle install --jobs 4 --retry 3
-          ls -l ./node_modules/.bin/
-          ./rake
+
+      - name: Build
+        run: |
+          ls -l "$(pwd)/node_modules/.bin/mmdc"
+          PATH="$(pwd)/node_modules/.bin:$PATH" ./rake
 
       - name: Deploy
         uses: ferrous-systems/shared-github-actions/github-pages@main
