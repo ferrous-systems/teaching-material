@@ -130,9 +130,11 @@ include::./async_main_1.rs[]
 include::./async_main_2.rs[]
 ----
 
-== Runtimes
+== Why Many Runtimes
 
-* `tokio`, `async-std`, `smol`, `monoio`, ...
+* `tokio` - a high-performant multithreaded runtime
+* `embassy` - a tiny single-threaded runtime for microcontrollers
+* ...
 * task executor, scheduler, non-blocking IO APIs
 
 == Multithreading
