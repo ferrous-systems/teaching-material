@@ -14,8 +14,14 @@ jobs:
         with:
           ruby-version: 2.6
 
+      - name: Set up Node 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
       - name: Build
         run: |
+          npm ci
           gem install bundler
           bundle install --jobs 4 --retry 3
           ./rake
