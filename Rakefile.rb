@@ -14,7 +14,7 @@ def convert_assignments(doc, assignment_dir)
   attributes: <<-ATTRS,
     icons=font
     source-highlighter=rouge
-    mermaid=node_modules/.bin/mmdc
+    mermaid="#{FileUtils.pwd}/node_modules/.bin/mmdc"
   ATTRS
   to_file: "#{TARGET_DIR}/#{assignment_dir}/#{File.basename doc, '.*'}.html",
   mkdirs: true
@@ -40,6 +40,7 @@ task :presentations => :index do
   FileUtils.cp Dir.glob('./presentations/*/*.{svg,jpg}'), './target'
   FileUtils.cp './presentations/slides.css', './target/slides.css'
 
+  puts "PWD #{FileUtils.pwd}"
   (FileList.new './presentations/*/*.adoc').each do |doc|
     puts "Converting #{doc}"
     name = File.basename (File.dirname doc)
@@ -58,7 +59,7 @@ task :presentations => :index do
         source-highlighter=highlightjs
         docinfo=shared
         docinfodir=../
-        mermaid=node_modules/.bin/mmdc
+        mermaid="#{FileUtils.pwd}/node_modules/.bin/mmdc"
       ATTRS
       backend: 'revealjs',
       to_file: "#{TARGET_DIR}/#{name}.html",
