@@ -14,7 +14,7 @@ def convert_assignments(doc, assignment_dir)
   attributes: <<-ATTRS,
     icons=font
     source-highlighter=rouge
-    mermaid=./node_modules/.bin/mmdc
+    mermaid=node_modules/.bin/mmdc
   ATTRS
   to_file: "#{TARGET_DIR}/#{assignment_dir}/#{File.basename doc, '.*'}.html",
   mkdirs: true
@@ -58,7 +58,7 @@ task :presentations => :index do
         source-highlighter=highlightjs
         docinfo=shared
         docinfodir=../
-        mermaid=./node_modules/.bin/mmdc
+        mermaid=node_modules/.bin/mmdc
       ATTRS
       backend: 'revealjs',
       to_file: "#{TARGET_DIR}/#{name}.html",
