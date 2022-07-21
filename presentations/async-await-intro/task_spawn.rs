@@ -5,7 +5,7 @@ async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     loop {
         let (socket, _) = listener.accept().await?;
 
-        tokio::spawn(async move {
+        tokio::spawn(async move {  // <1>
             process(socket).await;
         });
     }

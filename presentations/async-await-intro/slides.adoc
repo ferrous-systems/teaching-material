@@ -49,7 +49,7 @@ Example: making an HTTP request
 
 [source,rust]
 ----
-include::./1.rs[]
+include::./is_website_up.rs[]
 ----
 
 == Async
@@ -68,7 +68,7 @@ include::./1.rs[]
 
 [source,rust]
 ----
-include::./2.rs[]
+include::./fetch_into_string.rs[]
 ----
 
 * Question: How many tasks are running concurrently?
@@ -85,14 +85,21 @@ include::./2.rs[]
 
 [source,rust]
 ----
-include::./3.rs[]
+include::./join.rs[]
 ----
 
 == Select example
 
 [source,rust]
 ----
-include::./4.rs[]
+include::./select.rs[]
+----
+
+== Running tasks
+
+[source,rust]
+----
+include::./block_on.rs[]
 ----
 
 == Make Futures Go
@@ -106,21 +113,21 @@ Do lines 1 and 2 print?
 
 [source,rust]
 ----
-include::./5.rs[]
+include::./lazy.rs[]
 ----
 
 == Runtimes
 
 [source,rust]
 ----
-include::./6.rs[]
+include::./async_main_1.rs[]
 ----
 
 == "Async Main" pattern
 
 [source,rust]
 ----
-include::./7.rs[]
+include::./async_main_2.rs[]
 ----
 
 == Runtimes
@@ -135,7 +142,7 @@ include::./7.rs[]
 
 [source,rust]
 ----
-include::./8.rs[]
+include::./task_spawn.rs[]
 ----
 * other runtimes may have similar APIs
 
@@ -162,7 +169,7 @@ Use concurrency primitives to pass or share data between async blocks:
 
 [source,rust]
 ----
-include::./9.rs[]
+include::./async_stream_read.rs[]
 ----
 
 == Async Traits
@@ -172,7 +179,7 @@ include::./9.rs[]
 
 [source,rust]
 ----
-include::./10.rs[]
+include::./async_trait.rs[]
 ----
 * thus cannot describe common traits for async versions of `fs`, `net`, etc.
 * each runtime brings their own implementations!
