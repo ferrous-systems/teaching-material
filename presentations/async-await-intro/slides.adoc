@@ -123,7 +123,7 @@ include::./lazy.rs[]
 include::./async_main_1.rs[]
 ----
 
-== "Async Main" pattern
+== "Async Main" Pattern
 
 [source,rust]
 ----
@@ -162,7 +162,7 @@ Use concurrency primitives to pass or share data between async blocks:
 
 * thin compatibility layer based on `std::future::Future`
 * enough to support `async await` syntax only
-* standartization of other APIs is in progress
+* standardization of other APIs is in progress
 
 == Reading an async stream
 
