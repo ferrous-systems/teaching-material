@@ -4,7 +4,8 @@ link:./index.html[Table of Contents]
 
 == Concurrency
 
-[mermaid, format=svg, width="1000", height="1000"]
+[.stretch]
+[mermaid, format=svg]
 ....
 graph TD
   A[Concurrency] --> B[Asynchrony]
