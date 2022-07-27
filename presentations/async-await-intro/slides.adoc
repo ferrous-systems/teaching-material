@@ -79,8 +79,8 @@ include::./fetch_into_string.rs[]
 * By default no asynchrony in async/await
 * Needs async operators
 * Most common:
-  * Join: wait for all async tasks to complete
-  * Select: wait for one async task to complete
+  ** Join: wait for all async tasks to complete
+  ** Select: wait for one async task to complete
 
 == Join example
 
