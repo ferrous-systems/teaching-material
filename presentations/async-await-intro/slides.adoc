@@ -4,7 +4,8 @@ link:./index.html[Table of Contents]
 
 == Concurrency
 
-[mermaid, format=svg, width="1000", height="1000"]
+[.stretch]
+[mermaid, format=svg]
 ....
 graph TD
   A[Concurrency] --> B[Asynchrony]
@@ -22,7 +23,7 @@ graph TD
 * Running on multiple OS/hardware threads
 * Pre-emptive multitasking
 * Handled by OS
-* Best for: CPU-bound workloads
+* Best for: *CPU-bound workloads*
 
 == Asynchrony
 
@@ -35,7 +36,7 @@ graph TD
 * Lightweight tasks
 * Interleaving tasks
 * Needs user-level scheduler (executor)
-* Best for: I/O-bound workloads
+* Best for: *I/O-bound workloads*
 
 == Asynchronous Advantages
 
@@ -49,7 +50,7 @@ Example: making an HTTP request
 
 [source,rust]
 ----
-include::./1.rs[]
+include::./is_website_up.rs[]
 ----
 
 == Async
@@ -68,7 +69,7 @@ include::./1.rs[]
 
 [source,rust]
 ----
-include::./2.rs[]
+include::./fetch_into_string.rs[]
 ----
 
 * Question: How many tasks are running concurrently?
@@ -78,27 +79,130 @@ include::./2.rs[]
 * By default no asynchrony in async/await
 * Needs async operators
 * Most common:
-  * Join: wait for all async tasks to complete
-  * Select: wait for one async task to complete
+  ** Join: wait for all async tasks to complete
+  ** Select: wait for one async task to complete
 
 == Join example
 
 [source,rust]
 ----
-include::./3.rs[]
+include::./join.rs[]
 ----
 
 == Select example
 
 [source,rust]
 ----
-include::./4.rs[]
+include::./select.rs[]
+----
+
+== Make Futures Go
+
+* `Future` s are *lazy*
+* executor (single-threaded or multi-threaded)
+
+== Make Futures Go
+
+Do lines 1 and 2 print?
+
+[source,rust]
+----
+include::./lazy.rs[]
 ----
 
 == Running tasks
 
 [source,rust]
 ----
-include::./5.rs[]
+include::./block_on.rs[]
 ----
 
+== `block_on`
+
+* takes a future
+* blocks the current thread until the future is resolved
+* async runtimes provide this method
+
+== Runtimes
+
+[source,rust]
+----
+include::./async_main_1.rs[]
+----
+
+== "Async Main" Pattern
+
+[source,rust]
+----
+include::./async_main_2.rs[]
+----
+
+== Why Many Runtimes
+
+* `tokio` - a high-performant multithreaded runtime
+* `embassy` - a tiny single-threaded runtime for microcontrollers
+* ...
+* task executor, scheduler, non-blocking IO APIs
+
+== Multithreading
+
+* `block_on` runs tasks on a single tread
+* you can tell runtime that ta given async block can run on a separate thread
+
+[source,rust]
+----
+include::./task_spawn.rs[]
+----
+* other runtimes may have similar APIs
+
+== Multithreading
+
+Use concurrency primitives to pass or share data between async blocks:
+* `Arc`, `Mutex`, channels, etc.
+
+== `std::sync::Mutex` vs `<runtime>::Mutex`
+
+* use `std::sync::Mutex` if critical section is short and doesn't have `await` s in it.
+* use runtime's `Mutex` otherwise.
+
+== Compatibility
+
+* thin compatibility layer based on `std::future::Future`
+* enough to support `async await` syntax only
+* standardization of other APIs is in progress
+
+== Reading an async stream
+
+* no async iterators in the language yet
+* use `while-let-await` loop:
+
+[source,rust]
+----
+include::./async_stream_read.rs[]
+----
+
+== Async Traits
+
+* a big missing piece of the puzzle
+* cannot be implemented in Rust yet:
+
+[source,rust]
+----
+include::./async_trait.rs[]
+----
+* thus cannot describe common traits for async versions of `fs`, `net`, etc.
+* each runtime brings their own implementations!
+
+== Libraries
+
+* has to either choose one runtime to work on
+* or include adapters for several runtimes
+* `tokio` has the largest ecosystem
+
+== Future of Async in Rust
+
+* async traits!
+* standardize more APIs to remove the need to pick runtimes to support for libraries
+* async iterators
+* streams
+* the progress is slow yet steady

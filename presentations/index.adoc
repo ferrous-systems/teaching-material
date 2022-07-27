@@ -44,6 +44,7 @@
 * link:./async-implementation.html[Async Implementation Details]
 * link:./async-component-interaction.html[Async component interaction]
 * link:./async-growth-handling.html[Async: Avoiding disaster and unbounded growth]
+* link:./async-await-laziness-in-detail.html[Async/Await: Laziness in detail (Rust vs other languages)]
 
 .Special topics
 * link:./cargo.html[Cargo]
