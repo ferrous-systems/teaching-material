@@ -66,3 +66,13 @@ As Rust forbids aliasing, it is impossible in safe Rust to split a slice into 2 
 ----
 include::./2.rs[]
 ----
+
+== Highlight unsafe code in VSCode
+
+* Will highlight which function calls are `unsafe` inside an `unsafe` block
+* Helpful for longer `unsafe` blocks
+
+[source,json]
+----
+include::./vscode-settings.json[]
+----
