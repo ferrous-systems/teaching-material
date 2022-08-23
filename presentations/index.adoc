@@ -75,6 +75,7 @@
 * link:./assignments/rustlatin.html[Rust Latin]
 * link:./assignments/durable-file.html[Durable file]
 * link:./assignments/narcissistic-number-check.html[Narcissistic number check]
+* link:./assignments/serde-lifetimes.html[Lifetimes with Serde]
 * link:./assignments/redisish.html[Redisish protocol parser]
 * link:./assignments/tcp-echo-server.html[TCP server]
 * link:./assignments/tcp-client.html[TCP client]
