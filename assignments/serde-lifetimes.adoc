@@ -143,6 +143,6 @@ Get to the point when your program prints: `is borrowed = true`
 
  1. Why is there a need for separate `serde` and `serde-json` crates?
  2. Why do we need to put a lifetime annotation for a field of '&str' type?
- 3. What about `Cow` type?
- 4. When can we use plain `&str` for text data during deserialization?
+ 3. Why do we need to put a lifetime annotation for a field of 'Cow' type?
+ 4. When can we use plain `&str` vs `Cow<str>` or `String` for text data during deserialization?
  5. What are pros and cons of using `&str` or `Cow<str>` compared to `String?`
