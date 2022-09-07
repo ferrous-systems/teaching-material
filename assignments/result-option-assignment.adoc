@@ -54,7 +54,7 @@ TIP: IDEs often provide a "quick fix" to roll out all match arms quickly
 * import `std::io::prelude::*`
 * To use the content of the file, bind the result of the `match` statement to a variable.
 ** In the other branch of the match statement, change `println!("Error: {}", e)` to `panic!("Error: {}", e)`
-* Read the content of the file into a `String`. Use https://doc.rust-lang.org/std/io/trait.Read.html#method.read_to_string[Read#read_to_string].
+* Read the content of the file into a `String`. Use https://doc.rust-lang.org/std/io/trait.Read.html#method.read_to_string[Read::read_to_string].
 * Print the entire content of the file using `println!`
 * Handle all errors (the compiler will warn you if you miss one)
 
