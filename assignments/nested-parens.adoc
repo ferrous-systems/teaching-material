@@ -3,7 +3,7 @@
 
 In this exercise, you will learn
 
-* how to translate a `for loop` into an `iterator` solution by using `map`, `scan`, and `fold`
+* how to translate code using `for` loops into an code using iterators and the functions `map`, `scan`, and `fold`.
 * how to setup a benchmarking harness to compare speeds
 * how to use `Rayon` to parallelize your iterators!
 * how to compress data to get even more speedups
