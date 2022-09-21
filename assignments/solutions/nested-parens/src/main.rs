@@ -3,6 +3,7 @@ use std::fs::File;
 use std::io::prelude::*;
 
 // Adapted from https://haggainuchi.com/nestedparens.html
+// Skip this function, nothing to do.
 fn nested(n: i32) -> Vec<String> {
     if n == 0 {
         vec![String::new()]
@@ -22,10 +23,10 @@ fn nested(n: i32) -> Vec<String> {
 fn main() -> std::io::Result<()> {
     // Collect an i32 input from CLI
     let args: Vec<String> = env::args().collect();
-    let input = if args.len() != 1 {
+    let input = if args.len() != 2 {
         panic!("Please only supply a single i32 as CLI arg. e.g., `cargo run 10`");
     } else {
-        let num = args[0].parse::<i32>().unwrap();
+        let num = args[1].parse::<i32>().unwrap();
         if num < 1 || 15 < num {
             panic!("Please only supply an i32 between 2 and 13 as an arg")
         }
@@ -38,6 +39,9 @@ fn main() -> std::io::Result<()> {
 
     // Skip if File already exists,
     // Otherwise write the Vec<String> into the file, one element per line
+    if std::path::Path::new(&name).exists() {
+        panic!("File already exists. Exiting.");
+    }
     let mut file = File::create(&name).expect("File already existed!");
     for f in &parens_vec {
         writeln!(file, "{}", f)?;
@@ -87,11 +91,14 @@ pub fn max_depth2(s: String) -> i32 {
 }
 #[test]
 fn max_depth1_works() {
+    assert_eq!(max_depth1(String::from("()()()")), 1);
+    assert_eq!(max_depth1(String::from("((()))")), 3);
     assert_eq!(nested(10).into_iter().map(max_depth1).max().unwrap(), 10);
 }
 
 #[test]
 fn max_depth2_works() {
+    assert_eq!(max_depth2(String::from("()()()")), 1);
+    assert_eq!(max_depth2(String::from("((()))")), 3);
     assert_eq!(nested(10).into_iter().map(max_depth2).max().unwrap(), 10);
 }
-
