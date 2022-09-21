@@ -54,8 +54,7 @@ use std::io::prelude::*;
 // Adapted from https://haggainuchi.com/nestedparens.html
 fn nested(n: i32) -> Vec<String> {
     if n == 0 {
-        // 👀 How did I make an empty `String` again?
-        vec![XXX]
+        vec![todo!("👀 How do I make an empty `String` again?")]
     } else {
         let mut parens = Vec::new();
         for i in 0..n {
