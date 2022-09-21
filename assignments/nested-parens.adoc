@@ -27,7 +27,10 @@ In the above example, it would be on line `5`, as the maximum nesting level is `
 
 In this assignment, you will be given:
 * Code to write the input parentheses (which you can assume are always nested correctly) to a local file
-* A working solution via a `for loop`, and it will be your task to translate it to an iterator style, and then to benchmark the difference.
+
+* A working solution using a `for` loop,
+
+It will be your task to modify this solution to use iterators and benchmark the two solutions
 
 
 === Step 1
