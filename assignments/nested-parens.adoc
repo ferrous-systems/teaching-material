@@ -21,7 +21,7 @@ Problem statement: Given a well-formed set of `String` parentheses (one entry pe
 
 ----
 
-find the line where there is the maximum number of nested parentheses. 
+find the entry with the maximum nesting level. 
 In the above example, it would be on line `5`, as the maximum nesting level is `3`.
 
 
