@@ -41,7 +41,7 @@ It will be your task to modify this solution to use iterators and benchmark the 
 cargo new --bin nested
 ----
 
-and copy the following code in your `src/main.rs`:
+and copy the following code to the `src/main.rs` file:
 2. Complete some of the missing blanks of the code, and make sure `cargo test` passes.
 
 [source,rust, linenums]
