@@ -1,0 +1,228 @@
+= Exercise: Nested Parens
+:source-language: rust
+
+In this exercise, you will learn
+
+* how to translate a `for loop` into an `iterator` solution by using `map`, `scan`, and `fold`
+* how to setup a benchmarking harness to compare speeds
+* how to use `Rayon` to parallelize your iterators!
+* how to compress data to get even more speedups
+
+We will take a famous coding problem and iterate solutions, and measure their performance.
+Problem statement: Given a well-formed set of `String` parentheses (one entry per line, all lines in a single text file), 
+
+[source, text, linenums]
+----
+()(())
+(())()
+(()())
+()()()
+((()))
+
+----
+
+find the line where there is the maximum number of nested parentheses. 
+In the above example, it would be one line `5`, as the maximum nesting level is `3`.
+
+
+In this assignment, you will be given:
+* Code to write to a local file the parenthesis inputs (which you can assume are only nested correctly)
+* A working solution via a `for loop`, and it will be your task to translate it to an iterator style, and then to benchmark the difference.
+
+
+=== Step 1
+1. Make a new cargo crate with
+
+[source, bash]
+----
+cargo new nested
+----
+
+and copy the following code in your `src/main.rs`:
+2. Complete some of the missing blanks of the code, and make sure `cargo test` passes.
+
+[source,rust, linenums]
+====
+----
+use std::env;
+use std::fs::File;
+use std::io::prelude::*;
+
+// Adapted from https://haggainuchi.com/nestedparens.html
+fn nested(n: i32) -> Vec<String> {
+    if n == 0 {
+        // 👀 How did I make an empty `String` again?
+        vec![XXX]
+    } else {
+        let mut parens = Vec::new();
+        for i in 0..n {
+            for a in nested(i) {
+                for b in nested(n - 1 - i) {
+                    parens.push("(".to_owned() + &a + ")" + &b);
+                }
+            }
+        }
+        parens
+    }
+}
+
+// You don't need to modify this function - skip it.
+fn main() -> std::io::Result<()> {
+    // Collect an i32 input from CLI
+    let args: Vec<String> = env::args().collect();
+    let input = if args.len() != 1 {
+        panic!("Please only supply a single i32 as CLI arg. e.g., `cargo run 10`");
+    } else {
+        let num = args[0].parse::<i32>().unwrap();
+        if num < 1 || 15 < num {
+            panic!("Please only supply an i32 between 2 and 13 as an arg")
+        }
+        num
+    };
+
+    // Create a file name
+    let parens_vec = nested(input);
+    let name = format!("bench_{}_length_{}.txt", input, parens_vec.len());
+
+    // Skip if File already exists,
+    // Otherwise write the Vec<String> into the file, one element per line
+    let mut file = File::create(name).expect("File already existed!");
+    for f in &parens_vec {
+        writeln!(file, "{}", f)?;
+    }
+    Ok(())
+}
+
+
+// `for loop` solution
+// On LeetCode, this code obtains:
+// Runtime: 1 ms, faster than 53.49% of Rust online submissions for Maximum Nesting Depth of the Parentheses.
+// Memory Usage: 2.2 MB, less than 23.26% of Rust online submissions for Maximum Nesting Depth of the Parentheses.
+
+// Complete the following code! 
+fn max_depth1(s: String) -> i32 {
+    let mut max_count = 0;
+    let mut count = 0;
+    // 👀 How did I iterate over each char in a `String` again? 👀
+    for c in s.👾👾👾 {
+        // 👀 If I'm careful about how I map each `char` to a value... 👀
+        if c == 👾👾👾 {
+            count += 1;
+            if count > max_count {
+                // 👀 I can propagate that information along the `Vec`! 👀
+                max_count = 👾👾👾;
+            }
+        // 👀 Oh right, gotta catch the other case in the `map` here 👀
+        } else if c == 👾👾👾 {
+            count -= 1;
+        }
+    }
+    max_count
+}
+
+// Make sure this test passes!
+#[test]
+fn max_depth1_works() {
+    assert_eq!(nested(10).into_iter().map(max_depth1).max().unwrap(), 10);
+}
+----
+====
+
+
+=== Step 2
+
+1. Implement `max_depth2`, but now with iterators. Try to do the *smallest* possible change! You can do it with 2 lines of code being changed, but you might have to figure out what the right thing to do by looking at the documentation of `Rust Iterators`, like https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.map[`map`] or https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.for_each[`for_each`]
+
+Click to see a hint!
+
+[%collapsible]
+====
+Replace the top level loop with a `for_each`
+[source, rust]
+----
+s.chars()
+    .for_each(|c| {
+        ... })
+----
+You might have to add a few `})` at the end to compensate for introducing the `|c| {...}` closure.
+====
+
+2. Implement a test to verify your implementations match.
+
+Optional!
+Compare your `max_depth1` and `max_depth2` implementations to those of the https://leetcode.com/problems/maximum-nesting-depth-of-the-parentheses/[`LeetCode Maximum Nested Parenthesis`] in Rust implementations.
+
+[%collapsible]
+====
+
+==== `for loop` solution
+On LeetCode, this code obtains:
+Runtime: 1 ms, faster than 53.49% of Rust online submissions for Maximum Nesting Depth of the Parentheses.
+Memory Usage: 2.2 MB, less than 23.26% of Rust online submissions for Maximum Nesting Depth of the Parentheses.
+
+==== `iterator` solution, First Pass Attempt!
+On LeetCode, this code obtains:
+Runtime: 0 ms, faster than 100.00% of Rust online submissions for Maximum Nesting Depth of the Parentheses.
+Memory Usage: 1.9 MB, less than 97.67% of Rust online submissions for Maximum Nesting Depth of the Parentheses.
+====
+
+
+=== Step 3
+Use `criterion` to benchmark your implementations!
+
+1. Before we measure, it's good to step back and hypothesize what might happen: Which version do you think will be fastest? Why? 
+2. Copy this into your `src/lib.rs`:
+[source, rust]
+====
+----
+TODO
+----
+====
+
+And run the benchmark with
+[source, bash]
+====
+----
+TODO
+----
+====
+
+3. Write a benchmark harness for `max_depth2`.
+
+=== Step 4
+
+1. Write a `max_depth3` that uses a https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.scan[`scan`] instead of the `count += 1` and `count -= 1` idioms.
+2. Write a test and benchmark for `max_depth3`.
+
+
+=== Step 5
+1. Write a `max_depth4` that uses a https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.reduce[`reduce`] instead of the `if maxcount < count {...`
+2. Write a test and benchmark for `max_depth4`.
+
+=== Step6
+
+Time to slap on the rocket skates 😎
+
+1. Install `rayon` by running
+[source, bash]
+====
+----
+cargo add rayon
+----
+====
+
+2. Make a slew of functions that are `max_depth*_par` by replacing the `iter().chars()` with `par_iter().chars()`.
+3. Test them for correctness.
+4. Benchmark, compare and analyze.
+
+=== Step 7
+
+Optional!
+
+Investigate any and all of the following questions:
+0. Did you remember to set the `--release` flag? Most iterator optimizations will *never* fire if you don't make a release build.
+1. Which is your fastest `serial` (non-parallel) version?
+2. You may need to restructure your input generation mechanism, but can you find at what input sizes the serial is *faster* than the parallel version?
+3. Plot the times to completion vs input sizes in terms of Kilobytes handled. Where do you see `super linear` scaling? Can you estimate your cache sizes based on performance using these chars? Verify your findings with `hwloc` or `lstopo`.
+4. Profile the memory usage with `bytehound` or `dhall` for each `max_depth*` method
+5. Use `cargo-asm`, `Godbolt` compiler or `llvm-mca` to analyze possible.

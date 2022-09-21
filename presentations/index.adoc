@@ -94,6 +94,8 @@
 * link:./assignments/async-channels.html[Async Channels]
 * link:./assignments/actix.html[Actix Chat using Websockets]
 
+* link:./assignments/nested-parens.html[Nested Parens]
+
 .SemVer trail
 * link:./assignments/semver_from_file.html[SemVer from file]
 
