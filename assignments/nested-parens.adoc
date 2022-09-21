@@ -38,7 +38,7 @@ It will be your task to modify this solution to use iterators and benchmark the 
 
 [source, bash]
 ----
-cargo new nested
+cargo new --bin nested
 ----
 
 and copy the following code in your `src/main.rs`:
