@@ -70,7 +70,7 @@
 
 .Exercise Sheets
 * link:./assignments/fizzbuzz.html[FizzBuzz]
-* link:./assignments/result-option-assignment.html[Files, match and Results]
+* link:./assignments/result-option-assignment.html[Files, match and Result]
 * link:./assignments/fizzbuzz-command-line.html[FizzBuzz command line]
 * link:./assignments/rustlatin.html[Rust Latin]
 * link:./assignments/durable-file.html[Durable file]
