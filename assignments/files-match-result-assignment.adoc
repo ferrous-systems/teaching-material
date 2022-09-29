@@ -1,4 +1,4 @@
-= Exercise: Files, Option and Result
+= Exercise: Files, match, and Result
 :source-language: rust
 
 In this exercise, you will learn
@@ -44,7 +44,7 @@ A template with example data can be found in `assignments/IO-assignment/template
 == Task 1: Files and Errors
 
 * Open the file "src/data/content.txt" using https://doc.rust-lang.org/std/fs/struct.File.html#method.open[File::open] and bind the result to the variable `f`.
-* Find out what type the variable f is. Either your IDE shows you, or you can assign a random type to the variable, and run the program.
+* Find out what type the variable `f` is. Either your IDE shows you, or you can assign a random type to the variable, and run the program.
 * `match` the two possible patterns, `Ok(file)` and `Err(e)` to an an appropriate expression, for example: `println!("File opened")` and `println!("Error: {}", e)`
 
 TIP: IDEs often provide a "quick fix" to roll out all match arms quickly
