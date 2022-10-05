@@ -15,7 +15,7 @@ try_compile() {
 }
 
 # These are not supposed to compile
-# try_compile ./assignments/IO-assignment/template/Cargo.toml
+# try_compile ./assignments/files-match-result-assignment/template/Cargo.toml
 # try_compile ./assignments/async-chat-template/Cargo.toml
 # try_compile ./assignments/_templates/concurrency/Cargo.toml
 try_compile ./assignments/solutions/threaded-mailbox/Cargo.toml
