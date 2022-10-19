@@ -41,7 +41,7 @@ This call is introduced when dereferencing is requested.
 == Important deref behaviours
 
 -   String -&gt; &str
--   Vec<T> -&gt; &\[T\]
+-   Vec<T> -&gt; &[T]
 
 Functions that don't modify the lengths of a String or a Vector  should accept a slice instead. The memory layout is chosen so that this is *cost free*.
 
