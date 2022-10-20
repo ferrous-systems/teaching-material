@@ -39,7 +39,14 @@ match VALUE {
 
 Clone the teaching material repository at https://github.com/ferrous-systems/teaching-material[github.com/ferrous-systems/teaching-material].
 
-A template with example data can be found in `assignments/IO-assignment/template`.
+Then, start your `VSCode` in the proper root folder to have `Rust-Analyzer` working properly.
+[source, bash]
+----
+git clone https://github.com/ferrous-systems/teaching-material
+code teaching-material/assignments/files-match-result-assignment/template/
+----
+
+Your code will use the example data found in https://github.com/ferrous-systems/teaching-material/tree/main/assignments/files-match-result-assignment/template/src/data[files-match-result-assignment/template/src/data].
 
 == Task 1: Files and Errors
 
