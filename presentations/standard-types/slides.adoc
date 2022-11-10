@@ -110,7 +110,7 @@ include::./8.rs[]
 
 == `Vec<T>`: As a Slice
 
-`Vec<T>` implements `Deref<Target=[T]`, so it can be easily used as a slice.
+`Vec<T>` implements `Deref<Target=[T]>`, so it can be easily used as a slice.
 
 [source,rust]
 ----

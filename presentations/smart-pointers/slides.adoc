@@ -1,4 +1,4 @@
-= Special Pointers in Rust
+= Smart Pointers in Rust
 
 link:./index.html[Table of Contents]
 
