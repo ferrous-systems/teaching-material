@@ -68,16 +68,12 @@ If you have issues that your program only counts to 99, be aware that the `..`-r
 
 [source,rust]
 ----
-for i in 1..100 { // counts to 99
-
+for i in 1..5 { 
+    // Only gives you 1, 2, 3, 4
 }
 
-for i in 1..101 { // counts to 100
-
-}
-
-for i in 1..=100 { // counts including 100
-
+for i in 1..=5 {
+    // Gives you 1, 2, 3, 4 and 5
 }
 ----
 
