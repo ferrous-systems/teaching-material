@@ -94,12 +94,12 @@ if x % 5 == 0 {
 
 === Printing to console
 
-The recommended way to print to the console in this exercise is `println!`. `println!` _always_ needs a format string.
+The recommended way to print to the console in this exercise is `println!`. `println!` _always_ needs a format string - it uses `{}` as a placeholder to mean *print the next argument*, like Python 3 or C#.
 
 [source,rust]
 ----
 let s = String::from("Fizz");
-println!("{}", s);
+println!("The value is s is {}. That's nice.", s);
 ----
 
 === Testing
