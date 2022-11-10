@@ -27,11 +27,12 @@ Implementing the following rules:
   * If `i` is divisible by `3`, return `String::from("Fizz")`
   * If `i` is divisible by `5`, return `String::from("Buzz")`
   * If `i` is divisible by both `3` and `5`, return `String::from("FizzBuzz")`
-  * Return the number as a String, otherwise, using `format!("{}", i)`
+  * Return the number as a String, otherwise, using `i.to_string()`
   * Test the function
 
 3. Write a main function that loops from `1` to `100` using `for`
-** print the returned value using `println!("{}", fizz)`
+  * Call the `fizzbuzz` function inside the loop and store the result in the variable `fizz`.
+  * Print the returned value using `println!("{}", fizz)`
 
 == Help
 
@@ -58,7 +59,7 @@ The recommended ways to get a `String` type for this exercise are:
 ----
 let string = String::from("Fizz");
 let i = 4;
-let string = format!("{}", i);
+let string = i.to_string();
 ----
 
 === Counting from 1 to 100
