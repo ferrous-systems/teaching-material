@@ -8,6 +8,7 @@ In this exercise, you will learn
 * how to use the `Option`-type.
 * how to do some elementary file processing (counting, reading line by line).
 * how to navigate the Rust stdlib documentation
+* how to add external dependencies to your project
 
 Both the `Option` and `Result` are similar in way. Both have two variants, and
 depending on what those variants are, the program may continue in a different way.
