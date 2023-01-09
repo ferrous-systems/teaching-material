@@ -1,0 +1,129 @@
+= Cheat Sheet: FizzBuzz
+:source-language: rust
+
+In this cheat sheet you will find all the Rust syntax needed to solve the FizzBuzz Exercise.
+==== 1. New Project
+Create a new binary Cargo project, check the build and see if it runs:
++
+[source]
+----
+$ cargo new fizzbuzz
+$ cd fizzbuzz
+$ cargo run
+----
++
+== Strings
+
+
+  `String::from("FizzBuzz")`
+  `format!("{}", i)`
+let string = String::from("Fizz");
+let i = 4;
+let string = format!("{}", i);
+
+
+
+== Functions
+
+Functions in Rust have the `fn` keyword, followed by a name. the types of the variables in the function signature need to made explicit. If the function returns something, the type is declared following the `->` operator.
+
++
+[source,rust]
+----
+fn fizzbuzz(i: u32) -> String {
+    ///....
+}
+----
++
+
+
+
+
+
+== Control Flow: Conditionals
+
+this is Rust's syntax for if/else. `condition` needs to be have a bool value. 
+
+[source,rust]
+----
+if condition {
+    // do one thing
+} else {
+    // do the other thing
+}
+----
+== Math operators:
+
+[cols="1,1,1"]
+|===
+|Operator
+|Example
+|Explanation
+
+|`%`
+|`expr % expr`
+|Arithmetic remainder
+
+|`*`
+|`expr * expr`
+|arithmetic multiplication
+
+|`-`
+|`expr - expr`
+|arithmetic subtraction
+
+|`+`
+|`expr + expr`
+|arithmetic addition
+|===
+== Iterating and Ranges
+
+`for` loops iterate over the elements of a collection or a range.
+
+[source,rust]
+----
+for element in collection { 
+    // returns an element of this collection
+}
+----
+
+Ranges use the `..` syntax. It's _end-exclusive_
+
+[source,rust]
+----
+for i in 1..100 { // counts to 99
+
+}
+
+for i in 1..101 { // counts to 100
+
+}
+
+for i in 1..=100 { // counts including 100
+
+}
+----
+
+== returning
+
+
+
+If you have issues returning data from multiple branches of your solution, liberally use `return`.
+
+[source,rust]
+----
+if x % 5 == 0 {
+    return String::from("Buzz");
+}
+----
+
+== Printing to console
+
+The recommended way to print to the console in this exercise is `println!`. `println!` _always_ needs a format string.
+
+[source,rust]
+----
+let s = String::from("Fizz");
+println!("{}", s);
+----
+

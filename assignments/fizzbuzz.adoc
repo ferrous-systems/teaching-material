@@ -37,30 +37,36 @@ After completing this exercise you are able to
 In general, we also recommend to use the Rust documentation to figure out things you are missing to familiarise yourself with it. If you ever feel completely stuck or that you haven't understood something, please hail the trainers quickly.
 
 ==== 1. New Project
-Create a new binary Cargo project, check the build and see if it runs:
-+
+Create a new binary Cargo project, check the build and see if it runs.
+
+.Click to see hints/solutions for this step
+[%collapsible]
+
 [source]
 ----
 $ cargo new fizzbuzz
 $ cd fizzbuzz
 $ cargo run
 ----
-+
+
 
 ==== 2. `fn fizzbuzz`
 * Create the function with the name `fizzbuzz`. It takes an unsigned 32-bit integer as an argument and returns a `String` type.
-+
+
+.Click to see hints/solutions for this step
+[%collapsible]
 [source,rust]
 ----
 fn fizzbuzz(i: u32) -> String {
     ///....
 }
 ----
-+
+
 
 * Creating Strings:
 The two recommended ways to get a `String` type for this exercise are:
-
+.Click to see hints/solutions for this step
+[%collapsible]
 [source,rust]
 ----
 let string = String::from("Fizz");
