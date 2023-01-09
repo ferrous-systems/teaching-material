@@ -6,8 +6,9 @@ In this exercise, you will learn
 * how to open a file
 * how to handle errors using the `Result`-type.
 * how to use the `Option`-type.
-* how to read a file line by line.
-* how to count the number of lines in a file.
+* how to do some elementary file processing (counting, reading line by line).
+* how to navigate the Rust stdlib documentation
+* how to add external dependencies to your project
 
 Both the `Option` and `Result` are similar in way. Both have two variants, and
 depending on what those variants are, the program may continue in a different way.
@@ -50,7 +51,7 @@ Your code will use the example data found in https://github.com/ferrous-systems/
 
 == Task 1: Files and Errors
 
-* Open the file "src/data/content.txt" using https://doc.rust-lang.org/std/fs/struct.File.html#method.open[File::open] and bind the result to the variable `f`.
+* Open the file `"src/data/content.txt"` using https://doc.rust-lang.org/std/fs/struct.File.html#method.open[File::open] and bind the result to the variable `f`.
 * Find out what type the variable `f` is. Either your IDE shows you, or you can assign a random type to the variable, and run the program.
 * `match` the two possible patterns, `Ok(file)` and `Err(e)` to an an appropriate expression, for example: `println!("File opened")` and `println!("Error: {}", e)`
 
@@ -61,7 +62,7 @@ TIP: IDEs often provide a "quick fix" to roll out all match arms quickly
 * import `std::io::prelude::*`
 * To use the content of the file, bind the result of the `match` statement to a variable.
 ** In the other branch of the match statement, change `println!("Error: {}", e)` to `panic!("Error: {}", e)`
-* Read the content of the file into a `String`. Use https://doc.rust-lang.org/std/io/trait.Read.html#method.read_to_string[Read#read_to_string].
+* Read the content of the file into a `String`. Use https://doc.rust-lang.org/std/io/trait.Read.html#method.read_to_string[Read::read_to_string].
 * Print the entire content of the file using `println!`
 * Handle all errors (the compiler will warn you if you miss one)
 

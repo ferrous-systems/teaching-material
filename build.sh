@@ -15,7 +15,7 @@ try_compile() {
 }
 
 # These are not supposed to compile
-# try_compile ./assignments/IO-assignment/template/Cargo.toml
+# try_compile ./assignments/files-match-result-assignment/template/Cargo.toml
 # try_compile ./assignments/async-chat-template/Cargo.toml
 # try_compile ./assignments/_templates/concurrency/Cargo.toml
 try_compile ./assignments/solutions/threaded-mailbox/Cargo.toml
@@ -45,6 +45,7 @@ try_compile ./assignments/solutions/fill_in_the_blanks/Cargo.toml
 try_compile ./assignments/solutions/green-yellow/Cargo.toml
 try_compile ./assignments/solutions/redis-protobuf/Cargo.toml
 try_compile ./assignments/solutions/fizzbuzz/Cargo.toml
+try_compile ./assignments/solutions/shapes/Cargo.toml
 try_compile ./assignments/solutions/durable_file/Cargo.toml
 try_compile ./assignments/solutions/actix/chat-websockets/Cargo.toml
 try_compile ./assignments/_preliminary/async_parser_codealong/Cargo.toml
