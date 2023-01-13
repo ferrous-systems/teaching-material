@@ -123,7 +123,11 @@ fn rustlatin(sentence: &str) -> Vec<char> {
 
 === Step 4: Putting everything together: Comparing values and returning the content of the vector as `String`.
 
-Check if the first character of each word is a vowel. Add the prefix or suffix according to the rules above. Return the content of the vector as `String`.
+Add another function that checks if the first character of each word is a vowel. It adds the prefix or suffix according to the rules above. 
+
+Call the function in each iteration. 
+
+In `fn rustlatin` return the content of the vector as `String`.
 Run the tests to see if they pass. 
 
 .Click to see the hints/solutions for tests
@@ -131,18 +135,11 @@ Run the tests to see if they pass.
 ====
 [source,rust]
 ----
-fn rustlatin(sentence: &str) -> String {
-    let mut collection_of_words = Vec::new();
-    
-    for word in sentence.split(' ') {
-        let first_char = word.chars().next().unwrap();
-        if VOWELS.contains(&first_char) {
-            collection_of_words.push("sr".to_string() + word);
-        } else {
-            collection_of_words.push(word.to_string() + "rs");
-        }
-    };
-    collection_of_words.join(" ")
+// how to check if first character is a vowel, and modify the word!
+if VOWELS.contains(&first_char) {
+    collection_of_words.push("sr".to_string() + word);
+} else {
+    collection_of_words.push(word.to_string() + "rs");
 }
 ----
 ====
