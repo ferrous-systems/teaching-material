@@ -64,7 +64,7 @@ A part of this exercise is seeing type inference in action and to use it to help
 
 === Step 1: Splitting a sentence and pushing its words into a vector.
 
-Iterate over the sentence to split it into words. Use the white space as separator. Push each word into the vector `collection_of_words`. Add the correct return type to the function signature.
+Iterate over the sentence to split it into words. Use the white space as separator. https://doc.rust-lang.org/std/vec/struct.Vec.html#method.push[Push] each word into the vector `collection_of_words`. Add the correct return type to the function signature.
 Run the test to see if it passes. 
 
 .Click to see the solution
