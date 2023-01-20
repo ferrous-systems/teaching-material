@@ -20,7 +20,15 @@ You will learn how to:
 
 == Prerequisists
 
-Todo!
+You must be able to
+* define variables as mutable
+* use for loop
+* use an if/else construction
+* read Rust documentation
+* define a function with signature and return type
+* define arrays and vectors
+* distinguish between `String` and `&str`
+
 
 == Tasks
 
@@ -41,12 +49,14 @@ In order to learn as much as possible we recommend following the step-by-step so
 == Step-by-step-Solution
 === Getting started
 
-Find the exercise skeletton. 
+Find the exercise skeletton in trainingmaterial/assignments/_templates/rustlatin
 
-The folder contains each step as it's own numbered lib.rs file. Each file contains starter code and a test that needs to pass in order for the step to be considered complete. 
+The folder contains each step as it's own numbered `lib.rs` file. Each file contains starter code and a test that needs to pass in order for the step to be considered complete. 
 
 ==== Rust Analyzer
-A part of this exercise is seeing type inference in action and to use it to help to determine the type the funktion is going to return. To make sure the file can be indexed by Rust Analyzer, rename the file you're currently working on "lib.rs". Name it back to it's numbered version when you are finished. 
+A part of this exercise is seeing type inference in action and to use it to help to determine the type the funktion is going to return. To make sure the file can be indexed by Rust Analyzer, make sure 
+* that the `rustlatin` folder is your rootfolder in VSCoderename 
+* rename the file you're currently working on to `lib.rs`. Name it back to it's numbered version when you are finished. 
 
 
 
@@ -123,7 +133,7 @@ fn rustlatin(sentence: &str) -> Vec<char> {
 
 === Step 4: Putting everything together: Comparing values and returning the content of the vector as `String`.
 
-Add another function that checks if the first character of each word is a vowel. It adds the prefix or suffix according to the rules above. 
+Add another function that checks if the first character of each word is a vowel. It adds the prefix or suffix to the word according to the rules above. 
 
 Call the function in each iteration. 
 
@@ -135,11 +145,14 @@ Run the tests to see if they pass.
 ====
 [source,rust]
 ----
-// how to check if first character is a vowel, and modify the word!
-if VOWELS.contains(&first_char) {
-    collection_of_words.push("sr".to_string() + word);
-} else {
-    collection_of_words.push(word.to_string() + "rs");
+
+fn latinize(word: &str) -> String {
+    let first_char_of_word = word.chars().next().unwrap();
+    if VOWELS.contains(&first_char_of_word) {
+        "sr".to_string() + word
+    } else {
+        word.to_string() + "rs"
+    }
 }
 ----
 ====
