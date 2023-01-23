@@ -17,7 +17,6 @@ You will learn how to:
 * to concatenate `&str`
 * return the content of a `Vec<String>` as `String`.
 
-
 == Prerequisists
 
 You must be able to
@@ -46,25 +45,26 @@ The function returns a `String` containing the modified words.
 
 In order to learn as much as possible we recommend following the step-by-step solution. 
 
-== Step-by-step-Solution
+
 === Getting started
 
 Find the exercise skeletton in trainingmaterial/assignments/_templates/rustlatin
 
 The folder contains each step as it's own numbered `lib.rs` file. Each file contains starter code and a test that needs to pass in order for the step to be considered complete. 
 
-==== Rust Analyzer
+=== Rust Analyzer
 A part of this exercise is seeing type inference in action and to use it to help to determine the type the funktion is going to return. To make sure the file can be indexed by Rust Analyzer, make sure 
 * that the `rustlatin` folder is your rootfolder in VSCoderename 
 * rename the file you're currently working on to `lib.rs`. Name it back to it's numbered version when you are finished. 
 
 
-
-
+== Step-by-step-Solution
 
 === Step 1: Splitting a sentence and pushing its words into a vector.
 
-Iterate over the sentence to split it into words. Use the white space as separator. https://doc.rust-lang.org/std/vec/struct.Vec.html#method.push[Push] each word into the vector `collection_of_words`. Add the correct return type to the function signature.
+Iterate over the sentence to split it into words. Use the white space as separator. This can be done with the https://doc.rust-lang.org/std/primitive.str.html#method.split[`.split()`] method, where the separator character `' '` goes into the paranthesis. This method returns an iterator over substrings of the string slice. In Rust, iterators are lazy, that means just calling `.split()` on a `&str` doesn't do anything by itself. It needs to be in combination with something that advances the iteration, such as a `for` loop, or a manual advancement such as the `.next()` method. These will yield the actual object you want to use. 
+
+ https://doc.rust-lang.org/std/vec/struct.Vec.html#method.push[Push] each word into the vector `collection_of_words`. Add the correct return type to the function signature.
 Run the test to see if it passes. 
 
 .Click to see the solution
@@ -86,7 +86,7 @@ fn rustlatin(sentence: &str) -> Vec<&str> {
 
 === Step 2 Concatenating String types.
 
-After iterating over the sentence to split it into words, add the suffix `"rs"` to each word before pushing it to the vector. To concatenate two `&str` the first needs to be turned into the owned type with `to_owned`. Then `String` and `&str` can be added using `+`. Add the correct return type to the function signature.
+After iterating over the sentence to split it into words, add the suffix `"rs"` to each word before pushing it to the vector. To concatenate two `&str` the first needs to be turned into the owned type with `.to_owned()`. Then `String` and `&str` can be added using `+`. Add the correct return type to the function signature.
 Run the test to see if it passes. 
 
 .Click to see the solution
@@ -109,7 +109,9 @@ fn rustlatin(sentence: &str) -> Vec<String> {
 === Step 3: Iterating over a word to return the first character.
 After iterating over the sentence to split it into words, add the first character of each word to the vector. 
 
-(Here is the info missing how people are going to learn about chars(), and how it returns an iterator and not the character, either cheat sheet, documentation or we explain it here)
+Check the Rust documentation on the https://doc.rust-lang.org/std/primitive.str.html#[primitive str Type] for a method that returns an iterator over the `chars` of a `&str`. The `char` type is a unicode scalar value that represents a single character. 
+
+Since iterators don't do anything by themselves, it needs to be advanced first, with the `.next()` method. This method returns an `Option(Self::Item)`, where `Self::Item` is the `char` in this case. You don't need to handle it with pattern matching in this case, a simple `unwrap()` will do, as a `None` is not expected to happen. 
 
 Add the correct return type to the function signature.
 Run the test to see if it passes. 
