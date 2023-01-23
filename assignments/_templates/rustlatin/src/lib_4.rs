@@ -8,12 +8,13 @@ fn rustlatin(sentence: &str) -> String {
     for word in sentence.split(' ') {
         let first_char = word.chars().next().unwrap();
         // Your implementation goes here
+        // pushes the latinized words into the vector
     };
-    // return the content of collection_of_words as String
+    collection_of_words.join(" ")
 }
 
 // fn latinize() goes here
-
+// adds prefix "sr" and suffix "rs" according to the rules
 
 
 

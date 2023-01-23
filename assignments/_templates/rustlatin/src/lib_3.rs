@@ -1,12 +1,14 @@
 const VOWELS: [char; 5] = ['a', 'e', 'i', 'o', 'u'];
 
-fn rustlatin(sentence: &str) -> Vec<T> {
+fn rustlatin(sentence: &str) -> Vec<_> {
                             // ^^^^^^^ The correct return type needs to be added by you, 
                             //         depending on what the vector's exact type is. 
     let mut collection_of_chars = Vec::new();
     
     for word in sentence.split(' ') {
         // Your implementation goes here:
+        // Add the first char of each word to the vector. 
+        // Correct the return type of the vector.
 
     };
     collection_of_chars

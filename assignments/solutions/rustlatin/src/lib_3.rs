@@ -3,11 +3,11 @@ use std::str::Chars;
 const VOWELS: [char; 5] = ['a', 'e', 'i', 'o', 'u'];
 
 fn rustlatin(sentence: &str) -> Vec<char> {
-    let mut words = Vec::new();
+    let mut collection_of_words = Vec::new();
     
     for word in sentence.split(' ') {
         let first_char = word.chars().next().unwrap();
-        words.push(first_char);
+        collection_of_words.push(first_char);
     };
     words
  

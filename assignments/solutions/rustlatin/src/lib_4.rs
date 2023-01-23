@@ -1,13 +1,13 @@
 const VOWELS: [char; 5] = ['a', 'e', 'i', 'o', 'u'];
 
 fn rustlatin(sentence: &str) -> String {
-    let mut words = Vec::new();
+    let mut collection_of_words = Vec::new();
     
     for word in sentence.split(' ') {
-        words.push(latinize(word));
+        collection_of_words.push(latinize(word));
         
     };
-    words.join(" ")
+    collection_of_words.join(" ")
 }
 
 fn latinize(word: &str) -> String {

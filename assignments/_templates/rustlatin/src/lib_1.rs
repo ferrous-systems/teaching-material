@@ -3,7 +3,7 @@ const VOWELS: [char; 5] = ['a', 'e', 'i', 'o', 'u'];
 //           It's a global const because it will not be modified in any way and only
 //           serves as a reference.
 
-fn rustlatin(sentence: &str) -> Vec<T> {
+fn rustlatin(sentence: &str) -> Vec<_> {
                             // ^^^^^^^ The correct return type needs to be added by you, 
                             //         depending on what the vector's exact type is. 
 
@@ -13,6 +13,9 @@ fn rustlatin(sentence: &str) -> Vec<T> {
                               //              the type should appear here automatically.
     
     // Your implementation goes here:
+    // Iterate over the sentence to split it into words. 
+    // Push the words into the vector. 
+    // Correct the return type of the vector
 
     
     collection_of_words
