@@ -11,12 +11,21 @@ on:
   pull_request:
 
 jobs:
-  pages:
+  build:
+    name: Build
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        branch:
+          - main
+          - training_material_wip
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          ref: "${{ matrix.branch }}"
 
       - name: Set up Ruby 2.6
         uses: ruby/setup-ruby@v1
@@ -35,9 +44,9 @@ jobs:
       - name: Build
         run: PATH="$(pwd)/node_modules/.bin:$PATH" ./rake
 
-      - name: Deploy
-        uses: ferrous-systems/shared-github-actions/github-pages@main
+      - name: Upload content
+        uses: actions/upload-artifact@v3
         with:
+          name: "content-${{ matrix.branch }}"
           path: target/
-          token: ${{ secrets.GITHUB_TOKEN  }}
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+          retention-days: 1
