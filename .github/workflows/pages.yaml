@@ -1,5 +1,14 @@
-name: pages
-on: [push, pull_request]
+---
+
+name: GitHub Pages
+on:
+  # The website will be deployed when any of these branches is pushed to:
+  push:
+    branches:
+      - main
+      - training_material_wip
+  # Perform builds without uploads for pull requests:
+  pull_request:
 
 jobs:
   pages:
