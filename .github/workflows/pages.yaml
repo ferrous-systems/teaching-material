@@ -10,24 +10,21 @@ jobs:
         uses: actions/checkout@v1
 
       - name: Set up Ruby 2.6
-        uses: actions/setup-ruby@v1
+        uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.6
+          bundler-cache: true
 
       - name: Set up Node 16
         uses: actions/setup-node@v3
         with:
           node-version: 16
 
-      - name: Install Dependencies
-        run: |
-          npm ci
-          gem install bundler
-          bundle install --jobs 4 --retry 3
+      - name: Install Node dependencies
+        run: npm ci
 
       - name: Build
-        run: |
-          PATH="$(pwd)/node_modules/.bin:$PATH" ./rake
+        run: PATH="$(pwd)/node_modules/.bin:$PATH" ./rake
 
       - name: Deploy
         uses: ferrous-systems/shared-github-actions/github-pages@main
