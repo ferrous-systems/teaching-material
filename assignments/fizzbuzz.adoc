@@ -3,10 +3,7 @@
 
 In this exercise, we will implement our first tiny program: FizzBuzz. FizzBuzz is easy to implement, but allows for application of Rust patterns in a very clean fasion.
 
-For completing this exercise you need to have
-
-* basic programming skills in other languages
-* the Rust Syntax Cheat Sheet
+== Learning Goals
 
 After completing this exercise you are able to
 
@@ -16,21 +13,28 @@ After completing this exercise you are able to
 * format strings with and without printing them to the system console
 * write a function with a parameter and return type. 
 
+== Prerequisits
+
+For completing this exercise you need to have
+
+* basic programming skills in other languages
+* the Rust Syntax Cheat Sheet
+
 == Task
 
-1. Create a new project called `fizzbuzz`
-2. Define a function `fn fizzbuzz` that implements the following rules:
+* Create a new project called `fizzbuzz`
+* Define a function `fn fizzbuzz` that implements the following rules:
 
-  * If `i` is divisible by `3`, return `String::from("Fizz")`
-  * If `i` is divisible by `5`, return `String::from("Buzz")`
-  * If `i` is divisible by both `3` and `5`, return `String::from("FizzBuzz")`
-  * If neither of them is true return the number as a String, using `format!("{}", i)`
+  ** If `i` is divisible by `3`, return `String::from("Fizz")`
+  ** If `i` is divisible by `5`, return `String::from("Buzz")`
+  ** If `i` is divisible by both `3` and `5`, return `String::from("FizzBuzz")`
+  ** If neither of them is true return the number as a String, using `format!("{}", i)`
 
 
-3. Write a main function that implements the following:
-  * Iterate from `1` to `100`. 
-  * On each iteration the integer is tested with `fn fizzbuzz`
-  * print the returned value.
+* Write a main function that implements the following:
+  ** Iterate from `1` to `100`. 
+  ** On each iteration the integer is tested with `fn fizzbuzz`
+  ** print the returned value.
 
 === Step-by-Step-Solution
 
@@ -65,11 +69,14 @@ fn fizzbuzz(i: u32) -> String {
 
 * Creating Strings:
 The two recommended ways to get a `String` type for this exercise are:
+
 .Click to see hints/solutions for this step
 [%collapsible]
 [source,rust]
 ----
+// 1.
 let string = String::from("Fizz");
+
 let i = 4;
 let string = i.to_string();
 ----
@@ -83,7 +90,7 @@ let string = i.to_string();
 
 * Counting from 1 to 100
 
-If you have issues that your program only counts to 99, be aware that the `..`-range syntax in Rust is _end-exclusive_. Either move the bound or use the inclusive range syntax.
+If you have issues that your program only counts to 99, be aware that the `..`-range syntax in Rust is _end-exclusive_. Either move the bound or use the inclusive range syntax `..=`.
 
 [source,rust]
 ----
