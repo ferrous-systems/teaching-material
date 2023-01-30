@@ -135,7 +135,7 @@ fn rustlatin(sentence: &str) -> Vec<char> {
 
 === Step 4: Putting everything together: Comparing values and returning the content of the vector as `String`.
 
-Add another function that checks if the first character of each word is a vowel. It adds the prefix or suffix to the word according to the rules above. 
+Add another function that checks if the first character of each word is a vowel. https://doc.rust-lang.org/std/primitive.slice.html#method.contains[contains()] is the method to help you with this. It adds the prefix or suffix to the word according to the rules above. 
 
 Call the function in each iteration. 
 
