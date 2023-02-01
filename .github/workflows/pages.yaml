@@ -1,37 +1,89 @@
-name: pages
-on: [push, pull_request]
+---
+
+name: GitHub Pages
+on:
+  # The website will be deployed when any of these branches is pushed to:
+  push:
+    branches:
+      - main
+      - training_material_wip
+  # Perform builds without uploads for pull requests:
+  pull_request:
 
 jobs:
-  pages:
+  build:
+    name: Build
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        branch:
+          - main
+          - training_material_wip
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v1
+        uses: actions/checkout@v3
+        with:
+          ref: "${{ matrix.branch }}"
 
       - name: Set up Ruby 2.6
-        uses: actions/setup-ruby@v1
+        uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.6
+          bundler-cache: true
 
       - name: Set up Node 16
         uses: actions/setup-node@v3
         with:
           node-version: 16
 
-      - name: Install Dependencies
-        run: |
-          npm ci
-          gem install bundler
-          bundle install --jobs 4 --retry 3
+      - name: Install Node dependencies
+        run: npm ci
 
       - name: Build
-        run: |
-          PATH="$(pwd)/node_modules/.bin:$PATH" ./rake
+        run: PATH="$(pwd)/node_modules/.bin:$PATH" ./rake
 
-      - name: Deploy
-        uses: ferrous-systems/shared-github-actions/github-pages@main
+      - name: Upload content
+        uses: actions/upload-artifact@v3
+        with:
+          name: "content-${{ matrix.branch }}"
+          path: target/
+          retention-days: 1
+
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+
+    needs: [build]
+    if: github.event_name == 'push'
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Download contents for the main branch
+        uses: actions/download-artifact@v3
+        with:
+          name: content-main
+          path: target/
+
+      - name: Download contents for the training_material_wip branch
+        uses: actions/download-artifact@v3
+        with:
+          name: content-training_material_wip
+          path: target/next/
+
+      - name: Upload GitHub Pages content
+        uses: actions/upload-pages-artifact@v1
         with:
           path: target/
-          token: ${{ secrets.GITHUB_TOKEN  }}
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v1
+        id: deployment
