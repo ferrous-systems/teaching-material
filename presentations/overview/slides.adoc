@@ -39,7 +39,7 @@ include::./1.rs[]
 == Release Method
 
 - Nightly releases
-** experimental features are only present on nighly releases
+** experimental features are only present on nightly releases
 - Every 6 weeks, the current nightly is promoted to beta
 - After 6 weeks of testing, beta becomes stable
 - Guaranteed backwards-compatibility
