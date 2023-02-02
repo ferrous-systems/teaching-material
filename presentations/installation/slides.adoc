@@ -10,6 +10,13 @@ https://rust-lang.org/tools/install
 
 *It is not the Rust compiler!*
 
+== Hello, world! with Cargo
+
+[source,sh]
+----
+include::./7.sh[]
+----
+
 == Important commands
 
 [source,sh]
@@ -21,55 +28,16 @@ For up-to-date information, please see link:https://rust-lang.github.io/rustup-c
 
 == Contents of the toolchain
 
-- rustc, rust-docs, rust-std, rustfmt, rust-(lldb|gdb)^*^
-- cargo, cargo-fmt
+// TODO - infographic
+- rustc 
+- rustdoc
+- rustfmt
+- cargo
 - clippy
 - libcore/libstd
 
-^*^ The debugger installed is platform dependent.
-
-== rustc
-
-[source,sh]
-----
-include::./3.sh[]
-----
-
-The Rust compiler builds and links Rust code.
-
-== The quintessential beginning
-
-[source,rust]
-----
-include::./4.rs[]
-----
-
-== The quintessential output
-
-[source,sh]
-----
-include::./5b.sh[]
-----
-
-== Cargo
-
-[source,sh]
-----
-include::./6.sh[]
-----
-
-== Cargo contd.
-
-Cargo is Rusts build and package management tool.
-
 Cargo is installed along with `rustc`, but is not tightly coupled to a `rustc` version.
 
-== Once more with Cargo
-
-[source,sh]
-----
-include::./7.sh[]
-----
 
 == A Little Look Around
 
@@ -78,18 +46,8 @@ include::./7.sh[]
 
 For details, check the http://doc.crates.io/manifest.html[Cargo Manifest docs].
 
-== Playground
-
-* Playground: https://play.rust-lang.org
 
 == IDEs
 
 * rust-analyzer: https://rust-analyzer.github.io
 * IntelliJ Rust plugin for their IDEs (CLion, Idea, etc.): https://www.jetbrains.com/rust/
-
-== Add some tooling
-
-[source,sh]
-----
-include::./8.sh[]
-----

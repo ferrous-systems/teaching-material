@@ -11,7 +11,7 @@ link:./index.html[Table of Contents]
 [.centered]
 == Some Rust
 
-[source,rust]
+[source,rust, linenums]
 ----
 include::./1.rs[]
 ----
@@ -53,17 +53,16 @@ include::./1.rs[]
 - Pragmatism and easy integration
 - Approachable project
 
-== Rust wants to be usable first!
-
 == !
 
 Many examples in this course are very small, which is why we will also spend time discussing the impact of many features on large projects.
 
-== The Three Words
+== The Four Words
 
 - Safe
 - Concurrent
 - Fast
+- Pragmatic
 
 == Safe
 
@@ -103,3 +102,4 @@ From diverse backgrounds:
 - Dynamic languages (JS, Rubyists and Pythonistas)
 - Functional languages like Haskell and Scala
 - C/C++
+- Safety critical systems
