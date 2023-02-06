@@ -1,8 +1,7 @@
 = Exercise: Simple DB
 :source-language: rust
 
-In this exercise, we will implement a toy protocol parser for a simple protocol for databank queries. We call it simpleDB.
-
+In this exercise, we will implement a toy protocol parser for a simple protocol for databank queries. We call it simpleDB. The protocol has two commands, one of them can be sent with a payload of additional data. Your parser parses the incoming data strings, makes sure the commands are formatted correctly and returns errors for the different ways the formatting can go wrong. 
 
 == You will learn how to:
 
@@ -18,7 +17,25 @@ The library does not handle I/O.
 * control flow with if/else
 * familiarity with `Result<T, T>`, `Option<>`
 
-== Protocol Specification
+== Task
+
+1. Create a library project called `simple_db`.
+2. Implement appropriate datastructures for `Command` and `Error`.
+3. Read the documentation for `str` (primitive), especially `split_once()`, `splitn()` and `trim()`. Pay attention to their return type. Use the result value of `split_once()` and `splitn()` to guide your logic. 
+4. Learn about `if let` for control flow.
+5. Implement the following function so that it implements the rules of the protocol to parse the messages. Check the tests to help you with the case handling.
++
+[source,rust]
+----
+fn parse(input: &str) -> Result<Command, Error> {
+    todo!()
+}
+----
+
+
+6. Run `clippy` on your codebase. Run `rustfmt` on your codebase.
+
+=== Protocol Specification
 
 The protocol has two commands that are sent as messages in the following form:
 
@@ -41,26 +58,9 @@ Violations against the form of the messages and the properties are handled with 
 * MissingPayload (message is missing a payload)
 * UnknownError (message does not contain a string)
 
-== Task
-
-1. Create a library project called `simple_db`.
-2. Implement appropriate datastructures for `Command` and `Error`.
-3. Read the documentation for `str` (primitive), especially `split_once()`, `splitn()` and `trim()`. Pay attention to their return type. Use the result value of `split_once()` and `splitn()` to guide your logic. 
-4. Learn about `if let` for control flow.
-5. Implement the following function so that it implements the rules of the protocol to parse the messages. Check the tests to help you with the case handling.
-+
-[source,rust]
-----
-fn parse(input: &str) -> Result<Command, Error> {
-    todo!()
-}
-----
-
-
-6. Run `clippy` on your codebase. Run `rustfmt` on your codebase.
-
 === Testing
 
+Below are the tests your protocol parser needs to pass. You can copy them to the bottom of your `lib.rs`.
 
 [source,rust]
 ----
@@ -215,7 +215,7 @@ enum Error {
 
 The reason is that both describe can take multiple cases, which can be listed. Especially the `Command` type benefits a lot by encoding that only `Publish` carries data.
 
-==== Control flow and pattern matching, returning values 
+=== Control flow and pattern matching, returning values 
 
 This exercise involves handling a number of cases. You are already familiar with `if /else` and a basic form of `match`. Here, we'll introduce you to `if let`. 
 
@@ -239,10 +239,10 @@ Returning Values from branches and match arms
 * all match arms always need to return the same type, or none can return a value.
 * For `if let/else` or `if/else:` If there is no explicit `else` branch, it implicitly returns `()`. If you run into trouble because you need a return type, but don't need the else condition, `return` statements can help.
 
-=== Step by Step Solution
+== Step by Step Solution
 
 
-==== Step 1: Sorting out wrongly placed and absent newlines
+=== Step 1: Sorting out wrongly placed and absent newlines
 
 Missing, wrongly placed and more than one `\n` are errors that occur independent of other errors so it makes sense to handle these cases first. 
 Split the incomming message at the first appearing `\n` using `split_once()`. This operation yields `Some((&str, &str))` if at least one `\n` is present, and `None` if 0 are present. If the `\n` is *not* the last item in the message, the second `&str` in `Some((&str, &str))` is longer than 0 bytes. 
@@ -289,7 +289,7 @@ fn parse(input: &str) -> Result<Command, Error> {
 ----
 ====
 
-==== Step 2: Remove the else branch
+=== Step 2: Remove the else branch
 Remove the else branch, and add `return` statements to help with unexpected type errors. 
 
 [source,rust]
@@ -308,7 +308,7 @@ fn parse(input: &str) -> Result<Command, Error> {
 ----
 ====
 
-==== Step 3: if let: sorting Some() from None
+=== Step 3: if let: sorting Some() from None
 
 Use `.splitn()` to split the `input` into 2 parts at max, use whitespace as delimiter (`' '`). This method yields an iterator over the `substrings`.
 
@@ -348,7 +348,7 @@ pub fn parse(input: &str) -> Result<Command, Error> {
 ----
 ====
 
-==== Step 4: Pattern matching for the command keywords
+=== Step 4: Pattern matching for the command keywords
 
 Remove the Ok(Command::Command) and the enum variant. 
 Use `.trim()` on the command substring and use `match` to patternmatch its content. `.trim()` removes any `\n` that are in the substring. 
@@ -377,7 +377,7 @@ pub fn parse(input: &str) -> Result<Command, Error> {
 ----
 ====
 
-==== Step 5: Add Retrieve Case
+=== Step 5: Add Retrieve Case
 
 Add a match arm to check if the command substring is equal to `"RETRIEVE"`.
 It's not enough to return `Ok(Command::Retrieve)` just yet. The Retrieve command cannot have a payload, this includes whitespace! 
@@ -414,7 +414,7 @@ pub fn parse(input: &str) -> Result<Command, Error> {
 ----
 ====
 
-==== Step 6: Add Publish Case and finish
+=== Step 6: Add Publish Case and finish
 Add a match arm to check if the command substring is equal to `"PUBLISH"`. 
 Just like with the Retrieve command, we need to add a distinction, but the other way round: Publish needs a payload or whitespace for an empty payload to be valid. 
 
@@ -458,7 +458,7 @@ pub fn parse(input: &str) -> Result<Command, Error> {
 ----
 ====
 
-==== Full source code
+=== Full source code
 
 If all else fails, feel free to copy this solution to play around with it.
 
