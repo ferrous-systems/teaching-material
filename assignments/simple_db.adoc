@@ -19,11 +19,11 @@ The library does not handle I/O.
 
 == Task
 
-1. Create a library project called `simple_db`.
-2. Implement appropriate datastructures for `Command` and `Error`.
-3. Read the documentation for `str` (primitive), especially `split_once()`, `splitn()` and `trim()`. Pay attention to their return type. Use the result value of `split_once()` and `splitn()` to guide your logic. 
-4. Learn about `if let` for control flow.
-5. Implement the following function so that it implements the rules of the protocol to parse the messages. Check the tests to help you with the case handling.
+✅ Create a library project called `simple_db`.
+✅ Implement appropriate datastructures for `Command` and `Error`.
+✅ Read the documentation for `str` (primitive), especially `split_once()`, `splitn()` and `trim()`. Pay attention to their return type. Use the result value of `split_once()` and `splitn()` to guide your logic. 
+✅ Learn about `if let` for control flow in Knowledge section. (add anchor)
+✅ Implement the following function so that it implements the rules of the protocol to parse the messages. Check the tests to help you with the case handling.
 +
 [source,rust]
 ----
@@ -50,7 +50,8 @@ With the additional properties:
 4. Empty payloads are allowed. In this case, the command is `PUBLISH \n`. 
 
 Violations against the form of the messages and the properties are handled with the following error codes:
-* TrailingData (more then one newline)
+
+* TrailingData (more than one newline)
 * IncompleteMessage (no newline)
 * EmptyMessage (empty string instead of a command)
 * UnknownCommand (string is not empty, but neither PUBLISH nor RECEIVE)
