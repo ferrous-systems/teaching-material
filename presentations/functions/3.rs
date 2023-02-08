@@ -1,4 +1,4 @@
-fn doesnt_return() {
+fn returns_nothing() {
     true;
 }
 
