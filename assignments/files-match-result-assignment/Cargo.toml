@@ -1,9 +1,10 @@
 [package]
-name = "option-result-assignment"
+name = "files_match_result_assignment"
 version = "0.1.0"
-authors = ["Mirabellensaft <tanks@ferrous-systems.com>"]
-edition = "2018"
+authors = ["Mirabellensaft <tanks.transfeld@ferrous-systems.com>"]
+edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+url = "2"
