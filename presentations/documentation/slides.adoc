@@ -1,4 +1,10 @@
-= Documentation
+// TODO: Leave a link to explore docs
+// Move rest to Applied Rust
+'+}
+'[
+     =
+     
+] Documentation
 
 link:./index.html[Table of Contents]
 

@@ -1,3 +1,5 @@
+// TODO: Yank to Applied Rust
+// Fix naming inconsistency in folder/ prez title, file name???
 = Simple Generics
 
 link:./index.html[Table of Contents]

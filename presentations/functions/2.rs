@@ -1,13 +1,11 @@
-fn return_nothing() {}
-
-fn return_a_random() -> i32 {
-    4 // Chosen by dice roll.
+fn return_nothing() -> () {
+    println!("Hello!");
 }
 
-fn maybe_return_a_random(should: bool) -> Option<i32> {
-    if should {
-        Some(4)
+fn return_max(x: i32, y: i32) -> i32 {
+    if x > y {
+        x
     } else {
-        None
+        y
     }
 }

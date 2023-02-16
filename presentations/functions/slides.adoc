@@ -18,12 +18,14 @@ include::./2.rs[]
 
 == Returning
 
-Returning is optional. Signatures must be complete.
+Returning is optional. Signatures must be complete. Note the `;`!
 
 [source,rust]
 ----
 include::./3.rs[]
 ----
+
+// TODO: Move to "Applied Rust" 👔 
 
 == Generic Functions
 
