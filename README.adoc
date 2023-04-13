@@ -144,14 +144,14 @@ horizons.
 
 == Advanced courses
 
-Advanced courses deepen a Rust subject and are indended for groups that
+Advanced courses deepen a Rust subject and are indented for groups that
 have already attended a course previously. They quickly refresh core knowledge
 and then add a specific deep dive on topic. Advanced courses also differ
 from base courses in that they include a number facilitated discussions
 for attendees to share their experience.
 
 Advanced courses are tailored like base courses to the need of the
-group. For example, an basic course for for asynchronous programming
+group. For example, a basic course for asynchronous programming
 explains how concurrent execution in Rust works, while the advanced one may
 include writing your own execution engine.
 
@@ -243,7 +243,7 @@ In this module, attendees will learn:
 
 * Fuzzing of Rust applications
 * Using property based testing
-* Rust in continous integration
+* Rust in continuous integration
 * Documentation testing
 
 == Rust for Application Development
@@ -254,7 +254,7 @@ details, but on system construction and usage of foreign code.
 
 In this module, attendees will learn:
 
-* Useful libraries for many common usecases
+* Useful libraries for many common use-cases
 * How to evaluate a library
 * Componentising Rust projects
 * Error handling at large
@@ -282,7 +282,7 @@ In this module, attendees will learn:
 
 * Tools to analyse speed and memory consumption
 * Programming techniques for faster programs
-* "Refactoring towards Speed": futher deepening for optimising working
+* "Refactoring towards Speed": further deepening for optimising working
 code bases
 * Optimising programs for specific resource usage needs
 
@@ -307,7 +307,7 @@ module.
 
 In this module, attendees will learn:
 
-* Rust threads vs. asynchronous tasks
+* Rust threads vs. asynchronous tasks
 * Communication and sharing between concurrent units of a program
 * Effective memory safety features in concurrent applications
 * Available libraries and frameworks
