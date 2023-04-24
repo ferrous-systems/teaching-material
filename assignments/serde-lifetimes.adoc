@@ -86,7 +86,7 @@ Serde comes with two traits: `Serializable` and `Deserializable`. These traits c
 
 === 2. Deserialization using `str` s
 
-Notice that when we deserialize data we created a separate `String` to represent a `name` for our blog post. If our data type has a lot of fields in it we may end up allocating many-many Strings every time we receive data from our API.
+Notice that when we deserialize data we created a separate `String` to represent a `title` for our blog post. If our data type has a lot of fields in it we may end up allocating many-many Strings every time we receive data from our API.
 
 To avoid it we often can use string slices to refer to fragments of the original JSON string.
 
