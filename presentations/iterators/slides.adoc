@@ -79,6 +79,62 @@ Iterators can be advanced manually:
 include::./4.rs[]
 ----
 
+== Closures recap
+
+These are equivalent:
+
+// Explanation:
+// cols="a,a,a": 3 columns with asciidoc blocks
+// options="header": make it a header
+// separator=!: otherwise the pipe `|` will bork the table
+// Separte option: leave `|` as a separator, and escape it in included snippets.
+// ^!: centers the content in the table
+[cols="a,a,a", options="header", separator=!]
+!====
+^! Function
+^! Simple closure
+^! Multiline closure
+
+!
+[source,rust]
+----
+include::./add_fn.rs[]
+----
+
+!
+[source,rust]
+----
+include::./add_closure.rs[]
+----
+
+!
+[source,rust]
+----
+include::./add_multiline_closure.rs[]
+----
+!====
+
+== Add 1
+
+[cols="a,a", options="header", separator=|]
+|====
+^| Loopy way
+^| Simple closure
+
+|
+[source,rust]
+----
+include::./add_one_loop.rs[]
+----
+
+|
+[source,rust]
+----
+include::./add_one_iter.rs[]
+----
+|====
+<1> `map` is lazy, `for_each` is eager
+
 == Combinators: `map()`
 
 Transform items as they are evaluated:
