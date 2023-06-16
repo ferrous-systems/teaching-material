@@ -1,5 +1,13 @@
 = Ferrous Teaching Material
 
+== This material has moved!
+
+This is the published version of https://github.com/ferrous-systems/teaching-material. That repository is now Archived and this website is no longer updated.
+
+Our slides are now developed at https://github.com/ferrous-systems/rust-training. If you wish to view the slides, you can download rendered, versioned, zip bundles from  https://github.com/ferrous-systems/rust-training/releases.
+
+Our exercises (or assignments) are now developed at https://github.com/ferrous-systems/rust-exercises. You can browse the worksheets in Github, or clone the repository to have access to the templates and solutions.
+
 == Presentations
 
 .Basics
