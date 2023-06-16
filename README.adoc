@@ -2,6 +2,18 @@
 :toc-placement!:
 :ferrous: https://ferrous-systems.com/[Ferrous Systems]
 
+= Please see our new Ferrous Teaching Material
+
+**Our material has moved!**
+
+Our *training slides* now live at https://github.com/ferrous-systems/rust-training.
+
+Our *training exercises* now live at https://github.com/ferrous-systems/rust-exercises.
+
+This repository will be archived to retain any external links.
+
+---
+
 = Ferrous Teaching Material
 
 This is free workshop material produced by {ferrous} for trainings.
